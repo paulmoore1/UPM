@@ -1,0 +1,1 @@
+gp_dir = "/home/paul/global_phone"

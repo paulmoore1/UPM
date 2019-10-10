@@ -1,0 +1,52 @@
+Accidentally deleted SP_001_1.adc.shn - need to collect
+Errors with the following files:
+SP:
+    SP051_58
+
+WU:
+    WU037_66
+
+AR:
+  AR025 (all)
+  AR020 (all)
+
+GE:
+  GE031 (all)
+  GE003 (all)
+  GE050 (all)
+
+
+KO:
+  KO049 (all)
+  KO067 (all)
+  KO070 (all)
+  KO031 (all)
+  KO084 (all)
+
+BG:
+  BG067_19 and _32
+  BG112 (all)
+  BG070 (quite a few)
+
+FR: 
+  FR098 (quite a few)
+  FR032 (all)
+  FR001 (all)
+
+CZ:
+  CZ028 (all)
+  CZ058 (all)
+  CZ096_78 and _50
+
+JA:
+  JA004 (all)
+  JA091 (all)
+  JA098 (all)
+  JA111_55, 49, 69, 89, 71
+
+TH:
+  TH011 (all)
+
+VN:
+  VN012 (all)
+  VN093 (all)
