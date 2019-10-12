@@ -23,3 +23,6 @@ SHORTEN_BIN=/home/paul/UPM/tools/shorten-3.6.1/bin
 SOX_BIN=/usr/local/bin/sox
 
 export PATH=$SHORTEN_BIN:$SOX_BIN:$PATH
+
+export LOG_DIR=/home/paul/UPM/logs
+export CONF_DIR=/home/paul/UPM/conf

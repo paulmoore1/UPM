@@ -40,7 +40,7 @@ done
 GPDIR=/home/paul/global_phone
 WAVDIR=/home/paul/gp_wav
 LANGMAP=/home/paul/UPM/conf/lang_codes.txt
-LANGUAGES="AR BG CH CR CZ FR GE HA JA KO PL PO RU SW SA TA TH UA VN WU"
+LANGUAGES="VN"
 
 echo "Languages: ${LANGUAGES}"
 echo "Corpus dir: ${GPDIR}"
@@ -63,8 +63,8 @@ for L in $LANGUAGES; do
   shn_dir=$GPDIR/$LNAME/adc
   shn_file_pattern="${L}*\.adc\.shn"
   if [ $L = HA ]; then
-    shn_dir=$GPDIR/Hausa/Hausa/Data/adc
-    shn_file_pattern="${L}*\.adc"
+    shn_dir=$GPDIR/Hausa/Hausa/Data/test_adc
+    shn_file_pattern="${L}*\.adc\.shn"
   elif [ $L = SA ]; then
     shn_file_pattern="${L}*\.adc"
   elif [ $L = TA ]; then
@@ -77,8 +77,11 @@ for L in $LANGUAGES; do
   elif [ $L = WU ]; then
     shn_dir=$GPDIR/Chinese-Shanghai/Wu/adc
   fi
-
+  echo "$shn_dir"
+  echo "$shn_file_pattern"
+  # echo "$LISTDIR"
   find $shn_dir -name "$shn_file_pattern" > $LISTDIR/shn.list
+  #cat $LISTDIR/shn.list
 
   ./gp_convert_audio.sh \
     --input-list=$LISTDIR/shn.list \
@@ -123,7 +126,7 @@ for L in $LANGUAGES; do
     | grep -ohE "[0-9]+" | sort | uniq -u > $LISTDIR/spk
 
   rm $LISTDIR/basenames_wav
-  ) > $WAVDIR/${L}_log &
+  ) > $LOG_DIR/wav/${L}_log &
 done
 wait;
 exit

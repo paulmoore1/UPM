@@ -10,7 +10,6 @@ def listdir_fullpath(d):
 
 def read_lang_codes(conf_dir):
     lang_dict = {}
-    all_codes = []
     all_langs = []
     file_path = join(conf_dir, "lang_codes.txt")
     assert exists(file_path), "Could not find lang_codes.txt under " + conf_dir
@@ -23,9 +22,8 @@ def read_lang_codes(conf_dir):
         # Create 1:1 dict mapping e.g. dict[AR] = Arabic, dict[Arabic] = AR
         lang_dict[lang_code] = lang_word
         lang_dict[lang_word] = lang_code
-        all_codes.append(lang_code)
         all_langs.append(lang_word)
-    return lang_dict, all_codes, all_langs
+    return lang_dict, all_langs
 
 
 # Gets all speaker files in the path
@@ -63,7 +61,7 @@ def clean_empty_speaker_folders(gp_path, lang):
         
 
 def main():
-    lang_dict, all_codes, all_langs = read_lang_codes(global_vars.conf_dir)
+    lang_dict, all_langs = read_lang_codes(global_vars.conf_dir)
     for lang in all_langs:
         if lang == "Hausa":
             gp_path = join(global_vars.gp_dir, lang, "Hausa", "Data", "adc")
