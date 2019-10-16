@@ -40,7 +40,7 @@ done
 GPDIR=/home/paul/global_phone
 WAVDIR=/home/paul/gp_wav
 LANGMAP=/home/paul/UPM/conf/lang_codes.txt
-LANGUAGES="VN"
+LANGUAGES="TA"
 
 echo "Languages: ${LANGUAGES}"
 echo "Corpus dir: ${GPDIR}"
@@ -63,8 +63,8 @@ for L in $LANGUAGES; do
   shn_dir=$GPDIR/$LNAME/adc
   shn_file_pattern="${L}*\.adc\.shn"
   if [ $L = HA ]; then
-    shn_dir=$GPDIR/Hausa/Hausa/Data/test_adc
-    shn_file_pattern="${L}*\.adc\.shn"
+    shn_dir=$GPDIR/Hausa/Hausa/Data/adc
+    shn_file_pattern="${L}*\.adc"
   elif [ $L = SA ]; then
     shn_file_pattern="${L}*\.adc"
   elif [ $L = TA ]; then
@@ -83,10 +83,20 @@ for L in $LANGUAGES; do
   find $shn_dir -name "$shn_file_pattern" > $LISTDIR/shn.list
   #cat $LISTDIR/shn.list
 
-  ./gp_convert_audio.sh \
+  # If one of the languages with awkward adc format
+  if [ $L = HA ] || [ $L = SA ] || [ $L = UA ]; then
+    echo "Language contains raw adc files"
+    ./setup/gp_convert_audio_adc.sh \
+      --input-list=$LISTDIR/shn.list \
+      --output-dir=$FILEDIR \
+      --output-list=$LISTDIR/wav.list
+  else 
+    echo "Language files formatted with shn"
+    ./setup/gp_convert_audio.sh \
     --input-list=$LISTDIR/shn.list \
     --output-dir=$FILEDIR \
     --output-list=$LISTDIR/wav.list
+  fi
 
   if [ "$L" = "TA" ]; then
     # from ta01007d.wav.shn.wav to TA007_01.wav

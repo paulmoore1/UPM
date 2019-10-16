@@ -72,7 +72,7 @@ def main():
         try:
             assert exists(gp_path)
         except:
-            print("Language directory not found in " + gp_path)
+            #print("Language directory not found in " + gp_path)
             continue
         speaker_files = get_speaker_files(gp_path, lang)
         lang_code = lang_dict[lang]
