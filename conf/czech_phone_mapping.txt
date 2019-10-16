@@ -1,0 +1,41 @@
+a a
+aa aː
+aw au
+b b
+c c
+ch dʒ ?
+d d
+dj dz ?
+e ɛ
+ee ɛː
+f f
+g ɡ
+h ɦ
+i ɪ
+ii iː
+j j
+k k
+l l
+m m
+n n
+ng ŋ
+nj ɲ
+o o
+ow ou ?
+p p
+r r
+rsh r̝̊ ?
+rzh r̝ ?
+s s
+sh ʃ
+t t
+tj tʃ
+u u
+uu uː
+v v
+x x
+z z
+zh ʒ
+
+
+missing oː, m̩, l̩, r̩, ts
