@@ -1,41 +1,43 @@
-a a
-aa aː
-aw au
-b b
-c c
-ch dʒ ?
-d d
-dj dz ?
-e ɛ
-ee ɛː
-f f
-g ɡ
-h ɦ
-i ɪ
-ii iː
-j j
-k k
-l l
-m m
-n n
-ng ŋ
-nj ɲ
-o o
-ow ou ?
-p p
-r r
-rsh r̝̊ ?
-rzh r̝ ?
-s s
-sh ʃ
-t t
-tj tʃ
-u u
-uu uː
-v v
-x x
-z z
-zh ʒ
+a a a
+aa aː a:
+aw au au
+b b b
+c ts ts
+ch dʒ dZ
+d d d
+dj dz dz
+e ɛ E
+ee ɛː E:
+ew ɛu Eu
+f f f
+g ɡ g
+h ɦ h\
+i ɪ I
+ii iː i:
+j j j
+k k k
+l l l
+m m m
+n n n
+ng ŋ N
+nj ɲ J
+o o o
+oo oː o:
+ow ou ou
+p p p
+r r r
+rsh r̝̊ r_0_r
+rzh r̝ r_r
+s s s
+sh ʃ S
+t t t
+tj tʃ tS
+u u u
+uu uː u:
+v v v
+x x x
+z z z
+zh ʒ Z
 
 
-missing oː, m̩, l̩, r̩, ts
+missing m̩, l̩, r̩, c
