@@ -1,0 +1,42 @@
+M_a a a
+M_a+
+M_aI
+M_aU
+M_b b b
+M_D ð D
+M_d d d
+M_e e e
+M_e+
+M_eI
+M_eU
+M_f f f
+M_G ɣ G
+M_g ɡ g
+M_i i i
+M_i+
+M_j j j
+M_k k k
+M_l l l
+M_L ʎ L
+M_m m m
+M_n n n
+M_ng ɴ N\
+M_n~ ɲ J
+M_o o o
+M_o+
+M_oI
+M_p p p
+M_r r r
+M_rf ɾ or ɾ̥ 4 (voiced) or 4_0 (voiceless)
+M_s s s
+M_t t t
+M_T θ T
+M_tS tʃ or ts (likely tS in X-sampa)
+M_u u u
+M_u+
+M_V β B
+M_w ʋ or ʋ̥ v\ or v\_0 (voiceless) Or is it w w?
+M_x x x
+M_z z z
+
+Other fragments: M_+QK, M_+hGH, SIL

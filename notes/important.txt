@@ -1,1 +1,4 @@
 Remember that when reading transcripts, you need to get the utterance ID from the line (not indexing the list) since some utterances may be missing
+
+Have Dict pdfs for Spanish, Swahili, Thai, French, Czech
+Hausa, Ukrainian, Portuguese and Vietnamese
