@@ -2,3 +2,8 @@ Remember that when reading transcripts, you need to get the utterance ID from th
 
 Have Dict pdfs for Spanish, Swahili, Thai, French, Czech
 Hausa, Ukrainian, Portuguese and Vietnamese
+
+What should be done for tonal/duration languages like VI/HA?
+
+Hausa needs different transcription depending on if speaker is
+from Nigeria or Cameroon
