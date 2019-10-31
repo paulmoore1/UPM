@@ -1,7 +1,5 @@
 import os, sys
-upm_dir = os.path.dirname(os.getcwd())
-sys.path.insert(1, upm_dir)
-
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
 import py_helper_functions as helper
 import global_vars
 import re
@@ -33,9 +31,9 @@ def get_all_phones(dict_file):
 
 def main():
     # Temp hard coded directory
-    dict_dir = "/group/corpora/public/global_phone/Dictionaries/SP"
+    dict_dir = join(global_vars.wav_dir, "SA", "dict")
     assert exists(dict_dir), "Dictonary directory not found in " + dict_dir
-    dict_file = join(dict_dir, "Spanish-GPDict.txt")
+    dict_file = join(dict_dir, "Swahili-GPDict.txt")
     phone_list = get_all_phones(dict_file)
     print("Phone list: ")
     for phone in phone_list:

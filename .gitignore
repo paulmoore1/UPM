@@ -3,3 +3,4 @@ tools/shorten-3.6.1
 .vscode
 *.pyc
 logs
+__pycache__

@@ -1,4 +1,5 @@
-import os, epitran
+import os, epitran, sys
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
 from os.path import join, exists
 import global_vars
 import py_helper_functions as helper

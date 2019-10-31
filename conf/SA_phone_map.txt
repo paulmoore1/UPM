@@ -1,0 +1,38 @@
+SIL SIL SIL
+SWA_a a a
+SWA_b ɓ b_<
+SWA_ch tʃ tS
+SWA_d ɗ d_<
+SWA_dh ð D
+SWA_e ɛ E
+SWA_f f f
+SWA_g ɠ g_<
+SWA_gh ɣ G
+SWA_h h h
+SWA_i i i
+SWA_j ʄ j_<
+SWA_k k k
+SWA_kh x x
+SWA_l l l
+SWA_m m m
+SWA_mb ᵐb b~ ?
+SWA_mv ᶬv v~ ?
+SWA_n n n
+SWA_nd ⁿd d~ ?
+SWA_ng ᵑɡ g~ ?
+SWA_ng~ ŋ N
+SWA_nj ɲ J
+SWA_ny ⁿʄ j_<~ ?
+SWA_nz ⁿz z~ ?
+SWA_o ɔ O
+SWA_p p p
+SWA_r ɾ 4
+SWA_s s s
+SWA_sh ʃ S
+SWA_t t t
+SWA_th θ T
+SWA_u u u
+SWA_v v v
+SWA_w w w
+SWA_y j j
+SWA_z z z

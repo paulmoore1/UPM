@@ -28,14 +28,17 @@ def read_lang_codes():
 # Get dictionary mapping from lang code to epitran-code
 # e.g. dict[HA] = "hau-Latn"
 def read_epitran_codes():
-    epi_dict = {}
     file_path = join(global_vars.conf_dir, "epitran_codes.txt")
     assert exists(file_path), "Could not find epitran_codes.txt under " + global_vars.conf_dir
     with open(file_path, "r") as f:
         lines = f.read().splitlines()
+    epi_dict = {}
     for line in lines:
         entry = line.split()
         lang_code = entry[0]
         epitran_code = entry[1]
         epi_dict[lang_code] = epitran_code
     return epi_dict
+
+
+
