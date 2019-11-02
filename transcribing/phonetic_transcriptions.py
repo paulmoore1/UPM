@@ -208,8 +208,8 @@ def get_line(line, ipa_dict, x_sampa_dict, filter_oov):
         x_sampa_words.append(x_sampa_word)
     return " ".join(ipa_words), " ".join(x_sampa_words)
 
-
-def main():
+# Keep private so not imported
+def _main():
     # Temporary hard-coded language Swahili
     lang_code = "SA"
     dict_file = "Swahili-GPDict.txt"
@@ -225,4 +225,4 @@ def main():
     
 
 if __name__ == "__main__":
-    main()
+    _main()
