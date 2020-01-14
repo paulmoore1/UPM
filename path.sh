@@ -1,8 +1,8 @@
 #!/bin/bash
 
 source ~/.bashrc
-
-KALDI_ROOT=/home/paul/kaldi
+HOME_DIR=/home/paul
+KALDI_ROOT=$HOME_DIR/kaldi
 [ -f $KALDI_ROOT/tools/env.sh ] && . $KALDI_ROOT/tools/env.sh
 
 KALDI_SRC=$KALDI_ROOT/src
@@ -25,15 +25,18 @@ export kaldi_steps=$PWD/steps
 SCRIPTS=$kaldi_local:$kaldi_utils:$kaldi_steps
 export PATH=$PATH:$KALDI_BIN:$FSTBIN:$LMBIN:$SCRIPTS
 
-SHORTEN_BIN=/home/paul/UPM/tools/shorten-3.6.1/bin
+SHORTEN_BIN=$HOME_DIR/UPM/tools/shorten-3.6.1/bin
 SOX_BIN=/usr/local/bin/sox
 
 export PATH=$SHORTEN_BIN:$SOX_BIN:$PATH
 
-export LOG_DIR=/home/paul/UPM/logs
-export CONF_DIR=/home/paul/UPM/conf
-export WAV_DIR=/home/paul/gp_wav
-export DATA_DIR=/home/paul/gp_data
+export LOG_DIR_GLOBAL=$HOME_DIR/UPM/logs
+export CONF_DIR_GLOBAL=$HOME_DIR/UPM/conf
+export WAV_DIR_GLOBAL=$HOME_DIR/gp_wav
+export DATA_DIR_GLOBAL=$HOME_DIR/gp_data
+export FEAT_DIR_GLOBAL=$HOME_DIR/gp_feats
+export EXP_DIR_GLOBAL=$HOME_DIR/upm_exp
+export UPM_DIR_GLOBAL=$HOME_DIR/UPM
 
 if [ -z ${CONDA_DEFAULT_ENV+x} ] || [ "${CONDA_DEFAULT_ENV}" = base ]; then
     conda activate upm || exit

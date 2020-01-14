@@ -119,24 +119,6 @@ def get_all_transcript_filepaths(lang_code):
     return helper.listdir_fullpath(transcript_dir)
 
 
-# Requires a file path to a transcript e.g. /home/.../SA001.trl
-# Optional args allow to filter stutters, uhms or OOV words
-# If a phone map is given, will save as IPA/X-SAMPA instead of default
-# Returns:
-# - a list of file IDs for the WAV directory e.g. [SA001_1, SA001_2, ...]
-# - the dictionary corresponding to each ID e.g dict[SA001_1] = "blahblah"
-def read_transcription_file(transcript_file_path, word_dict, phone_map=None, filter_stutters=False, filter_uhms=False, filter_oov=False):
-    assert exists(transcript_file_path), "Could not find transcript file in " + transcript_file_path
-    with open(transcript_file_path, "r") as f:
-        lines = f.read().splitlines()
-    # Check speaker ID matches in file and filename
-    header = lines[0]
-    filename = os.path.splitext(os.path.basename(transcript_file_path))[0]
-    header_ID = header.split()[-1]
-    file_ID = filename[2:]
-    assert header_ID == file_ID, "File and header ID mismatch: {} vs {}".format(header_ID, file_ID)
-
-
 # Reads all the transcript files, makes a txt file where each line looks like:
 # SA001_1 phonetic_transcrption_of_sentence
 # Optional arguments to filter utterances with stutters, uhms or OOV words from final list
@@ -171,7 +153,7 @@ def write_all_transcriptions(lang_code, transcript_files, ipa_dict, x_sampa_dict
             else:
                 utt_id = filename + "_" + curr_line_id
                 ipa_words, x_sampa_words = get_line(line, ipa_dict, x_sampa_dict, filter_oov)
-                # If None is returned, something was wrong with one of the words
+                # If Nis returned, something was wrong with one of the words
                 if ipa_words is None:
                     print("ERROR with line " + line)
                     continue
