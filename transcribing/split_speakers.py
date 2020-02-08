@@ -6,7 +6,7 @@ from phonetic_transcriptions import get_all_transcript_filepaths
 from py_helper_functions import query_yes_no
 
 
-def check_for_transcript_matches(transcript_files):
+def check_for_transcript_matches(lang_code, transcript_files, log_dir):
     transcript_files.sort()
     all_tr_dict = {}
     all_matches = []
@@ -42,10 +42,8 @@ def check_for_transcript_matches(transcript_files):
                         match_idx = all_matches.index(match_str)
                         match_counter[match_idx] += 1
         already_checked.append(spk_id)
-    log_path = join(global_vars.log_dir, "sa_tr")
-    if not exists(log_path):
-        os.makedirs(log_path)
-    with open(join(log_path, "sa_logs.txt"), "w") as f:
+    
+    with open(join(log_dir, "{}_logs.txt".format(lang_code.lower())), "w") as f:
         v_bad_matches = []
         bad_matches = []
         minor_matches = []
@@ -72,7 +70,8 @@ def check_for_transcript_matches(transcript_files):
                 f.write(line)
 
     
-def get_spk_times(utt2len_filepath):
+def get_spk_times(lang_code, log_dir):
+    utt2len_filepath = join(global_vars.wav_dir, lang_code, "lists", "utt2len")
     with open(utt2len_filepath, "r") as f:
         lines = f.read().splitlines()
     time_dict = {}
@@ -84,11 +83,22 @@ def get_spk_times(utt2len_filepath):
             time_dict[spk_id] += time
         else:
             time_dict[spk_id] = time
-    ordered_tuples = []
+    all_times = []
     for spk_id, time in time_dict.items():
-        ordered_tuples.append((spk_id, time))
-    ordered_tuples.sort()
-    return ordered_tuples
+        all_times.append((spk_id, time))
+    all_times.sort()
+    total_len = sum(n for _, n in all_times)
+    
+    log_path = join(log_dir, "{}_times.txt".format(lang_code.lower()))
+
+    with open(log_path, "w") as f:
+        f.write("Time percent for each speaker\n")
+        for spk_id, time in all_times:
+            percent_time = round(time/total_len*100, 3)
+            id_str = id_to_str(spk_id, space_before=False, lang_code=lang_code)
+            f.write("{} {}\n".format(id_str, percent_time))
+
+    return all_times
 
 # Checks the percent split in time given a list of validation/test spk ids
 def check_percent_split(ordered_times, val_ids, test_ids):
@@ -136,7 +146,7 @@ def assess_split(spk_ids, v_bad_matches, bad_matches, label):
     for id_1, id_2 in bad_matches:
         if id_1 in spk_ids and id_2 in spk_ids:
             bad += 1
-    #print("{}:\nVery bad count: {}\nBad count: {}\n".format(label, str(v_bad), str(bad)))
+    print("{}:\nVery bad count: {}\nBad count: {}\n".format(label, str(v_bad), str(bad)))
 
 
 def print_percent_times(times):
@@ -145,6 +155,22 @@ def print_percent_times(times):
     for spk_id, time in times:
         percent_times.append((spk_id, round(time/total_len*100, 3)))
     print(percent_times)
+
+def id_to_str(id, space_before=True, lang_code=None):
+    if id < 10:
+        id_str =  "00" + str(id)
+    elif id < 100:
+        id_str = "0" + str(id)
+    else:
+        id_str = str(id)
+
+    if lang_code is not None:
+        id_str = lang_code.upper() + id_str
+
+    if space_before:
+        id_str = " " + id_str
+
+    return id_str    
 
 
 def write_ids_to_conf(lang_code, ids, label, overwrite=False):
@@ -213,22 +239,25 @@ def normalise_data_subset_string(data_str):
 
 
 def main():
-    lang_code = "SA"
+    lang_code = "UA"
+    log_dir = join(global_vars.log_dir, "splitting")
+    if not exists(log_dir):
+        os.makedirs(log_dir)
     transcript_files = get_all_transcript_filepaths(lang_code)
-    #check_for_transcript_matches(transcript_files)
-    utt2len_filepath = join(global_vars.wav_dir, lang_code, "lists", "utt2len")
-    times = get_spk_times(utt2len_filepath)
+    check_for_transcript_matches(lang_code, transcript_files, log_dir)
+    
+    times = get_spk_times(lang_code, log_dir)
     #print_percent_times(times)
-    val_ids = [4, 12, 20, 25, 29, 33, 44, 48, 55, 56, 82]
-    test_ids = [6, 10, 15, 21, 32, 36, 39, 50, 66, 79, 95]
-    check_percent_split(times, val_ids, test_ids)
+    #val_ids = [4, 12, 20, 25, 29, 33, 44, 48, 55, 56, 82]
+    #test_ids = [6, 10, 15, 21, 32, 36, 39, 50, 66, 79, 95]
+    #check_percent_split(times, val_ids, test_ids)
 
-    spk_ids = [x[0] for x in times]
-    train_ids = [x for x in spk_ids if not (x in val_ids or x in test_ids)]
+    #spk_ids = [x[0] for x in times]
+    #train_ids = [x for x in spk_ids if not (x in val_ids or x in test_ids)]
 
-    write_ids_to_conf(lang_code, train_ids, "Training")
-    write_ids_to_conf(lang_code, val_ids, "Validation")
-    write_ids_to_conf(lang_code, test_ids, "Testing")
+    #write_ids_to_conf(lang_code, train_ids, "Training")
+    #write_ids_to_conf(lang_code, val_ids, "Validation")
+    #write_ids_to_conf(lang_code, test_ids, "Testing")
 
 
 if __name__ == "__main__":
