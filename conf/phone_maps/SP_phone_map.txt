@@ -1,5 +1,6 @@
+SIL SIL SIL
 M_a a a
-M_a+
+M_a+ a a
 M_aI
 M_aU
 M_b b b
@@ -24,7 +25,7 @@ M_ng ɴ N\
 M_n~ ɲ J
 M_o o o
 M_o+
-M_oI
+M_oI oI oI
 M_p p p
 M_r r r
 M_rf ɾ or ɾ̥ 4 (voiced) or 4_0 (voiceless)

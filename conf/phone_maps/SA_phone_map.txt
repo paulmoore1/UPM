@@ -1,4 +1,4 @@
-SIL SIL SIL
+SIL sil sil
 SWA_a a a
 SWA_b ɓ b_<
 SWA_ch tʃ tS

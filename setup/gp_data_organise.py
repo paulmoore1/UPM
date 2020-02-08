@@ -45,22 +45,67 @@ def create_new_dir(set_dir, delete=True):
     else:        
         os.makedirs(set_dir)
 
-def filter_file_lines(speakers, read_filepath, write_filepath):
-    with open(read_filepath, "r") as f:
-        read_lines = f.readlines()
+
+# Combine files for each train/val/test set for each language
+# Writes to exp_data_dir/[train]
+def combine_files(lang_codes, dataset, exp_data_dir):
+    assert dataset in ["train", "val", "test"], "ERROR: Dataset should be one of \"train\", \"val\" or \"test\""
+    transcripts_dir = global_vars.all_tr_dir
+    wav_dir = global_vars.wav_dir
+
+    write_dir = join(exp_data_dir, dataset)
+    if not isdir(write_dir):
+        os.makedirs(write_dir)
+    
+    # Gets transcription files
+    for idx, lang_code in enumerate(lang_codes):
+        if idx == 0:
+            write_new = True
+        else:
+            write_new = False
+        transcripts_file = join(transcripts_dir, lang_code + "_X-SAMPA_tr.txt")
+        assert exists(transcripts_file), "ERROR: Transcript file not found at {}".format(transcripts_file)
+        
+        # Get list of speakers for filtering transcript
+        spk_list = join(global_vars.conf_dir, "spk_lists", "{}_spk.list".format(dataset))
+        assert exists(spk_list), "ERROR: Speaker list not found in {}".format(spk_list)
+
+        speakers = read_spk_list(spk_list, lang_code)
+
+        feat_filetypes = ["wav.scp", "spk2utt", "utt2spk", "utt2len"]
+        feat_filepaths = [join(wav_dir, lang_code, "lists", x)  for x in feat_filetypes]
+
+        feat_filepaths.append(transcripts_file)
+
+        for read_filepath in feat_filepaths:
+            # If it's the transcript file
+            if read_filepath.endswith(".txt"):
+                write_filepath = join(write_dir, dataset + ".txt")
+            else:
+                write_filepath = join(write_dir, basename(read_filepath))
+            # Write and filter the files
+            write_and_filter(read_filepath, speakers, write_filepath, write_new)
+
+
+
+def write_and_filter(original_filepath, spk_list, write_filepath, write_new):
+    with open(original_filepath, "r") as f:
+        lines = f.readlines()
     write_lines = []
-    for line in read_lines:
-        # First 5 characters will be speaker 
-        if line[0:5] in speakers:
+    for line in lines:
+        if line[0:5] in spk_list:
             write_lines.append(line)
+    
+    # If writing new file
+    if write_new == True:
+        with open(write_filepath, "w") as f:
+            for line in write_lines:
+                f.write(line)
+    else:
+        with open(write_filepath, "a") as f:
+            for line in write_lines:
+                f.write(line)
 
-    with open(write_filepath, "w") as f:
-        for line in write_lines:
-            f.write(line)
-
-
-def split_lang_codes(lang_codes_str):
-    pass
 
 def main():
     args = get_args()
@@ -77,8 +122,6 @@ def main():
             os.makedirs(join(data_dir, x))
 
 
-    conf_dir = join(args.conf_dir, "spk_lists")
-
     for dataset in data_splits:
         if dataset == "train":
             langs = args.train_languages.split()
@@ -86,23 +129,8 @@ def main():
             langs = args.val_languages.split()
         else:
             langs = args.test_languages.split()
-        spk_filepath = join(conf_dir, dataset + "_spk.list")
         
-        for lang in langs:
-
-            # General directories to read/write to
-            read_dir = join(wav_dir, lang, "lists")
-            write_dir = join(data_dir, lang, dataset)
-
-            speakers = read_spk_list(spk_filepath, lang)
-
-            if not isdir(write_dir):
-                os.makedirs(join(data_dir, lang, dataset))
-            for filetype in ["wav.scp", "spk2utt", "utt2spk", "utt2len"]:
-                read_path = join(read_dir, filetype)
-                write_path = join(write_dir, filetype)
-                filter_file_lines(speakers, read_path, write_path)
-
+        combine_files(langs, dataset, data_dir)
 
 
 if __name__ == "__main__":

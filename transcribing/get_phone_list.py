@@ -1,4 +1,4 @@
-import os, sys
+import os, sys, glob
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
 import py_helper_functions as helper
 import global_vars
@@ -30,10 +30,11 @@ def get_all_phones(dict_file):
     return phone_list
 
 def main():
-    # Temp hard coded directory
-    dict_dir = join(global_vars.wav_dir, "SA", "dict")
-    assert exists(dict_dir), "Dictonary directory not found in " + dict_dir
-    dict_file = join(dict_dir, "Swahili-GPDict.txt")
+    lang_code = "UK"
+    dict_dir = join(global_vars.gp_dir, "dict", lang_code)
+    files = glob.glob(join(dict_dir, "*GPDict.txt"))
+    assert len(files) == 1, "Multiple/no matches found in {}".format(dict_dir)
+    dict_file = files[0]
     phone_list = get_all_phones(dict_file)
     print("Phone list: ")
     for phone in phone_list:
