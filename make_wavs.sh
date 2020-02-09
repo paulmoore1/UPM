@@ -6,7 +6,7 @@ set -o pipefail
 GPDIR=/home/paul/global_phone
 WAVDIR=/home/paul/gp_wav
 LANGMAP=/home/paul/UPM/conf/lang_codes.txt
-LANGUAGES="UA"
+LANGUAGES="GE"
 
 echo "Languages: ${LANGUAGES}"
 echo "Corpus dir: ${GPDIR}"

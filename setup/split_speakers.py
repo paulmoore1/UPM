@@ -2,8 +2,19 @@ import os, sys, re
 from os.path import join, exists
 sys.path.insert(1, join(sys.path[0], '..'))
 import global_vars
-from phonetic_transcriptions import get_all_transcript_filepaths
-from py_helper_functions import query_yes_no
+import py_helper_functions as helper
+
+
+def get_all_transcript_filepaths(lang_code):
+    lang_dir = join(global_vars.wav_dir, lang_code)
+    if "rmn" in os.listdir(lang_dir):
+        transcript_dir = join(lang_dir, "rmn")
+    elif "trl" in os.listdir(lang_dir):
+        transcript_dir = join(lang_dir, "trl")
+    else:
+        print("No transcript directories (rmn/trl) found in " + lang_dir)
+        return None
+    return helper.listdir_fullpath(transcript_dir)
 
 
 def check_for_transcript_matches(lang_code, transcript_files, log_dir):
@@ -33,7 +44,7 @@ def check_for_transcript_matches(lang_code, transcript_files, log_dir):
                     continue
                 spk_2_lines = all_tr_dict[spk_2_id]
                 if line in spk_2_lines:
-                    match_str = spk_id + " <--> " + spk_2_id
+                    match_str = spk_id + " " + spk_2_id
                     # if haven't seen this match, add a new tracker + counter
                     if not match_str in all_matches:
                         all_matches.append(match_str)
@@ -57,17 +68,22 @@ def check_for_transcript_matches(lang_code, transcript_files, log_dir):
             else:
                 minor_matches.append(match_line)
         if len(v_bad_matches) > 0:
-            f.write("Very bad matches:\n")
-            for line in v_bad_matches:
-                f.write(line)
+            write_line_counts(f, v_bad_matches, "Very bad matches")
         if len(bad_matches) > 0:
-            f.write("Bad matches: \n")
-            for line in bad_matches:
-                f.write(line)
+            write_line_counts(f, bad_matches, "Bad matches")
         if len(minor_matches) > 0:
-            f.write("Minor matches: \n")
-            for line in minor_matches:
-                f.write(line)
+            write_line_counts(f, minor_matches, "Minor matches")
+
+    return v_bad_matches, bad_matches, minor_matches
+
+def write_line_counts(open_file, matches, label):
+    open_file.write(label + ":\n")
+    for match in matches:
+        items = match.split()
+        spk_1 = str(items[0])
+        spk_2 = str(items[1])
+        count = str(items[2])
+        open_file.write("{} <--> {}: {}\n".format(spk_1, spk_2, count))
 
     
 def get_spk_times(lang_code, log_dir):
@@ -101,7 +117,7 @@ def get_spk_times(lang_code, log_dir):
     return all_times
 
 # Checks the percent split in time given a list of validation/test spk ids
-def check_percent_split(ordered_times, val_ids, test_ids):
+def check_percent_split(ordered_times, val_ids, test_ids, v_bad, bad, minor, log_dir):
     spk_ids = [x[0] for x in ordered_times]
     train_ids = [x for x in spk_ids if not (x in val_ids or x in test_ids)]
     
@@ -124,30 +140,55 @@ def check_percent_split(ordered_times, val_ids, test_ids):
     print_percent(val_len, total_len, "Validation")
     print_percent(test_len, total_len, "Testing")
 
-    v_bad_matches = [(4, 5), (15, 81), (17, 20), (20, 23), (29, 73), (32, 33), (33, 36), (48, 61)]
-    bad_matches = [(12, 13), (20, 21), (33, 38), (36, 38), (39, 40), (44, 45), (50, 51), (56, 57), (66, 67)]
-
-    assess_split(train_ids, v_bad_matches, bad_matches, "Training")
-    assess_split(val_ids, v_bad_matches, bad_matches, "Validation")
-    assess_split(test_ids, v_bad_matches, bad_matches, "Testing")
+    assess_split(train_ids, v_bad, bad, minor, "Training", log_dir)
+    assess_split(val_ids, v_bad, bad, minor, "Validation", log_dir)
+    assess_split(test_ids, v_bad, bad, minor, "Testing", log_dir)
     
 
 def print_percent(audio_len, total_len, data_subset):
     percent = audio_len/total_len*100
     print("{0} %: {1:.3f}".format(data_subset, percent))
 
+def convert_to_tuples(matches):
+    tuples = []
+    for match in matches:
+        items = match.split()
+        # Convert e.g. UA001 --> 1
+        spk_1_id = int(items[0][2:])
+        spk_2_id = int(items[1][2:])
+        tuples.append((spk_1_id, spk_2_id))
+    return tuples
 
-def assess_split(spk_ids, v_bad_matches, bad_matches, label):
-    v_bad = 0
-    for id_1, id_2 in v_bad_matches:
-        if id_1 in spk_ids and id_2 in spk_ids:
-            v_bad += 1
-    bad = 0
-    for id_1, id_2 in bad_matches:
-        if id_1 in spk_ids and id_2 in spk_ids:
-            bad += 1
-    print("{}:\nVery bad count: {}\nBad count: {}\n".format(label, str(v_bad), str(bad)))
 
+def assess_split(spk_ids, v_bad, bad, minor, label, log_dir):
+    
+    v_bad_count, v_bad_lines = get_counts_and_lines(v_bad, spk_ids)
+    bad_count, bad_lines = get_counts_and_lines(bad, spk_ids)
+    minor_count, minor_lines = get_counts_and_lines(minor, spk_ids)
+    
+
+    print("{}:\nVery bad count: {}\nBad count: {}\nMinor count: {}\n".format(
+        label, str(v_bad_count), str(bad_count), str(minor_count)))
+
+    log_file = join(log_dir, "{}_revised.txt".format(label.lower()))
+
+    with open(log_file, "w") as f:
+        write_line_counts(f, v_bad_lines, "Very bad matches")
+        write_line_counts(f, bad_lines, "Bad matches")
+        write_line_counts(f, minor_lines, "Minor matches")
+    
+
+# Get number of bad matches, and lines they occur on
+def get_counts_and_lines(bad, spk_ids):
+    matches = convert_to_tuples(bad)
+    count = 0
+    lines = []
+    for idx, (id_1, id_2) in enumerate(matches):
+        if id_1 in spk_ids and id_2 in spk_ids:
+            count += 1
+            lines.append(bad[idx])
+    return count, lines
+    
 
 def print_percent_times(times):
     total_len = sum(n for _, n in times)
@@ -210,7 +251,7 @@ def write_ids_to_conf(lang_code, ids, label, overwrite=False):
             old_line = old_line_list[0]
             # If the old line was different, check whether or not to override
             if old_line != id_str:
-                overwrite = query_yes_no("IDs found for " + label + " already, overwrite? [y/n]", default="no")
+                overwrite = helper.query_yes_no("IDs found for " + label + " already, overwrite? [y/n]", default="no")
                 if not overwrite:
                     print("Did not overwrite")
                     return
@@ -239,25 +280,26 @@ def normalise_data_subset_string(data_str):
 
 
 def main():
-    lang_code = "UA"
+    lang_code = "GE"
     log_dir = join(global_vars.log_dir, "splitting")
     if not exists(log_dir):
         os.makedirs(log_dir)
     transcript_files = get_all_transcript_filepaths(lang_code)
-    check_for_transcript_matches(lang_code, transcript_files, log_dir)
+    v_bad, bad, minor = check_for_transcript_matches(lang_code, transcript_files, log_dir)
     
     times = get_spk_times(lang_code, log_dir)
     #print_percent_times(times)
-    #val_ids = [4, 12, 20, 25, 29, 33, 44, 48, 55, 56, 82]
-    #test_ids = [6, 10, 15, 21, 32, 36, 39, 50, 66, 79, 95]
-    #check_percent_split(times, val_ids, test_ids)
+    val_ids = []
+    test_ids = []
+    #
+    check_percent_split(times, val_ids, test_ids, v_bad, bad, minor, log_dir)
 
-    #spk_ids = [x[0] for x in times]
-    #train_ids = [x for x in spk_ids if not (x in val_ids or x in test_ids)]
+    # spk_ids = [x[0] for x in times]
+    # train_ids = [x for x in spk_ids if not (x in val_ids or x in test_ids)]
 
-    #write_ids_to_conf(lang_code, train_ids, "Training")
-    #write_ids_to_conf(lang_code, val_ids, "Validation")
-    #write_ids_to_conf(lang_code, test_ids, "Testing")
+    # write_ids_to_conf(lang_code, train_ids, "Training")
+    # write_ids_to_conf(lang_code, val_ids, "Validation")
+    # write_ids_to_conf(lang_code, test_ids, "Testing")
 
 
 if __name__ == "__main__":
