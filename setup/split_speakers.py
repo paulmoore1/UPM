@@ -26,7 +26,11 @@ def check_for_transcript_matches(lang_code, transcript_files, log_dir):
             print("ERROR file not found: " + transcript_file)
             continue
         with open(transcript_file, "r") as f:
-            lines = f.read().splitlines()
+            try:
+                lines = f.read().splitlines()
+            except:
+                print("Error reading file: {}".format(transcript_file))
+                continue
         # Filter non-speech lines and set to lower-case
         lines = [x.lower() for x in lines if not x.startswith(";")]
         filename = os.path.splitext(os.path.basename(transcript_file))[0]
@@ -280,7 +284,7 @@ def normalise_data_subset_string(data_str):
 
 
 def main():
-    lang_code = "GE"
+    lang_code = "PO"
     log_dir = join(global_vars.log_dir, "splitting")
     if not exists(log_dir):
         os.makedirs(log_dir)
@@ -289,8 +293,8 @@ def main():
     
     times = get_spk_times(lang_code, log_dir)
     #print_percent_times(times)
-    val_ids = []
-    test_ids = []
+    val_ids = [1, 2, 3, 4, 5, 7, 8, 9]
+    test_ids = [6, 10]
     #
     check_percent_split(times, val_ids, test_ids, v_bad, bad, minor, log_dir)
 
