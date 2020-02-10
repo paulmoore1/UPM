@@ -36,9 +36,9 @@ do
 done
 
 data_dir=$srcdir/data
-dict_dir=$srcdir/dict
-lm_dir=$srcdir/nist_lm
-tmp_dir=$srcdir/lm_tmp
+dict_dir=$data_dir/dict
+lm_dir=$data_dir/nist_lm
+tmp_dir=$data_dir/lm_tmp
 
 mkdir -p $dict_dir $lm_dir $tmp_dir
 
@@ -57,16 +57,23 @@ echo sil > $dict_dir/optional_silence.txt
 # really to the same base phone.
 
 # Create the lexicon, which is just an identity mapping
-cut -d' ' -f2- $data_dir/train.text | tr ' ' '\n' | sort -u > $dict_dir/phones.txt
+cut -d' ' -f2- $data_dir/train/text | tr ' ' '\n' | sort -u > $dict_dir/phones.txt
 paste $dict_dir/phones.txt $dict_dir/phones.txt > $dict_dir/lexicon.txt || exit 1;
 grep -v -F -f $dict_dir/silence_phones.txt $dict_dir/phones.txt > $dict_dir/nonsilence_phones.txt 
 
 # A few extra questions that will be added to those obtained by automatically clustering
 # the "real" phones.  These ask about stress; there's also one for silence.
 cat $dict_dir/silence_phones.txt| awk '{printf("%s ", $1);} END{printf "\n";}' > $dict_dir/extra_questions.txt || exit 1;
-cat $dict_dir/nonsilence_phones.txt | perl -e 'while(<>){ foreach $p (split(" ", $_)) {
-  $p =~ m:^([^\d]+)(\d*)$: || die "Bad phone $_"; $q{$2} .= "$p "; } } foreach $l (values %q) {print "$l\n";}' \
- >> $dict_dir/extra_questions.txt || exit 1;
+
+
+
+# NOTE: Removing this perl script - seems to filter out phones that start with a digit (which isn't what we want)
+# cat $dict_dir/nonsilence_phones.txt | perl -e 'while(<>){ foreach $p (split(" ", $_)) {
+#   $p =~ m:^([^\d]+)(\d*)$: || die "Bad phone $_"; $q{$2} .= "$p "; } } foreach $l (values %q) {print "$l\n";}' \
+#  >> $dict_dir/extra_questions.txt || exit 1;
+# Replacing with this:
+
+cat $dict_dir/nonsilence_phones.txt | awk '{printf("%s ", $1);} END{printf "\n";}' >> $dict_dir/extra_questions.txt || exit 1;
 
 # (2) Create the phone bigram LM
 if [ -z $IRSTLM ] ; then
@@ -82,7 +89,7 @@ if ! command -v prune-lm >/dev/null 2>&1 ; then
   exit 1
 fi
 
-cut -d' ' -f2- $data_dir/train.text | sed -e 's:^:<s> :' -e 's:$: </s>:' \
+cut -d' ' -f2- $data_dir/train/text | sed -e 's:^:<s> :' -e 's:$: </s>:' \
   > $data_dir/lm_train.text
 
 build-lm.sh -i $data_dir/lm_train.text -n 2 \
@@ -90,5 +97,7 @@ build-lm.sh -i $data_dir/lm_train.text -n 2 \
 
 compile-lm $tmp_dir/lm_phone_bg.ilm.gz -t=yes /dev/stdout | \
 grep -v unk | gzip -c > $lm_dir/lm_phone_bg.arpa.gz 
+
+rm -rf $tmp_dir
 
 echo "Dictionary & language model preparation succeeded"

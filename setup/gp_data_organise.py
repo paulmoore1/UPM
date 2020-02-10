@@ -80,7 +80,7 @@ def combine_files(lang_codes, dataset, exp_data_dir):
         for read_filepath in feat_filepaths:
             # If it's the transcript file
             if read_filepath.endswith(".txt"):
-                write_filepath = join(write_dir, dataset + ".txt")
+                write_filepath = join(write_dir, "text")
             else:
                 write_filepath = join(write_dir, basename(read_filepath))
             # Write and filter the files

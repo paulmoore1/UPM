@@ -7,7 +7,7 @@ KALDI_ROOT=$HOME_DIR/kaldi
 
 KALDI_SRC=$KALDI_ROOT/src
 KALDI_BIN=$KALDI_SRC/bin:$KALDI_SRC/featbin:$KALDI_SRC/fgmmbin:$KALDI_SRC/fstbin
-KALDI_BIN=$KALDI_BIN$:$KALDI_SRC/gmmbin:$KALDI_SRC/latbin:$KALDI_SRC/nnetbin
+KALDI_BIN=$KALDI_BIN:$KALDI_SRC/gmmbin:$KALDI_SRC/latbin:$KALDI_SRC/nnetbin
 KALDI_BIN=$KALDI_BIN:$KALDI_SRC/sgmm2bin:$KALDI_SRC/lmbin:$KALDI_SRC/ivectorbin
 FSTBIN=$KALDI_ROOT/tools/openfst/bin
 LMBIN=$KALDI_ROOT/tools/irstlm/bin

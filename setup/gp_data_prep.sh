@@ -24,7 +24,7 @@ if [ ! -x $sph2pipe ]; then
    exit 1;
 fi
 
-GP_LANGUAGES="SA UK"
+GP_LANGUAGES="SA UA"
 MFCC_DIR=$FEAT_DIR_GLOBAL/mfcc
 DATA_DIR=$dir
 
@@ -39,6 +39,7 @@ python ./setup/gp_data_organise.py \
     --train-languages "${GP_LANGUAGES}" \
     --val-languages "$GP_LANGUAGES" \
     --test-languages "$GP_LANGUAGES"
+
 
 
 # for L in $GP_LANGUAGES; do
