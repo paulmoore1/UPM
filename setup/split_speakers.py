@@ -26,11 +26,12 @@ def check_for_transcript_matches(lang_code, transcript_files, log_dir):
             print("ERROR file not found: " + transcript_file)
             continue
         with open(transcript_file, "r") as f:
-            try:
-                lines = f.read().splitlines()
-            except:
-                print("Error reading file: {}".format(transcript_file))
-                continue
+            lines = f.read().splitlines()
+            # try:
+            #     lines = f.read().splitlines()
+            # except:
+            #     print("Error reading file: {}".format(transcript_file))
+            #     continue
         # Filter non-speech lines and set to lower-case
         lines = [x.lower() for x in lines if not x.startswith(";")]
         filename = os.path.splitext(os.path.basename(transcript_file))[0]
@@ -144,9 +145,9 @@ def check_percent_split(ordered_times, val_ids, test_ids, v_bad, bad, minor, log
     print_percent(val_len, total_len, "Validation")
     print_percent(test_len, total_len, "Testing")
 
-    assess_split(train_ids, v_bad, bad, minor, "Training", log_dir)
-    assess_split(val_ids, v_bad, bad, minor, "Validation", log_dir)
-    assess_split(test_ids, v_bad, bad, minor, "Testing", log_dir)
+    assess_split(train_ids, val_ids, test_ids, v_bad, bad, minor, log_dir)
+    #assess_split(val_ids, v_bad, bad, minor, "Validation", log_dir)
+    #assess_split(test_ids, v_bad, bad, minor, "Testing", log_dir)
     
 
 def print_percent(audio_len, total_len, data_subset):
@@ -164,17 +165,16 @@ def convert_to_tuples(matches):
     return tuples
 
 
-def assess_split(spk_ids, v_bad, bad, minor, label, log_dir):
+def assess_split(train_ids, val_ids, test_ids, v_bad, bad, minor, log_dir):
     
-    v_bad_count, v_bad_lines = get_counts_and_lines(v_bad, spk_ids)
-    bad_count, bad_lines = get_counts_and_lines(bad, spk_ids)
-    minor_count, minor_lines = get_counts_and_lines(minor, spk_ids)
+    v_bad_count, v_bad_lines = get_counts_and_lines(v_bad, train_ids, val_ids, test_ids)
+    bad_count, bad_lines = get_counts_and_lines(bad, train_ids, val_ids, test_ids)
+    minor_count, minor_lines = get_counts_and_lines(minor, train_ids, val_ids, test_ids)
     
 
-    print("{}:\nVery bad count: {}\nBad count: {}\nMinor count: {}\n".format(
-        label, str(v_bad_count), str(bad_count), str(minor_count)))
+    print("Results:\nVery bad count: {}\nBad count: {}\nMinor count: {}\n".format(str(v_bad_count), str(bad_count), str(minor_count)))
 
-    log_file = join(log_dir, "{}_revised.txt".format(label.lower()))
+    log_file = join(log_dir, "split_revised.txt")
 
     with open(log_file, "w") as f:
         write_line_counts(f, v_bad_lines, "Very bad matches")
@@ -183,12 +183,15 @@ def assess_split(spk_ids, v_bad, bad, minor, label, log_dir):
     
 
 # Get number of bad matches, and lines they occur on
-def get_counts_and_lines(bad, spk_ids):
+def get_counts_and_lines(bad, train_ids, val_ids, test_ids):
     matches = convert_to_tuples(bad)
     count = 0
     lines = []
     for idx, (id_1, id_2) in enumerate(matches):
-        if id_1 in spk_ids and id_2 in spk_ids:
+        # Check if any of the bad matches occur between sets
+        if (id_1 in train_ids and id_2 in val_ids) or (id_1 in train_ids and id_2 in test_ids) or \
+        (id_1 in val_ids and id_2 in test_ids) or (id_1 in val_ids and id_2 in train_ids) or \
+        (id_1 in test_ids and id_2 in train_ids) or (id_1 in test_ids and id_2 in val_ids)   :
             count += 1
             lines.append(bad[idx])
     return count, lines
@@ -284,7 +287,7 @@ def normalise_data_subset_string(data_str):
 
 
 def main():
-    lang_code = "PO"
+    lang_code = "SA"
     log_dir = join(global_vars.log_dir, "splitting")
     if not exists(log_dir):
         os.makedirs(log_dir)
@@ -293,17 +296,17 @@ def main():
     
     times = get_spk_times(lang_code, log_dir)
     #print_percent_times(times)
-    val_ids = [1, 2, 3, 4, 5, 7, 8, 9]
-    test_ids = [6, 10]
+    val_ids = [4, 5, 15, 17, 20, 21, 23, 81, 84]
+    test_ids = [29, 73, 32, 33, 36, 38, 48, 55, 61]
     #
     check_percent_split(times, val_ids, test_ids, v_bad, bad, minor, log_dir)
 
-    # spk_ids = [x[0] for x in times]
-    # train_ids = [x for x in spk_ids if not (x in val_ids or x in test_ids)]
+    spk_ids = [x[0] for x in times]
+    train_ids = [x for x in spk_ids if not (x in val_ids or x in test_ids)]
 
-    # write_ids_to_conf(lang_code, train_ids, "Training")
-    # write_ids_to_conf(lang_code, val_ids, "Validation")
-    # write_ids_to_conf(lang_code, test_ids, "Testing")
+    write_ids_to_conf(lang_code, train_ids, "Training")
+    write_ids_to_conf(lang_code, val_ids, "Validation")
+    write_ids_to_conf(lang_code, test_ids, "Testing")
 
 
 if __name__ == "__main__":

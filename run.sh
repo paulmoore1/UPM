@@ -3,9 +3,21 @@
 [ -f path.sh ] && . ./path.sh
 set -e
 
+
+# Acoustic model parameters (copied from TIMIT)
+numLeavesTri1=2500
+numGaussTri1=15000
+numLeavesMLLT=2500
+numGaussMLLT=15000
+numLeavesSAT=2500
+numGaussSAT=15000
+numGaussUBM=400
+numLeavesSGMM=7000
+numGaussSGMM=9000
+
 feats_nj=8
 train_nj=8
-decode_nj=8
+decode_nj=5
 
 expname="expname"
 exp_dir=$EXP_DIR_GLOBAL/$expname
@@ -37,11 +49,68 @@ echo ===========================================================================
 #steps/train_mono.sh  --nj "$train_nj" --cmd "$train_cmd" $exp_data_dir/train $exp_data_dir/lang $exp_dir/mono
 
 
-utils/mkgraph.sh $exp_data_dir/lang_test_bg $exp_dir/mono $exp_dir/mono/graph
+# utils/mkgraph.sh $exp_data_dir/lang_test_bg $exp_dir/mono $exp_dir/mono/graph
+
+# steps/decode.sh --nj "$decode_nj" --cmd "$decode_cmd" \
+#  $exp_dir/mono/graph $exp_data_dir/val $exp_dir/mono/decode_val
+
+# steps/decode.sh --nj "$decode_nj" --cmd "$decode_cmd" \
+#  $exp_dir/mono/graph $exp_data_dir/test $exp_dir/mono/decode_test
+
+echo ============================================================================
+echo "           tri1 : Deltas + Delta-Deltas Training & Decoding               "
+echo ============================================================================
+
+# steps/align_si.sh --boost-silence 1.25 --nj "$train_nj" --cmd "$train_cmd" \
+#  ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/mono ${exp_dir}/mono_ali
+
+# Train tri1, which is deltas + delta-deltas, on train data.
+# steps/train_deltas.sh --cmd "$train_cmd" \
+#  $numLeavesTri1 $numGaussTri1 ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/mono_ali ${exp_dir}/tri1
+
+# utils/mkgraph.sh ${exp_data_dir}/lang_test_bg ${exp_dir}/tri1 ${exp_dir}/tri1/graph
 
 steps/decode.sh --nj "$decode_nj" --cmd "$decode_cmd" \
- $exp_dir/mono/graph $exp_data_dir/val $exp_dir/mono/decode_val
+ ${exp_dir}/tri1/graph ${exp_data_dir}/val ${exp_dir}/tri1/decode_val
 
 steps/decode.sh --nj "$decode_nj" --cmd "$decode_cmd" \
- $exp_dir/mono/graph $exp_data_dir/test $exp_dir/mono/decode_test
+ ${exp_dir}/tri1/graph ${exp_data_dir}/test ${exp_dir}/tri1/decode_test
 
+echo ============================================================================
+echo "                 tri2 : LDA + MLLT Training & Decoding                    "
+echo ============================================================================
+
+steps/align_si.sh --nj "$train_nj" --cmd "$train_cmd" \
+  ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/tri1 ${exp_dir}/tri1_ali
+
+steps/train_lda_mllt.sh --cmd "$train_cmd" \
+ --splice-opts "--left-context=3 --right-context=3" \
+ $numLeavesMLLT $numGaussMLLT ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/tri1_ali ${exp_dir}/tri2
+
+utils/mkgraph.sh ${exp_data_dir}/lang_test_bg ${exp_dir}/tri2 ${exp_dir}/tri2/graph
+
+steps/decode.sh --nj "$decode_nj" --cmd "$decode_cmd" \
+ ${exp_dir}/tri2/graph ${exp_data_dir}/val ${exp_dir}/tri2/decode_val
+
+steps/decode.sh --nj "$decode_nj" --cmd "$decode_cmd" \
+ ${exp_dir}/tri2/graph ${exp_data_dir}/test ${exp_dir}/tri2/decode_test
+
+echo ============================================================================
+echo "              tri3 : LDA + MLLT + SAT Training & Decoding                 "
+echo ============================================================================
+
+# Align tri2 system with train data.
+steps/align_si.sh --nj "$train_nj" --cmd "$train_cmd" \
+ --use-graphs true ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/tri2 ${exp_dir}/tri2_ali
+
+# From tri2 system, train tri3 which is LDA + MLLT + SAT.
+steps/train_sat.sh --cmd "$train_cmd" \
+ $numLeavesSAT $numGaussSAT ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/tri2_ali ${exp_dir}/tri3
+
+utils/mkgraph.sh ${exp_data_dir}/lang_test_bg ${exp_dir}/tri3 ${exp_dir}/tri3/graph
+
+steps/decode_fmllr.sh --nj "$decode_nj" --cmd "$decode_cmd" \
+ ${exp_dir}/tri3/graph ${exp_data_dir}/val ${exp_dir}/tri3/decode_val
+
+steps/decode_fmllr.sh --nj "$decode_nj" --cmd "$decode_cmd" \
+ ${exp_dir}/tri3/graph ${exp_data_dir}/test ${exp_dir}/tri3/decode_test
