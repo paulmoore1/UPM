@@ -1,0 +1,41 @@
+SIL sil sil
+H_a a a
+H_aI ai ai
+H_aU au au
+H_b b b
+H_B ɓ b_<
+H_c c c
+H_d d d
+H_D ɗ d_<
+H_DZ dʒ dZ
+H_e e e
+H_F ɸ p\
+H_g g g
+H_h h h
+H_i i i
+H_j j j
+H_k k k
+H_K k' k_>
+H_KR kʰ k_h
+H_l l l
+H_m m m
+H_n n n
+H_o o o
+H_p p p
+H_Q ʔʲ ?_j
+H_r r r
+H_R ɽ r`
+H_s s s
+H_S ʃ S
+H_t t t
+H_TS ts ts
+H_u u u
+H_w w w
+H_z z z
+L
+S
+T1
+T2
+T3
+
+# Neec to normalise dictionary for long/short

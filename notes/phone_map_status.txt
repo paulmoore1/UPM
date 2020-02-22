@@ -1,0 +1,16 @@
+Current phone maps that are confirmed to be good (from documentation):
+CZ, FR, GE, PL, PO, SA, SP, UA
+
+Added to start of JA dictionary:
+{#ARTIK#} {{M_+QK WB}}
+{#ATMEN#} {{M_+QK WB}}
+{#MUELL#} {{M_+QK WB}}
+{#SCHMATZEN#} {{M_+QK WB}}
+
+since {#N_ARTIK#} {{M_+QK WB}} seemed to be the closest thing
+
+Using non-tonal dictionary of Thai to reduce number of phones
+
+Needing to assume dictionary for WU = CH
+
+Kept M_oel same as M_oe in SW for consistency w/ German

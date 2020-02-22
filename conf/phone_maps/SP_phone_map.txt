@@ -1,20 +1,20 @@
-SIL SIL SIL
+SIL sil sil
 M_a a a
 M_a+ a a
-M_aI
-M_aU
+M_aI aɪ aI
+M_aU aU aU
 M_b b b
 M_D ð D
 M_d d d
 M_e e e
-M_e+
-M_eI
-M_eU
+M_e+ e e
+M_eI eɪ eI
+M_eU eʊ eU
 M_f f f
 M_G ɣ G
 M_g ɡ g
 M_i i i
-M_i+
+M_i+ i i
 M_j j j
 M_k k k
 M_l l l
@@ -24,20 +24,20 @@ M_n n n
 M_ng ɴ N\
 M_n~ ɲ J
 M_o o o
-M_o+
+M_o+ o o
 M_oI oI oI
 M_p p p
 M_r r r
-M_rf ɾ or ɾ̥ 4 (voiced) or 4_0 (voiceless)
+M_rf ɾ 4
 M_s s s
 M_t t t
 M_T θ T
-M_tS tʃ or ts (likely tS in X-sampa)
+M_tS tʃ tS
 M_u u u
-M_u+
+M_u+ u u
 M_V β B
-M_w ʋ or ʋ̥ v\ or v\_0 (voiceless) Or is it w w?
+M_w ʋ P
 M_x x x
 M_z z z
 
-Other fragments: M_+QK, M_+hGH, SIL
+Other fragments: M_+QK, M_+hGH

@@ -1,14 +1,15 @@
+SIL sil sil
 a a a
 aa aː a:
-aw au au
+aw aʊ aU
 b b b
 c ts ts
 ch dʒ dZ
 d d d
-dj dz dz
+dj dʲ d_j
 e ɛ E
 ee ɛː E:
-ew ɛu Eu
+ew ɛʊ EU
 f f f
 g ɡ g
 h ɦ h\
@@ -23,11 +24,11 @@ ng ŋ N
 nj ɲ J
 o o o
 oo oː o:
-ow ou ou
+ow oʊ OU
 p p p
 r r r
-rsh r̝̊ r_0_r
-rzh r̝ r_r
+rsh r̥ r_0
+rzh rʒ rZ
 s s s
 sh ʃ S
 t t t
@@ -38,6 +39,3 @@ v v v
 x x x
 z z z
 zh ʒ Z
-
-
-missing m̩, l̩, r̩, c

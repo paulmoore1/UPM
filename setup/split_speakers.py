@@ -74,10 +74,16 @@ def check_for_transcript_matches(lang_code, transcript_files, log_dir):
                 minor_matches.append(match_line)
         if len(v_bad_matches) > 0:
             write_line_counts(f, v_bad_matches, "Very bad matches")
+        else:
+            f.write("No very bad matches found\n")
         if len(bad_matches) > 0:
             write_line_counts(f, bad_matches, "Bad matches")
+        else:
+            f.write("No bad matches found\n")
         if len(minor_matches) > 0:
             write_line_counts(f, minor_matches, "Minor matches")
+        else:
+            f.write("No minor matches found\n")
 
     return v_bad_matches, bad_matches, minor_matches
 
@@ -287,8 +293,8 @@ def normalise_data_subset_string(data_str):
 
 
 def main():
-    lang_code = "SA"
-    log_dir = join(global_vars.log_dir, "splitting")
+    lang_code = "RU"
+    log_dir = join(global_vars.log_dir, "splitting", lang_code)
     if not exists(log_dir):
         os.makedirs(log_dir)
     transcript_files = get_all_transcript_filepaths(lang_code)
@@ -296,8 +302,9 @@ def main():
     
     times = get_spk_times(lang_code, log_dir)
     #print_percent_times(times)
-    val_ids = [4, 5, 15, 17, 20, 21, 23, 81, 84]
-    test_ids = [29, 73, 32, 33, 36, 38, 48, 55, 61]
+    val_ids = [1, 2, 3, 4, 5, 6, 7, 8, 12, 13, 14, 15, 16, 17, 18, 19]
+    test_ids = [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38]
+    # test_ids = [11, 12, 13, 14, 15, 16, 17, 18]
     #
     check_percent_split(times, val_ids, test_ids, v_bad, bad, minor, log_dir)
 
