@@ -184,6 +184,7 @@ def get_line(line, ipa_dict, x_sampa_dict, filter_oov):
         except:
             # If filtering OOV words, stop here
             if filter_oov:
+                raise Exception("OOV word found: {}".format(word))
                 return None, None
         ipa_words.append(ipa_word)
         x_sampa_words.append(x_sampa_word)

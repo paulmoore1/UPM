@@ -1,0 +1,15 @@
+a vowel open front unrounded
+b consonant voiced bilabial stop labial
+b_< consonant voiced bilabial stop implosive labial
+c consonant voiceless palatal stop dorsal
+d consonant voiced alveolar plosive coronal
+d` consonant voiced retroflex plosive coronal
+d_< consonant voiced alveolar implosive coronal
+e vowel close-mid front unrounded
+f consonant voiceless labiodental fricative labial
+pf consonant voiceless labiodental fricative bilabial plosive labial
+g consonant voiced velar plosive dorsal
+g_< consonant voiced velar implosive dorsal
+h consonant voiceless glottal fricative
+h\ consonant voiced glottal fricative
+i vowel close front unrounded

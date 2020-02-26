@@ -24,8 +24,7 @@ if [ ! -x $sph2pipe ]; then
    exit 1;
 fi
 
-GP_LANGUAGES="SA UA"
-MFCC_DIR=$FEAT_DIR_GLOBAL/mfcc
+GP_LANGUAGES="SA UA HA"
 DATA_DIR=$dir
 
 echo "Running with languages: ${GP_LANGUAGES}"
