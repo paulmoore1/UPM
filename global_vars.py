@@ -1,6 +1,6 @@
-from os.path import join
+from os.path import join, expanduser
 
-home_dir = "/home/paul"
+home_dir = expanduser("~")
 gp_dir = join(home_dir, "global_phone")
 all_tr_dir = join(gp_dir, "all_transcripts")
 exp_dir = join(home_dir, "upm_exp")

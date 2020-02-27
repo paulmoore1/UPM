@@ -23,7 +23,7 @@ UA_m m m
 UA_mj mʲ m_j
 UA_n n n
 UA_nj nʲ n_j
-UA_o ɔ 0
+UA_o ɔ O
 UA_p p p
 UA_pj pʲ p_j
 UA_r r r

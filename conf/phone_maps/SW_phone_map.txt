@@ -9,7 +9,7 @@ M_alel æː {:
 M_b b b
 M_C ç C
 M_d d d
-M_dr rd rd
+M_dr ɖ d`
 M_e e e
 M_el eː e:
 M_etu ə @
@@ -20,13 +20,13 @@ M_i i i
 M_il iː i:
 M_j j j
 M_k k k
-M_ks ks ks
+M_ks x x
 M_l l l
-M_lr rl rl
+M_lr ɭ l`
 M_m m m
 M_n n n
 M_ng ŋ N
-M_nr rn rn
+M_nr ɳ n`
 M_o o o
 M_oc ɔ O
 M_oe ø 2
@@ -39,9 +39,9 @@ M_p p p
 M_r r r
 M_s s s
 M_S ʃ S
-M_sr rs rs
+M_sr ʂ s`
 M_t t t
-M_tr rt rt
+M_tr ʈ t`
 M_u u u
 M_ue y y
 M_uel yː y:
