@@ -19,18 +19,18 @@ feats_nj=8
 train_nj=8
 decode_nj=5
 
-expname="expname"
+expname="new_exp"
 exp_dir=$EXP_DIR_GLOBAL/$expname
 exp_data_dir=$exp_dir/data
 echo "Running experiment ${expname}, storing files in ${exp_dir}"
 
 # Run once, then comment out these lines so they aren't run again
-setup/compute_feats.sh
-echo "Finished computing features; comment out these lines in run.sh now"
-exit 1
+# setup/compute_feats.sh
+# echo "Finished computing features; comment out these lines in run.sh now"
+# exit 1
 
 
-# setup/gp_data_prep.sh $DATA_DIR_GLOBAL || exit 1
+setup/gp_data_prep.sh $DATA_DIR_GLOBAL || exit 1
 
 # setup/gp_prepare_dict.sh --src-dir=$exp_dir || exit 1
 

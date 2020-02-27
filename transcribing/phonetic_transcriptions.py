@@ -260,7 +260,7 @@ def combine_phones(lang_codes, phone_map_dir, write_dir):
 
 # Keep private so not imported
 def _main():
-    lang_codes = ["SA", "UK"]
+    lang_codes = []
     phone_map_dir = join(global_vars.conf_dir, "phone_maps")
     dict_dir = join(global_vars.exp_dir, "dict")
     if not os.path.isdir(dict_dir):
