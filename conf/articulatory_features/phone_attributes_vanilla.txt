@@ -13,3 +13,108 @@ g_< consonant voiced velar implosive dorsal
 h consonant voiceless glottal fricative
 h\ consonant voiced glottal fricative
 i vowel close front unrounded
+j consonant voiced palatal approximant dorsal
+j\ consonant voiced palatal fricative dorsal
+k consonant voiceless velar plosive dorsal
+l consonant voiced alveolar lateral approximant coronal
+l` consonant voiced retroflex lateral approximant coronal
+l\ consonant alveolar lateral flap coronal
+m consonant bilabial nasal labial
+n consonant voiced alveolar nasal coronal
+n` consonant retroflex nasal coronal
+o vowel close-mid back rounded
+p consonant voiceless bilabial plosive labial
+p\ consonant voiceless bilabial fricative labial
+q consonant voiceless uvular plosive
+r consonant alveolar trill coronal
+r` consonant retroflex flap coronal
+r\ consonant alveolar approximant coronal
+r\` consonant retroflex approximant coronal
+r_0 consonant voiceless alveolar trill
+rZ consonant voiced alveolar fricative trill
+s consonant voiceless alveolar fricative coronal
+s` consonant voiceless retroflex fricative coronal
+s\ consonant voiceless alveolo-palatal fricative coronal
+t consonant voiceless alveolar plosive coronal
+t` consonant voiceless retroflex plosive coronal
+t`s` consonant voiceless retroflex plosive fricative coronal
+u vowel close back rounded
+v consonant voiced labiodental fricative labial
+v\ consonant voiced labiodental approximant
+w consonant labial-velar approximant labial
+x consonant voiceless velar fricative dorsal
+x\ consonant voiceless palatal-velar fricative dorsal
+y vowel close front rounded
+z consonant voiced alveolar fricative coronal
+z` consonant voiced retroflex fricative coronal
+z\ consonant voiced alveolo-palatal fricative
+A vowel open back unrounded
+B consonant voiced bilabial fricative labial
+B\ consonant bilabial trill labial
+C consonant voiceless palatal fricative
+D consonant voiced dental fricative coronal
+E vowel open-mid front unrounded
+F consonant labiodental nasal labial
+G consonant voiced velar fricative dorsal
+G\ consonant voiced uvular plosive dorsal
+G_< consonant voiced uvular implosive
+H consonant labial-palatal approximant labial
+H\ consonant voiceless epiglottal fricative
+I vowel near-close front unrounded
+I\ vowel near-close central unrounded
+J consonant palatal nasal
+J\ consonant voiced palatal plosive
+J_< consonant voiced palatal implosive
+K consonant voiceless alveolar lateral fricative coronal
+K\ consonant voiced alveolar lateral fricative coronal
+L consonant palatal lateral approximant
+L\ consonant velar lateral approximant dorsal
+M vowel close back unrounded
+M\ consonant velar approximant dorsal
+N consonant velar nasal dorsal
+N\ consonant uvular nasal dorsal
+O vowel open-mid back rounded
+O\ consonant bilabial click labial
+P consonant labiodental approximant labial
+Q vowel open back rounded
+R consonant voiced uvular fricative
+R\ consonant uvular trill
+S consonant voiceless postalveolar fricative coronal
+S_a consonant voiceless postalveolar fricative coronal apical
+T consonant voiceless dental fricative coronal
+U vowel near-close back rounded
+U\ vowel near-close central rounded
+V vowel open-mid back unrounded
+W consonant voiceless labial-velar fricative labial
+X consonant voiceless uvular fricative
+X\ consonant voiceless pharyngeal fricative
+Y vowel near-close front rounded
+Z consonant voiced postalveolar fricative coronal
+@ vowel close-mid open-mid central rounded unrounded
+{ vowel near-open front unrounded
+} vowel close central rounded
+1 vowel close central unrounded
+2 vowel close-mid front rounded
+3 vowel open-mid central unrounded
+3\ vowel open-mid central rounded
+4 consonant alveolar flap coronal
+5 consonant velar alveolar lateral approximant coronal dorsal
+6 vowel near-open central
+7 vowel close-mid back unrounded
+8 vowel close-mid central rounded
+9 vowel open-mid front rounded
+& vowel open front rounded
+? consonant glottal stop
+?\ consonant voiced pharyngeal fricative
+|\ consonant dental click coronal
+|\|\ consonant alveolar lateral click coronal
+=\ consonant palatal click
+ts consonant voiceless alveolar affricate coronal
+dz consonant voiced alveolar affricate coronal
+dz\ consonant voiced alveolo-palatal affricate coronal
+dZ consonant voiced postalveolar affricate coronal
+dZ\ consonant voiced alveolo-palatal affricate coronal
+tS consonant voiceless postalveolar affricate coronal
+ts\ consonant voiceless alveolo-palatal affricate coronal
+s\ consonant voiceless palatal fricative dorsal
+tK consonant voiceless alveolar lateral affricate coronal
