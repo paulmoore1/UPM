@@ -7,16 +7,20 @@
 # in data/local/, and converts it into the "canonical" form,
 # in various subdirectories of data/, e.g. data/lang, data/train, etc.
 
+expname="test"
+
 . ./path.sh || exit 1;
+. ./utils/parse_options.sh
+
 
 # NOTE: need to pass as argument later
 
-exp_dir=$EXP_DIR_GLOBAL/expname
+exp_dir=$EXP_DIR_GLOBAL/$expname
 
 
 echo "Preparing train, dev and test data"
 srcdir=$exp_dir/data
-lmdir=$exp_dir/nist_lm
+lmdir=$srcdir/nist_lm
 tmpdir=$exp_dir/lm_tmp
 lexicon=$exp_dir/dict/lexicon.txt
 mkdir -p $tmpdir
@@ -27,7 +31,7 @@ for x in train val test; do
   #cp $srcdir/${x}.stm data/$x/stm
   #cp $srcdir/${x}.glm data/$x/glm
   utils/fix_data_dir.sh $exp_dir/data/$x
-  utils/validate_data_dir.sh --no-feats $exp_dir/data/$x || exit 1
+  #utils/validate_data_dir.sh --no-feats $exp_dir/data/$x || exit 1
 done
 
 # Next, for each type of language model, create the corresponding FST

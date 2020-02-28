@@ -1,66 +1,66 @@
-SIL
-a1
-a2
-a3
-ai
-ao
-au
-au3
-ay
-ay3
-b
-ch
-d1
-d2
-e1
-e2
-eo
-eu
-g
-h
-i
-ie2
-ieu
-iu
-j
-k
-kh
-l
-m
-n
-ng
-nh
-o1
-o2
-o3
-oa
-oe
-oi
-oi2
-oi3
-p
-ph
-r
-s
-t
-T1
-T2
-T3
-T4
-T5
-T6
-th
-tr
-u1
-u2
-ua
-ua2
-ui
-ui2
-uoi2
-uoi3
-uou
-uu2
-uy
-v
-x
+SIL sil sil
+a1 a a
+a2 aː a:
+a3 ə @
+ai aːi a:i
+ao aːʊ a:U
+au aʊ aU
+au3 əʊ @U
+ay ai ai
+ay3 əi @i
+b ɓ b_<
+ch c c
+d1 ɟ J\
+d2 ɗ d_<
+e1 e e
+e2 ɛ E
+eo ɛʊ EU
+eu eʊ eU
+g ɣ G
+h h h
+i i i
+ie2 iə i@
+ieu iəʊ i@U
+iu iʊ iU
+j j j
+k k k
+kh x x
+l l l
+m m m
+n n n
+ng ŋ N
+nh ɲ J
+o1 ɔ O
+o2 o o
+o3 əː @:
+oa oa oa
+oe əːʊ @:U
+oi ɔi Oi
+oi2 oi oi
+oi3 əːi @:i
+p p p
+ph f f
+r ʐ z`
+s ʂ s`
+t t t
+T1 _1
+T2 _2
+T3 _3
+T4 _4
+T5 _5
+T6 _6
+th tʰ t_h
+tr ʈ t`
+u1 u u
+u2 ɨ 1
+ua uə u@
+ua2 ɨə 1@
+ui ui ui
+ui2 ɨi i1
+uoi2 uəi u@i
+uoi3 ɨəi 1@i
+uou ɨəʊ 1@U
+uu2 ɨʊ 1U
+uy uːi u:i
+v v v
+x s s
