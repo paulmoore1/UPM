@@ -1,32 +1,32 @@
-SIL
-M_+hGH
-M_+QK
-M_ab
-M_b
-M_d
-M_dZ
-M_e
-M_f
-M_g
-M_h
-M_i
-M_i2
-M_j
-M_k
-M_l
-M_m
-M_n
-M_o
-M_oe
-M_p
-M_r
-M_s
-M_S
-M_sft
-M_t
-M_tS
-M_u
-M_ue
-M_v
-M_z
-M_Z
+SIL sil sil
+M_+hGH unk unk
+M_+QK unk unk
+M_ab a a
+M_b b b
+M_d d d
+M_dZ dʒ dZ
+M_e e e
+M_f f f
+M_g ɟ J\
+M_h h h
+M_i i i
+M_i2 ɯ M
+M_j j j
+M_k k k
+M_l l l
+M_m m m
+M_n n n
+M_o o o
+M_oe œ 9
+M_p p p
+M_r ɾ 4
+M_s s s
+M_S ʃ S
+M_sft ɟː J\:
+M_t t t
+M_tS tʃ tS
+M_u u u
+M_ue y y
+M_v v v
+M_z z z
+M_Z ʒ Z
