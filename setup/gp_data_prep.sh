@@ -1,14 +1,16 @@
 #!/bin/bash
 
+
+expname="exp_test"
+langs=""
 # Based on timit_data_prep
-
-if [ $# -ne 1 ]; then
-   echo "Argument should be the ? directory, see ../run.sh for example."
-   exit 1;
-fi
-expname="expname"
-
 . ./path.sh
+
+. ./utils/parse_options.sh
+
+echo $expname
+echo $langs
+
 
 dir=$EXP_DIR_GLOBAL/$expname/data
 lmdir=$EXP_DIR_GLOBAL/$expname/lm
@@ -24,7 +26,6 @@ if [ ! -x $sph2pipe ]; then
    exit 1;
 fi
 
-GP_LANGUAGES="SA UA HA"
 DATA_DIR=$dir
 
 echo "Running with languages: ${GP_LANGUAGES}"
@@ -35,9 +36,15 @@ python ./setup/gp_data_organise.py \
     --wav-dir $WAV_DIR_GLOBAL \
     --data-dir $DATA_DIR \
     --conf-dir $CONF_DIR_GLOBAL \
-    --train-languages "${GP_LANGUAGES}" \
-    --val-languages "$GP_LANGUAGES" \
-    --test-languages "$GP_LANGUAGES"
+    --train-languages "${langs}" \
+    --val-languages "${langs}" \
+    --test-languages "${langs}"
+
+echo "Ensuring directories are valid"
+
+utils/fix_data_dir.sh $DATA_DIR/train
+utils/fix_data_dir.sh $DATA_DIR/val
+utils/fix_data_dir.sh $DATA_DIR/test
 
 
 

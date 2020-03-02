@@ -1,4 +1,4 @@
-import os, re, sys, fnmatch, glob
+import os, re, sys, fnmatch, glob, string
 from os.path import join, exists
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
 import global_vars
@@ -34,37 +34,28 @@ def read_phone_map(map_file):
 # These files are stored as [lang_code]_IPA_dict.txt and ..X-SAMPA_dict.txt
 def convert_phonetic_dict(lang_code, dict_file, ipa_phone_map, x_sampa_phone_map):
     with open(dict_file, "r") as f:
+        print("Reading dictionary file: {}".format(dict_file))
         lines = f.read().splitlines()
     dict_dir = os.path.dirname(dict_file)
     words_dict = {}
     for idx, line in enumerate(lines):
-        entry = line.split("} {", 1)
-        word = entry[0]
-        # Word entries should start with a {, and not have a } after the split
-        try:
-            
-            assert word.startswith("{")
-            assert not word.endswith("}")
-        except:
-            print(entry)
-            print(word.startswith("{"))
-            print(not word.endswith("}"))
-            print("Error at line {} with {}; skipping".format(idx, word))
-            continue
-        # Trim the { off the front
-        word = word[1:]
+        if lang_code == "PL":
+            entry = line.split("\t")
+        else:
+            entry = line.split("} {", 1)
+        word = entry[0].strip()
+        word = word.replace("{", "")
+        word = word.replace("}", "")
+
         word_phones = entry[1]
-        # Should end with double curly braces if split correctly
-        try:
-            assert word_phones.endswith("}}")
-        except:
-            print("Error at line {} with word phones {}".format(idx, word_phones))
-            continue
+        
+
         # Remove curly braces, WB from string
         word_phones = word_phones.replace("{", "")
         word_phones = word_phones.replace("}", "")
         word_phones = word_phones.replace("WB", "")
         word_phone_list = word_phones.split()
+        #print("Word = {}\tPhone list =  {}".format(word, word_phone_list))
         words_dict[word] = word_phone_list
     print("Finished reading dictionary file")
     
@@ -72,6 +63,8 @@ def convert_phonetic_dict(lang_code, dict_file, ipa_phone_map, x_sampa_phone_map
     ipa_file_path = join(dict_dir, lang_code + "_IPA_dict.txt")
     with open(ipa_file_path, "w") as f:
         for word in words_dict:
+            #print(word)
+            #print(words_dict[word])
             ipa_word = "".join((map(ipa_phone_map.get, words_dict[word])))
             f.write(word + " " + ipa_word + "\n")
     
@@ -81,6 +74,8 @@ def convert_phonetic_dict(lang_code, dict_file, ipa_phone_map, x_sampa_phone_map
     x_sampa_file_path = join(dict_dir, lang_code + "_X-SAMPA_dict.txt")
     with open(x_sampa_file_path, "w") as f:
         for word in words_dict:
+            #print(word)
+            #print(words_dict[word])
             x_sampa_word = " ".join((map(x_sampa_phone_map.get, words_dict[word])))
             f.write(word + " " + x_sampa_word + "\n")
 
@@ -90,7 +85,7 @@ def convert_phonetic_dict(lang_code, dict_file, ipa_phone_map, x_sampa_phone_map
 # Loads a ...IPA_dict.txt or _X-SAMPA_dict.txt file 
 # Returns a dictonary where dict[word] = phonetic transcription
 def load_dict_file(lang_code, dict_file):
-    file_path = join(global_vars.gp_dir, "dict", lang_code, dict_file)
+    file_path = join(global_vars.wav_dir, lang_code, "dict", dict_file)
     with open(file_path, "r") as f:
         lines = f.read().splitlines()
     phonetic_dict = {}
@@ -106,10 +101,14 @@ def load_dict_file(lang_code, dict_file):
 # Gets all transcript filepaths for a language
 # Checks for rmn (Romanized) first, failing that tries looking for trl
 # If both fail, returns None, otherwise returns a list of full filepaths
-def get_all_transcript_filepaths(lang_code):
+def get_all_transcript_filepaths(lang_code, preferred_type="trl"):
     lang_dir = join(global_vars.wav_dir, lang_code)
     if "rmn" in os.listdir(lang_dir):
-        transcript_dir = join(lang_dir, "rmn")
+        if preferred_type == "rmn":
+            transcript_dir = join(lang_dir, "rmn")
+        else:
+            if "trl" in os.listdir(lang_dir):
+                transcript_dir = join(lang_dir, "trl")
     elif "trl" in os.listdir(lang_dir):
         transcript_dir = join(lang_dir, "trl")
     else:
@@ -128,6 +127,7 @@ def write_all_transcriptions(lang_code, transcript_files, ipa_dict, x_sampa_dict
     x_sampa_lines = []
     transcript_files.sort()
     for transcript_file in transcript_files:
+        print("Writing for file: {}".format(os.path.basename(transcript_file)))
         if not exists(transcript_file):
             print("ERROR file not found: " + transcript_file)
             continue
@@ -151,10 +151,10 @@ def write_all_transcriptions(lang_code, transcript_files, ipa_dict, x_sampa_dict
                 curr_line_id = m.group(1)
             else:
                 utt_id = filename + "_" + curr_line_id
-                ipa_words, x_sampa_words = get_line(line, ipa_dict, x_sampa_dict, filter_oov)
+                ipa_words, x_sampa_words = get_line(line, ipa_dict, x_sampa_dict, filter_oov, lang_code)
                 # If Nis returned, something was wrong with one of the words
                 if ipa_words is None:
-                    print("ERROR with line " + line)
+                    print("ERROR with line {}".format(curr_line_id))
                     continue
                 ipa_lines.append(utt_id + " " + ipa_words)
                 x_sampa_lines.append(utt_id + " " + x_sampa_words)
@@ -173,19 +173,49 @@ def write_all_transcriptions(lang_code, transcript_files, ipa_dict, x_sampa_dict
 # Checks if the words in a line all occur in the dictionary
 # If they all do, returns the dictionary values for the words
 # Otherwise, returns None
-def get_line(line, ipa_dict, x_sampa_dict, filter_oov):
+def get_line(line, ipa_dict, x_sampa_dict, filter_oov, lang_code):
+    # Remove punctuation
+    #line = line.translate(str.maketrans('', '', string.punctuation))
+    #print(line)
+    if lang_code == "PL":
+        # Can't simply replace all punctuation since hyphens are needed
+        line = line.replace(",", "")
+        line = line.replace(".", "")
+        line = line.replace("”", "")
+        line = line.replace("„", "")
+        line = line.replace(":", "")
+        line = line.replace(";", "")
+        line = line.replace(" – ", "")
+        line = line.replace(" - ", "")
+        
+
     words = line.split()
     ipa_words = []
     x_sampa_words = []
     for word in words:
-        try:
+        #print(word)
+        word = word.strip()
+        word = word.replace(" ", "")
+        if word in ipa_dict:
             ipa_word = ipa_dict[word]
             x_sampa_word = x_sampa_dict[word]
-        except:
-            # If filtering OOV words, stop here
-            if filter_oov:
-                raise Exception("OOV word found: {}".format(word))
-                return None, None
+        # Try lowercasing if that's the problem
+        else:
+            
+            lowercased_word = re.sub('[A-Z]+', lambda m: m.group(0).lower(), word)
+       
+            if lowercased_word in ipa_dict:
+                ipa_word = ipa_dict[lowercased_word]
+                x_sampa_word = x_sampa_dict[lowercased_word]
+            elif word.lower() in ipa_dict:
+                ipa_word = ipa_dict[word.lower()]
+                x_sampa_word = x_sampa_dict[word.lower()]
+            
+            else:
+                # If filtering OOV words, stop here
+                if filter_oov:
+                    print("OOV word found: {} or {}".format(word, lowercased_word))
+                    return None, None
         ipa_words.append(ipa_word)
         x_sampa_words.append(x_sampa_word)
     ipa_words = " ".join(ipa_words)
@@ -195,7 +225,7 @@ def get_line(line, ipa_dict, x_sampa_dict, filter_oov):
     return ipa_words, x_sampa_words
 
 def write_lang_transcriptions(lang_code):
-    dict_dir = join(global_vars.gp_dir, "dict", lang_code)
+    dict_dir = join(global_vars.wav_dir, lang_code, "dict")
     files = glob.glob(join(dict_dir, "*GPDict.txt"))
     assert len(files) == 1, "Multiple/no matches found in {}".format(dict_dir)
     dict_file = files[0]
@@ -205,69 +235,19 @@ def write_lang_transcriptions(lang_code):
     ipa_dict = load_dict_file(lang_code, lang_code + "_IPA_dict.txt")
     x_sampa_dict = load_dict_file(lang_code, lang_code + "_X-SAMPA_dict.txt")
         
-    transcript_files = get_all_transcript_filepaths(lang_code)
+    transcript_files = get_all_transcript_filepaths(lang_code, preferred_type="trl")
     write_all_transcriptions(lang_code, transcript_files, ipa_dict, x_sampa_dict)
-    
-def combine_phones(lang_codes, phone_map_dir, write_dir):
-    phones_list = []
-    for lang_code in lang_codes:
-        phone_map = join(phone_map_dir, lang_code + "_phone_map.txt")
-        with open(phone_map, "r") as f:
-            lines = f.read().splitlines()
-        for line in lines:
-            entry = line.split()
-            x_sampa_phone = entry[2]
-            if x_sampa_phone not in phones_list:
-                phones_list.append(x_sampa_phone)
-    phones_list.sort()
-    phones_list_no_sil = phones_list.copy()
-    phones_list_no_sil.remove("sil")
 
-    phones_file = join(write_dir, "phones.txt")
-    silence_phones_file = join(write_dir, "silence_phones.txt")
-    optional_silence_phones_file = join(write_dir, "optional_silence_phones.txt")
-    non_silence_phones_file = join(write_dir, "nonsilence_phones.txt")
-    extra_questions_file = join(write_dir, "extra_questions.txt")
-    lexicon_file = join(write_dir, "lexicon.txt")
-    lexiconp_file = join(write_dir, "lexiconp.txt")
-
-    with open(phones_file, "w") as f:
-        for phone in phones_list:
-            f.write(phone + "\n")
-    
-    with open(silence_phones_file, "w") as f:
-        f.write("sil\n")
-
-    with open(optional_silence_phones_file, "w") as f:
-        f.write("sil\n" )
-
-    with open(non_silence_phones_file, "w") as f:
-        for phone in phones_list_no_sil:
-            f.write(phone + "\n")
-
-    with open(extra_questions_file, "w") as f:
-        f.write("sil\n")
-        line = " ".join(phones_list_no_sil) + "\n"
-        f.write(line)
-
-    with open(lexicon_file, "w") as f:
-        for phone in phones_list:
-            f.write("{}\t{}\n".format(phone, phone))
-
-    with open(lexiconp_file, "w") as f:
-        for phone in phones_list:
-            f.write("{}\t1.0\t{}\n".format(phone, phone))
 
 # Keep private so not imported
 def _main():
-    lang_codes = ["SA", "UK"]
+    lang_codes = ["PL"]
     phone_map_dir = join(global_vars.conf_dir, "phone_maps")
     dict_dir = join(global_vars.exp_dir, "dict")
     if not os.path.isdir(dict_dir):
         os.mkdir(dict_dir)
-    #for lang_code in lang_codes:
-    #    write_lang_transcriptions(lang_code)
-    combine_phones(lang_codes, phone_map_dir, dict_dir)    
+    for lang_code in lang_codes:
+        write_lang_transcriptions(lang_code)   
     
 
 if __name__ == "__main__":

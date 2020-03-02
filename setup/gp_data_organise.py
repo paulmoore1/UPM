@@ -72,7 +72,7 @@ def combine_files(lang_codes, dataset, exp_data_dir):
 
         speakers = read_spk_list(spk_list, lang_code)
 
-        feat_filetypes = ["wav.scp", "spk2utt", "utt2spk", "utt2len", "cmvn.scp", "feats.scp"]
+        feat_filetypes = ["wav.scp", "spk2utt", "utt2spk", "utt2len", "feats.scp"]
         feat_filepaths = [join(wav_dir, lang_code, "lists", x)  for x in feat_filetypes]
 
         feat_filepaths.append(transcripts_file)
