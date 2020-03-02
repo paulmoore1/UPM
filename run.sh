@@ -92,12 +92,9 @@ echo ===========================================================================
 echo ============================================================================
 echo "           tri1 : Deltas + Delta-Deltas Training & Decoding               "
 echo ============================================================================
-numLeavesTri1=(2000 2500 3000)
+numLeavesTri1=(2500 3000)
 numGaussTri1=(10000 15000 20000)
-numLeavesMLLT=(2000 2500 3000)
-numGaussMLLT=(10000 15000 20000)
-numLeavesSAT=(2000 2500 3000)
-numGaussSAT=(10000 15000 20000)
+
 
 # steps/align_si.sh \
 #     --boost-silence 1.25 \
@@ -108,56 +105,80 @@ numGaussSAT=(10000 15000 20000)
 #     ${exp_dir}/mono_2000 \
 #     ${exp_dir}/mono_ali
 
-for numLeaves in ${numLeavesTri1[@]}; do
-    for numGauss in ${numGaussTri1[@]}; do
-    echo "Training triphone with ${numLeaves} leaves and ${numGauss} Gaussians"
-        tri_exp=tri1_leaves_${numLeaves}_gauss_${numGauss}
+# for numLeaves in ${numLeavesTri1[@]}; do
+#     for numGauss in ${numGaussTri1[@]}; do
+#     echo "Training triphone with ${numLeaves} leaves and ${numGauss} Gaussians"
+#         tri_exp=tri1_leaves_${numLeaves}_gauss_${numGauss}
         
-        # Train tri1, which is deltas + delta-deltas, on train data.
-        steps/train_deltas.sh \
-            --cmd "$train_cmd" \
-            $numLeaves \
-            $numGauss \
-            ${exp_data_dir}/train \
-            ${exp_data_dir}/lang \
-            ${exp_dir}/mono_ali \
-            ${exp_dir}/${tri_exp}
+#         # Train tri1, which is deltas + delta-deltas, on train data.
+#         steps/train_deltas.sh \
+#             --cmd "$train_cmd" \
+#             $numLeaves \
+#             $numGauss \
+#             ${exp_data_dir}/train \
+#             ${exp_data_dir}/lang \
+#             ${exp_dir}/mono_ali \
+#             ${exp_dir}/${tri_exp}
 
-        utils/mkgraph.sh \
-            ${exp_data_dir}/lang_test_bg \
-            ${exp_dir}/${tri_exp} \
-            ${exp_dir}/${tri_exp}/graph
+#         utils/mkgraph.sh \
+#             ${exp_data_dir}/lang_test_bg \
+#             ${exp_dir}/${tri_exp} \
+#             ${exp_dir}/${tri_exp}/graph
 
-        steps/decode.sh \
-            --nj "$decode_nj" \
-            --cmd "$decode_cmd" \
-            ${exp_dir}/${tri_exp}/graph \
-            ${exp_data_dir}/val \
-            ${exp_dir}/${tri_exp}/decode_val
-    done
-done
-
-
-
+#         steps/decode.sh \
+#             --nj "$decode_nj" \
+#             --cmd "$decode_cmd" \
+#             ${exp_dir}/${tri_exp}/graph \
+#             ${exp_data_dir}/val \
+#             ${exp_dir}/${tri_exp}/decode_val
+#     done
+# done
 
 # steps/decode.sh --nj "$decode_nj" --cmd "$decode_cmd" \
 #  ${exp_dir}/tri1/graph ${exp_data_dir}/test ${exp_dir}/tri1/decode_test
 
+# steps/align_si.sh --nj "$train_nj" --cmd "$train_cmd" \
+#   ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/tri1_leaves_2000_gauss_20000 ${exp_dir}/tri1_ali_train
+
+# steps/align_si.sh --nj "$train_nj" --cmd "$train_cmd" \
+#   ${exp_data_dir}/val ${exp_data_dir}/lang ${exp_dir}/tri1_leaves_2000_gauss_20000 ${exp_dir}/tri1_ali_val
+
+# steps/align_si.sh --nj "$train_nj" --cmd "$train_cmd" \
+#   ${exp_data_dir}/test ${exp_data_dir}/lang ${exp_dir}/tri1_leaves_2000_gauss_20000 ${exp_dir}/tri1_ali_test
+
 echo ============================================================================
 echo "                 tri2 : LDA + MLLT Training & Decoding                    "
 echo ============================================================================
+numLeavesMLLT=(2000 2500 3000)
+numGaussMLLT=(10000 15000 20000)
+
 
 # steps/align_si.sh --nj "$train_nj" --cmd "$train_cmd" \
-#   ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/tri1 ${exp_dir}/tri1_ali
+#    ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/tri1_leaves_2500_gauss_20000 ${exp_dir}/tri1_ali
 
-# steps/train_lda_mllt.sh --cmd "$train_cmd" \
-#  --splice-opts "--left-context=3 --right-context=3" \
-#  $numLeavesMLLT $numGaussMLLT ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/tri1_ali ${exp_dir}/tri2
 
-# utils/mkgraph.sh ${exp_data_dir}/lang_test_bg ${exp_dir}/tri2 ${exp_dir}/tri2/graph
+# for numLeaves in ${numLeavesMLLT[@]}; do
+#     for numGauss in ${numGaussMLLT[@]}; do
+#     echo "Training LDA + MLLT with ${numLeaves} leaves and ${numGauss} Gaussians"
+#         tri2_exp=tri2_l_${numLeaves}_g_${numGauss}
+        
+#         steps/train_lda_mllt.sh --cmd "$train_cmd" \
+#          --splice-opts "--left-context=3 --right-context=3" \
+#          $numLeaves $numGauss ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/tri1_ali ${exp_dir}/${tri2_exp}
 
-# steps/decode.sh --nj "$decode_nj" --cmd "$decode_cmd" \
-#  ${exp_dir}/tri2/graph ${exp_data_dir}/val ${exp_dir}/tri2/decode_val
+#         utils/mkgraph.sh \
+#             ${exp_data_dir}/lang_test_bg \
+#             ${exp_dir}/${tri2_exp} \
+#             ${exp_dir}/${tri2_exp}/graph
+
+#         steps/decode.sh \
+#             --nj "$decode_nj" \
+#             --cmd "$decode_cmd" \
+#             ${exp_dir}/${tri2_exp}/graph \
+#             ${exp_data_dir}/val \
+#             ${exp_dir}/${tri2_exp}/decode_val
+#     done
+# done
 
 # steps/decode.sh --nj "$decode_nj" --cmd "$decode_cmd" \
 #  ${exp_dir}/tri2/graph ${exp_data_dir}/test ${exp_dir}/tri2/decode_test
@@ -165,19 +186,42 @@ echo ===========================================================================
 echo ============================================================================
 echo "              tri3 : LDA + MLLT + SAT Training & Decoding                 "
 echo ============================================================================
+numLeavesSAT=(2000 2500 3000)
+numGaussSAT=(10000 15000 20000)
 
 # Align tri2 system with train data.
 # steps/align_si.sh --nj "$train_nj" --cmd "$train_cmd" \
 #  --use-graphs true ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/tri2 ${exp_dir}/tri2_ali
 
 # # From tri2 system, train tri3 which is LDA + MLLT + SAT.
-# steps/train_sat.sh --cmd "$train_cmd" \
-#  $numLeavesSAT $numGaussSAT ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/tri2_ali ${exp_dir}/tri3
 
-# utils/mkgraph.sh ${exp_data_dir}/lang_test_bg ${exp_dir}/tri3 ${exp_dir}/tri3/graph
 
-# steps/decode_fmllr.sh --nj "$decode_nj" --cmd "$decode_cmd" \
-#  ${exp_dir}/tri3/graph ${exp_data_dir}/val ${exp_dir}/tri3/decode_val
+steps/align_si.sh --nj "$train_nj" --cmd "$train_cmd" \
+ --use-graphs true ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/tri2_l_3000_g_20000 ${exp_dir}/tri2_ali
+
+
+for numLeaves in ${numLeavesSAT[@]}; do
+    for numGauss in ${numGaussSAT[@]}; do
+    echo "Training LDA + MLLT with ${numLeaves} leaves and ${numGauss} Gaussians"
+        tri3_exp=tri3_l_${numLeaves}_g_${numGauss}
+        
+        steps/train_sat.sh --cmd "$train_cmd" \
+         $numLeaves $numGauss ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/tri2_ali ${exp_dir}/${tri3_exp}
+
+        utils/mkgraph.sh \
+            ${exp_data_dir}/lang_test_bg \
+            ${exp_dir}/${tri3_exp} \
+            ${exp_dir}/${tri3_exp}/graph
+
+        steps/decode_fmllr.sh \
+            --nj "$decode_nj" \
+            --cmd "$decode_cmd" \
+            ${exp_dir}/${tri3_exp}/graph \
+            ${exp_data_dir}/val \
+            ${exp_dir}/${tri3_exp}/decode_val
+    done
+done
+
 
 # steps/decode_fmllr.sh --nj "$decode_nj" --cmd "$decode_cmd" \
 #  ${exp_dir}/tri3/graph ${exp_data_dir}/test ${exp_dir}/tri3/decode_test
