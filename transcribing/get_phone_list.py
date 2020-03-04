@@ -64,7 +64,7 @@ def update_phone_list(word_phones, phone_list):
     return phone_list
 
 def main():
-    lang_code = "WU"
+    lang_code = "CR"
     dict_dir = join(global_vars.wav_dir, lang_code, "dict")
     files = glob.glob(join(dict_dir, "*GPDict.txt"))
     assert len(files) == 1, "Multiple/no matches found in {}".format(dict_dir)

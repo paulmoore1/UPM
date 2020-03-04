@@ -48,7 +48,7 @@ def create_new_dir(set_dir, delete=True):
 
 # Combine files for each train/val/test set for each language
 # Writes to exp_data_dir/[train]
-def combine_files(lang_codes, dataset, exp_data_dir):
+def combine_files(lang_codes, dataset, exp_data_dir, bad_tr):
     assert dataset in ["train", "val", "test"], "ERROR: Dataset should be one of \"train\", \"val\" or \"test\""
     transcripts_dir = global_vars.all_tr_dir
     wav_dir = global_vars.wav_dir
@@ -84,16 +84,24 @@ def combine_files(lang_codes, dataset, exp_data_dir):
             else:
                 write_filepath = join(write_dir, basename(read_filepath))
             # Write and filter the files
-            write_and_filter(read_filepath, speakers, write_filepath, write_new)
+            write_and_filter(read_filepath, speakers, write_filepath, write_new, bad_tr)
 
 
 
-def write_and_filter(original_filepath, spk_list, write_filepath, write_new):
+def write_and_filter(original_filepath, spk_list, write_filepath, write_new, bad_tr):
     with open(original_filepath, "r") as f:
         lines = f.readlines()
     write_lines = []
     for line in lines:
-        if line[0:5] in spk_list:
+        speaker = line[0:5]
+        # If the file is not spk2utt, check the transcription id
+        if "spk2utt" not in original_filepath:
+            tr_id = line.split()[0]
+            # Skip any bad transcriptions
+            if tr_id in bad_tr:
+                continue
+        # Then check if the speaker matches
+        if speaker in spk_list:
             write_lines.append(line)
     
     # If writing new file
@@ -106,8 +114,19 @@ def write_and_filter(original_filepath, spk_list, write_filepath, write_new):
             for line in write_lines:
                 f.write(line)
 
+def get_blacklisted_transcriptions():
+    blacklist_file = join(global_vars.conf_dir, "blacklisted_transcriptions.txt")
+    transcriptions = []
+    with open(blacklist_file, "r") as f:
+        for line in f:
+            entry = line.split()
+            speaker = entry[0]
+            transcriptions.append(speaker)
+    return transcriptions
 
 def main():
+    bad_tr = get_blacklisted_transcriptions()
+
     args = get_args()
 
     data_splits = ["train", "val", "test"]
@@ -130,7 +149,7 @@ def main():
         else:
             langs = args.test_languages.split()
         
-        combine_files(langs, dataset, data_dir)
+        combine_files(langs, dataset, data_dir, bad_tr)
 
 
 if __name__ == "__main__":

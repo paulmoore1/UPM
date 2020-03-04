@@ -196,8 +196,8 @@ numGaussSAT=(10000 15000 20000)
 # # From tri2 system, train tri3 which is LDA + MLLT + SAT.
 
 
-steps/align_si.sh --nj "$train_nj" --cmd "$train_cmd" \
- --use-graphs true ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/tri2_l_3000_g_20000 ${exp_dir}/tri2_ali
+# steps/align_si.sh --nj "$train_nj" --cmd "$train_cmd" \
+#  --use-graphs true ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/tri2_l_3000_g_20000 ${exp_dir}/tri2_ali
 
 
 for numLeaves in ${numLeavesSAT[@]}; do

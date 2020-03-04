@@ -1,4 +1,6 @@
 SIL sil sil
+M_+QK unk unk
+M_+hGH unk unk
 M_a a a
 M_a+ a a
 M_aI aɪ aI
@@ -39,5 +41,3 @@ M_V β B
 M_w ʋ P
 M_x x x
 M_z z z
-
-Other fragments: M_+QK, M_+hGH

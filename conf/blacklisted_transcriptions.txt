@@ -1,0 +1,34 @@
+GE005_144   # Only speaks half
+SW086_84    # Only speaks half of transcription
+GE011_122   # Doesn't read last few words
+SW050_94    # Alignment problems
+GE025_64    # Audio cuts in/out
+GE040_94    # Audio cuts in/out
+SP001_18    # Only speaks half of transcription
+SP005_24    # Only speaks half of transcription
+SP014_72    # Only speaks half of transcription
+SP016_25    # Only speaks half of transcription
+SP018_7     # Only speaks half of transcription
+SP054_27    # Only speaks half of transcription
+SP079_1     # Only speaks half of transcription
+CR060_16    # Doesn't match
+CR069_11    # Only speaks end
+SW067_113   # Cut off early
+SP042_20    # Final word cut off halfway
+SP046_150   # Doesn't match
+SP086_50    # Doesn't match
+SP094_13    # Doesn't match
+SW009_125   # End cut off
+CR083_58    # End cut off
+GE007_22    # Doesn't match
+SP094_1     # Doesn't match
+PO101_1     # Bad transcription
+PO115_59    # Check transcription
+PO116_22    # Check transcription
+CH096_60    # Alignment problems
+PO003_86    # Alignment problems
+PO004_45    # Alignment problems
+PO139_34    # Alignment problems
+RU006_98    # Alignment problems
+RU059_51    # Alignment problems
+RU065_34    # Very long

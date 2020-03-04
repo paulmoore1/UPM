@@ -1,45 +1,45 @@
 SIL sil sil
-a
-b
-bj
-d
-dj
-dZ
-dz
-e
-f
-fj
-g
-gj
-i
-j
-ja
-ju
-k
-kj
-l
-lj
-m
-mj
-n
-nj
-o
-p
-pj
-r
-rj
-s
-S
-sj
-t
-tj
-tS
-ts
-u
-v
-vj
-x
-Y
-z
-Z
-zj
+a a a
+b b b
+bj bʲ b_j
+d d d
+dj dʲ d_j
+dZ dʒ dZ
+dz dz dz
+e ɛ E
+f f f
+fj fʲ f_j
+g g g
+gj gʲ g_j
+i i i
+j j j
+ja ya ya
+ju yu yu
+k k k
+kj kʲ k_j
+l l l
+lj lʲ l_j
+m m m
+mj mʲ m_j
+n n n
+nj nʲ n_j
+o o o
+p p p
+pj pʲ p_j
+r r r
+rj rʲ r_j
+s s s
+S ʃ S
+sj sʲ s_j
+t t t
+tj tʲ t_j
+tS tʃ tS
+ts ts ts
+u u u
+v v v 
+vj vʲ v_j
+x x x
+Y ɤ 7
+z z z
+Z ʒ Z
+zj zʲ z_j

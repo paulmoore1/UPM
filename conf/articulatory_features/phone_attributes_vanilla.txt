@@ -116,5 +116,6 @@ dZ consonant voiced postalveolar affricate coronal
 dZ\ consonant voiced alveolo-palatal affricate coronal
 tS consonant voiceless postalveolar affricate coronal
 ts\ consonant voiceless alveolo-palatal affricate coronal
+t_s\ consonant voiceless alveolo-palatal affricate coronal
 s\ consonant voiceless palatal fricative dorsal
 tK consonant voiceless alveolar lateral affricate coronal

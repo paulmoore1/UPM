@@ -1,33 +1,33 @@
-SIL
-M_+QK
-M_ab
-M_abl
-M_b
-M_d
-M_dZ
-M_e
-M_el
-M_f
-M_g
-M_h
-M_i
-M_il
-M_j
-M_k
-M_l
-M_m
-M_n
-M_nq
-M_o
-M_ol
-M_p
-M_Q
-M_s
-M_S
-M_t
-M_ts
-M_tS
-M_w
-M_W
-M_Wl
-M_z
+SIL sil sil
+M_+QK unk unk
+M_ab a a
+M_abl aː a:
+M_b b b
+M_d d d
+M_dZ ʑ z\
+M_e e e
+M_el eː e:
+M_f ɸ p\
+M_g g g
+M_h h h
+M_i i i
+M_il iː i:
+M_j j j
+M_k k k
+M_l ɾ 4
+M_m m m
+M_n n n
+M_nq ɲ J
+M_o o o
+M_ol oː o:
+M_p p p
+M_Q ʔ ?
+M_s s s
+M_S ʃ S
+M_t t t
+M_ts ts ts
+M_tS tɕ t_s\
+M_w w w
+M_W ɯ M
+M_Wl ɯː M:
+M_z z z
