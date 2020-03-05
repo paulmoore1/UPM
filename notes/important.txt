@@ -9,3 +9,5 @@ Hausa needs different transcription depending on if speaker is
 from Nigeria or Cameroon
 
 Need to check if German phones could be merged or not (overly specific right now?)
+
+Japanese is unusable - dictionary is corrupt

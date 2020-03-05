@@ -1,6 +1,6 @@
 SIL sil sil
-+hGH
-+QK
++hGH unk unk
++QK unk unk
 A a a
 A/1 a a
 AE ɛ E

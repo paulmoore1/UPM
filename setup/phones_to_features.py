@@ -101,12 +101,13 @@ def convert_to_features(all_phones, universal_phones, extensions, conf_dir):
                 if extension in temp:
                     phone_features += extensions[extension]
                     temp = temp.replace(extension, "")
+            n = len(temp)
             # If removing extensions is enough, will now find in universal phones list
             if temp in universal_phones:
                 phone_features += universal_phones[temp]
-            elif len(temp) == 2: # Must be a dipthong e.g. Ei
-                phone_features += universal_phones[temp[0]]
-                phone_features += universal_phones[temp[1]]
+            elif n <= 3: # Must be a dipthong/tripthong e.g. Ei
+                for i in range(n):
+                    phone_features += universal_phones[temp[i]]
             else:
                 raise Exception("Unknown phone: {}".format(phone))
             # Remove any duplicate features
@@ -127,6 +128,7 @@ def convert_to_features(all_phones, universal_phones, extensions, conf_dir):
 
 def write_to_txt_file(all_phones_dict, enc, conf_dir):
     filepath = join(conf_dir, "feature_vectors.txt")
+    csv_filepath = join(conf_dir, "feature_vectors.csv")
     # Sort dictionary so that file is in a reasonable order
     od = OrderedDict(sorted(all_phones_dict.items()))
 

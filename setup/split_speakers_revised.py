@@ -1,0 +1,325 @@
+import os, sys, re
+from os.path import join, exists
+sys.path.insert(1, join(sys.path[0], '..'))
+import global_vars
+import py_helper_functions as helper
+
+
+def get_transcript_matches(lang_code, log_dir):
+    tr_filepath = join(global_vars.gp_data_dir, lang_code, "lists", "text")
+
+    with open(tr_filepath, "r") as f:
+        lines = f.read().splitlines()
+    all_tr_dict = {}
+    all_matches = []
+
+    # Find all the lines, split into a dictionary of the form {speaker: [line1, line2, ...]}
+    for line in lines:
+        line = line.split(" ", 1)
+        speaker = line[0][0:5] # Get speaker for dict ID
+        if speaker in all_tr_dict:
+            all_tr_dict[speaker].append(line[1])
+        else:
+            all_tr_dict[speaker] = [line[1]]
+    already_checked = []
+    match_counter = []
+    # Iterate through speakers in the transcription dictionary
+    for spk_id in all_tr_dict:
+        spk_lines = all_tr_dict[spk_id]
+        # Iterate through lines, checking if it exists in any other speaker
+        for line in spk_lines:
+            for spk_2_id in all_tr_dict:
+                # Skip if it's the same speaker
+                if spk_id == spk_2_id or spk_2_id in already_checked:
+                    continue
+                spk_2_lines = all_tr_dict[spk_2_id]
+                if line in spk_2_lines:
+                    match_str = spk_id + " " + spk_2_id
+                    # if haven't seen this match, add a new tracker + counter
+                    if not match_str in all_matches:
+                        all_matches.append(match_str)
+                        match_counter.append(1)
+                    else:
+                        match_idx = all_matches.index(match_str)
+                        match_counter[match_idx] += 1
+        already_checked.append(spk_id)
+
+    with open(join(log_dir, "{}_logs.txt".format(lang_code.lower())), "w") as f:
+        v_bad_matches = []
+        bad_matches = []
+        minor_matches = []
+        for idx, line in enumerate(all_matches):
+            match_count = match_counter[idx]
+            match_line = line + " " + str(match_count) + " \n"
+            if match_count > 10:
+                v_bad_matches.append(match_line)
+            elif match_count > 1:
+                bad_matches.append(match_line)
+            else:
+                minor_matches.append(match_line)
+        if len(v_bad_matches) > 0:
+            write_line_counts(f, v_bad_matches, "Very bad matches")
+        else:
+            f.write("No very bad matches found\n")
+        if len(bad_matches) > 0:
+            write_line_counts(f, bad_matches, "Bad matches")
+        else:
+            f.write("No bad matches found\n")
+        if len(minor_matches) > 0:
+            write_line_counts(f, minor_matches, "Minor matches")
+        else:
+            f.write("No minor matches found\n")
+
+    return v_bad_matches, bad_matches, minor_matches
+
+
+def write_line_counts(open_file, matches, label):
+    open_file.write(label + ":\n")
+    for match in matches:
+        items = match.split()
+        spk_1 = str(items[0])
+        spk_2 = str(items[1])
+        count = str(items[2])
+        open_file.write("{} <--> {}: {}\n".format(spk_1, spk_2, count))
+
+
+def get_spk_times(lang_code, log_dir):
+    utt2len_filepath = join(global_vars.gp_data_dir, lang_code, "lists", "utt2len")
+    with open(utt2len_filepath, "r") as f:
+        lines = f.read().splitlines()
+    time_dict = {}
+    for line in lines:
+        entry = line.split()
+        spk_id = int(entry[0].split("_")[0][2:])
+        time = float(entry[1])
+        if spk_id in time_dict:
+            time_dict[spk_id] += time
+        else:
+            time_dict[spk_id] = time
+    all_times = []
+    for spk_id, time in time_dict.items():
+        all_times.append((spk_id, time))
+    all_times.sort()
+    total_len = sum(n for _, n in all_times)
+
+    log_path = join(log_dir, "{}_times.txt".format(lang_code.lower()))
+
+    with open(log_path, "w") as f:
+        f.write("Time percent for each speaker\n")
+        for spk_id, time in all_times:
+            percent_time = round(time/total_len*100, 3)
+            id_str = id_to_str(spk_id, space_before=False, lang_code=lang_code)
+            f.write("{} {}\n".format(id_str, percent_time))
+
+    return all_times
+
+# Checks the percent split in time given a list of validation/test spk ids
+def check_percent_split(ordered_times, val_ids, test_ids, v_bad, bad, minor, log_dir):
+    spk_ids = [x[0] for x in ordered_times]
+    train_ids = [x for x in spk_ids if not (x in val_ids or x in test_ids)]
+
+    if any(x in val_ids for x in test_ids):
+        print("ERROR: validation ids in test ids")
+        return
+    if any(not x in spk_ids for x in val_ids):
+        print("ERROR: validation id not found in spk ids")
+        return
+    if any(not x in spk_ids for x in test_ids):
+        print("ERROR: test id not found in spk ids")
+        return
+
+    total_len = sum(n for _, n in ordered_times)
+    val_len = sum(n for i, n in ordered_times if i in val_ids)
+    test_len = sum(n for i, n in ordered_times if i in test_ids)
+    training_len = total_len - val_len - test_len
+
+    print_percent(training_len, total_len, "Training")
+    print_percent(val_len, total_len, "Validation")
+    print_percent(test_len, total_len, "Testing")
+
+    assess_split(train_ids, val_ids, test_ids, v_bad, bad, minor, log_dir)
+    #assess_split(val_ids, v_bad, bad, minor, "Validation", log_dir)
+    #assess_split(test_ids, v_bad, bad, minor, "Testing", log_dir)
+
+
+def print_percent(audio_len, total_len, data_subset):
+    percent = audio_len/total_len*100
+    print("{0} %: {1:.3f}".format(data_subset, percent))
+
+def convert_to_tuples(matches):
+    tuples = []
+    for match in matches:
+        items = match.split()
+        # Convert e.g. UA001 --> 1
+        spk_1_id = int(items[0][2:])
+        spk_2_id = int(items[1][2:])
+        tuples.append((spk_1_id, spk_2_id))
+    return tuples
+
+
+def assess_split(train_ids, val_ids, test_ids, v_bad, bad, minor, log_dir):
+
+    v_bad_count, v_bad_lines = get_counts_and_lines(v_bad, train_ids, val_ids, test_ids)
+    bad_count, bad_lines = get_counts_and_lines(bad, train_ids, val_ids, test_ids)
+    minor_count, minor_lines = get_counts_and_lines(minor, train_ids, val_ids, test_ids)
+
+
+    print("Results:\nVery bad count: {}\nBad count: {}\nMinor count: {}\n".format(str(v_bad_count), str(bad_count), str(minor_count)))
+
+    log_file = join(log_dir, "split_revised.txt")
+
+    with open(log_file, "w") as f:
+        write_line_counts(f, v_bad_lines, "Very bad matches")
+        write_line_counts(f, bad_lines, "Bad matches")
+        write_line_counts(f, minor_lines, "Minor matches")
+
+
+# Get number of bad matches, and lines they occur on
+def get_counts_and_lines(bad, train_ids, val_ids, test_ids):
+    matches = convert_to_tuples(bad)
+    count = 0
+    lines = []
+    for idx, (id_1, id_2) in enumerate(matches):
+        # Check if any of the bad matches occur between sets
+        if (id_1 in train_ids and id_2 in val_ids) or (id_1 in train_ids and id_2 in test_ids) or \
+        (id_1 in val_ids and id_2 in test_ids) or (id_1 in val_ids and id_2 in train_ids) or \
+        (id_1 in test_ids and id_2 in train_ids) or (id_1 in test_ids and id_2 in val_ids)   :
+            count += 1
+            lines.append(bad[idx])
+    return count, lines
+
+
+def print_percent_times(times):
+    total_len = sum(n for _, n in times)
+    percent_times = []
+    for spk_id, time in times:
+        percent_times.append((spk_id, round(time/total_len*100, 3)))
+    print(percent_times)
+
+def id_to_str(id, space_before=True, lang_code=None):
+    if id < 10:
+        id_str =  "00" + str(id)
+    elif id < 100:
+        id_str = "0" + str(id)
+    else:
+        id_str = str(id)
+
+    if lang_code is not None:
+        id_str = lang_code.upper() + id_str
+
+    if space_before:
+        id_str = " " + id_str
+
+    return id_str
+
+
+def write_ids_to_conf(lang_code, ids, label, overwrite=False):
+    ids.sort()
+    id_str = lang_code
+    for spk_id in ids:
+        if spk_id < 10:
+            id_str += (" 00" + str(spk_id))
+        elif spk_id < 100:
+            id_str += (" 0" + str(spk_id))
+        else:
+            id_str += (" " + str(spk_id))
+    data_subset_str = normalise_data_subset_string(label)
+    conf_file = join(global_vars.conf_dir, "spk_lists", data_subset_str + "_spk.list")
+
+    # If doesn't exist, create a new file
+    if not exists(conf_file):
+        with open(conf_file, "w") as f:
+            f.write(id_str + "\n")
+    else:
+        # If does exist, check if it's in the file or not
+        with open(conf_file, "r") as f:
+            lines = f.read().splitlines()
+        # If ID string isn't already in the file for the language, append it
+        if not any(x.startswith(lang_code) for x in lines):
+            lines.append(id_str)
+            lines.sort()
+            with open(conf_file, "w") as f:
+                for line in lines:
+                    f.write(line + "\n")
+        # ID string is in file, decide if to overwrite or not
+        else:
+            old_line_list = [x for x in lines if lang_code in x]
+            if len(old_line_list) != 1:
+                print("ERROR: multiple lines found with same language code")
+                return
+            old_line = old_line_list[0]
+            # If the old line was different, check whether or not to override
+            if old_line != id_str:
+                overwrite = helper.query_yes_no("IDs found for " + label + " already, overwrite? [y/n]", default="no")
+                if not overwrite:
+                    print("Did not overwrite")
+                    return
+                else:
+                    print("Overwriting old values")
+                    lines.remove(old_line)
+                    lines.append(id_str)
+                    lines.sort()
+                    with open(conf_file, "w") as f:
+                        for line in lines:
+                            f.write(line + "\n")
+
+
+# Converts training/validation/test strings into a
+# standard lowercase format
+def normalise_data_subset_string(data_str):
+    data_str = data_str.lower()
+    if data_str.startswith("train"):
+        return "train"
+    elif data_str.startswith("val") or data_str.startswith("eval"):
+        return "val"
+    elif data_str.startswith("test"):
+        return "test"
+    else:
+        return "UNK"
+
+
+def get_current_ids(lang_code, dataset):
+    spk = join(global_vars.conf_dir, "spk_lists", "{}_spk.list".format(dataset))
+
+    with open(spk, "r") as f:
+        ids = []
+        for line in f:
+            if line.startswith(lang_code):
+                ids = [int(x) for x in line.split()[1:]]
+    if len(ids) == 0:
+        print("ERROR: no ids found for {}".format(lang_code))
+
+    return ids
+
+
+
+def main():
+    lang_code = "SW"
+    log_dir = join(global_vars.log_dir, "splitting", lang_code)
+    if not exists(log_dir):
+        os.makedirs(log_dir)
+
+    v_bad, bad, minor = get_transcript_matches(lang_code, log_dir)
+
+    times = get_spk_times(lang_code, log_dir)
+    #print_percent_times(times)
+    val_ids = get_current_ids(lang_code, "val")
+    test_ids = get_current_ids(lang_code, "test")
+    print(val_ids)
+    print(test_ids)
+    # val_ids = [1, 2, 5, 7, 11, 12, 13, 20, 21, 22, 23, 24, 25, 42, 45, 51, 60, 70]
+    # test_ids = [26, 27, 28, 32, 34, 35, 36, 41, 43, 58, 77, 78, 86, 88, 89, 98]
+
+    #val_ids.remove(34)
+    check_percent_split(times, val_ids, test_ids, v_bad, bad, minor, log_dir)
+
+    # spk_ids = [x[0] for x in times]
+    # train_ids = [x for x in spk_ids if not (x in val_ids or x in test_ids)]
+
+    # write_ids_to_conf(lang_code, train_ids, "Training")
+    # write_ids_to_conf(lang_code, val_ids, "Validation")
+    # write_ids_to_conf(lang_code, test_ids, "Testing")
+
+
+if __name__ == "__main__":
+    main()

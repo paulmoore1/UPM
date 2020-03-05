@@ -32,10 +32,3 @@ H_TS ts ts
 H_u u u
 H_w w w
 H_z z z
-L
-S
-T1
-T2
-T3
-
-# Neec to normalise dictionary for long/short

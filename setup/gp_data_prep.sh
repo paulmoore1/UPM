@@ -33,7 +33,6 @@ echo "Running with languages: ${GP_LANGUAGES}"
 echo "Organising speakers into sets."
 
 python ./setup/gp_data_organise.py \
-    --wav-dir $WAV_DIR_GLOBAL \
     --data-dir $DATA_DIR \
     --conf-dir $CONF_DIR_GLOBAL \
     --train-languages "${langs}" \

@@ -7,8 +7,6 @@ from py_helper_functions import listdir_fullpath
 
 def get_args():
     parser = argparse.ArgumentParser(description="Organising data sets")
-    parser.add_argument('--wav-dir', type=str, required=True,
-        help="Directory of all WAV files")
     parser.add_argument('--data-dir', type=str, required=True,
         help="Directory to output data files")
     parser.add_argument('--conf-dir', type=str, required=True,
@@ -50,8 +48,7 @@ def create_new_dir(set_dir, delete=True):
 # Writes to exp_data_dir/[train]
 def combine_files(lang_codes, dataset, exp_data_dir, bad_tr):
     assert dataset in ["train", "val", "test"], "ERROR: Dataset should be one of \"train\", \"val\" or \"test\""
-    transcripts_dir = global_vars.all_tr_dir
-    wav_dir = global_vars.wav_dir
+    data_dir = global_vars.gp_data_dir
 
     write_dir = join(exp_data_dir, dataset)
     if not isdir(write_dir):
@@ -63,26 +60,18 @@ def combine_files(lang_codes, dataset, exp_data_dir, bad_tr):
             write_new = True
         else:
             write_new = False
-        transcripts_file = join(transcripts_dir, lang_code + "_X-SAMPA_tr.txt")
-        assert exists(transcripts_file), "ERROR: Transcript file not found at {}".format(transcripts_file)
-        
+
         # Get list of speakers for filtering transcript
         spk_list = join(global_vars.conf_dir, "spk_lists", "{}_spk.list".format(dataset))
         assert exists(spk_list), "ERROR: Speaker list not found in {}".format(spk_list)
 
         speakers = read_spk_list(spk_list, lang_code)
 
-        feat_filetypes = ["wav.scp", "spk2utt", "utt2spk", "utt2len", "feats.scp"]
-        feat_filepaths = [join(wav_dir, lang_code, "lists", x)  for x in feat_filetypes]
-
-        feat_filepaths.append(transcripts_file)
+        feat_filetypes = ["wav.scp", "spk2utt", "utt2spk", "utt2len", "feats.scp", "text"]
+        feat_filepaths = [join(data_dir, lang_code, "lists", x)  for x in feat_filetypes]
 
         for read_filepath in feat_filepaths:
-            # If it's the transcript file
-            if read_filepath.endswith(".txt"):
-                write_filepath = join(write_dir, "text")
-            else:
-                write_filepath = join(write_dir, basename(read_filepath))
+            write_filepath = join(write_dir, basename(read_filepath))
             # Write and filter the files
             write_and_filter(read_filepath, speakers, write_filepath, write_new, bad_tr)
 
@@ -94,6 +83,9 @@ def write_and_filter(original_filepath, spk_list, write_filepath, write_new, bad
     write_lines = []
     for line in lines:
         speaker = line[0:5]
+        if basename(original_filepath) == "text":
+            line = " ".join(line.split()) + "\n" # Ensure that there is only single spacing
+
         # If the file is not spk2utt, check the transcription id
         if "spk2utt" not in original_filepath:
             tr_id = line.split()[0]
@@ -103,7 +95,7 @@ def write_and_filter(original_filepath, spk_list, write_filepath, write_new, bad
         # Then check if the speaker matches
         if speaker in spk_list:
             write_lines.append(line)
-    
+
     # If writing new file
     if write_new == True:
         with open(write_filepath, "w") as f:
@@ -132,8 +124,6 @@ def main():
     data_splits = ["train", "val", "test"]
 
     data_dir = args.data_dir
-    wav_dir = args.wav_dir
-    assert isdir(wav_dir), "WAV directory not found in {}".format(wav_dir)
 
     if not isdir(data_dir):
         os.makedirs(data_dir)
