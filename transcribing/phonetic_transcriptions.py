@@ -402,12 +402,12 @@ def check_transcription(lang_code):
 
 # Keep private so not imported
 def _main():
-    lang_codes = ["KO"] # FR needs iso-8859-15 and trl files
-    encoding="iso-8859-15"
-    #encoding="utf-8"
+    lang_codes = ["JA"] # FR needs iso-8859-15 and trl files
+    #encoding="iso-8859-15"
+    encoding="utf-8"
 
     for lang_code in lang_codes:
-        #write_lang_transcriptions(lang_code, encoding, "trl")   
+        write_lang_transcriptions(lang_code, encoding, "rmn")   
         check_transcription(lang_code)
 
 

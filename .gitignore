@@ -4,3 +4,7 @@ tools/shorten-3.6.1
 *.pyc
 logs
 __pycache__
+pytorch-kaldi/cfg/DIRHA_baselines/*
+pytorch-kaldi/cfg/Librispeech_baselines/*
+pytorch-kaldi/cfg/TIMIT_baselines/*
+pytorch-kaldi/kaldi_decoding_scripts/*
