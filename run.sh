@@ -26,6 +26,7 @@ expname="sa_only"
 GP_LANGUAGES="SA"
 exp_dir=$EXP_DIR_GLOBAL/$expname
 exp_data_dir=$exp_dir/data
+mfccdir=$FEAT_DIR_GLOBAL/mfcc
 echo "Running experiment ${expname}, storing files in ${exp_dir}"
 
 # Run once, then comment out these lines so they aren't run again
@@ -48,21 +49,21 @@ echo "Running experiment ${expname}, storing files in ${exp_dir}"
 # setup/gp_format_data.sh \
 #     --expname $expname
 
-# mfccdir=$FEAT_DIR_GLOBAL/mfcc
-
-# for x in train val test; do
-# ##   steps/make_mfcc.sh --cmd "$train_cmd" --nj $feats_nj $exp_data_dir/$x $exp_dir/make_mfcc/$x $mfccdir
-#     steps/compute_cmvn_stats.sh $exp_data_dir/$x $exp_dir/make_cmvn/$x $mfccdir
-# done
 
 
+for x in train val test; do
+##   steps/make_mfcc.sh --cmd "$train_cmd" --nj $feats_nj $exp_data_dir/$x $exp_dir/make_mfcc/$x $mfccdir
+    steps/compute_cmvn_stats.sh $exp_data_dir/$x $exp_dir/make_cmvn/$x $mfccdir
+done
+
+exit 0
 
 echo ============================================================================
 echo "                     MonoPhone Training & Decoding                        "
 echo ============================================================================
 
 ali_dir=${exp_dir}/mono_ali
-feat=vc
+feat=all
 for x in train val; do
   echo "Making phone feature map for ${ali_dir}_${x}"
   phones=${ali_dir}_${x}/phones.txt
@@ -84,8 +85,6 @@ mono_exp=mono
 #     $exp_data_dir/lang_test_bg \
 #     $exp_dir/${mono_exp} \
 #     $exp_dir/${mono_exp}/graph
-echo "Exiting early on line 74"
-exit 0
 
 steps/decode.sh \
     --nj "$decode_nj" \
@@ -201,8 +200,8 @@ steps/decode_fmllr.sh \
 
 steps/decode_fmllr.sh --nj "$decode_nj" --cmd "$decode_cmd" \
  ${exp_dir}/tri3/graph ${exp_data_dir}/test ${exp_dir}/tri3/decode_test
-    done
-done
+#     done
+# done
 
 # steps/align_fmllr.sh --nj "$train_nj" --cmd "$train_cmd" \
 #  ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/${tri3_exp} ${exp_dir}/tri3_ali

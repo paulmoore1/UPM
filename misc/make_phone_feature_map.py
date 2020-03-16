@@ -2,6 +2,7 @@ import os, argparse, sys
 from operator import itemgetter
 import numpy as np
 
+
 from os.path import join, basename, exists, dirname
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
 import global_vars
@@ -14,6 +15,8 @@ def get_args():
     parser.add_argument('--feat-type', type=str, default="all", choices=["all", \
         "vc", "place", "manner", "backness", "height"],
         help="Feature type")
+    parser.add_argument('--invert', type=helper.str2bool, default=False,
+        help="If inverted sets 0s to 1s and vice versa")
     return parser.parse_args()
 
 def read_phones(phone_filepath):
@@ -27,7 +30,7 @@ def read_phones(phone_filepath):
         int_to_phone[phone_int] = phone
     return int_to_phone
 
-def convert_phones_to_feats(int_to_phone, feat, feature_vector_filepath, write_path):
+def convert_phones_to_feats(int_to_phone, feat, feature_vector_filepath, write_path, invert=False):
     with open(feature_vector_filepath, "r") as f:
         lines = f.read().splitlines()
     phone_to_feat = {}
@@ -46,27 +49,30 @@ def convert_phones_to_feats(int_to_phone, feat, feature_vector_filepath, write_p
                 selected_feats = feat_to_cols(feat)
                 col_idx = [header.index(feature) for feature in selected_feats]
                 feat_vec = itemgetter(*col_idx)(all_feats)
-                feat_vec = np.asarray([int(x) for x in feat_vec])
+            feat_vec = np.asarray([int(x) for x in feat_vec])
             # Used for adding unknown phones
             feat_length = len(feat_vec)
             phone_to_feat[phone] = feat_vec
 
     with open(write_path, "w") as f:
-        print("IMPORTANT: inverting feature vectors right now")
+        if invert:
+            print("IMPORTANT: inverting feature vectors right now")
 
         for i in range(len(int_to_phone)):
             write_line = [i]
             phone = int_to_phone[str(i)]
             if phone in phone_to_feat:
                 feat_vec = phone_to_feat[phone]
-                # TODO remove later
+                if invert:
+                    feat_vec = 1 - feat_vec
 
-
-                feat_vec = 1 - feat_vec
-
-            else: # Some phones like <eps> won't be in
-                print("Phone not found: {}, setting to 1 (need to change)".format(phone))
-                feat_vec = [1]*feat_length
+            else: # Some phones like <eps> won't be in, set to 0s
+                print("Phone not found: {}".format(phone))
+                if invert: # When inverted make a list of 1s
+                    feat_vec = [1]*feat_length
+                else:
+                    feat_vec = [0]*feat_length
+                    
 
             write_line += list(feat_vec)
 

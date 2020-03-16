@@ -21,6 +21,7 @@ import torch.optim as optim
 import math
 from shutil import copyfile
 
+rows_skipped = 0
 
 def run_command(cmd):
     """from http://blog.kagesenshi.org/2008/02/teeing-python-subprocesspopen-output.html
@@ -2440,7 +2441,14 @@ def forward_model(
                 # Reshape to N x D
                 new_shape = (size[0]*size[1], size[2])
                 lab_dnn = lab_dnn.view(new_shape).float()
-
+    
+            # Filter out zero rows (don't need absolute since the values are only 0 or 1)
+            lab_dnn_good_idx = lab_dnn.sum(dim=1) != 0
+            lab_dnn_filtered = lab_dnn[lab_dnn_good_idx]
+            if lab_dnn_filtered.size()[0] == 0:
+                # Apply zero cost if we eliminated all the rows
+                outs_dict[out_name] = torch.tensor([0.0], requires_grad=True) #torch.tensor([0])
+                continue
             # lab_dict[inp2][3] is the index where the dataset in the input splits between features and labels
             
             # put output in the right format
@@ -2448,11 +2456,13 @@ def forward_model(
 
             if len(out.shape) == 3:
                 out = out.view(max_len * batch_size, -1)
-            print(out.max())
-            print(out.min())
+
+            # Filter out the zero rows
+            out_filtered = out[lab_dnn_good_idx]
+
 
             if to_do != "forward":
-                outs_dict[out_name] = costs[out_name](out, lab_dnn)
+                outs_dict[out_name] = costs[out_name](out_filtered, lab_dnn_filtered)
 
         if operation == "cost_err":
 
