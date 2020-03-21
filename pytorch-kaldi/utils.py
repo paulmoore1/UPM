@@ -2458,8 +2458,6 @@ def forward_model(
             if len(out.shape) == 3:
                 out = out.view(max_len * batch_size, -1)
 
-            print(out.max())
-            print(out.min())
             # Filter out the zero rows
             #out_filtered = out[lab_dnn_good_idx]
 
