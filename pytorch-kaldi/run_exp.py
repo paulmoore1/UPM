@@ -180,8 +180,10 @@ op_counter = 1  # used to dected the next configuration file from the list_chunk
 # Reading the ordered list of config file to process
 cfg_file_list = [line.rstrip("\n") for line in open(out_folder + "/exp_files/list_chunks.txt")]
 cfg_file_list.append(cfg_file_list[-1])
-articulatory_feats = True
-articulatory_feat_dim = 2
+# articulatory_feats = True
+# articulatory_feat_dim = 51
+articulatory_feats = config["exp"]["use_articulatory_feats"] == "True"
+articulatory_feat_dim = int(config["exp"]["articulatory_feat_dim"])
 
 # A variable that tells if the current chunk is the first one that is being processed:
 processed_first = True

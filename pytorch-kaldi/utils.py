@@ -2438,17 +2438,18 @@ def forward_model(
                 lab_dnn = inp[:, lab_dict[inp2][3]:]
             size = lab_dnn.size()
             if len(size) == 3:
-                # Reshape to N x D
+                # Reshape to N x D, convert to float for BCE loss
                 new_shape = (size[0]*size[1], size[2])
                 lab_dnn = lab_dnn.view(new_shape).float()
-    
-            # Filter out zero rows (don't need absolute since the values are only 0 or 1)
-            lab_dnn_good_idx = lab_dnn.sum(dim=1) != 0
-            lab_dnn_filtered = lab_dnn[lab_dnn_good_idx]
-            if lab_dnn_filtered.size()[0] == 0:
-                # Apply zero cost if we eliminated all the rows
-                outs_dict[out_name] = torch.tensor([0.0], requires_grad=True) #torch.tensor([0])
-                continue
+            
+            # NEW: shouldn't need to filter - should be removed in data stage
+            # # Filter out zero rows (don't need absolute since the values are only 0 or 1)
+            # lab_dnn_good_idx = lab_dnn.sum(dim=1) != 0
+            # lab_dnn_filtered = lab_dnn[lab_dnn_good_idx]
+            # if lab_dnn_filtered.size()[0] == 0:
+            #     # Apply zero cost if we eliminated all the rows
+            #     outs_dict[out_name] = torch.tensor([0.0], requires_grad=True) #torch.tensor([0])
+            #     continue
             # lab_dict[inp2][3] is the index where the dataset in the input splits between features and labels
             
             # put output in the right format
@@ -2457,12 +2458,14 @@ def forward_model(
             if len(out.shape) == 3:
                 out = out.view(max_len * batch_size, -1)
 
+            print(out.max())
+            print(out.min())
             # Filter out the zero rows
-            out_filtered = out[lab_dnn_good_idx]
+            #out_filtered = out[lab_dnn_good_idx]
 
 
             if to_do != "forward":
-                outs_dict[out_name] = costs[out_name](out_filtered, lab_dnn_filtered)
+                outs_dict[out_name] = costs[out_name](out, lab_dnn)
 
         if operation == "cost_err":
 
