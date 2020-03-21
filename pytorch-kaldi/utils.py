@@ -154,7 +154,13 @@ def compute_avg_performance(info_lst):
     for tr_info_file in info_lst:
         config_res = configparser.ConfigParser()
         config_res.read(tr_info_file)
-        losses.append(float(config_res["results"]["loss"]))
+        loss_new = config_res["results"]["loss"]
+        if "[" in loss_new:
+            loss_new = loss_new.replace("[", "")
+        if "]" in loss_new:
+            loss_new = loss_new.replace("]", "")
+        losses.append(float(loss_new))
+        #losses.append(float(config_res["results"]["loss"]))
         errors.append(float(config_res["results"]["err"]))
         times.append(float(config_res["results"]["elapsed_time_chunk"]))
 
@@ -2441,15 +2447,24 @@ def forward_model(
                 # Reshape to N x D, convert to float for BCE loss
                 new_shape = (size[0]*size[1], size[2])
                 lab_dnn = lab_dnn.view(new_shape).float()
+     
+            #NEW: shouldn't need to filter - should be removed in data processing stage
+            # Remove 95% of zero rows (don't need absolute since the values are only 0 or 1)
+            # zero_idx = lab_dnn.sum(dim=1) == 0
+            # n = len(zero_idx)
+            # step_size = int(n/(0.05*n))
+            # print(lab_dnn[0:100])
+            # print(n)
+            # print(step_size)
+            # keep_idx = [zero_idx[x] for x in np.arange(0, n, step=step_size)]
+            # print(keep_idx)
+            keep_idx = lab_dnn.sum(dim=1) != 0
+            lab_dnn_filtered = lab_dnn[keep_idx]
             
-            # NEW: shouldn't need to filter - should be removed in data stage
-            # # Filter out zero rows (don't need absolute since the values are only 0 or 1)
-            # lab_dnn_good_idx = lab_dnn.sum(dim=1) != 0
-            # lab_dnn_filtered = lab_dnn[lab_dnn_good_idx]
-            # if lab_dnn_filtered.size()[0] == 0:
-            #     # Apply zero cost if we eliminated all the rows
-            #     outs_dict[out_name] = torch.tensor([0.0], requires_grad=True) #torch.tensor([0])
-            #     continue
+            if lab_dnn_filtered.size()[0] == 0:
+                # Apply zero cost if we eliminated all the rows
+                outs_dict[out_name] = torch.tensor([0.0], requires_grad=True) #torch.tensor([0])
+                continue
             # lab_dict[inp2][3] is the index where the dataset in the input splits between features and labels
             
             # put output in the right format
@@ -2459,11 +2474,10 @@ def forward_model(
                 out = out.view(max_len * batch_size, -1)
 
             # Filter out the zero rows
-            #out_filtered = out[lab_dnn_good_idx]
-
+            out_filtered = out[keep_idx]
 
             if to_do != "forward":
-                outs_dict[out_name] = costs[out_name](out, lab_dnn)
+                outs_dict[out_name] = costs[out_name](out_filtered, lab_dnn_filtered)
 
         if operation == "cost_err":
 
@@ -2592,6 +2606,11 @@ def dump_epoch_results(res_file_path, ep, tr_data_lst, tr_loss_tot, tr_error_tot
                 os.makedirs(model_dir)
             if os.path.exists(model_files[pt_arch]) and not os.path.exists(model_dir + "/best_" + pt_arch + ".pkl"):
                 copyfile(model_files[pt_arch], model_dir + "/best_" + pt_arch + ".pkl")
+
+        # Save to best_valid_loss.txt for restarting
+        best_loss_path = os.path.join(out_folder, "best_valid_loss.txt")
+        with open(best_loss_path, "w") as f:
+            f.write(str(best_valid_loss))
 
     return best_valid_loss
 

@@ -53,6 +53,7 @@ def write_to_cfg_file(cfg_filepath, chunks_dict, idx_dict):
     for dataset, n_chunks in chunks_dict.items():
         line_idx = idx_dict[dataset]
         lines[line_idx] = "n_chunks = {}\n".format(n_chunks)
+        print("Wrote {} chunks for {}".format(n_chunks, dataset))
 
     with open(cfg_filepath, "w") as f:
         f.writelines(lines)

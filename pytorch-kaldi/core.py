@@ -611,6 +611,8 @@ def run_nn(
             for k in range(batch_size):
 
                 snt_len = data_end_index[snt_index] - beg_snt
+
+                # Removed since we have silence already
                 N_zeros = max_len - snt_len
 
                 # Appending a random number of initial zeros, tge others are at the end.
@@ -618,6 +620,7 @@ def run_nn(
 
                 # randomizing could have a regularization effect
                 inp[N_zeros_left : N_zeros_left + snt_len, k, :] = data_set[beg_snt : beg_snt + snt_len, :]
+                
 
                 beg_snt = data_end_index[snt_index]
                 snt_index = snt_index + 1
@@ -806,9 +809,7 @@ def run_nn(
     lab_dict = shared_list[3]
     arch_dict = shared_list[4]
     data_set = shared_list[5]
-
-    print(data_set.shape)
-
+    
     # converting numpy tensors into pytorch tensors and put them on GPUs if specified
     if not (save_gpumem) and use_cuda:
         data_set = torch.from_numpy(data_set).float().cuda()

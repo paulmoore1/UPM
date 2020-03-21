@@ -20,8 +20,11 @@ feats_nj=8
 train_nj=8
 decode_nj=8
 
-expname="sa_only"
-#expname="baseline_shallow_no_dipthongs"
+#expname="sa_only"
+expname="baseline_shallow_no_dipthongs"
+cfgname="UPM_RNN_mfcc.cfg"
+# expname="sa_only"
+# cfgname="UPM_sandbox.cfg"
 #GP_LANGUAGES="SA UA GE"
 GP_LANGUAGES="SA"
 exp_dir=$EXP_DIR_GLOBAL/$expname
@@ -51,26 +54,40 @@ echo "Running experiment ${expname}, storing files in ${exp_dir}"
 
 
 
-for x in train val test; do
-##   steps/make_mfcc.sh --cmd "$train_cmd" --nj $feats_nj $exp_data_dir/$x $exp_dir/make_mfcc/$x $mfccdir
-    steps/compute_cmvn_stats.sh $exp_data_dir/$x $exp_dir/make_cmvn/$x $mfccdir
-done
+# for x in train val test; do
+# ##   steps/make_mfcc.sh --cmd "$train_cmd" --nj $feats_nj $exp_data_dir/$x $exp_dir/make_mfcc/$x $mfccdir
+#     steps/compute_cmvn_stats.sh $exp_data_dir/$x $exp_dir/make_cmvn/$x $mfccdir
+# done
 
-exit 0
+
 
 echo ============================================================================
 echo "                     MonoPhone Training & Decoding                        "
 echo ============================================================================
 
-ali_dir=${exp_dir}/mono_ali
+# Get phone feature maps for each item
+ali_dir=${exp_dir}/tri3_ali
 feat=all
-for x in train val; do
+for x in train val test; do
   echo "Making phone feature map for ${ali_dir}_${x}"
   phones=${ali_dir}_${x}/phones.txt
   python misc/make_phone_feature_map.py \
     --phones-filepath $phones \
-    --feat $feat
+    --feat $feat \
+    --print-info False
 done
+
+python misc/set_chunks.py \
+  --cfg-filename $cfgname \
+  --exp-data-dir $exp_data_dir
+
+root_dir=$PWD
+cd pytorch-kaldi
+python run_exp.py cfg/UPM/$cfgname
+
+cd $root_dir
+
+exit
 
 mono_exp=mono
 # steps/train_mono.sh  \
@@ -86,15 +103,15 @@ mono_exp=mono
 #     $exp_dir/${mono_exp} \
 #     $exp_dir/${mono_exp}/graph
 
-steps/decode.sh \
-    --nj "$decode_nj" \
-    --cmd "$decode_cmd" \
-    $exp_dir/${mono_exp}/graph \
-    $exp_data_dir/val \
-    $exp_dir/${mono_exp}/decode_val
+# steps/decode.sh \
+#     --nj "$decode_nj" \
+#     --cmd "$decode_cmd" \
+#     $exp_dir/${mono_exp}/graph \
+#     $exp_data_dir/val \
+#     $exp_dir/${mono_exp}/decode_val
 
-steps/decode.sh --nj "$decode_nj" --cmd "$decode_cmd" \
- $exp_dir/mono/graph $exp_data_dir/test $exp_dir/mono/decode_test
+# steps/decode.sh --nj "$decode_nj" --cmd "$decode_cmd" \
+#  $exp_dir/mono/graph $exp_data_dir/test $exp_dir/mono/decode_test
 
 
 echo ============================================================================
@@ -111,7 +128,7 @@ echo ===========================================================================
 #     ${exp_dir}/mono_ali
 
 # # Train tri1, which is deltas + delta-deltas, on train data.
-# tri_exp=tri1
+tri_exp=tri1
 # steps/train_deltas.sh \
 #     --cmd "$train_cmd" \
 #     $numLeavesTri1 \
@@ -126,15 +143,15 @@ echo ===========================================================================
 #     ${exp_dir}/${tri_exp} \
 #     ${exp_dir}/${tri_exp}/graph
 
-steps/decode.sh \
-    --nj "$decode_nj" \
-    --cmd "$decode_cmd" \
-    ${exp_dir}/${tri_exp}/graph \
-    ${exp_data_dir}/val \
-    ${exp_dir}/${tri_exp}/decode_val
+# steps/decode.sh \
+#     --nj "$decode_nj" \
+#     --cmd "$decode_cmd" \
+#     ${exp_dir}/${tri_exp}/graph \
+#     ${exp_data_dir}/val \
+#     ${exp_dir}/${tri_exp}/decode_val
 
-steps/decode.sh --nj "$decode_nj" --cmd "$decode_cmd" \
- ${exp_dir}/${tri_exp}/graph ${exp_data_dir}/test ${exp_dir}/${tri_exp}/decode_test
+# steps/decode.sh --nj "$decode_nj" --cmd "$decode_cmd" \
+#  ${exp_dir}/${tri_exp}/graph ${exp_data_dir}/test ${exp_dir}/${tri_exp}/decode_test
 
 
 echo ============================================================================
@@ -144,7 +161,7 @@ echo ===========================================================================
 # steps/align_si.sh --nj "$train_nj" --cmd "$train_cmd" \
 #    ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/tri1 ${exp_dir}/tri1_ali
 
-# tri2_exp=tri2
+tri2_exp=tri2
 
 # steps/train_lda_mllt.sh --cmd "$train_cmd" \
 #     --splice-opts "--left-context=3 --right-context=3" \
@@ -155,16 +172,16 @@ echo ===========================================================================
 #     ${exp_dir}/${tri2_exp} \
 #     ${exp_dir}/${tri2_exp}/graph
 
-steps/decode.sh \
-    --nj "$decode_nj" \
-    --cmd "$decode_cmd" \
-    ${exp_dir}/${tri2_exp}/graph \
-    ${exp_data_dir}/val \
-    ${exp_dir}/${tri2_exp}/decode_val
+# steps/decode.sh \
+#     --nj "$decode_nj" \
+#     --cmd "$decode_cmd" \
+#     ${exp_dir}/${tri2_exp}/graph \
+#     ${exp_data_dir}/val \
+#     ${exp_dir}/${tri2_exp}/decode_val
 
 
-steps/decode.sh --nj "$decode_nj" --cmd "$decode_cmd" \
- ${exp_dir}/${tri2_exp}/graph ${exp_data_dir}/test ${exp_dir}/${tri2_exp}/decode_test
+# steps/decode.sh --nj "$decode_nj" --cmd "$decode_cmd" \
+#  ${exp_dir}/${tri2_exp}/graph ${exp_data_dir}/test ${exp_dir}/${tri2_exp}/decode_test
 
 echo ============================================================================
 echo "              tri3 : LDA + MLLT + SAT Training & Decoding                 "

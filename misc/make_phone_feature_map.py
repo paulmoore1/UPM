@@ -17,6 +17,7 @@ def get_args():
         help="Feature type")
     parser.add_argument('--invert', type=helper.str2bool, default=False,
         help="If inverted sets 0s to 1s and vice versa")
+    parser.add_argument('--print-info', type=helper.str2bool, default=False)
     return parser.parse_args()
 
 def read_phones(phone_filepath):
@@ -30,7 +31,7 @@ def read_phones(phone_filepath):
         int_to_phone[phone_int] = phone
     return int_to_phone
 
-def convert_phones_to_feats(int_to_phone, feat, feature_vector_filepath, write_path, invert=False):
+def convert_phones_to_feats(int_to_phone, feat, feature_vector_filepath, write_path, invert=False, print_info=False):
     with open(feature_vector_filepath, "r") as f:
         lines = f.read().splitlines()
     phone_to_feat = {}
@@ -67,7 +68,8 @@ def convert_phones_to_feats(int_to_phone, feat, feature_vector_filepath, write_p
                     feat_vec = 1 - feat_vec
 
             else: # Some phones like <eps> won't be in, set to 0s
-                print("Phone not found: {}".format(phone))
+                if print_info:
+                    print("Phone not found: {}".format(phone))
                 if invert: # When inverted make a list of 1s
                     feat_vec = [1]*feat_length
                 else:
@@ -78,11 +80,13 @@ def convert_phones_to_feats(int_to_phone, feat, feature_vector_filepath, write_p
 
             write_line = [str(x) for x in write_line]
             f.write(",".join(write_line) + "\n")
-        print("Phones have {} features".format(feat_length))
+        if print_info:
+            print("Phones have {} features".format(feat_length))
 
 def main():
     args = get_args()
     feat = args.feat_type
+    printing = args.print_info
     feature_vector_filepath = join(global_vars.conf_dir, "articulatory_features",
                                     "feature_vectors.txt")
     if not exists(feature_vector_filepath):
@@ -100,7 +104,7 @@ def main():
 
     write_path = join(dirname(args.phones_filepath), "phone_featmap.txt")
 
-    convert_phones_to_feats(int_to_phone, feat, feature_vector_filepath, write_path)
+    convert_phones_to_feats(int_to_phone, feat, feature_vector_filepath, write_path, print_info=printing)
 
 # Values for appropriate columns depending on feature type (if not taking all)
 def feat_to_cols(feat):

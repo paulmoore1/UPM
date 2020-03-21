@@ -282,8 +282,8 @@ def load_dataset(fea_scp, fea_opts, lab_folder, lab_opts, left, right, max_seque
 
     if articulatory_feats:
         mapping = _read_phone_featmap()
-        fea_conc, lab_conc, end_index_fea, end_index_lab = _remove_zero_features(mapping, 
-                                                            lab_conc, fea_conc, end_index_fea, end_index_lab)
+        # fea_conc, lab_conc, end_index_fea, end_index_lab = _remove_zero_features(mapping, 
+        #                                                     lab_conc, fea_conc, end_index_fea, end_index_lab)
         # Convert e.g. [1 2 3] to [[0 1 0], [0 1 1], [1 0 0]]
         lab_conc = mapping[lab_conc]
 

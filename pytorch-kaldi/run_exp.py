@@ -195,7 +195,13 @@ fea_dict = []
 lab_dict = []
 arch_dict = []
 
-best_valid_loss = math.inf
+best_loss_path = os.path.join(out_folder, "best_valid_loss.txt")
+if os.path.exists(best_loss_path):
+    with open(best_loss_path, "r") as f:
+        best_valid_loss = float(f.readline())
+else:
+    best_valid_loss = math.inf
+
 # --------TRAINING LOOP--------#
 for ep in range(N_ep):
 
