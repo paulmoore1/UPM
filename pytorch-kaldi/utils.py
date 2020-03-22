@@ -2458,8 +2458,16 @@ def forward_model(
             # print(step_size)
             # keep_idx = [zero_idx[x] for x in np.arange(0, n, step=step_size)]
             # print(keep_idx)
-            keep_idx = lab_dnn.sum(dim=1) != 0
-            lab_dnn_filtered = lab_dnn[keep_idx]
+
+
+            # New method for filtering 95% of zeros
+            zero_mask = lab_dnn.sum(dim=1) == 0
+            step_size = 20 # E.g. 1/0.05 = 20 (so 5% are kept). Would be 1/0.1 = 10 for 10%
+            zero_idx = torch.where(zero_mask)[0]
+            zero_idx_short = zero_idx[0::step_size]
+            non_zero_idx = torch.where(~zero_mask)[0]
+            all_kept_idx = torch.cat((zero_idx_short, non_zero_idx), 0)
+            lab_dnn_filtered = lab_dnn[all_kept_idx]
             
             if lab_dnn_filtered.size()[0] == 0:
                 # Apply zero cost if we eliminated all the rows
@@ -2474,7 +2482,7 @@ def forward_model(
                 out = out.view(max_len * batch_size, -1)
 
             # Filter out the zero rows
-            out_filtered = out[keep_idx]
+            out_filtered = out[all_kept_idx]
 
             if to_do != "forward":
                 outs_dict[out_name] = costs[out_name](out_filtered, lab_dnn_filtered)
