@@ -141,7 +141,7 @@ def load_dataset(fea_scp, fea_opts, lab_folder, lab_opts, left, right, max_seque
             fea_conc, lab_conc = _append_to_concat_list(fea_chunked, lab_chunked, fea_conc, lab_conc, k)
         return fea_conc, lab_conc, snt_name
 
-    def _concatenate_features_and_labels(fea_conc, lab_conc):
+    def _concatenate_features_and_labels(fea_conc, lab_conc, mapping=None):
         def _sort_chunks_by_length(fea_conc, lab_conc):
             fea_zipped = zip(fea_conc, lab_conc)
             fea_sorted = sorted(fea_zipped, key=lambda x: x[0].shape[0])
@@ -155,6 +155,69 @@ def load_dataset(fea_scp, fea_opts, lab_folder, lab_opts, left, right, max_seque
                 end_snt = end_snt + entry.shape[0]
                 end_index.append(end_snt)
             return end_index
+
+        def _filter_lines(conc, idx_to_remove):
+            total_sent_length = 0
+            total_num_removals = 0
+            conc = list(conc)
+
+            for conc_idx, entry in enumerate(conc):
+                sent_length = entry.shape[0]
+                entry_idx_to_remove = list()
+                for idx in idx_to_remove[total_num_removals:]:
+                    relative_idx = idx - total_sent_length
+                    if relative_idx < sent_length:
+                        entry_idx_to_remove.append(relative_idx)
+                    else:
+                        break
+                num_removed = len(entry_idx_to_remove)
+                total_num_removals += num_removed
+                total_sent_length += sent_length
+                # If all of a sentence would be removed, keep one entry
+                if num_removed == sent_length:
+                    conc[conc_idx] = np.delete(entry, entry_idx_to_remove[:-1], axis=0)
+                else:
+                    conc[conc_idx] = np.delete(entry, entry_idx_to_remove, axis=0)
+                
+            return tuple(conc)
+
+        def _get_idx_to_remove(lab_conc, mapping):
+            conc_cat = np.concatenate(lab_conc)
+            (vals, counts) = np.unique(conc_cat, return_counts=True)
+            # Get features of zero-vectors
+            zero_feats = np.where(~mapping.any(axis=1))[0]
+            # Filter only the ones which actually occur in the labels
+            valid_zero_feats = [x for x in vals if x in zero_feats]
+            # Get the index of these in the values list (since some values may be missing)
+            zero_idx = np.nonzero(np.in1d(vals,valid_zero_feats))[0]
+
+            # Get the target number of counts for these zero-features as the
+            # mean of all the other counts
+            count_nonzero = np.delete(counts, zero_idx)
+            target_counts = int(count_nonzero.mean())
+            # Get the total number of zero-features
+            count_zero_total = counts[zero_idx].sum()
+
+            # Only remove if we have too many zero features
+            if count_zero_total > target_counts:
+                # Step size for keeping elements
+                step = int(count_zero_total/target_counts)
+                # Get all indices with zero features.
+                zero_indices = [np.where(conc_cat == zero)[0] for zero in valid_zero_feats]
+                # Combine all zero indices into one
+                zero_indices = np.concatenate(zero_indices)
+                # This is all the zero indices except every step-th one
+                idx_to_remove = np.delete(zero_indices, np.arange(0, zero_indices.size, step))
+                idx_to_remove.sort()
+                return idx_to_remove
+            else:
+                return None
+        
+        if mapping is not None:
+            idx_to_remove = _get_idx_to_remove(lab_conc, mapping)
+            if idx_to_remove is not None:
+                fea_conc = _filter_lines(fea_conc, idx_to_remove)
+                lab_conc = _filter_lines(lab_conc, idx_to_remove)
 
         fea_conc, lab_conc = _sort_chunks_by_length(fea_conc, lab_conc)
         end_index_fea = _get_end_index_from_list(fea_conc)
@@ -199,14 +262,6 @@ def load_dataset(fea_scp, fea_opts, lab_folder, lab_opts, left, right, max_seque
             fea[k] = _adjust_feature_sequence_length(fea[k], nr_of_fea_for_lab)
         return fea, lab
 
-    def _get_end_index_from_list(conc):
-        end_snt = 0
-        end_index = list()
-        for entry in conc:
-            end_snt = end_snt + entry.shape[0]
-            end_index.append(end_snt)
-        return end_index
-
     def _read_phone_featmap():
         # Hard-coding values for now
         mapping = []
@@ -218,74 +273,22 @@ def load_dataset(fea_scp, fea_opts, lab_folder, lab_opts, left, right, max_seque
                 mapping.append(feat_vec)
         return np.asarray(mapping)
 
-    def _remove_zero_features(mapping, lab_conc, fea_conc, end_index_fea, end_index_lab):
-
-        def _fix_end_labs(idx_to_remove, end_index_lab):
-            # Where to start (updated each time to allow only one pass through)
-            start_idx = 0 # also the total number removed
-            for idx, curr_end_lab in enumerate(end_index_lab):
-                for removed_idx in idx_to_remove[start_idx:]:
-                    if removed_idx <= curr_end_lab:
-                        start_idx += 1
-                    else:
-                        end_index_lab[idx] -= start_idx
-                        break
-            # Update last one since it gets skipped
-            end_index_lab[-1] -= start_idx
-            return end_index_lab
-
-        (vals, counts) = np.unique(lab_conc, return_counts=True)
-        # Get features of zero-vectors
-        zero_feats = np.where(~mapping.any(axis=1))[0]
-        # Filter only the ones which actually occur in the labels
-        valid_zero_feats = [x for x in vals if x in zero_feats]
-        # Get the index of these in the values list (since some values may be missing)
-        zero_idx = np.nonzero(np.in1d(vals,valid_zero_feats))[0]
-
-        # Get the target number of counts for these zero-features as the
-        # mean of all the other counts
-        count_nonzero = np.delete(counts, zero_idx)
-        target_counts = int(count_nonzero.mean())
-        # Get the total number of zero-features
-        count_zero_total = counts[zero_idx].sum()
-
-        # Only remove if we have too many zero features
-        if count_zero_total > target_counts:
-            # Step size for keeping elements
-            step = int(count_zero_total/target_counts)
-            # Get all indices with zero features.
-            zero_indices = [np.where(lab_conc == zero)[0] for zero in valid_zero_feats]
-            # Combine all zero indices into one
-            zero_indices = np.concatenate(zero_indices)
-            # This is all the zero indices except every step-th one
-            idx_to_remove = np.delete(zero_indices, np.arange(0, zero_indices.size, step))
-            # Remove these from the original labels
-            lab_conc = np.delete(lab_conc, idx_to_remove)
-            # Remove the corresponding features
-            fea_conc = np.delete(fea_conc, idx_to_remove,axis=0)
-            # Update the end indices
-            end_index_fea = _fix_end_labs(idx_to_remove, end_index_fea)
-            end_index_lab = _fix_end_labs(idx_to_remove, end_index_lab)
-    
-        return fea_conc, lab_conc, end_index_fea, end_index_lab
-
     fea, lab = _read_features_and_labels_with_kaldi(fea_scp, fea_opts, fea_only, lab_folder, lab_opts, output_folder)
     if _input_is_wav_file(fea_scp) and (not fea_only):
         fea, lab = _match_feature_and_label_sequence_lengths(fea, lab, max_sequence_length)
     fea_chunks, lab_chunks, chunk_names = _chunk_features_and_labels(
         max_sequence_length, fea, lab, fea_only, _input_is_wav_file(fea_scp)
     )
-    fea_conc, lab_conc, end_index_fea, end_index_lab = _concatenate_features_and_labels(fea_chunks, lab_chunks)
-    # lab_conc is the concatenated numpy array of labels
-    # i.e. [1 1 1 1 ... 37 12 12 12 32 ....] etc.
-    # Is of shape (N,)
-
     if articulatory_feats:
         mapping = _read_phone_featmap()
-        # fea_conc, lab_conc, end_index_fea, end_index_lab = _remove_zero_features(mapping, 
-        #                                                     lab_conc, fea_conc, end_index_fea, end_index_lab)
+        fea_conc, lab_conc, end_index_fea, end_index_lab = _concatenate_features_and_labels(fea_chunks, lab_chunks, mapping)
+        # lab_conc is the concatenated numpy array of labels
+        # i.e. [1 1 1 1 ... 37 12 12 12 32 ....] etc.
+        # Is of shape (N,)
         # Convert e.g. [1 2 3] to [[0 1 0], [0 1 1], [1 0 0]]
         lab_conc = mapping[lab_conc]
+    else:
+        fea_conc, lab_conc, end_index_fea, end_index_lab = _concatenate_features_and_labels(fea_chunks, lab_chunks)
 
     return [chunk_names, fea_conc, lab_conc, np.asarray(end_index_fea), np.asarray(end_index_lab)]
 

@@ -2449,30 +2449,20 @@ def forward_model(
                 lab_dnn = lab_dnn.view(new_shape).float()
      
             #NEW: shouldn't need to filter - should be removed in data processing stage
-            # Remove 95% of zero rows (don't need absolute since the values are only 0 or 1)
-            # zero_idx = lab_dnn.sum(dim=1) == 0
-            # n = len(zero_idx)
-            # step_size = int(n/(0.05*n))
-            # print(lab_dnn[0:100])
-            # print(n)
-            # print(step_size)
-            # keep_idx = [zero_idx[x] for x in np.arange(0, n, step=step_size)]
-            # print(keep_idx)
-
 
             # New method for filtering 95% of zeros
-            zero_mask = lab_dnn.sum(dim=1) == 0
-            step_size = 20 # E.g. 1/0.05 = 20 (so 5% are kept). Would be 1/0.1 = 10 for 10%
-            zero_idx = torch.where(zero_mask)[0]
-            zero_idx_short = zero_idx[0::step_size]
-            non_zero_idx = torch.where(~zero_mask)[0]
-            all_kept_idx = torch.cat((zero_idx_short, non_zero_idx), 0)
-            lab_dnn_filtered = lab_dnn[all_kept_idx]
+            # zero_mask = lab_dnn.sum(dim=1) == 0
+            # step_size = 20 # E.g. 1/0.05 = 20 (so 5% are kept). Would be 1/0.1 = 10 for 10%
+            # zero_idx = torch.where(zero_mask)[0]
+            # zero_idx_short = zero_idx[0::step_size]
+            # non_zero_idx = torch.where(~zero_mask)[0]
+            # all_kept_idx = torch.cat((zero_idx_short, non_zero_idx), 0)
+            # lab_dnn_filtered = lab_dnn[all_kept_idx]
             
-            if lab_dnn_filtered.size()[0] == 0:
-                # Apply zero cost if we eliminated all the rows
-                outs_dict[out_name] = torch.tensor([0.0], requires_grad=True) #torch.tensor([0])
-                continue
+            # if lab_dnn_filtered.size()[0] == 0:
+            #     # Apply zero cost if we eliminated all the rows
+            #     outs_dict[out_name] = torch.tensor([0.0], requires_grad=True) #torch.tensor([0])
+            #     continue
             # lab_dict[inp2][3] is the index where the dataset in the input splits between features and labels
             
             # put output in the right format
@@ -2481,11 +2471,11 @@ def forward_model(
             if len(out.shape) == 3:
                 out = out.view(max_len * batch_size, -1)
 
-            # Filter out the zero rows
-            out_filtered = out[all_kept_idx]
+            # # Filter out the zero rows
+            # out_filtered = out[all_kept_idx]
 
             if to_do != "forward":
-                outs_dict[out_name] = costs[out_name](out_filtered, lab_dnn_filtered)
+                outs_dict[out_name] = costs[out_name](out, lab_dnn)
 
         if operation == "cost_err":
 
