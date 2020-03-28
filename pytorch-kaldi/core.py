@@ -5,7 +5,7 @@
 # October 2018
 ##########################################################
 
-import sys
+import sys, re
 import configparser
 import os
 from utils import is_sequential_dict, model_init, optimizer_init, forward_model, progress
@@ -499,6 +499,13 @@ def run_nn(
         lab_dict = shared_list[3]
         arch_dict = shared_list[4]
         data_set = shared_list[5]
+
+        # arch_dict = e.g. {'RNN_layers': ['architecture1', 'RNN_layers', 1], 
+        # 'MLP_layers': ['architecture2', 'MLP_layers', 0], 
+        # 'MLP_layers2': ['architecture3', 'MLP_layers2', 0]}
+        # ouptut_folder = pytorch-kaldi/exp/[expname]
+
+
         # fea_dict = e.g. {'mfcc': ['mfcc', 'exp/UPM_MLP_mfcc/exp_files/train_TIMIT_tr_ep00_ck0_mfcc.lst', 
         # 'apply-cmvn --utt2spk=ark:/home/paul/upm_exp/new_exp/data/train/utt2spk  
         # ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
@@ -546,6 +553,15 @@ def run_nn(
     # pre-training and multi-gpu init
     for net in nns.keys():
         pt_file_arch = config[arch_dict[net][0]]["arch_pretrain_file"]
+
+        # Use best model trained when testing
+        if to_do == "forward":
+            print("Doing regex")
+            p = re.compile(r'.*(train.*)_architecture\d.pkl')
+            m = p.match(pt_file_arch)
+            if m:
+                replacement = m.group(1)
+                pt_file_arch = pt_file_arch.replace(replacement, "model/best")
 
         if pt_file_arch != "none":
             if use_cuda:

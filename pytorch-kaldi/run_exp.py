@@ -165,14 +165,14 @@ for arch in arch_lst:
     pt_files[arch] = config[arch]["arch_pretrain_file"]
 
 
-# If production, skip training and forward directly from last saved models
+# If production, skip training and forward directly from best saved models
 if is_production:
     ep = N_ep - 1
     N_ep = 0
     model_files = {}
 
     for arch in pt_files.keys():
-        model_files[arch] = out_folder + "/exp_files/final_" + arch + ".pkl"
+        model_files[arch] = out_folder + "/exp_files/model/best_" + arch + ".pkl"
 
 
 op_counter = 1  # used to dected the next configuration file from the list_chunks.txt
@@ -184,6 +184,8 @@ cfg_file_list.append(cfg_file_list[-1])
 # articulatory_feat_dim = 51
 articulatory_feats = config["exp"]["use_articulatory_feats"] == "True"
 articulatory_feat_dim = int(config["exp"]["articulatory_feat_dim"])
+
+do_testing = config["exp"]["do_testing"] == "True"
 
 # A variable that tells if the current chunk is the first one that is being processed:
 processed_first = True
@@ -522,6 +524,8 @@ for forward_data in forward_data_lst:
                     config_chunk_file,
                     processed_first,
                     next_config_file,
+                    articulatory_feats,
+                    articulatory_feat_dim    
                 )
                 processed_first = False
                 if not (os.path.exists(info_file)):
