@@ -3,6 +3,7 @@
 
 expname="exp_test"
 langs=""
+feattype="mfcc"
 # Based on timit_data_prep
 . ./path.sh
 
@@ -10,6 +11,7 @@ langs=""
 
 echo $expname
 echo $langs
+echo $feattype
 
 
 dir=$EXP_DIR_GLOBAL/$expname/data
@@ -37,7 +39,8 @@ python ./setup/gp_data_organise.py \
     --conf-dir $CONF_DIR_GLOBAL \
     --train-languages "${langs}" \
     --val-languages "${langs}" \
-    --test-languages "${langs}"
+    --test-languages "${langs}" \
+    --feat-type "${feattype}"
 
 echo "Ensuring directories are valid"
 

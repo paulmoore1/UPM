@@ -21,16 +21,19 @@ train_nj=8
 decode_nj=8
 
 #expname="sa_only"
-expname="baseline_shallow_no_dipthongs"
-cfgname="UPM_RNN_mfcc.cfg"
-# expname="sa_only"
-# cfgname="UPM_sandbox.cfg"
-#GP_LANGUAGES="SA UA GE"
-GP_LANGUAGES="SA"
+expname="baseline_mfcc"
+#expname="all_no_ua"
+cfgname="UPM_RNN_mfcc_base.cfg"
+feattype="mfcc"
+
+#GP_LANGUAGES="BG SA UA SW CR HA PL TU"
+GP_LANGUAGES="BG SA UA SW CR HA PL TU"
 exp_dir=$EXP_DIR_GLOBAL/$expname
 exp_data_dir=$exp_dir/data
 mfccdir=$FEAT_DIR_GLOBAL/mfcc
+fbankdir=$FEAT_DIR_GLOBAL/fbank
 echo "Running experiment ${expname}, storing files in ${exp_dir}"
+echo "Pytorch experiment files are ${cfgname}"
 
 # Run once, then comment out these lines so they aren't run again
 # setup/compute_feats.sh
@@ -39,13 +42,13 @@ echo "Running experiment ${expname}, storing files in ${exp_dir}"
 
 # setup/gp_data_prep.sh \
 #     --expname $expname \
-#     --langs "${GP_LANGUAGES}"
-
+#     --langs "${GP_LANGUAGES}" \
+#     --feattype "$feattype"
 
 # setup/gp_prepare_dict.sh --src-dir=$exp_dir || exit 1
 
-# # # # Caution below: we remove optional silence by setting "--sil-prob 0.0",
-# # # # in TIMIT the silence appears also as a word in the dictionary and is scored.
+# # # # # # Caution below: we remove optional silence by setting "--sil-prob 0.0",
+# # # # # # in TIMIT the silence appears also as a word in the dictionary and is scored.
 # utils/prepare_lang.sh --sil-prob 0.0 --position-dependent-phones false --num-sil-states 3 \
 #    ${exp_dir}/data/dict "sil" ${exp_dir}/data/lang_tmp ${exp_dir}/data/lang
 
@@ -55,15 +58,13 @@ echo "Running experiment ${expname}, storing files in ${exp_dir}"
 
 
 # for x in train val test; do
-# ##   steps/make_mfcc.sh --cmd "$train_cmd" --nj $feats_nj $exp_data_dir/$x $exp_dir/make_mfcc/$x $mfccdir
-#     steps/compute_cmvn_stats.sh $exp_data_dir/$x $exp_dir/make_cmvn/$x $mfccdir
+#   #steps/compute_cmvn_stats.sh $exp_data_dir/$x $exp_dir/make_cmvn/$x $mfccdir
+#   steps/compute_cmvn_stats.sh $exp_data_dir/$x $exp_dir/make_cmvn/$x $fbankdir
 # done
 
-
-
-echo ============================================================================
-echo "                     MonoPhone Training & Decoding                        "
-echo ============================================================================
+#For removing invalid utterances after aligning
+# setup/filter_valid_alignments.sh \
+#     --exp-dir $exp_dir
 
 # Get phone feature maps for each item
 ali_dir=${exp_dir}/tri3_ali
@@ -74,8 +75,9 @@ for x in train val test; do
   python misc/make_phone_feature_map.py \
     --phones-filepath $phones \
     --feat $feat \
-    --print-info False
+    --print-info True
 done
+
 
 python misc/set_chunks.py \
   --cfg-filename $cfgname \
@@ -88,6 +90,13 @@ python run_exp.py cfg/UPM/$cfgname
 cd $root_dir
 
 exit
+
+
+
+echo ============================================================================
+echo "                     MonoPhone Training & Decoding                        "
+echo ============================================================================
+
 
 mono_exp=mono
 # steps/train_mono.sh  \
@@ -128,7 +137,7 @@ echo ===========================================================================
 #     ${exp_dir}/mono_ali
 
 # # Train tri1, which is deltas + delta-deltas, on train data.
-tri_exp=tri1
+# tri_exp=tri1
 # steps/train_deltas.sh \
 #     --cmd "$train_cmd" \
 #     $numLeavesTri1 \
@@ -141,7 +150,7 @@ tri_exp=tri1
 # utils/mkgraph.sh \
 #     ${exp_data_dir}/lang_test_bg \
 #     ${exp_dir}/${tri_exp} \
-#     ${exp_dir}/${tri_exp}/graph
+    # ${exp_dir}/${tri_exp}/graph
 
 # steps/decode.sh \
 #     --nj "$decode_nj" \
@@ -158,10 +167,11 @@ echo ===========================================================================
 echo "                 tri2 : LDA + MLLT Training & Decoding                    "
 echo ============================================================================
 
+tri2_exp=tri2
+
 # steps/align_si.sh --nj "$train_nj" --cmd "$train_cmd" \
 #    ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/tri1 ${exp_dir}/tri1_ali
 
-tri2_exp=tri2
 
 # steps/train_lda_mllt.sh --cmd "$train_cmd" \
 #     --splice-opts "--left-context=3 --right-context=3" \
@@ -186,19 +196,19 @@ tri2_exp=tri2
 echo ============================================================================
 echo "              tri3 : LDA + MLLT + SAT Training & Decoding                 "
 echo ============================================================================
-# numLeavesSAT=(2000 2500 3000)
-# numGaussSAT=(10000 15000 20000)
 
+tri3_exp=tri3
 # Align tri2 system with train data.
 # steps/align_si.sh --nj "$train_nj" --cmd "$train_cmd" \
-#  --use-graphs true ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/${tri2_exp} ${exp_dir}/tri2_ali
+#  --use-graphs true ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/${tri2_exp} ${exp_dir}/tri2_ali_train
 
-# # From tri2 system, train tri3 which is LDA + MLLT + SAT.
+# steps/align_si.sh --nj "$train_nj" --cmd "$train_cmd" \
+#  --use-graphs true ${exp_data_dir}/val ${exp_data_dir}/lang ${exp_dir}/${tri2_exp} ${exp_dir}/tri2_ali_val
 
-# for numLeaves in ${numLeavesSAT[@]}; do
-#     for numGauss in ${numGaussSAT[@]}; do
-#     echo "Training LDA + MLLT with ${numLeaves} leaves and ${numGauss} Gaussians"
-tri3_exp=tri3
+# steps/align_si.sh --nj "$train_nj" --cmd "$train_cmd" \
+#  --use-graphs true ${exp_data_dir}/test ${exp_data_dir}/lang ${exp_dir}/${tri2_exp} ${exp_dir}/tri2_ali_test
+
+# From tri2 system, train tri3 which is LDA + MLLT + SAT.
 
 # steps/train_sat.sh --cmd "$train_cmd" \
 #     $numLeavesSAT $numGaussSAT ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/tri2_ali ${exp_dir}/${tri3_exp}
@@ -208,20 +218,8 @@ tri3_exp=tri3
 #     ${exp_dir}/${tri3_exp} \
 #     ${exp_dir}/${tri3_exp}/graph
 
-steps/decode_fmllr.sh \
-    --nj "$decode_nj" \
-    --cmd "$decode_cmd" \
-    ${exp_dir}/${tri3_exp}/graph \
-    ${exp_data_dir}/val \
-    ${exp_dir}/${tri3_exp}/decode_val
-
-steps/decode_fmllr.sh --nj "$decode_nj" --cmd "$decode_cmd" \
- ${exp_dir}/tri3/graph ${exp_data_dir}/test ${exp_dir}/tri3/decode_test
-#     done
-# done
-
 # steps/align_fmllr.sh --nj "$train_nj" --cmd "$train_cmd" \
-#  ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/${tri3_exp} ${exp_dir}/tri3_ali
+#  ${exp_data_dir}/train ${exp_data_dir}/lang ${exp_dir}/${tri3_exp} ${exp_dir}/tri3_ali_train
 
 # steps/align_fmllr.sh --nj "$train_nj" --cmd "$train_cmd" \
 #  ${exp_data_dir}/val ${exp_data_dir}/lang ${exp_dir}/${tri3_exp} ${exp_dir}/tri3_ali_val
@@ -229,5 +227,15 @@ steps/decode_fmllr.sh --nj "$decode_nj" --cmd "$decode_cmd" \
 #  steps/align_fmllr.sh --nj "$train_nj" --cmd "$train_cmd" \
 #  ${exp_data_dir}/test ${exp_data_dir}/lang ${exp_dir}/${tri3_exp} ${exp_dir}/tri3_ali_test
 
-# expname="new_exp"
-# GP_LANGUAGES="SA UA GE"
+
+# steps/decode_fmllr.sh \
+#     --nj "$decode_nj" \
+#     --cmd "$decode_cmd" \
+#     ${exp_dir}/${tri3_exp}/graph \
+#     ${exp_data_dir}/val \
+#     ${exp_dir}/${tri3_exp}/decode_val
+
+# steps/decode_fmllr.sh --nj "$decode_nj" --cmd "$decode_cmd" \
+#  ${exp_dir}/${tri3_exp}/graph ${exp_data_dir}/test ${exp_dir}/${tri3_exp}/decode_test
+
+

@@ -703,39 +703,39 @@ def check_cfg(cfg_file, config, cfg_file_proto):
                         forward_norm_lst[i] = count_file_path
 
                     # Compute the number of raw phone states
-                    elif "ali-to-phones" in lab_opts[lab_lst.index(forward_norm_lst[i])]:
-                        log_file = config["exp"]["out_folder"] + "/log.log"
-                        folder_lab_count = lab_folders[lab_lst.index(forward_norm_lst[i])]
-                        cmd = "hmm-info " + folder_lab_count + "/final.mdl | awk '/phones/{print $4}'"
-                        output = run_shell(cmd, log_file)
-                        if output.decode().rstrip() == "":
-                            sys.stderr.write(
-                                "ERROR: hmm-info command doesn't exist. Make sure your .bashrc contains the Kaldi paths and correctly exports it.\n"
-                            )
-                            sys.exit(0)
-                        N_out = int(output.decode().rstrip())
-                        N_out_lab[lab_lst.index(forward_norm_lst[i])] = N_out
-                        count_file_path = (
-                            out_folder
-                            + "/exp_files/forward_"
-                            + forward_out_lst[i]
-                            + "_"
-                            + forward_norm_lst[i]
-                            + ".count"
-                        )
+                    # elif "ali-to-phones" in lab_opts[lab_lst.index(forward_norm_lst[i])]:
+                    #     log_file = config["exp"]["out_folder"] + "/log.log"
+                    #     folder_lab_count = lab_folders[lab_lst.index(forward_norm_lst[i])]
+                    #     cmd = "hmm-info " + folder_lab_count + "/final.mdl | awk '/phones/{print $4}'"
+                    #     output = run_shell(cmd, log_file)
+                    #     if output.decode().rstrip() == "":
+                    #         sys.stderr.write(
+                    #             "ERROR: hmm-info command doesn't exist. Make sure your .bashrc contains the Kaldi paths and correctly exports it.\n"
+                    #         )
+                    #         sys.exit(0)
+                    #     N_out = int(output.decode().rstrip())
+                    #     N_out_lab[lab_lst.index(forward_norm_lst[i])] = N_out
+                    #     count_file_path = (
+                    #         out_folder
+                    #         + "/exp_files/forward_"
+                    #         + forward_out_lst[i]
+                    #         + "_"
+                    #         + forward_norm_lst[i]
+                    #         + ".count"
+                    #     )
 
-                        cmd = (
-                            "analyze-counts --print-args=False --verbose=0 --binary=false --counts-dim="
-                            + str(N_out)
-                            + ' "ark:ali-to-phones '
-                            + folder_lab_count
-                            + '/final.mdl \\"ark:gunzip -c '
-                            + folder_lab_count
-                            + '/ali.*.gz |\\" ark:- |" '
-                            + count_file_path
-                        )
-                        run_shell(cmd, log_file)
-                        forward_norm_lst[i] = count_file_path
+                    #     cmd = (
+                    #         "analyze-counts --print-args=False --verbose=0 --binary=false --counts-dim="
+                    #         + str(N_out)
+                    #         + ' "ark:ali-to-phones '
+                    #         + folder_lab_count
+                    #         + '/final.mdl \\"ark:gunzip -c '
+                    #         + folder_lab_count
+                    #         + '/ali.*.gz |\\" ark:- |" '
+                    #         + count_file_path
+                    #     )
+                    #     run_shell(cmd, log_file)
+                    #     forward_norm_lst[i] = count_file_path
 
                     else:
                         sys.stderr.write(
@@ -2451,18 +2451,18 @@ def forward_model(
             #NEW: shouldn't need to filter - should be removed in data processing stage
 
             # New method for filtering 95% of zeros
-            # zero_mask = lab_dnn.sum(dim=1) == 0
-            # step_size = 20 # E.g. 1/0.05 = 20 (so 5% are kept). Would be 1/0.1 = 10 for 10%
-            # zero_idx = torch.where(zero_mask)[0]
-            # zero_idx_short = zero_idx[0::step_size]
-            # non_zero_idx = torch.where(~zero_mask)[0]
-            # all_kept_idx = torch.cat((zero_idx_short, non_zero_idx), 0)
-            # lab_dnn_filtered = lab_dnn[all_kept_idx]
+            zero_mask = lab_dnn.sum(dim=1) == 0
+            step_size = 20 # E.g. 1/0.05 = 20 (so 5% are kept). Would be 1/0.1 = 10 for 10%
+            zero_idx = torch.where(zero_mask)[0]
+            zero_idx_short = zero_idx[0::step_size]
+            non_zero_idx = torch.where(~zero_mask)[0]
+            all_kept_idx = torch.cat((zero_idx_short, non_zero_idx), 0)
+            lab_dnn_filtered = lab_dnn[all_kept_idx]
             
-            # if lab_dnn_filtered.size()[0] == 0:
-            #     # Apply zero cost if we eliminated all the rows
-            #     outs_dict[out_name] = torch.tensor([0.0], requires_grad=True) #torch.tensor([0])
-            #     continue
+            if lab_dnn_filtered.size()[0] == 0:
+                # Apply zero cost if we eliminated all the rows
+                outs_dict[out_name] = torch.tensor([0.0], requires_grad=True) #torch.tensor([0])
+                continue
             # lab_dict[inp2][3] is the index where the dataset in the input splits between features and labels
             
             # put output in the right format
@@ -2471,11 +2471,22 @@ def forward_model(
             if len(out.shape) == 3:
                 out = out.view(max_len * batch_size, -1)
 
+            out_filtered = out[all_kept_idx]
+
+            # safe_idx = ~torch.any(torch.isnan(out_filtered), axis=1)
+            # out_safe = out_filtered[safe_idx, :]
+            
+            # if not out_safe.size() == out.size():
+            #     print("Error with some values")
+            #     lab_dnn_filtered = lab_dnn_filtered[safe_idx, :]
             # # Filter out the zero rows
-            # out_filtered = out[all_kept_idx]
+
+            # print(out)
+            # print(out.max())
+            # print(out.min())
 
             if to_do != "forward":
-                outs_dict[out_name] = costs[out_name](out, lab_dnn)
+                outs_dict[out_name] = costs[out_name](out_filtered, lab_dnn_filtered)
 
         if operation == "cost_err":
 

@@ -17,6 +17,7 @@ def get_args():
         help="Which languages to use when training. Should be space-separated language codes")
     parser.add_argument('--test-languages', type=str, required=True,
         help="Which languages to use when training. Should be space-separated language codes")
+    parser.add_argument('--feat-type', type=str, choices=["fbank", "mfcc"], default="mfcc")
 
     return parser.parse_args()
 
@@ -46,7 +47,7 @@ def create_new_dir(set_dir, delete=True):
 
 # Combine files for each train/val/test set for each language
 # Writes to exp_data_dir/[train]
-def combine_files(lang_codes, dataset, exp_data_dir, bad_tr):
+def combine_files(lang_codes, dataset, exp_data_dir, bad_tr, feat_type):
     assert dataset in ["train", "val", "test"], "ERROR: Dataset should be one of \"train\", \"val\" or \"test\""
     data_dir = global_vars.gp_data_dir
 
@@ -67,11 +68,16 @@ def combine_files(lang_codes, dataset, exp_data_dir, bad_tr):
 
         speakers = read_spk_list(spk_list, lang_code)
 
-        feat_filetypes = ["wav.scp", "spk2utt", "utt2spk", "utt2len", "feats.scp", "text"]
+        feat_filetypes = ["wav.scp", "spk2utt", "utt2spk", "utt2len", "feats_{}.scp".format(feat_type), "text"]
         feat_filepaths = [join(data_dir, lang_code, "lists", x)  for x in feat_filetypes]
 
         for read_filepath in feat_filepaths:
-            write_filepath = join(write_dir, basename(read_filepath))
+            if "feats" in read_filepath:
+                filename = basename(read_filepath)
+                filename = filename.replace("_{}".format(feat_type), "")
+                write_filepath = join(write_dir, filename)
+            else:
+                write_filepath = join(write_dir, basename(read_filepath))
             # Write and filter the files
             write_and_filter(read_filepath, speakers, write_filepath, write_new, bad_tr)
 
@@ -139,7 +145,7 @@ def main():
         else:
             langs = args.test_languages.split()
         
-        combine_files(langs, dataset, data_dir, bad_tr)
+        combine_files(langs, dataset, data_dir, bad_tr, args.feat_type)
 
 
 if __name__ == "__main__":

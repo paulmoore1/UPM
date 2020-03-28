@@ -218,8 +218,24 @@ def load_dataset(fea_scp, fea_opts, lab_folder, lab_opts, left, right, max_seque
             if idx_to_remove is not None:
                 fea_conc = _filter_lines(fea_conc, idx_to_remove)
                 lab_conc = _filter_lines(lab_conc, idx_to_remove)
-
+        
         fea_conc, lab_conc = _sort_chunks_by_length(fea_conc, lab_conc)
+        
+        # Check if there is a mismatch between features and labels
+        test_fea_len = len(fea_conc[0])
+        test_lab_len = len(lab_conc[0])
+
+        # If there is, print a warning
+        if test_fea_len != test_lab_len:
+            lab_conc = np.asarray(lab_conc)
+            print("WARNING: features and label lengths do not match correctly")
+            for idx, sent in enumerate(fea_conc):
+                fea_length = len(sent)
+                lab_length = len(lab_conc[idx])
+                if fea_length < lab_length:
+                    # Remove last two from label (tend to be 1s anyway)
+                    lab_conc[idx] = lab_conc[idx][0:fea_length]
+
         end_index_fea = _get_end_index_from_list(fea_conc)
         end_index_lab = _get_end_index_from_list(lab_conc)
         fea_conc = np.concatenate(fea_conc)
@@ -281,7 +297,8 @@ def load_dataset(fea_scp, fea_opts, lab_folder, lab_opts, left, right, max_seque
     )
     if articulatory_feats:
         mapping = _read_phone_featmap()
-        fea_conc, lab_conc, end_index_fea, end_index_lab = _concatenate_features_and_labels(fea_chunks, lab_chunks, mapping)
+        #TODO remove mapping = None - here for testing!
+        fea_conc, lab_conc, end_index_fea, end_index_lab = _concatenate_features_and_labels(fea_chunks, lab_chunks, mapping=None)
         # lab_conc is the concatenated numpy array of labels
         # i.e. [1 1 1 1 ... 37 12 12 12 32 ....] etc.
         # Is of shape (N,)
@@ -289,6 +306,15 @@ def load_dataset(fea_scp, fea_opts, lab_folder, lab_opts, left, right, max_seque
         lab_conc = mapping[lab_conc]
     else:
         fea_conc, lab_conc, end_index_fea, end_index_lab = _concatenate_features_and_labels(fea_chunks, lab_chunks)
+    num_fea = fea_conc.shape[0]
+    num_lab = lab_conc.shape[0]
+
+    # if num_lab > num_fea:
+    #     print("ERROR: too many        l (#lab = {}, #fea = {})".format(num_lab, num_fea))
+    #     lab_con = lab_conc[0:num_fea, :]
+    # elif num_fea > num_lab:
+    #     print("ERROR: too many feats (#fea = {}, #lab = {}, diff = {}".format(num_fea, num_lab, num_fea - num_lab))
+    # print(lab_conc.shape)
 
     return [chunk_names, fea_conc, lab_conc, np.asarray(end_index_fea), np.asarray(end_index_lab)]
 
