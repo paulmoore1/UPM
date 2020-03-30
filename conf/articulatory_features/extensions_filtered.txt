@@ -1,0 +1,10 @@
+: long
+_< implosive
+_> ejective
+_~ nasal
+_h aspirated
+_w labial
+_j palatal
+_t breathy-voice
+_^ non-syllabic
+_d dental coronal

@@ -8,3 +8,4 @@ pytorch-kaldi/cfg/DIRHA_baselines/*
 pytorch-kaldi/cfg/Librispeech_baselines/*
 pytorch-kaldi/cfg/TIMIT_baselines/*
 pytorch-kaldi/kaldi_decoding_scripts/*
+pytorch-kaldi/.ipynb_checkpoints/*

@@ -19,6 +19,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 import math
+import pickle
 from shutil import copyfile
 
 rows_skipped = 0
@@ -2509,6 +2510,56 @@ def forward_model(
                 outs_dict[out_name] = err
                 # print(err)
 
+        if operation == "pred_from_att":
+            # Only compute labels if forwarding the outputs after training
+            # Otherwise return None (it'd be expensive/pointless while training)
+            if to_do =="forward":
+                feat_idx_dict, vp, cp, vp_idx, cp_idx = load_prediction_variables()
+
+                # split into silence, vowels and consonants
+                vowel_idx = feat_idx_dict["vowel"]
+                consonant_idx = feat_idx_dict["consonant"]
+                vowels = out[:, vowel_idx]
+                consonants = out[:, consonant_idx]
+                sums = vowels + consonants
+                # There is roughly a 50% chance this phone is non-silence.
+                sum_bools = sums > 0.5
+                # Take max of vowel vs. consonant
+                vowel_bools = vowels > consonants
+                consonant_bools = ~vowel_bools
+
+                vowel_idx = sum_bools & vowel_bools 
+                consonant_idx = sum_bools & consonant_bools
+                silence_idx = ~sum_bools
+
+                vowels = out[vowel_idx]
+                consonants = out[consonant_idx]
+
+                # take the slice from [1:] (all the atts idx)
+                # sum the value of these attributes. 
+                # divide by the number of attributes to normalise
+                v_scores = [vowels[:,slice_idx[1:]].sum(dim=1)/(len(slice_idx)-1) for slice_idx in vp]
+                # Stack to shape [29, N], where each 29 is the score for each vowel
+                v_scores = torch.stack(v_scores, dim=0) 
+                # Get max phone idx, and convert this to the corresponding phone
+                v_out = vp_idx[v_scores.argmax(dim=0)] 
+
+                c_scores = [consonants[:,slice_idx[1:]].sum(dim=1)/(len(slice_idx)-1) for slice_idx in cp]
+                # Stack to shape [86, N] where each 86 is the score for each consonant
+                c_scores = torch.stack(c_scores, dim=0)
+                c_out = cp_idx[c_scores.argmax(dim=0)]
+                
+                # Fill final output
+                final_out = torch.zeros(out.size()[0]).cuda()
+                final_out.masked_scatter_(consonant_idx, c_out.cuda().float())
+                final_out.masked_scatter_(vowel_idx, v_out.cuda().float())
+                final_out.masked_fill_(silence_idx, 1)
+                final_out = final_out.int()
+
+                outs_dict[out_name] = final_out
+            else:
+                outs_dict[out_name] = None
+
         if operation == "concatenate":
             dim_conc = len(outs_dict[inp1].shape) - 1
             outs_dict[out_name] = torch.cat((outs_dict[inp1], outs_dict[inp2]), dim_conc)  # check concat axis
@@ -2546,6 +2597,155 @@ def forward_model(
                 break
 
     return outs_dict
+
+
+def setup_prediction_variables(exp_phones_filepath, conf_dir, save_dir=None):
+    # universal_phones = file with every possible phone and their attributes
+    # exp_phones = path to phones.txt mapping the experiment phones to integers
+    # feats = path to filepath with articulatory feature vectors for each phone
+    def _get_phone_idx_dict(phones_txt_filepath):
+        with open(phones_txt_filepath, "r") as f:
+            phone_to_idx_dict = {}
+            for line in f:
+                entry = line.split()
+                phone = entry[0]
+                idx = int(entry[1])
+                phone_to_idx_dict[phone] = idx
+        return phone_to_idx_dict
+
+    def _get_feat_idx(feats_filepath):
+        with open(feats_filepath, "r") as f:
+            header = f.readline()
+        features = header.split()[1:]
+        feat_idx_dict = {}
+        for idx, feat in enumerate(features):
+            feat_idx_dict[feat] = idx
+        return feat_idx_dict
+
+    def _filter_valid_extensions(extensions_filepath, phones_idx_dict, feat_idx_dict):
+        vowel_extensions = []
+        consonant_extensions = []
+        with open(extensions_filepath, "r") as f:
+            lines = f.read().splitlines()
+            
+        for line in lines:
+            is_valid = False
+            entry = line.split()
+            extension = entry[0]
+            # Check if extension occurs in any of the phones
+            for phone in phones_idx_dict:
+                if extension in phone:
+                    is_valid = True
+            
+            if is_valid:
+                extension_atts = [feat_idx_dict[x] for x in entry[1:]]
+                # This extension seems to only apply to vowels; the rest to consonants
+                if extension in [":"]: 
+                    vowel_extensions.append([extension] + extension_atts)
+                else:
+                    consonant_extensions.append([extension] + extension_atts)
+        return vowel_extensions, consonant_extensions
+
+    def _get_phones(phones_filepath, feat_idx_dict, phone_to_idx_dict, ve, ce):
+        with open(phones_filepath, "r") as f:
+            lines = f.read().splitlines()
+        vowel_phones = []
+        consonant_phones = []
+        vowel_idx = feat_idx_dict["vowel"]
+        consonant_idx = feat_idx_dict["consonant"]  
+        
+        for line in lines:
+            # Entry = ["a", "front", "close", etc.]
+            curr_phone = line.split()
+            is_vowel = False
+            # Convert attributes to their indices for speed
+            for idx, att in enumerate(curr_phone):
+                if att == "vowel":
+                    remove_idx = idx
+                    is_vowel = True
+                elif att == "consonant":
+                    remove_idx = idx
+                    
+                if att in feat_idx_dict:
+                    curr_phone[idx] = feat_idx_dict[att]
+            if is_vowel:
+                vowel_phones = _add_extensions(ve, vowel_phones, curr_phone, phone_to_idx_dict, vowel_idx)
+            else:
+                consonant_phones = _add_extensions(ce, consonant_phones, curr_phone, phone_to_idx_dict, consonant_idx)
+
+            # curr_phone[0] is the phone e.g. "a"
+            phone = curr_phone[0]
+
+            # Special case for J\: (rare incidence of consonant + long in Turkish)
+            if phone == "J\\" and "J\\:" in phone_to_idx_dict:
+                long_idx = feat_idx_dict["long"]
+                extra_phone_idx = phone_to_idx_dict["J\\:"]
+                extra_feat = [extra_phone_idx] + curr_phone[1:] + [long_idx]
+                extra_feat.remove(consonant_idx)
+                consonant_phones.append(extra_feat)
+
+            if phone in phone_to_idx_dict:
+                curr_phone[0] = phone_to_idx_dict[phone]
+            else:
+                # Set unknown phones to <eps> ?
+                curr_phone[0] = 0
+            del curr_phone[remove_idx]
+            if is_vowel:
+                vowel_phones.append(curr_phone)
+            else:
+                consonant_phones.append(curr_phone)
+
+        return vowel_phones, consonant_phones
+
+    def _save_variables(feat_idx_dict, vp, cp, vp_idx, cp_idx, save_dir=None):
+        if save_dir is None:
+            save_dir = os.getcwd()
+        save_path = os.path.join(save_dir, "feat_vars.pkl")
+        with open(save_path, 'wb') as f:
+            pickle.dump([feat_idx_dict, vp, cp, vp_idx, cp_idx], f)
+
+    def _get_first_idx(phones):
+        phone_idx = [x[0] for x in phones]
+        return torch.from_numpy(np.asarray(phone_idx))
+
+    def _add_extensions(extensions, phones, curr_phone, phone_to_idx_dict, remove_val):
+        # Each extension is of the format [":", 3, 2]
+        for extension in extensions:
+            # Only add new attributes
+            atts_to_add = [x for x in extension[1:] if x not in curr_phone[1:]]
+            if len(atts_to_add) > 0:
+                ext_phone = curr_phone[0] + extension[0]
+                if ext_phone in phone_to_idx_dict:
+                    ext_phone_idx = phone_to_idx_dict[ext_phone]
+                else:
+                    ext_phone_idx = 0
+                ext_feat = [ext_phone_idx] + curr_phone[1:] + atts_to_add
+                ext_feat.remove(remove_val)
+                phones.append(ext_feat)
+        return phones
+
+    feats_filepath = os.path.join(conf_dir, "articulatory_features", "feature_vectors.txt")
+    universal_phones_filepath = os.path.join(conf_dir, "articulatory_features", "phone_attributes_filtered.txt")
+    extensions_filepath = os.path.join(conf_dir, "articulatory_features", "extensions_filtered.txt")
+    phone_idx_dict = _get_phone_idx_dict(exp_phones_filepath)
+    feat_idx_dict = _get_feat_idx(feats_filepath)
+    ve, ce = _filter_valid_extensions(extensions_filepath, phone_idx_dict, feat_idx_dict)
+
+    vp, cp = _get_phones(universal_phones_filepath, feat_idx_dict, phone_idx_dict, ve, ce)
+
+    cp_idx = _get_first_idx(cp)
+    vp_idx = _get_first_idx(vp)
+
+    _save_variables(feat_idx_dict, vp, cp, vp_idx, cp_idx, save_dir=save_dir)
+
+
+def load_prediction_variables(load_dir=None):
+    if load_dir is None:
+        load_dir = os.getcwd()
+    load_path = os.path.join(load_dir, "feat_vars.pkl")
+    with open(load_path, 'rb') as f:
+        feat_idx_dict, vp, cp, vp_idx, cp_idx = pickle.load(f)
+    return feat_idx_dict, vp, cp, vp_idx, cp_idx
 
 
 def dump_epoch_results(res_file_path, ep, tr_data_lst, tr_loss_tot, tr_error_tot, tot_time, 
