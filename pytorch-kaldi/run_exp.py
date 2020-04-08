@@ -31,6 +31,7 @@ from utils import (
     get_val_info_file_path,
     get_val_cfg_file_path,
     get_chunks_after_which_to_validate,
+    setup_prediction_variables
 )
 from data_io import read_lab_fea_refac01 as read_lab_fea
 from shutil import copyfile
@@ -182,9 +183,8 @@ cfg_file_list = [line.rstrip("\n") for line in open(out_folder + "/exp_files/lis
 cfg_file_list.append(cfg_file_list[-1])
 # articulatory_feats = True
 # articulatory_feat_dim = 51
-articulatory_feats = config["exp"]["use_articulatory_feats"] == "True"
+articulatory_feats = strtobool(config["exp"]["use_articulatory_feats"])
 articulatory_feat_dim = int(config["exp"]["articulatory_feat_dim"])
-
 
 # A variable that tells if the current chunk is the first one that is being processed:
 processed_first = True
@@ -429,6 +429,14 @@ for pt_arch in pt_files.keys():
 
 
 # --------FORWARD--------#
+# If using articulatory features, setup variables for use in prediction
+if articulatory_feats:
+    exp_phones_filepath = os.path.join(config["dataset1"]["lab"]["lab_folder"], "phones.txt")
+    # TODO fix properly - hacky solution for now
+    conf_dir = os.path.join(os.path.expanduser("~"), "UPM", "conf")
+    setup_prediction_variables(exp_phones_filepath, conf_dir)
+
+
 for forward_data in forward_data_lst:
 
     # Compute the number of chunks
