@@ -2646,7 +2646,8 @@ def setup_prediction_variables(exp_phones_filepath, conf_dir, save_dir=None):
                     consonant_extensions.append([extension] + extension_atts)
         return vowel_extensions, consonant_extensions
 
-    def _get_phones(phones_filepath, feat_idx_dict, phone_to_idx_dict, ve, ce):
+    def _get_phones(phones_filepath, feat_idx_dict, phone_to_idx_dict, ve, ce, include_extensions=True):
+        # ve, ce are vowel and consonant extensions to add
         with open(phones_filepath, "r") as f:
             lines = f.read().splitlines()
         vowel_phones = []
@@ -2658,7 +2659,7 @@ def setup_prediction_variables(exp_phones_filepath, conf_dir, save_dir=None):
             # Entry = ["a", "front", "close", etc.]
             curr_phone = line.split()
             is_vowel = False
-            # Convert attributes to their indices for speed
+            # Convert to indices for speed
             for idx, att in enumerate(curr_phone):
                 if att == "vowel":
                     remove_idx = idx
@@ -2668,14 +2669,14 @@ def setup_prediction_variables(exp_phones_filepath, conf_dir, save_dir=None):
                     
                 if att in feat_idx_dict:
                     curr_phone[idx] = feat_idx_dict[att]
-            if is_vowel:
+                    
+            if is_vowel and include_extensions:
                 vowel_phones = _add_extensions(ve, vowel_phones, curr_phone, phone_to_idx_dict, vowel_idx)
-            else:
+            elif include_extensions:
                 consonant_phones = _add_extensions(ce, consonant_phones, curr_phone, phone_to_idx_dict, consonant_idx)
-
+    
             # curr_phone[0] is the phone e.g. "a"
             phone = curr_phone[0]
-
             # Special case for J\: (rare incidence of consonant + long in Turkish)
             if phone == "J\\" and "J\\:" in phone_to_idx_dict:
                 long_idx = feat_idx_dict["long"]
@@ -2683,7 +2684,7 @@ def setup_prediction_variables(exp_phones_filepath, conf_dir, save_dir=None):
                 extra_feat = [extra_phone_idx] + curr_phone[1:] + [long_idx]
                 extra_feat.remove(consonant_idx)
                 consonant_phones.append(extra_feat)
-
+                
             if phone in phone_to_idx_dict:
                 curr_phone[0] = phone_to_idx_dict[phone]
             else:
@@ -2697,10 +2698,13 @@ def setup_prediction_variables(exp_phones_filepath, conf_dir, save_dir=None):
 
         return vowel_phones, consonant_phones
 
-    def _save_variables(feat_idx_dict, vp, cp, vp_idx, cp_idx, save_dir=None):
+    def _save_variables(feat_idx_dict, vp, cp, vp_idx, cp_idx, filename=None, save_dir=None):
         if save_dir is None:
             save_dir = os.getcwd()
-        save_path = os.path.join(save_dir, "feat_vars.pkl")
+        if filename is None:
+            save_path = os.path.join(save_dir, "feat_vars.pkl")
+        else:
+            save_path = os.path.join(save_dir, filename + ".pkl")
         with open(save_path, 'wb') as f:
             pickle.dump([feat_idx_dict, vp, cp, vp_idx, cp_idx], f)
 
@@ -2739,10 +2743,13 @@ def setup_prediction_variables(exp_phones_filepath, conf_dir, save_dir=None):
     _save_variables(feat_idx_dict, vp, cp, vp_idx, cp_idx, save_dir=save_dir)
 
 
-def load_prediction_variables(load_dir=None):
+def load_prediction_variables(filename=None, load_dir=None):
     if load_dir is None:
         load_dir = os.getcwd()
-    load_path = os.path.join(load_dir, "feat_vars.pkl")
+    if filename is None:
+        load_path = os.path.join(load_dir, "feat_vars.pkl")
+    else:
+        load_path = os.path.join(load_dir, filename + ".pkl")
     with open(load_path, 'rb') as f:
         feat_idx_dict, vp, cp, vp_idx, cp_idx = pickle.load(f)
     return feat_idx_dict, vp, cp, vp_idx, cp_idx
