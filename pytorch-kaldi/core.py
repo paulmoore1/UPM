@@ -556,9 +556,8 @@ def run_nn(
 
         # Use best model trained when testing
         if to_do == "forward":
-            print("Doing regex")
-            p = re.compile(r'.*(train.*)_architecture\d.pkl')
-            m = p.match(pt_file_arch)
+            pattern = re.compile(r'.*(exp_files.*)_architecture\d.pkl')
+            m = pattern.match(pt_file_arch)
             if m:
                 replacement = m.group(1)
                 pt_file_arch = pt_file_arch.replace(replacement, "model/best")

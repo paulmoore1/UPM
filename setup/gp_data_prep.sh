@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 expname="exp_test"
 langs=""
 feattype="mfcc"
