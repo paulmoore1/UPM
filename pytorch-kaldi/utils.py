@@ -2554,7 +2554,9 @@ def forward_model(
                 final_out.masked_scatter_(consonant_idx, c_out.cuda().float())
                 final_out.masked_scatter_(vowel_idx, v_out.cuda().float())
                 final_out.masked_fill_(silence_idx, 1)
-                final_out = final_out.int()
+
+                print(final_out.size())
+                print(final_out[0:100])
 
                 outs_dict[out_name] = final_out
             else:
@@ -2705,6 +2707,7 @@ def setup_prediction_variables(exp_phones_filepath, conf_dir, save_dir=None):
             save_path = os.path.join(save_dir, "feat_vars.pkl")
         else:
             save_path = os.path.join(save_dir, filename + ".pkl")
+        print("Saving in {}".format(save_path))
         with open(save_path, 'wb') as f:
             pickle.dump([feat_idx_dict, vp, cp, vp_idx, cp_idx], f)
 
@@ -2739,7 +2742,7 @@ def setup_prediction_variables(exp_phones_filepath, conf_dir, save_dir=None):
 
     cp_idx = _get_first_idx(cp)
     vp_idx = _get_first_idx(vp)
-
+    print("Prediction variables set up successuflly!")
     _save_variables(feat_idx_dict, vp, cp, vp_idx, cp_idx, save_dir=save_dir)
 
 

@@ -228,7 +228,7 @@ def load_dataset(fea_scp, fea_opts, lab_folder, lab_opts, left, right, max_seque
         # If there is, print a warning
         if test_fea_len != test_lab_len:
             lab_conc = np.asarray(lab_conc)
-            print("WARNING: features and label lengths do not match correctly")
+            #print("WARNING: features and label lengths do not match correctly")
             for idx, sent in enumerate(fea_conc):
                 fea_length = len(sent)
                 lab_length = len(lab_conc[idx])

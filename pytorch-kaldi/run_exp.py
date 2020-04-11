@@ -132,12 +132,13 @@ run_nn_script = config["exp"]["run_nn_script"].split(".py")[0]
 module = importlib.import_module("core")
 run_nn = getattr(module, run_nn_script)
 
-
 # Splitting data into chunks (see out_folder/additional_files)
-create_lists(config)
+if not glob.glob(os.path.join(out_folder, "exp_files", "*.lst")):
+    create_lists(config)
 
 # Writing the config files
-create_configs(config)
+if not glob.glob(os.path.join(out_folder, "exp_files", "*.cfg")):
+    create_configs(config)
 
 print("- Chunk creation......OK!\n")
 
@@ -165,9 +166,18 @@ for arch in arch_lst:
     halving_factor[arch] = float(config[arch]["arch_halving_factor"])
     pt_files[arch] = config[arch]["arch_pretrain_file"]
 
+if "skip_training" in config["exp"]:
+    skip_training = strtobool(config["exp"]["skip_training"])
+    if skip_training:
+        print("Skipping training")
+    else:
+        print("Training model")
+else:
+    skip_training = False
+
 
 # If production, skip training and forward directly from best saved models
-if is_production:
+if is_production or skip_training:
     ep = N_ep - 1
     N_ep = 0
     model_files = {}
@@ -431,12 +441,16 @@ for pt_arch in pt_files.keys():
 # --------FORWARD--------#
 # If using articulatory features, setup variables for use in prediction
 if articulatory_feats:
-    exp_phones_filepath = os.path.join(config["dataset1"]["lab"]["lab_folder"], "phones.txt")
+    pattern = 'lab_folder=(.*)\n?'
+    lab_info = config["dataset3"]["lab"]
+    lab_folder = re.findall(pattern, lab_info)[0]
+
+    exp_phones_filepath = os.path.join(lab_folder, "phones.txt")
     # TODO fix properly - hacky solution for now
     conf_dir = os.path.join(os.path.expanduser("~"), "UPM", "conf")
     setup_prediction_variables(exp_phones_filepath, conf_dir)
 
-
+print("Forwarding data")
 for forward_data in forward_data_lst:
 
     # Compute the number of chunks
@@ -556,6 +570,8 @@ for forward_data in forward_data_lst:
                 )
                 sys.exit(0)
 
+# print("Stopping before decoding")
+# sys.exit(1)
 
 # --------DECODING--------#
 dec_lst = glob.glob(out_folder + "/exp_files/*_to_decode.ark")
@@ -634,10 +650,10 @@ for data in forward_data_lst:
                 run_shell(cmd_decode, log_file)
 
                 # remove ark files if needed
-                if not forward_save_files[k]:
-                    list_rem = glob.glob(files_dec)
-                    for rem_ark in list_rem:
-                        os.remove(rem_ark)
+                # if not forward_save_files[k]:
+                #     list_rem = glob.glob(files_dec)
+                #     for rem_ark in list_rem:
+                #         os.remove(rem_ark)
 
             # Print WER results and write info file
             cmd_res = "./check_res_dec.sh " + out_dec_folder
