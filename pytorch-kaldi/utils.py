@@ -2514,51 +2514,11 @@ def forward_model(
             # Only compute labels if forwarding the outputs after training
             # Otherwise return None (it'd be expensive/pointless while training)
             if to_do =="forward":
-                feat_idx_dict, vp, cp, vp_idx, cp_idx = load_prediction_variables()
+                feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx = load_prediction_variables()
 
-                # split into silence, vowels and consonants
-                vowel_idx = feat_idx_dict["vowel"]
-                consonant_idx = feat_idx_dict["consonant"]
-                vowels = out[:, vowel_idx]
-                consonants = out[:, consonant_idx]
-                sums = vowels + consonants
-                # There is roughly a 50% chance this phone is non-silence.
-                sum_bools = sums > 0.5
-                # Take max of vowel vs. consonant
-                vowel_bools = vowels > consonants
-                consonant_bools = ~vowel_bools
+                all_scores = convert_to_scores(out, feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx)
 
-                vowel_idx = sum_bools & vowel_bools 
-                consonant_idx = sum_bools & consonant_bools
-                silence_idx = ~sum_bools
-
-                vowels = out[vowel_idx]
-                consonants = out[consonant_idx]
-
-                # take the slice from [1:] (all the atts idx)
-                # sum the value of these attributes. 
-                # divide by the number of attributes to normalise
-                v_scores = [vowels[:,slice_idx[1:]].sum(dim=1)/(len(slice_idx)-1) for slice_idx in vp]
-                # Stack to shape [29, N], where each 29 is the score for each vowel
-                v_scores = torch.stack(v_scores, dim=0) 
-                # Get max phone idx, and convert this to the corresponding phone
-                v_out = vp_idx[v_scores.argmax(dim=0)] 
-
-                c_scores = [consonants[:,slice_idx[1:]].sum(dim=1)/(len(slice_idx)-1) for slice_idx in cp]
-                # Stack to shape [86, N] where each 86 is the score for each consonant
-                c_scores = torch.stack(c_scores, dim=0)
-                c_out = cp_idx[c_scores.argmax(dim=0)]
-                
-                # Fill final output
-                final_out = torch.zeros(out.size()[0]).cuda()
-                final_out.masked_scatter_(consonant_idx, c_out.cuda().float())
-                final_out.masked_scatter_(vowel_idx, v_out.cuda().float())
-                final_out.masked_fill_(silence_idx, 1)
-
-                print(final_out.size())
-                print(final_out[0:100])
-
-                outs_dict[out_name] = final_out
+                outs_dict[out_name] = all_scores
             else:
                 outs_dict[out_name] = None
 
@@ -2700,7 +2660,7 @@ def setup_prediction_variables(exp_phones_filepath, conf_dir, save_dir=None):
 
         return vowel_phones, consonant_phones
 
-    def _save_variables(feat_idx_dict, vp, cp, vp_idx, cp_idx, filename=None, save_dir=None):
+    def _save_variables(feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx, filename=None, save_dir=None):
         if save_dir is None:
             save_dir = os.getcwd()
         if filename is None:
@@ -2742,8 +2702,8 @@ def setup_prediction_variables(exp_phones_filepath, conf_dir, save_dir=None):
 
     cp_idx = _get_first_idx(cp)
     vp_idx = _get_first_idx(vp)
-    print("Prediction variables set up successuflly!")
-    _save_variables(feat_idx_dict, vp, cp, vp_idx, cp_idx, save_dir=save_dir)
+
+    _save_variables(feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx, save_dir=save_dir)
 
 
 def load_prediction_variables(filename=None, load_dir=None):
@@ -2754,8 +2714,84 @@ def load_prediction_variables(filename=None, load_dir=None):
     else:
         load_path = os.path.join(load_dir, filename + ".pkl")
     with open(load_path, 'rb') as f:
-        feat_idx_dict, vp, cp, vp_idx, cp_idx = pickle.load(f)
-    return feat_idx_dict, vp, cp, vp_idx, cp_idx
+        feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx = pickle.load(f)
+    return feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx
+
+
+def convert_to_scores(out, feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx):
+
+    # Takes max value for the zero (unknown) phone
+    def _reduce_zeros(scores, idx):
+        zero_idx = idx == 0
+        zero_count = zero_idx.sum()
+        
+        zero = torch.zeros(1)
+        
+        # Only keep highest zero-score
+        max_zero_score = scores[zero_idx].max(axis=0)[0]
+        # Add 1-dim for concatenation
+        max_zero_score.unsqueeze_(0)
+
+        # filter out the original zero rows
+        scores_out = torch.cat((max_zero_score, scores[~zero_idx,:]), 0).cuda()
+        idx_out = torch.cat((zero, idx[~zero_idx].float())).cuda()
+        
+        # idx_out is now [0, x, y, ...]
+        # scores_out is now [zero_scores, x_scores, y_scores, ...]
+        # zero_scores is the mean zero (unknown) score
+        return scores_out, idx_out
+
+    def _get_all_phone_scores(out, phones, phone_idx, total_seen_phones):
+        # take the slice from [1:] (all the atts idx)
+        # sum the value of these attributes. 
+        # divide by the number of attributes to normalise
+        scores = [out[:,slice_idx[1:]].sum(dim=1)/(len(slice_idx)-1) for slice_idx in phones]
+        # Stack to shape [# vowel phones, N]
+        scores = torch.stack(scores, dim=0)
+        n = scores.shape[1]
+        
+        scores, phone_idx = _reduce_zeros(scores, phone_idx)
+        
+        combined_scores = torch.zeros((n, total_seen_phones))
+        for idx, col_idx in enumerate(phone_idx.long()):
+            combined_scores[:,col_idx] = scores[idx,:]
+            
+        return combined_scores.cuda()
+
+    # split into silence, vowels and consonants
+    vowel_idx = feat_idx_dict["vowel"]
+    consonant_idx = feat_idx_dict["consonant"]
+    vowels = out[:, vowel_idx]
+    consonants = out[:, consonant_idx]
+    sums = vowels + consonants
+    # There is roughly a 50% chance this phone is non-silence.
+    sum_bools = sums > 0.5
+    # Take max of vowel vs. consonant
+    vowel_bools = vowels > consonants
+    consonant_bools = ~vowel_bools
+    
+    vowel_idx = sum_bools & vowel_bools 
+    consonant_idx = sum_bools & consonant_bools
+    silence_idx = ~sum_bools
+
+    vowels = out[vowel_idx]
+    consonants = out[consonant_idx]
+    
+    n_phones = len(phone_idx_dict)
+    
+    # Output is N x #phones
+    out_scores = torch.zeros((out.size()[0], n_phones))
+    
+    combined_v_scores = _get_all_phone_scores(vowels, vp, vp_idx, n_phones)
+    combined_c_scores = _get_all_phone_scores(consonants, cp, cp_idx, n_phones)
+
+    # Fill final output
+    final_out = torch.zeros((out.size()[0], n_phones)).cuda()
+    final_out[consonant_idx,:] =  combined_c_scores
+    final_out[vowel_idx,:] = combined_v_scores
+    final_out[silence_idx,1] = 1 - sums[silence_idx]  # Fill the silent indices with the probability they were silence
+    
+    return final_out
 
 
 def dump_epoch_results(res_file_path, ep, tr_data_lst, tr_loss_tot, tr_error_tot, tot_time, 
