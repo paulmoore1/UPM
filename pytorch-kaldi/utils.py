@@ -2514,6 +2514,22 @@ def forward_model(
             # Only compute labels if forwarding the outputs after training
             # Otherwise return None (it'd be expensive/pointless while training)
             if to_do =="forward":
+                
+                if len(inp.shape) == 3:
+                    lab_dnn = inp[:, :, lab_dict[inp2][3]:]
+                if len(inp.shape) == 2:
+                    lab_dnn = inp[:, lab_dict[inp2][3]:]
+                size = lab_dnn.size()
+                if len(size) == 3:
+                # Reshape to N x D, convert to float for BCE loss
+                    new_shape = (size[0]*size[1], size[2])
+                    lab_dnn = lab_dnn.view(new_shape).float()
+
+                out = outs_dict[inp1]
+
+                if len(out.shape) == 3:
+                    out = out.view(max_len * batch_size, -1)
+
                 feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx = load_prediction_variables()
 
                 all_scores = convert_to_scores(out, feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx)
@@ -2667,8 +2683,9 @@ def setup_prediction_variables(exp_phones_filepath, conf_dir, save_dir=None):
             save_path = os.path.join(save_dir, "feat_vars.pkl")
         else:
             save_path = os.path.join(save_dir, filename + ".pkl")
+        print("Saving in {}".format(save_path))
         with open(save_path, 'wb') as f:
-            pickle.dump([feat_idx_dict, vp, cp, vp_idx, cp_idx], f)
+            pickle.dump([feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx], f)
 
     def _get_first_idx(phones):
         phone_idx = [x[0] for x in phones]
@@ -2775,19 +2792,21 @@ def convert_to_scores(out, feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx
 
     vowels = out[vowel_idx]
     consonants = out[consonant_idx]
-    
+
     n_phones = len(phone_idx_dict)
     
-    # Output is N x #phones
-    out_scores = torch.zeros((out.size()[0], n_phones))
-    
-    combined_v_scores = _get_all_phone_scores(vowels, vp, vp_idx, n_phones)
-    combined_c_scores = _get_all_phone_scores(consonants, cp, cp_idx, n_phones)
-
-    # Fill final output
+    # Fill final output of N x #phones
     final_out = torch.zeros((out.size()[0], n_phones)).cuda()
-    final_out[consonant_idx,:] =  combined_c_scores
-    final_out[vowel_idx,:] = combined_v_scores
+    
+    # If there is at least one vowel
+    if vowel_idx.sum() > 0:
+        combined_v_scores = _get_all_phone_scores(vowels, vp, vp_idx, n_phones)
+        final_out[vowel_idx,:] = combined_v_scores
+
+    if consonant_idx.sum() > 0:
+        combined_c_scores = _get_all_phone_scores(consonants, cp, cp_idx, n_phones)
+        final_out[consonant_idx,:] =  combined_c_scores
+
     final_out[silence_idx,1] = 1 - sums[silence_idx]  # Fill the silent indices with the probability they were silence
     
     return final_out
