@@ -191,6 +191,7 @@ op_counter = 1  # used to dected the next configuration file from the list_chunk
 # Reading the ordered list of config file to process
 cfg_file_list = [line.rstrip("\n") for line in open(out_folder + "/exp_files/list_chunks.txt")]
 cfg_file_list.append(cfg_file_list[-1])
+
 # articulatory_feats = True
 # articulatory_feat_dim = 51
 articulatory_feats = strtobool(config["exp"]["use_articulatory_feats"])
@@ -450,6 +451,8 @@ if articulatory_feats:
     conf_dir = os.path.join(os.path.expanduser("~"), "UPM", "conf")
     setup_prediction_variables(exp_phones_filepath, conf_dir)
 
+forward_configs = [x for x in cfg_file_list if os.path.basename(x).startswith("forward")]
+
 print("Forwarding data")
 for forward_data in forward_data_lst:
 
@@ -494,10 +497,14 @@ for forward_data in forward_data_lst:
             # Doing forward
 
             # getting the next chunk
-            next_config_file = cfg_file_list[op_counter]
-
+            if skip_training:
+                next_config_file = forward_configs[op_counter]
+            else:
+                next_config_file = cfg_file_list[op_counter]
+            
             # run chunk processing
             if _run_forwarding_in_subprocesses(config):
+
                 shared_list = list()
                 output_folder = config["exp"]["out_folder"]
                 save_gpumem = strtobool(config["exp"]["save_gpumem"])
@@ -505,6 +512,7 @@ for forward_data in forward_data_lst:
                 p = read_next_chunk_into_shared_list_with_subprocess(
                     read_lab_fea, shared_list, config_chunk_file, is_production, output_folder, wait_for_process=True
                 )
+
                 data_name, data_end_index_fea, data_end_index_lab, fea_dict, lab_dict, arch_dict, data_set_dict = extract_data_from_shared_list(
                     shared_list
                 )
@@ -650,10 +658,10 @@ for data in forward_data_lst:
                 run_shell(cmd_decode, log_file)
 
                 # remove ark files if needed
-                # if not forward_save_files[k]:
-                #     list_rem = glob.glob(files_dec)
-                #     for rem_ark in list_rem:
-                #         os.remove(rem_ark)
+                if not forward_save_files[k]:
+                    list_rem = glob.glob(files_dec)
+                    for rem_ark in list_rem:
+                        os.remove(rem_ark)
 
             # Print WER results and write info file
             cmd_res = "./check_res_dec.sh " + out_dec_folder
