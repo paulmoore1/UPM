@@ -303,7 +303,11 @@ def load_dataset(fea_scp, fea_opts, lab_folder, lab_opts, left, right, max_seque
         # i.e. [1 1 1 1 ... 37 12 12 12 32 ....] etc.
         # Is of shape (N,)
         # Convert e.g. [1 2 3] to [[0 1 0], [0 1 1], [1 0 0]]
-        lab_conc = mapping[lab_conc]
+
+        # Append original label to end (for later assessment)
+        lab_mapping = mapping[lab_conc]
+        lab_conc = np.expand_dims(lab_conc, axis=1)
+        lab_conc = np.concatenate((lab_mapping, lab_conc), axis=1)
     else:
         fea_conc, lab_conc, end_index_fea, end_index_lab = _concatenate_features_and_labels(fea_chunks, lab_chunks)
     num_fea = fea_conc.shape[0]
