@@ -28,7 +28,7 @@ cfgname="UPM_RNN_mfcc_art.cfg"
 feattype="mfcc"
 
 #GP_LANGUAGES="BG SA UA SW CR HA PL TU"
-GP_LANGUAGES="BG"
+GP_LANGUAGES="SA SW CR HA PL"
 exp_dir=$EXP_DIR_GLOBAL/$expname
 exp_data_dir=$exp_dir/data
 baseline_dir=$EXP_DIR_GLOBAL/baseline_mfcc
@@ -42,8 +42,8 @@ echo "Pytorch experiment files are ${cfgname}"
 # echo "Finished computing features; comment out these lines in run.sh now"
 # exit 1
 
-# setup/split_langs.sh --exp_dir $exp_dir --langs "$GP_LANGUAGES" --mfccdir $mfccdir
-# exit
+setup/split_langs.sh --exp_dir $exp_dir --langs "$GP_LANGUAGES" --mfccdir $mfccdir
+exit
 
 # setup/gp_data_prep.sh \
 #     --expname $expname \

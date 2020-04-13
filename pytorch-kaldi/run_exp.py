@@ -141,6 +141,12 @@ if "refresh_chunks" in config["exp"]:
 else:
     refresh_chunks = True
 
+# For skipping chunk creation when it's already correct
+if "pred_folder" in config["exp"]:
+    pred_folder = config["exp"]["pred_folder"]
+else:
+    pred_folder = "pred_results"
+
 # Splitting data into chunks (see out_folder/additional_files)
 if refresh_chunks:
 #if not glob.glob(os.path.join(out_folder, "exp_files", "*.lst")):
@@ -616,6 +622,8 @@ if articulatory_feats:
     
     with open(pred_lock_path, "w") as f:
         f.write("Prediction complete")
+    # Stop now before decoding
+    return
 
 # print("Stopping before decoding")
 # sys.exit(1)
