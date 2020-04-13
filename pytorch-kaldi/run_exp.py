@@ -196,6 +196,13 @@ cfg_file_list.append(cfg_file_list[-1])
 # articulatory_feat_dim = 51
 articulatory_feats = strtobool(config["exp"]["use_articulatory_feats"])
 articulatory_feat_dim = int(config["exp"]["articulatory_feat_dim"])
+if "is_universal" in config["exp"]:
+    is_universal = strtobool(config["exp"]["is_universal"])
+else:
+    is_universal = False
+
+# Add 1 (new) since it contains the original phone at the end
+articulatory_feat_dim += 1
 
 # A variable that tells if the current chunk is the first one that is being processed:
 processed_first = True
@@ -449,7 +456,10 @@ if articulatory_feats:
     exp_phones_filepath = os.path.join(lab_folder, "phones.txt")
     # TODO fix properly - hacky solution for now
     conf_dir = os.path.join(os.path.expanduser("~"), "UPM", "conf")
-    setup_prediction_variables(exp_phones_filepath, conf_dir)
+    write_folder = os.path.join(out_folder, "pred_results")
+    if not os.path.exists(write_folder):
+        os.makedirs(write_folder)
+    setup_prediction_variables(exp_phones_filepath, conf_dir,  write_folder, is_universal=is_universal)
 
 forward_configs = [x for x in cfg_file_list if os.path.basename(x).startswith("forward")]
 
