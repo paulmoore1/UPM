@@ -279,7 +279,6 @@ def load_dataset(fea_scp, fea_opts, lab_folder, lab_opts, left, right, max_seque
         return fea, lab
 
     def _read_phone_featmap():
-        # Hard-coding values for now
         mapping = []
         filepath = os.path.join(lab_folder, "phone_featmap.txt")
         with open(filepath, "r") as f:
