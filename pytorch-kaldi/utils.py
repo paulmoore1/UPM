@@ -2523,9 +2523,12 @@ def forward_model(
                     lab_dnn = inp[:, -1]
                 size = lab_dnn.size()
                 if len(size) == 3:
-                # Reshape to N x D, convert to float for BCE loss
+                # Reshape to N, convert to int for comparison
                     new_shape = (size[0]*size[1], size[2])
-                    lab_dnn = lab_dnn.view(new_shape).float()
+                    lab_dnn = lab_dnn.view(new_shape).int()
+                if len(size) == 2:
+                    new_shape = (size[0]*size[1])
+                    lab_dnn = lab_dnn.view(new_shape).int()
 
                 out = outs_dict[inp1]
 
@@ -2533,41 +2536,53 @@ def forward_model(
                     out = out.view(max_len * batch_size, -1)
 
                 feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx, is_universal, out_folder = load_prediction_variables()
+                # Create simple text files so we don't overwrite previous results
+                # Don't overwrite labels
+                lab_lock_path = os.path.join(out_folder, "lab_lock.txt")
+                pred_lock_path = os.path.join(out_folder, "pred_lock.txt")
+                pred_uni_lock_path = os.path.join(out_folder, "pred_uni_lock.txt")
+    
                 pred = convert_to_pred(out, feat_idx_dict, vp, cp, vp_idx, cp_idx)
 
                 if not is_universal:
-                    # We're just evaluating the model based on the target labels
-                    count_path = os.path.join(out_folder, "err_counts.txt")
-                    correct_path = os.path.join(out_folder, "correct_pred.txt")
-                    wrong_path = os.path.join(out_folder, "wrong_pred.txt")
+                    if not os.path.exists(pred_lock_path):
+                        # We're just evaluating the model based on the target labels
+                        count_path = os.path.join(out_folder, "err_counts.txt")
+                        pred_path = os.path.join(out_folder, "pred.txt")
+                        correct_idx = (pred == lab_dnn)
+    
+                        correct_count = int(correct_idx.sum().detach().cpu().numpy())
+                        total_count = pred.shape[0]
 
-                    correct_idx = (pred == lab_dnn)
-                    correct_val = pred[correct_idx]
-                    wrong_val = pred[~correct_idx]
+                        with open(count_path, "a") as f:
+                            f.write("{} {}\n".format(correct_count, total_count))
 
-                    correct_count = correct_idx.sum().detach().cpu().numpy())
-                    total_count = pred.shape[0]
+                        with open(pred_path, "a") as f:
+                            pred_list = list(pred.detach().cpu().numpy())
+                            pred_str = " ".join(str(i) for i in pred_list)
+                            f.write(pred_str + "\n")
+                    else:
+                        print("ERROR: path locked")
+                        break
 
-                    with open(count_path, "a") as f:
-                        f.write("{} {}\n".format(correct_count, total_count))
-
-                    with open(correct_path, "a") as f:
-                        correct_list = list(correct_val.detach().cpu().numpy())
-                        correct_str = " ".join(str(i) for i in correct_list)
-                        f.write(correct_str + "\n")
-
-                    with open(wrong_path, "a") as f:
-                        wrong_list = list(correct_val.detach().cpu().numpy())
-                        wrong_str = " ".join(str(i) for i in wrong_list)
-                        f.write(wrong_str + "\n")
                 else:
-                    # We're using all possible phone values
-                    pred_path = os.path.join(out_folder, "pred.txt")
-                    pred_list = list(pred.detach().cpu().numpy())
-                    # Filter duplicate consecutive entries
-                    pred_list = [x[0] for x in groupby(pred_list)]
-                    pred_str = " ".join(str(i) for i in pred_list)
-                    f.write(pred_str + "\n")
+                    if not os.path.exists(pred_uni_lock_path):
+                        # We're using all possible phone values
+                        pred_path = os.path.join(out_folder, "pred_universal.txt")
+                        pred_list = list(pred.detach().cpu().numpy())
+
+                        with open(pred_path, "a") as f:
+                            # Filter duplicate consecutive entries
+                            #pred_list = [x[0] for x in groupby(pred_list)]
+                            pred_str = " ".join(str(i) for i in pred_list)
+                            f.write(pred_str + "\n")
+
+                if not os.path.exists(lab_lock_path):
+                    lab_path = os.path.join(out_folder, "lab.txt")
+                    with open(lab_path, "a") as f:
+                            lab_list = list(lab_dnn.detach().cpu().numpy())
+                            lab_str = " ".join(str(i) for i in lab_list)
+                            f.write(lab_str + "\n")
 
                 #all_scores = convert_to_scores(out, feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx)
                 # Just doing this dummy output so it doesn't break the matrix saving
@@ -2713,7 +2728,7 @@ def setup_prediction_variables(exp_phones_filepath, conf_dir, out_folder, save_d
 
         return vowel_phones, consonant_phones
 
-    def _save_variables(feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx, filename=None, save_dir=None):
+    def _save_variables(feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx, is_universal, write_folder, filename=None, save_dir=None):
         if save_dir is None:
             save_dir = os.getcwd()
         if filename is None:
@@ -2722,7 +2737,7 @@ def setup_prediction_variables(exp_phones_filepath, conf_dir, out_folder, save_d
             save_path = os.path.join(save_dir, filename + ".pkl")
         print("Saving in {}".format(save_path))
         with open(save_path, 'wb') as f:
-            pickle.dump([feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx], f)
+            pickle.dump([feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx, is_universal, write_folder], f)
 
     def _get_first_idx(phones):
         phone_idx = [x[0] for x in phones]
@@ -2811,7 +2826,7 @@ def load_prediction_variables(filename=None, load_dir=None):
     else:
         load_path = os.path.join(load_dir, filename + ".pkl")
     with open(load_path, 'rb') as f:
-        feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx = pickle.load(f)
+        feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx, is_universal, out_folder = pickle.load(f)
     return feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx, is_universal, out_folder
 
 

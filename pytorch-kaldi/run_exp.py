@@ -92,7 +92,10 @@ else:
 # Output folder creation
 out_folder = config["exp"]["out_folder"]
 if not os.path.exists(out_folder):
+    print("Creating new output folder: {}".format(out_folder))
     os.makedirs(out_folder + "/exp_files")
+else:
+    print("Using old output folder: {}".format(out_folder))
 
 # Log file path
 log_file = config["exp"]["out_folder"] + "/log.log"
@@ -132,20 +135,29 @@ run_nn_script = config["exp"]["run_nn_script"].split(".py")[0]
 module = importlib.import_module("core")
 run_nn = getattr(module, run_nn_script)
 
+# For skipping chunk creation when it's already correct
+if "refresh_chunks" in config["exp"]:
+    refresh_chunks = strtobool(config["exp"]["refresh_chunks"])
+else:
+    refresh_chunks = True
+
 # Splitting data into chunks (see out_folder/additional_files)
-if not glob.glob(os.path.join(out_folder, "exp_files", "*.lst")):
+if refresh_chunks:
+#if not glob.glob(os.path.join(out_folder, "exp_files", "*.lst")):
     create_lists(config)
 
 # Writing the config files
-if not glob.glob(os.path.join(out_folder, "exp_files", "*.cfg")):
+if refresh_chunks:
+#if not glob.glob(os.path.join(out_folder, "exp_files", "*.cfg")):
     create_configs(config)
 
 print("- Chunk creation......OK!\n")
 
 # create res_file
 res_file_path = out_folder + "/res.res"
-res_file = open(res_file_path, "w")
-res_file.close()
+if not os.path.exists(res_file_path):
+    res_file = open(res_file_path, "w")
+    res_file.close()
 
 
 # Learning rates and architecture-specific optimization parameters
@@ -198,6 +210,8 @@ articulatory_feats = strtobool(config["exp"]["use_articulatory_feats"])
 articulatory_feat_dim = int(config["exp"]["articulatory_feat_dim"])
 if "is_universal" in config["exp"]:
     is_universal = strtobool(config["exp"]["is_universal"])
+    if is_universal:
+        print("Predicting from universal_phones.txt")
 else:
     is_universal = False
 
@@ -587,6 +601,21 @@ for forward_data in forward_data_lst:
                     "ERROR: File %s does not exist. Forwarding did not suceed.\nSee %s \n" % (info_file, log_file)
                 )
                 sys.exit(0)
+
+# Lock files so they won't be overwritten
+if articulatory_feats:
+    write_folder = os.path.join(out_folder, "pred_results")
+    lab_lock_path = os.path.join(out_folder, "lab_lock.txt")
+    if is_universal:
+        pred_lock_path = os.path.join(out_folder, "pred_uni_lock.txt")
+    else:
+        pred_lock_path = os.path.join(out_folder, "pred_lock.txt")
+        
+    with open(lab_lock_path, "w") as f:
+        f.write("Labels complete")
+    
+    with open(pred_lock_path, "w") as f:
+        f.write("Prediction complete")
 
 # print("Stopping before decoding")
 # sys.exit(1)

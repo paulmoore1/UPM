@@ -21,9 +21,9 @@ train_nj=8
 decode_nj=8
 
 #expname="sa_only"
-expname="baseline_slavic"
-#expname="all_no_bg"
-cfgname="UPM_RNN_mfcc_slavic_base.cfg"
+#expname="baseline_slavic"
+expname="baseline_mfcc"
+cfgname="UPM_RNN_mfcc_art.cfg"
 #cfgname="UPM_RNN_fbank_base.cfg"
 feattype="mfcc"
 
@@ -71,16 +71,16 @@ echo "Pytorch experiment files are ${cfgname}"
 #     --exp-dir $exp_dir
 
 #Get phone feature maps for each item
-ali_dir=${exp_dir}/tri3_ali
-feat=all
-for x in train val test; do
-  echo "Making phone feature map for ${ali_dir}_${x}"
-  phones=${ali_dir}_${x}/phones.txt
-  python misc/make_phone_feature_map.py \
-    --phones-filepath $phones \
-    --feat $feat \
-    --print-info True
-done
+# ali_dir=${exp_dir}/tri3_ali
+# feat=all
+# for x in train val test; do
+#   echo "Making phone feature map for ${ali_dir}_${x}"
+#   phones=${ali_dir}_${x}/phones.txt
+#   python misc/make_phone_feature_map.py \
+#     --phones-filepath $phones \
+#     --feat $feat \
+#     --print-info True
+# done
 
 # Adapted for hold-one-out
 # tr_ali_dir=${exp_dir}/tri3_ali_train_no_BG
@@ -107,6 +107,8 @@ cd pytorch-kaldi
 python run_exp.py cfg/UPM/$cfgname
 
 cd $root_dir
+
+exit
 
 
 local/score.sh $exp_data_dir/val $exp_data_dir/lang $PWD/pytorch-kaldi/exp/UPM_RNN_mfcc_base_5_layers/decode_UPM_val_out_dnn2
