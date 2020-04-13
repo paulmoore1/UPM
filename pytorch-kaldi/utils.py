@@ -21,6 +21,7 @@ import torch.optim as optim
 import math
 import pickle
 from shutil import copyfile
+from itertools import groupby
 
 rows_skipped = 0
 
@@ -2439,10 +2440,11 @@ def forward_model(
 
         if operation == "cost_ce":
             # Put labels in the right format
+            # (new) remove last label since it's the target phone #
             if len(inp.shape) == 3:
-                lab_dnn = inp[:, :, lab_dict[inp2][3]:]
+                lab_dnn = inp[:, :, lab_dict[inp2][3]:-1]
             if len(inp.shape) == 2:
-                lab_dnn = inp[:, lab_dict[inp2][3]:]
+                lab_dnn = inp[:, lab_dict[inp2][3]:-1]
             size = lab_dnn.size()
             if len(size) == 3:
                 # Reshape to N x D, convert to float for BCE loss
@@ -2514,11 +2516,11 @@ def forward_model(
             # Only compute labels if forwarding the outputs after training
             # Otherwise return None (it'd be expensive/pointless while training)
             if to_do =="forward":
-                
+                # These are the phone idx integers
                 if len(inp.shape) == 3:
-                    lab_dnn = inp[:, :, lab_dict[inp2][3]:]
+                    lab_dnn = inp[:, :, -1]
                 if len(inp.shape) == 2:
-                    lab_dnn = inp[:, lab_dict[inp2][3]:]
+                    lab_dnn = inp[:, -1]
                 size = lab_dnn.size()
                 if len(size) == 3:
                 # Reshape to N x D, convert to float for BCE loss
@@ -2530,11 +2532,46 @@ def forward_model(
                 if len(out.shape) == 3:
                     out = out.view(max_len * batch_size, -1)
 
-                feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx = load_prediction_variables()
+                feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx, is_universal, out_folder = load_prediction_variables()
+                pred = convert_to_pred(out, feat_idx_dict, vp, cp, vp_idx, cp_idx)
 
-                all_scores = convert_to_scores(out, feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx)
+                if not is_universal:
+                    # We're just evaluating the model based on the target labels
+                    count_path = os.path.join(out_folder, "err_counts.txt")
+                    correct_path = os.path.join(out_folder, "correct_pred.txt")
+                    wrong_path = os.path.join(out_folder, "wrong_pred.txt")
 
-                outs_dict[out_name] = all_scores
+                    correct_idx = (pred == lab_dnn)
+                    correct_val = pred[correct_idx]
+                    wrong_val = pred[~correct_idx]
+
+                    correct_count = correct_idx.sum().detach().cpu().numpy())
+                    total_count = pred.shape[0]
+
+                    with open(count_path, "a") as f:
+                        f.write("{} {}\n".format(correct_count, total_count))
+
+                    with open(correct_path, "a") as f:
+                        correct_list = list(correct_val.detach().cpu().numpy())
+                        correct_str = " ".join(str(i) for i in correct_list)
+                        f.write(correct_str + "\n")
+
+                    with open(wrong_path, "a") as f:
+                        wrong_list = list(correct_val.detach().cpu().numpy())
+                        wrong_str = " ".join(str(i) for i in wrong_list)
+                        f.write(wrong_str + "\n")
+                else:
+                    # We're using all possible phone values
+                    pred_path = os.path.join(out_folder, "pred.txt")
+                    pred_list = list(pred.detach().cpu().numpy())
+                    # Filter duplicate consecutive entries
+                    pred_list = [x[0] for x in groupby(pred_list)]
+                    pred_str = " ".join(str(i) for i in pred_list)
+                    f.write(pred_str + "\n")
+
+                #all_scores = convert_to_scores(out, feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx)
+                # Just doing this dummy output so it doesn't break the matrix saving
+                outs_dict[out_name] = torch.zeros((2,2))
             else:
                 outs_dict[out_name] = None
 
@@ -2577,7 +2614,7 @@ def forward_model(
     return outs_dict
 
 
-def setup_prediction_variables(exp_phones_filepath, conf_dir, save_dir=None):
+def setup_prediction_variables(exp_phones_filepath, conf_dir, out_folder, save_dir=None, is_universal=False):
     # universal_phones = file with every possible phone and their attributes
     # exp_phones = path to phones.txt mapping the experiment phones to integers
     # feats = path to filepath with articulatory feature vectors for each phone
@@ -2707,6 +2744,45 @@ def setup_prediction_variables(exp_phones_filepath, conf_dir, save_dir=None):
                 phones.append(ext_feat)
         return phones
 
+
+    def _build_universal_phonemap(phones_filepath, ve, ce, write_filepath=None):
+        with open(phones_filepath, "r") as f:
+            lines = f.read().splitlines()
+        
+        write_lines = ["<eps> 0", "sil 1"]
+        next_num = 2
+        
+        for line in lines:
+            curr_phone = line.split()
+            phone = curr_phone[0]
+            write_lines.append("{} {}".format(phone, next_num))
+            next_num += 1
+            if "vowel" in curr_phone:
+                for ext_list in ve:
+                    ext = ext_list[0]
+                    phone_ext = phone + ext
+                    write_lines.append("{} {}".format(phone_ext, next_num))
+                    next_num += 1
+                    
+            elif "consonant" in curr_phone:
+                for ext_list in ce:
+                    ext = ext_list[0]
+                    phone_ext = phone + ext
+                    write_lines.append("{} {}".format(phone_ext, next_num))
+                    next_num += 1
+                    
+        # Special case of "long" applying to consonant
+        write_lines.append("J\\: {}".format(next_num))
+                    
+        if write_filepath is None:
+            write_filepath = join(os.getcwd(), "universal_phones.txt")
+            
+        with open(write_filepath, "w") as f:
+            print("Writing to {}".format(write_filepath))
+            for line in write_lines:
+                f.write(line + "\n")
+        return write_filepath
+    
     feats_filepath = os.path.join(conf_dir, "articulatory_features", "feature_vectors.txt")
     universal_phones_filepath = os.path.join(conf_dir, "articulatory_features", "phone_attributes_filtered.txt")
     extensions_filepath = os.path.join(conf_dir, "articulatory_features", "extensions_filtered.txt")
@@ -2714,12 +2790,17 @@ def setup_prediction_variables(exp_phones_filepath, conf_dir, save_dir=None):
     feat_idx_dict = _get_feat_idx(feats_filepath)
     ve, ce = _filter_valid_extensions(extensions_filepath, phone_idx_dict, feat_idx_dict)
 
+    if is_universal:
+        # Build universal phones file and change exp_phones_filepath to it.      
+        new_exp_phones_filepath = _build_universal_phonemap(universal_phones_filepath, ve, ce)
+        phone_idx_dict = _get_phone_idx_dict(new_exp_phones_filepath)
+
     vp, cp = _get_phones(universal_phones_filepath, feat_idx_dict, phone_idx_dict, ve, ce)
 
     cp_idx = _get_first_idx(cp)
     vp_idx = _get_first_idx(vp)
 
-    _save_variables(feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx, save_dir=save_dir)
+    _save_variables(feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx, is_universal, out_folder, save_dir=save_dir)
 
 
 def load_prediction_variables(filename=None, load_dir=None):
@@ -2731,7 +2812,7 @@ def load_prediction_variables(filename=None, load_dir=None):
         load_path = os.path.join(load_dir, filename + ".pkl")
     with open(load_path, 'rb') as f:
         feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx = pickle.load(f)
-    return feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx
+    return feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx, is_universal, out_folder
 
 
 def convert_to_scores(out, feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx):
@@ -2808,6 +2889,52 @@ def convert_to_scores(out, feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx
         final_out[consonant_idx,:] =  combined_c_scores
 
     final_out[silence_idx,1] = 1 - sums[silence_idx]  # Fill the silent indices with the probability they were silence
+    
+    return final_out
+
+
+def convert_to_pred(out, feat_idx_dict, vp, cp, vp_idx, cp_idx):
+    # split into silence, vowels and consonants
+    vowel_idx = feat_idx_dict["vowel"]
+    consonant_idx = feat_idx_dict["consonant"]
+    vowels = out[:, vowel_idx]
+    consonants = out[:, consonant_idx]
+    sums = vowels + consonants
+    # There is roughly a 50% chance this phone is non-silence.
+    sum_bools = sums > 0.5
+    # Take max of vowel vs. consonant
+    vowel_bools = vowels > consonants
+    consonant_bools = ~vowel_bools
+    
+    vowel_idx = sum_bools & vowel_bools 
+    consonant_idx = sum_bools & consonant_bools
+    silence_idx = ~sum_bools
+
+    vowels = out[vowel_idx]
+    consonants = out[consonant_idx]
+
+    # Fill final output
+    final_out = torch.zeros(out.size()[0]).cuda()
+    # take the slice from [1:] (all the atts idx)
+    # sum the value of these attributes. 
+    # divide by the number of attributes to normalise
+    if vowel_idx.sum() > 0:
+        v_scores = [vowels[:,slice_idx[1:]].sum(dim=1)/(len(slice_idx)-1) for slice_idx in vp]
+         # Stack to shape [29, N], where each 29 is the score for each vowel
+        v_scores = torch.stack(v_scores, dim=0)
+        # Get max phone idx, and convert this to the corresponding phone
+        v_out = vp_idx[v_scores.argmax(dim=0)] 
+        final_out.masked_scatter_(vowel_idx, v_out.cuda().float())
+
+    if consonant_idx.sum() > 0:
+        c_scores = [consonants[:,slice_idx[1:]].sum(dim=1)/(len(slice_idx)-1) for slice_idx in cp]
+        # Stack to shape [86, N] where each 86 is the score for each consonant
+        c_scores = torch.stack(c_scores, dim=0)
+        c_out = cp_idx[c_scores.argmax(dim=0)]
+        final_out.masked_scatter_(consonant_idx, c_out.cuda().float())
+    
+    final_out.masked_fill_(silence_idx, 1)
+    final_out = final_out.int()
     
     return final_out
 
