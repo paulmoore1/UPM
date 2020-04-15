@@ -22,6 +22,7 @@ import math
 import pickle
 from shutil import copyfile
 from itertools import groupby
+from torch.nn.functional import softmax
 
 rows_skipped = 0
 
@@ -2790,7 +2791,7 @@ def setup_prediction_variables(exp_phones_filepath, conf_dir, out_folder, save_d
         write_lines.append("J\\: {}".format(next_num))
                     
         if write_filepath is None:
-            write_filepath = join(os.getcwd(), "universal_phones.txt")
+            write_filepath = os.path.join(os.getcwd(), "universal_phones.txt")
             
         with open(write_filepath, "w") as f:
             print("Writing to {}".format(write_filepath))
@@ -2799,7 +2800,7 @@ def setup_prediction_variables(exp_phones_filepath, conf_dir, out_folder, save_d
         return write_filepath
     
     feats_filepath = os.path.join(conf_dir, "articulatory_features", "feature_vectors.txt")
-    universal_phones_filepath = os.path.join(conf_dir, "articulatory_features", "phone_attributes_filtered.txt")
+    phone_attributes_filepath = os.path.join(conf_dir, "articulatory_features", "phone_attributes_filtered.txt")
     extensions_filepath = os.path.join(conf_dir, "articulatory_features", "extensions_filtered.txt")
     phone_idx_dict = _get_phone_idx_dict(exp_phones_filepath)
     feat_idx_dict = _get_feat_idx(feats_filepath)
@@ -2807,10 +2808,10 @@ def setup_prediction_variables(exp_phones_filepath, conf_dir, out_folder, save_d
 
     if is_universal:
         # Build universal phones file and change exp_phones_filepath to it.      
-        new_exp_phones_filepath = _build_universal_phonemap(universal_phones_filepath, ve, ce)
+        new_exp_phones_filepath = _build_universal_phonemap(phone_attributes_filepath, ve, ce)
         phone_idx_dict = _get_phone_idx_dict(new_exp_phones_filepath)
 
-    vp, cp = _get_phones(universal_phones_filepath, feat_idx_dict, phone_idx_dict, ve, ce)
+    vp, cp = _get_phones(phone_attributes_filepath, feat_idx_dict, phone_idx_dict, ve, ce)
 
     cp_idx = _get_first_idx(cp)
     vp_idx = _get_first_idx(vp)
@@ -2830,7 +2831,7 @@ def load_prediction_variables(filename=None, load_dir=None):
     return feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx, is_universal, out_folder
 
 
-def convert_to_scores(out, feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx):
+def convert_to_probs(out, feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx):
 
     # Takes max value for the zero (unknown) phone
     def _reduce_zeros(scores, idx):
@@ -2861,8 +2862,8 @@ def convert_to_scores(out, feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx
         # Stack to shape [# vowel phones, N]
         scores = torch.stack(scores, dim=0)
         n = scores.shape[1]
-        
-        scores, phone_idx = _reduce_zeros(scores, phone_idx)
+        if 0 in phone_idx:
+            scores, phone_idx = _reduce_zeros(scores, phone_idx)
         
         combined_scores = torch.zeros((n, total_seen_phones))
         for idx, col_idx in enumerate(phone_idx.long()):
@@ -2894,7 +2895,7 @@ def convert_to_scores(out, feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx
     # Fill final output of N x #phones
     final_out = torch.zeros((out.size()[0], n_phones)).cuda()
     
-    # If there is at least one vowel
+    # only modify outputs if there is at least one in category each time (vowel/consonant/silence)
     if vowel_idx.sum() > 0:
         combined_v_scores = _get_all_phone_scores(vowels, vp, vp_idx, n_phones)
         final_out[vowel_idx,:] = combined_v_scores
@@ -2903,8 +2904,19 @@ def convert_to_scores(out, feat_idx_dict, phone_idx_dict, vp, cp, vp_idx, cp_idx
         combined_c_scores = _get_all_phone_scores(consonants, cp, cp_idx, n_phones)
         final_out[consonant_idx,:] =  combined_c_scores
 
-    final_out[silence_idx,1] = 1 - sums[silence_idx]  # Fill the silent indices with the probability they were silence
+    if silence_idx.sum() > 0:
+        silence_sum = sums[silence_idx]  # Will be values < 0.5
+        silence_prob = 1 - silence_sum # Will be values > 0.5
+        non_silence_probs = silence_sum / (n_phones) # Distribute likelihood of non-silence across attributes 
+        non_silence_probs.unsqueeze_(dim=1)
+        final_out[silence_idx,:] =  non_silence_probs.repeat(1, n_phones)
+        
+        final_out[silence_idx,1] = torch.exp(1 - sums[silence_idx])  # Fill the silent indices with the probability they were silence
+    final_out = final_out.cuda()
     
+    # Set 0 score to -inf so that they are 0 in softmax.
+    final_out[final_out == 0] = -math.inf 
+    final_out = softmax(final_out, dim=1)
     return final_out
 
 
