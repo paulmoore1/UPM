@@ -221,8 +221,9 @@ if "is_universal" in config["exp"]:
 else:
     is_universal = False
 
-# Add 1 (new) since it contains the original phone at the end
-articulatory_feat_dim += 1
+if articulatory_feats:
+    # Add 1 (new) since it contains the original phone at the end
+    articulatory_feat_dim += 1
 
 # A variable that tells if the current chunk is the first one that is being processed:
 processed_first = True
@@ -476,7 +477,7 @@ if articulatory_feats:
     exp_phones_filepath = os.path.join(lab_folder, "phones.txt")
     # TODO fix properly - hacky solution for now
     conf_dir = os.path.join(os.path.expanduser("~"), "UPM", "conf")
-    write_folder = os.path.join(out_folder, "pred_results")
+    write_folder = os.path.join(out_folder, pred_folder)
     if not os.path.exists(write_folder):
         os.makedirs(write_folder)
     setup_prediction_variables(exp_phones_filepath, conf_dir,  write_folder, is_universal=is_universal)
@@ -610,12 +611,12 @@ for forward_data in forward_data_lst:
 
 # Lock files so they won't be overwritten
 if articulatory_feats:
-    write_folder = os.path.join(out_folder, "pred_results")
-    lab_lock_path = os.path.join(out_folder, "lab_lock.txt")
+    write_folder = os.path.join(out_folder, pred_folder)
+    lab_lock_path = os.path.join(write_folder, "lab_lock.txt")
     if is_universal:
-        pred_lock_path = os.path.join(out_folder, "pred_uni_lock.txt")
+        pred_lock_path = os.path.join(write_folder, "pred_uni_lock.txt")
     else:
-        pred_lock_path = os.path.join(out_folder, "pred_lock.txt")
+        pred_lock_path = os.path.join(write_folder, "pred_lock.txt")
         
     with open(lab_lock_path, "w") as f:
         f.write("Labels complete")
@@ -623,7 +624,7 @@ if articulatory_feats:
     with open(pred_lock_path, "w") as f:
         f.write("Prediction complete")
     # Stop now before decoding
-    return
+    sys.exit(0)
 
 # print("Stopping before decoding")
 # sys.exit(1)
