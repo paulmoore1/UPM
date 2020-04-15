@@ -8,7 +8,7 @@
 
 from __future__ import print_function
 
-import os
+import os, shutil
 import sys
 import glob
 import configparser
@@ -471,16 +471,32 @@ for pt_arch in pt_files.keys():
 # If using articulatory features, setup variables for use in prediction
 if articulatory_feats:
     pattern = 'lab_folder=(.*)\n?'
-    lab_info = config["dataset3"]["lab"]
-    lab_folder = re.findall(pattern, lab_info)[0]
 
-    exp_phones_filepath = os.path.join(lab_folder, "phones.txt")
+    lab_train = config["dataset1"]["lab"]
+    lab_train_folder = re.findall(pattern, lab_train)[0]
+
+    lab_test = config["dataset3"]["lab"]
+    lab_test_folder = re.findall(pattern, lab_test)[0]
+
+    train_phones_filepath = os.path.join(lab_train_folder, "phones.txt")
+    test_phones_filepath = os.path.join(lab_test_folder, "phones.txt")
     # TODO fix properly - hacky solution for now
     conf_dir = os.path.join(os.path.expanduser("~"), "UPM", "conf")
     write_folder = os.path.join(out_folder, pred_folder)
     if not os.path.exists(write_folder):
         os.makedirs(write_folder)
-    setup_prediction_variables(exp_phones_filepath, conf_dir,  write_folder, is_universal=is_universal)
+
+    shutil.copy(train_phones_filepath, os.path.join(write_folder, "tr_phones.txt"))
+    shutil.copy(test_phones_filepath, os.path.join(write_folder, "test_phones.txt"))
+
+    setup_prediction_variables(test_phones_filepath, conf_dir,  write_folder, is_universal=is_universal)
+
+    if is_universal:
+        universal_path = os.path.join(os.getcwd(), "universal_phones.txt")
+        if os.path.exists(universal_path):
+            shutil.copy(universal_path, os.path.join(write_folder, "universal_phones.txt"))
+        else:
+            print("ERROR: did not find target file: {}".format(universal_path))
 
 forward_configs = [x for x in cfg_file_list if os.path.basename(x).startswith("forward")]
 
