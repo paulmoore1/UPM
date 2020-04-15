@@ -61,46 +61,46 @@ echo "Pytorch experiment files are ${cfgname}"
 # setup/gp_format_data.sh \
 #     --expname $expname
 
-for lang in "BG" "CR" "PL" "UA"; do
+# for lang in "BG" "CR" "PL" "UA"; do
 
-    expname=${lang}_only
-    exp_dir=$EXP_DIR_GLOBAL/$expname
-    exp_data_dir=$exp_dir/data
+#     expname=${lang}_only
+#     exp_dir=$EXP_DIR_GLOBAL/$expname
+#     exp_data_dir=$exp_dir/data
 
-    ali_dir=${exp_dir}/tri3_ali_test
-    feat=all
-    phones=${ali_dir}/phones.txt
-    python misc/make_phone_feature_map.py \
-    --phones-filepath $phones \
-    --feat $feat \
-    --print-info True
+#     ali_dir=${exp_dir}/tri3_ali_test
+#     feat=all
+#     phones=${ali_dir}/phones.txt
+#     python misc/make_phone_feature_map.py \
+#     --phones-filepath $phones \
+#     --feat $feat \
+#     --print-info True
 
 
-    steps/compute_cmvn_stats.sh $exp_data_dir/test $exp_dir/make_cmvn/$x $mfccdir
+#     steps/compute_cmvn_stats.sh $exp_data_dir/test $exp_dir/make_cmvn/$x $mfccdir
 
-    cfgname="UPM_RNN_mfcc_slavic_art_test.cfg"
+#     cfgname="UPM_RNN_mfcc_slavic_art_test.cfg"
 
-    cfgpath=$UPM_DIR_GLOBAL/pytorch-kaldi/cfg/UPM/$cfgname
+#     cfgpath=$UPM_DIR_GLOBAL/pytorch-kaldi/cfg/UPM/$cfgname
 
-    # Update configuration files 
-    python setup/update_cfg_files.py \
-        --cfg-filepath $cfgpath \
-        --lang $lang
+#     # Update configuration files 
+#     python setup/update_cfg_files.py \
+#         --cfg-filepath $cfgpath \
+#         --lang $lang
     
-    # Drop into pytorch-kaldi and back out to make sure everything works
-    root_dir=$PWD
-    cd pytorch-kaldi
-    python run_exp.py cfg/UPM/$cfgname
-    cd $root_dir
+#     # Drop into pytorch-kaldi and back out to make sure everything works
+#     root_dir=$PWD
+#     cd pytorch-kaldi
+#     python run_exp.py cfg/UPM/$cfgname
+#     cd $root_dir
 
-done
-
-exit
-
-# for x in train val test; do
-#   steps/compute_cmvn_stats.sh $exp_data_dir/$x $exp_dir/make_cmvn/$x $mfccdir
-#   #steps/compute_cmvn_stats.sh $exp_data_dir/$x $exp_dir/make_cmvn/$x $fbankdir
 # done
+
+# exit
+
+for x in train val test; do
+  steps/compute_cmvn_stats.sh $exp_data_dir/$x $exp_dir/make_cmvn/$x $mfccdir
+  #steps/compute_cmvn_stats.sh $exp_data_dir/$x $exp_dir/make_cmvn/$x $fbankdir
+done
 
 # # exit
 # #For removing invalid utterances after aligning
@@ -145,6 +145,10 @@ exit
 
 root_dir=$PWD
 cd pytorch-kaldi
+
+python run_exp.py cfg/UPM/$cfgname
+
+exit
 for x in 3; do
 cfgname="UPM_RNN_mfcc_base_${x}_layers.cfg"
 
