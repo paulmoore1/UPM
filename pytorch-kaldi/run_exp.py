@@ -489,8 +489,8 @@ if articulatory_feats:
     shutil.copy(train_phones_filepath, os.path.join(write_folder, "tr_phones.txt"))
     shutil.copy(test_phones_filepath, os.path.join(write_folder, "test_phones.txt"))
 
-    setup_prediction_variables(test_phones_filepath, conf_dir,  write_folder, is_universal=is_universal)
-
+    setup_prediction_variables(train_phones_filepath, conf_dir,  write_folder, is_universal=is_universal)
+    
     if is_universal:
         universal_path = os.path.join(os.getcwd(), "universal_phones.txt")
         if os.path.exists(universal_path):

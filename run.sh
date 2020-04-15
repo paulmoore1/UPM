@@ -21,19 +21,20 @@ train_nj=8
 decode_nj=8
 
 #expname="sa_only"
-#expname="baseline_slavic"
 expname="baseline_mfcc"
+#expname="baseline_fbank"
 cfgname="UPM_RNN_mfcc_art.cfg"
 #cfgname="UPM_RNN_fbank_base.cfg"
 feattype="mfcc"
 
-#GP_LANGUAGES="BG SA UA SW CR HA PL TU"
-GP_LANGUAGES="SA SW CR HA PL"
+mfccdir=$FEAT_DIR_GLOBAL/mfcc
+fbankdir=$FEAT_DIR_GLOBAL/fbank
+
+#GP_LANGUAGES="BG UA CR PL"
 exp_dir=$EXP_DIR_GLOBAL/$expname
 exp_data_dir=$exp_dir/data
 baseline_dir=$EXP_DIR_GLOBAL/baseline_mfcc
-mfccdir=$FEAT_DIR_GLOBAL/mfcc
-fbankdir=$FEAT_DIR_GLOBAL/fbank
+
 echo "Running experiment ${expname}, storing files in ${exp_dir}"
 echo "Pytorch experiment files are ${cfgname}"
 
@@ -42,8 +43,8 @@ echo "Pytorch experiment files are ${cfgname}"
 # echo "Finished computing features; comment out these lines in run.sh now"
 # exit 1
 
-setup/split_langs.sh --exp_dir $exp_dir --langs "$GP_LANGUAGES" --mfccdir $mfccdir
-exit
+# setup/split_langs.sh --exp_dir $exp_dir --langs "$GP_LANGUAGES" --mfccdir $mfccdir
+# exit
 
 # setup/gp_data_prep.sh \
 #     --expname $expname \
@@ -60,11 +61,47 @@ exit
 # setup/gp_format_data.sh \
 #     --expname $expname
 
+for lang in "BG" "CR" "PL" "UA"; do
+
+    expname=${lang}_only
+    exp_dir=$EXP_DIR_GLOBAL/$expname
+    exp_data_dir=$exp_dir/data
+
+    ali_dir=${exp_dir}/tri3_ali_test
+    feat=all
+    phones=${ali_dir}/phones.txt
+    python misc/make_phone_feature_map.py \
+    --phones-filepath $phones \
+    --feat $feat \
+    --print-info True
+
+
+    steps/compute_cmvn_stats.sh $exp_data_dir/test $exp_dir/make_cmvn/$x $mfccdir
+
+    cfgname="UPM_RNN_mfcc_slavic_art_test.cfg"
+
+    cfgpath=$UPM_DIR_GLOBAL/pytorch-kaldi/cfg/UPM/$cfgname
+
+    # Update configuration files 
+    python setup/update_cfg_files.py \
+        --cfg-filepath $cfgpath \
+        --lang $lang
+    
+    # Drop into pytorch-kaldi and back out to make sure everything works
+    root_dir=$PWD
+    cd pytorch-kaldi
+    python run_exp.py cfg/UPM/$cfgname
+    cd $root_dir
+
+done
+
+exit
+
 # for x in train val test; do
 #   steps/compute_cmvn_stats.sh $exp_data_dir/$x $exp_dir/make_cmvn/$x $mfccdir
 #   #steps/compute_cmvn_stats.sh $exp_data_dir/$x $exp_dir/make_cmvn/$x $fbankdir
 # done
-# #
+
 # # exit
 # #For removing invalid utterances after aligning
 # setup/filter_valid_alignments.sh \
@@ -83,9 +120,9 @@ exit
 # done
 
 # Adapted for hold-one-out
-# tr_ali_dir=${exp_dir}/tri3_ali_train_no_BG
-# val_ali_dir=${exp_dir}/tri3_ali_val_no_BG
-# test_ali_dir=${exp_dir}/tri3_ali_test_BG
+# tr_ali_dir=${exp_dir}/tri3_ali_train_no_HA
+# val_ali_dir=${exp_dir}/tri3_ali_val_no_HA
+# test_ali_dir=${exp_dir}/tri3_ali_test_HA
 
 # feat=all
 # for x in $tr_ali_dir $val_ali_dir $test_ali_dir; do
@@ -97,18 +134,25 @@ exit
 #     --print-info True
 # done
 
-python misc/set_chunks.py \
-  --cfg-filename $cfgname \
-  --exp-data-dir $exp_data_dir
-
+# python misc/set_chunks.py \
+#   --cfg-filename $cfgname \
+#   --exp-data-dir $exp_data_dir
+# root_dir=$PWD
+# cd pytorch-kaldi
+# python run_exp.py cfg/UPM/$cfgname
+# cd $root_dir
+# exit
 
 root_dir=$PWD
 cd pytorch-kaldi
+for x in 3; do
+cfgname="UPM_RNN_mfcc_base_${x}_layers.cfg"
+
 python run_exp.py cfg/UPM/$cfgname
 
-cd $root_dir
+done
 
-exit
+cd $root_dir
 
 
 local/score.sh $exp_data_dir/val $exp_data_dir/lang $PWD/pytorch-kaldi/exp/UPM_RNN_mfcc_base_5_layers/decode_UPM_val_out_dnn2
