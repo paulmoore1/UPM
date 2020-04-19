@@ -1,0 +1,15 @@
+blockdiag {
+0 [label="RNN_layers",shape = box];
+1 [label="mfcc",shape = circle];
+2 [label="MLP_layers",shape = box];
+3 [label="cost_ce",shape = roundedbox];
+4 [label="lab_mono",shape = roundedbox];
+5 [label="pred_from_att",shape = roundedbox];
+6 [label="lab_mono",shape = roundedbox];
+1 -> 0 [label = "mfcc"]
+4 -> 3 [label = "lab_mono"]
+4 -> 5 [label = "lab_mono"]
+0 -> 2 [label = "out_dnn1"]
+2 -> 3 [label = "out_dnn2"]
+2 -> 5 [label = "out_dnn2"]
+}

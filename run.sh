@@ -21,9 +21,9 @@ train_nj=8
 decode_nj=8
 
 #expname="sa_only"
-expname="baseline_mfcc"
+expname="baseline_slavic"
 #expname="baseline_fbank"
-cfgname="UPM_RNN_mfcc_art.cfg"
+cfgname="UPM_RNN_mfcc_slavic_art_no_BG.cfg"
 #cfgname="UPM_RNN_fbank_base.cfg"
 feattype="mfcc"
 
@@ -61,7 +61,7 @@ echo "Pytorch experiment files are ${cfgname}"
 # setup/gp_format_data.sh \
 #     --expname $expname
 
-# for lang in "BG" "CR" "PL" "UA"; do
+# for lang in "BG" "CR" "PL" "UA" "TU" "SA" "SW" "HA"; do
 
 #     expname=${lang}_only
 #     exp_dir=$EXP_DIR_GLOBAL/$expname
@@ -78,7 +78,7 @@ echo "Pytorch experiment files are ${cfgname}"
 
 #     steps/compute_cmvn_stats.sh $exp_data_dir/test $exp_dir/make_cmvn/$x $mfccdir
 
-#     cfgname="UPM_RNN_mfcc_slavic_art_test.cfg"
+#     cfgname="UPM_RNN_mfcc_art_test.cfg"
 
 #     cfgpath=$UPM_DIR_GLOBAL/pytorch-kaldi/cfg/UPM/$cfgname
 
@@ -97,10 +97,10 @@ echo "Pytorch experiment files are ${cfgname}"
 
 # exit
 
-for x in train val test; do
-  steps/compute_cmvn_stats.sh $exp_data_dir/$x $exp_dir/make_cmvn/$x $mfccdir
-  #steps/compute_cmvn_stats.sh $exp_data_dir/$x $exp_dir/make_cmvn/$x $fbankdir
-done
+# for x in train_no_BG val_no_BG test_BG; do
+#   steps/compute_cmvn_stats.sh $exp_data_dir/$x $exp_dir/make_cmvn/$x $mfccdir
+#   #steps/compute_cmvn_stats.sh $exp_data_dir/$x $exp_dir/make_cmvn/$x $fbankdir
+# done
 
 # # exit
 # #For removing invalid utterances after aligning
@@ -119,20 +119,20 @@ done
 #     --print-info True
 # done
 
-# Adapted for hold-one-out
-# tr_ali_dir=${exp_dir}/tri3_ali_train_no_HA
-# val_ali_dir=${exp_dir}/tri3_ali_val_no_HA
-# test_ali_dir=${exp_dir}/tri3_ali_test_HA
+#Adapted for hold-one-out
+tr_ali_dir=${exp_dir}/tri3_ali_train_no_BG
+val_ali_dir=${exp_dir}/tri3_ali_val_no_BG
+test_ali_dir=${exp_dir}/tri3_ali_test_BG
 
-# feat=all
-# for x in $tr_ali_dir $val_ali_dir $test_ali_dir; do
-#   echo "Making phone feature map for ${x}"
-#   phones=${x}/phones.txt
-#   python misc/make_phone_feature_map.py \
-#     --phones-filepath $phones \
-#     --feat $feat \
-#     --print-info True
-# done
+feat=all
+for x in $tr_ali_dir $val_ali_dir $test_ali_dir; do
+  echo "Making phone feature map for ${x}"
+  phones=${x}/phones.txt
+  python misc/make_phone_feature_map.py \
+    --phones-filepath $phones \
+    --feat $feat \
+    --print-info True
+done
 
 # python misc/set_chunks.py \
 #   --cfg-filename $cfgname \
