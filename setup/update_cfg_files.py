@@ -10,15 +10,25 @@ def get_args():
         help="Filepath to target configuration file")
     parser.add_argument('--lang-code', type=str, required=True, 
         help="Language code to update target configuration file with")
-    parser.add_argument('--baseline', type=str2bool, default=False, 
-        help="Whether or not the cfg file is for the baseline experiments")
+    parser.add_argument('--dataset', type=str, choices=["val", "test"], 
+        help="The dataset (val/test) to update in the configuration file")
     return parser.parse_args()
 
+def get_new_lang_string(pattern, line, new_lang, replace_format):
+    m = pattern.match(line)
+    if m is not None:
+        old_lang = m.group(1)
+        old_str = replace_format.format(old_lang)
+        new_str = replace_format.format(new_lang)
+        line = line.replace(old_str, new_str)
+        return line, True
+    else:
+        return line, False
 
 def main():
     args = get_args()
     lang = args.lang_code
-    use_baseline = args.baseline
+    dataset = args.dataset
 
     with open(args.cfg_filepath, "r") as f:
         lines = f.read().splitlines()
@@ -41,13 +51,12 @@ def main():
 
         # Only update lab_files for architecture 3
         if updating_test_lab_files:
-            pattern = re.compile(r'.*\/(.*)_only\/')
-            m = pattern.match(line)
-            if m is not None:
-                old_lang = m.group(1)
-                old_str = "{}_only".format(old_lang)
-                new_str = "{}_only".format(lang)
-                lines[idx] = line.replace(old_str, new_str)
+            pattern_1 = re.compile(r'.*\/(.*)_only\/')
+            lines[idx], updated = get_new_lang_string(pattern_1, line, lang, "{}_only")
+            if not updated:
+                # Try a second patter
+                pattern_2 = re.compile(r'.*test_(.{2})')
+                lines[idx], _ = get_new_lang_string(pattern_2, line, lang, "test_{}")
             # Stop updating at "n_chunks" which is at the end of the test lab files
             if line.startswith("n_chunks"):
                 lines[idx] = "n_chunks = 10"
@@ -55,28 +64,23 @@ def main():
 
         if updating_val_lab_files:
             pattern = re.compile(r'.*val_(.{2})')
-            m = pattern.match(line)
-            if m is not None:
-                old_lang = m.group(1)
-                old_str = "val_{}".format(old_lang)
-                new_str = "val_{}".format(lang)
-                lines[idx] = line.replace(old_str, new_str)
+            lines[idx], updated = get_new_lang_string(pattern, line, lang, "val_{}")
             # Stop updating at "n_chunks" which is at the end of the test lab files
             if line.startswith("n_chunks"):
                 lines[idx] = "n_chunks = 10"
                 updating_val_lab_files = False
         
-        if "dataset3" in line:
+        if "dataset3" in line and dataset == "test":
             updating_test_lab_files = True
+            lines[idx+1] = "data_name = {}_only".format(lang)
 
-        if "dataset2" in line and use_baseline:
+        if "dataset2" in line and dataset == "val":
             updating_val_lab_files = True
             lines[idx+1] = "data_name = {}_only".format(lang)
 
-        if use_baseline:
-            if line.startswith("forward_with"):
-                lines[idx-1] = "valid_with = {}_only".format(lang)
-                lines[idx] = "forward_with = {}_only".format(lang)
+        if line.startswith("forward_with"):
+            lines[idx-1] = "valid_with = {}_only".format(lang)
+            lines[idx] = "forward_with = {}_only".format(lang)
 
     with open(args.cfg_filepath, "w") as f:
         for line in lines:

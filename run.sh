@@ -60,10 +60,10 @@ echo "Pytorch experiment files are ${cfgname}"
 
 # setup/gp_format_data.sh \
 #     --expname $expname
-lang="BG"
-local/score.sh $exp_data_dir/val_${lang} $exp_data_dir/lang $PWD/pytorch-kaldi/exp/UPM_RNN_mfcc_base_5_layers/decode_${lang}_only_out_dnn2
 
-for lang in "CR" "PL" "UA" "TU" "SA" "SW" "HA"; do
+#local/score.sh $exp_data_dir/val_${lang} $exp_data_dir/lang $PWD/pytorch-kaldi/exp/UPM_RNN_mfcc_base_5_layers/decode_${lang}_only_out_dnn2
+
+for lang in "BG" "CR" "UA" "PL"; do
 
     expname=${lang}_only
     exp_dir=$EXP_DIR_GLOBAL/$expname
@@ -78,9 +78,9 @@ for lang in "CR" "PL" "UA" "TU" "SA" "SW" "HA"; do
     --print-info True
 
 
-    steps/compute_cmvn_stats.sh $exp_data_dir/test $exp_dir/make_cmvn/$x $mfccdir
+    #steps/compute_cmvn_stats.sh $exp_data_dir/test $exp_dir/make_cmvn/$x $mfccdir
 
-    cfgname="UPM_RNN_mfcc_base_test_5_layers.cfg"
+    cfgname="UPM_RNN_mfcc_slavic_base_test.cfg"
 
     cfgpath=$UPM_DIR_GLOBAL/pytorch-kaldi/cfg/UPM/$cfgname
 
@@ -88,19 +88,19 @@ for lang in "CR" "PL" "UA" "TU" "SA" "SW" "HA"; do
     python setup/update_cfg_files.py \
         --cfg-filepath $cfgpath \
         --lang $lang \
-        --baseline True
+        --dataset "test"
     
-    # Drop into pytorch-kaldi and back out to make sure everything works
+    #Drop into pytorch-kaldi and back out to make sure everything works
     root_dir=$PWD
     cd pytorch-kaldi
     python run_exp.py cfg/UPM/$cfgname
     cd $root_dir
 
-    expname=baseline_mfcc
+    expname=baseline_slavic
     exp_dir=$EXP_DIR_GLOBAL/$expname
     exp_data_dir=$exp_dir/data
 
-    local/score.sh $exp_data_dir/val_${lang} $exp_data_dir/lang $PWD/pytorch-kaldi/exp/UPM_RNN_mfcc_base_5_layers/decode_${lang}_only_out_dnn2
+    local/score.sh $exp_data_dir/val_${lang} $exp_data_dir/lang $PWD/pytorch-kaldi/exp/UPM_RNN_mfcc_slavic_base/decode_${lang}_only_out_dnn2
 
 done
 
