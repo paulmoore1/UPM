@@ -735,5 +735,5 @@ for data in forward_data_lst:
             print(wers)
 
 # Saving Loss and Err as .txt and plotting curves
-if not is_production:
+if not is_production and not skip_training:
     create_curves(out_folder, N_ep, valid_data_lst)

@@ -1,0 +1,1 @@
+%WER 42.82 [ 44873 / 104784, 1798 ins, 15737 del, 27338 sub ] [PARTIAL] /home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_5_layers/decode_BG_only_out_dnn2/wer_9_0.0

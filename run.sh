@@ -21,9 +21,9 @@ train_nj=8
 decode_nj=8
 
 #expname="sa_only"
-expname="baseline_slavic"
+expname="baseline_mfcc"
 #expname="baseline_fbank"
-cfgname="UPM_RNN_mfcc_slavic_art_no_BG.cfg"
+cfgname="UPM_RNN_mfcc_base_test.cfg"
 #cfgname="UPM_RNN_fbank_base.cfg"
 feattype="mfcc"
 
@@ -60,42 +60,51 @@ echo "Pytorch experiment files are ${cfgname}"
 
 # setup/gp_format_data.sh \
 #     --expname $expname
+lang="BG"
+local/score.sh $exp_data_dir/val_${lang} $exp_data_dir/lang $PWD/pytorch-kaldi/exp/UPM_RNN_mfcc_base_5_layers/decode_${lang}_only_out_dnn2
 
-# for lang in "BG" "CR" "PL" "UA" "TU" "SA" "SW" "HA"; do
+for lang in "CR" "PL" "UA" "TU" "SA" "SW" "HA"; do
 
-#     expname=${lang}_only
-#     exp_dir=$EXP_DIR_GLOBAL/$expname
-#     exp_data_dir=$exp_dir/data
+    expname=${lang}_only
+    exp_dir=$EXP_DIR_GLOBAL/$expname
+    exp_data_dir=$exp_dir/data
 
-#     ali_dir=${exp_dir}/tri3_ali_test
-#     feat=all
-#     phones=${ali_dir}/phones.txt
-#     python misc/make_phone_feature_map.py \
-#     --phones-filepath $phones \
-#     --feat $feat \
-#     --print-info True
+    ali_dir=${exp_dir}/tri3_ali_test
+    feat=all
+    phones=${ali_dir}/phones.txt
+    python misc/make_phone_feature_map.py \
+    --phones-filepath $phones \
+    --feat $feat \
+    --print-info True
 
 
-#     steps/compute_cmvn_stats.sh $exp_data_dir/test $exp_dir/make_cmvn/$x $mfccdir
+    steps/compute_cmvn_stats.sh $exp_data_dir/test $exp_dir/make_cmvn/$x $mfccdir
 
-#     cfgname="UPM_RNN_mfcc_art_test.cfg"
+    cfgname="UPM_RNN_mfcc_base_test_5_layers.cfg"
 
-#     cfgpath=$UPM_DIR_GLOBAL/pytorch-kaldi/cfg/UPM/$cfgname
+    cfgpath=$UPM_DIR_GLOBAL/pytorch-kaldi/cfg/UPM/$cfgname
 
-#     # Update configuration files 
-#     python setup/update_cfg_files.py \
-#         --cfg-filepath $cfgpath \
-#         --lang $lang
+    # Update configuration files 
+    python setup/update_cfg_files.py \
+        --cfg-filepath $cfgpath \
+        --lang $lang \
+        --baseline True
     
-#     # Drop into pytorch-kaldi and back out to make sure everything works
-#     root_dir=$PWD
-#     cd pytorch-kaldi
-#     python run_exp.py cfg/UPM/$cfgname
-#     cd $root_dir
+    # Drop into pytorch-kaldi and back out to make sure everything works
+    root_dir=$PWD
+    cd pytorch-kaldi
+    python run_exp.py cfg/UPM/$cfgname
+    cd $root_dir
 
-# done
+    expname=baseline_mfcc
+    exp_dir=$EXP_DIR_GLOBAL/$expname
+    exp_data_dir=$exp_dir/data
 
-# exit
+    local/score.sh $exp_data_dir/val_${lang} $exp_data_dir/lang $PWD/pytorch-kaldi/exp/UPM_RNN_mfcc_base_5_layers/decode_${lang}_only_out_dnn2
+
+done
+
+exit
 
 # for x in train_no_BG val_no_BG test_BG; do
 #   steps/compute_cmvn_stats.sh $exp_data_dir/$x $exp_dir/make_cmvn/$x $mfccdir

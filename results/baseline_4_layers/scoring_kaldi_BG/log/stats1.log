@@ -1,0 +1,10 @@
+# cat /home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_BG_only_out_dnn2/scoring_kaldi/penalty_0.0/8.txt | align-text --special-symbol='***' ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_BG_only_out_dnn2/scoring_kaldi/test_filt.txt ark:- ark,t:- | utils/scoring/wer_per_utt_details.pl --special-symbol '***' | tee /home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_BG_only_out_dnn2/scoring_kaldi/wer_details/per_utt | utils/scoring/wer_per_spk_details.pl /home/paul/upm_exp/baseline_mfcc/data/val_BG/utt2spk > /home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_BG_only_out_dnn2/scoring_kaldi/wer_details/per_spk 
+# Started at Mon Apr 20 20:22:54 BST 2020
+#
+align-text '--special-symbol=***' ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_BG_only_out_dnn2/scoring_kaldi/test_filt.txt ark:- ark,t:- 
+utils/scoring/wer_per_spk_details.pl: Note: handling as utf-8 text
+LOG (align-text[5.5]:main():align-text.cc:135) Done 1071 sentences, failed for 0
+utils/scoring/wer_per_utt_details.pl: Note: handling as utf-8 text
+utils/scoring/wer_per_spk_details.pl: Note: handling as utf-8 text
+# Accounting: time=1 threads=1
+# Ended (code 0) at Mon Apr 20 20:22:55 BST 2020, elapsed time 1 seconds

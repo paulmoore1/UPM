@@ -1,0 +1,530 @@
+# lattice-scale --inv-acoustic-scale=10 "ark:gunzip -c /home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_3_layers/decode_PL_only_out_dnn2/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=0.0 ark:- ark:- | lattice-best-path --word-symbol-table=/home/paul/upm_exp/baseline_mfcc/data/lang/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- /home/paul/upm_exp/baseline_mfcc/data/lang/words.txt | local/wer_hyp_filter > /home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_3_layers/decode_PL_only_out_dnn2/scoring_kaldi/penalty_0.0/10.txt 
+# Started at Mon Apr 20 22:24:22 BST 2020
+#
+lattice-add-penalty --word-ins-penalty=0.0 ark:- ark:- 
+lattice-best-path --word-symbol-table=/home/paul/upm_exp/baseline_mfcc/data/lang/words.txt ark:- ark,t:- 
+lattice-scale --inv-acoustic-scale=10 'ark:gunzip -c /home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_3_layers/decode_PL_only_out_dnn2/lat.*.gz|' ark:- 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_117, best cost 42.2241 + -72.1181 = -29.894 over 175 frames.
+PL072_117 sil a ts a z n O v E m i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_59, best cost 51.2705 + -103.256 = -51.9855 over 225 frames.
+PL084_59 sil s w a b a t o r O g i k a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_90, best cost 59.7323 + -96.2251 = -36.4929 over 238 frames.
+PL038_90 sil v E n ts O S_j l a t a n k a m a t sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_104, best cost 74.141 + -117.386 = -43.2451 over 250 frames.
+PL039_104 sil m a v O k t o s l a i x n a z v i s k a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_41, best cost 70.6829 + -120.421 = -49.7377 over 263 frames.
+PL084_41 sil p O z a s t a w a t 1 k o j n t E r a s sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_15, best cost 108.636 + -133.756 = -25.1194 over 275 frames.
+PL072_15 sil p S a d E m s p O n i z a p a tS E_~ ts_j O_~ S E S tS E s k r a m m sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_98, best cost 100.802 + -140.053 = -39.2509 over 275 frames.
+PL072_98 sil tS E s k O z a S k a z e n a t O rZ E t a r m O rZ E b 1 ts_j sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_5, best cost 46.482 + -104.716 = -58.2338 over 281 frames.
+PL038_5 sil j a k p r a ts O v a ts_j sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_69, best cost 87.8395 + -148.323 = -60.4839 over 300 frames.
+PL036_69 sil p o l i s u d a w O S_j E_~ p o s O dz_j E b a n d E t sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_95, best cost 85.7387 + -136.059 = -50.3204 over 300 frames.
+PL036_95 sil b a r dz O v a rZ n a j s t a n a s M n a k ts i ya sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_91, best cost 101.195 + -167.736 = -66.5408 over 338 frames.
+PL036_91 sil p O l s k a n a p O d n o n i E s a n k a v O n s p o k O n sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_40, best cost 133.427 + -181.284 = -47.8563 over 356 frames.
+PL039_40 sil tS 1 z i n s k o Z a f 9 r u r i k i n a S E m p O v i S_j i E r O S_j ts_j O_~ z a ts_j sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_87, best cost 51.2034 + -94.8964 = -43.6931 over 225 frames.
+PL072_87 sil s v a b a t O l o g i k a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_76, best cost 39.2995 + -75.7514 = -36.4519 over 225 frames.
+PL084_76 sil tS i t a g rZ E m a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_82, best cost 74.0125 + -118.219 = -44.2066 over 238 frames.
+PL039_82 sil a k f O S_j i S k i b u f i S p a n i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_52, best cost 59.73 + -117.298 = -57.5685 over 250 frames.
+PL039_52 sil t o p o S 1 x n a s E v i S k a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_57, best cost 79.0657 + -133.438 = -54.3727 over 281 frames.
+PL036_57 sil j i tS O S_j i E s k o n s E f E n ts j a m i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_44, best cost 115.53 + -145.972 = -30.4418 over 281 frames.
+PL040_44 sil k a l i p e J\ e 4 e n E k t f i r dz_j E v i s a f r O z u ts k i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_22, best cost 31.0917 + -66.7754 = -35.6838 over 169 frames.
+PL036_22 sil n i z a v S a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_40, best cost 98.6775 + -119.109 = -20.4311 over 238 frames.
+PL036_40 sil g a n a k s a r tS m O v t o n a l t v a p s a l a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_74, best cost 64.7939 + -112.771 = -47.9767 over 244 frames.
+PL084_74 sil p S E s E p O v i n i z a r a b i tS i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL037_6, best cost 61.1317 + -123.426 = -62.2942 over 275 frames.
+PL037_6 sil a n E z m i E n s t 1 rZ 1 tS n a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_69, best cost 91.7078 + -129.381 = -37.6737 over 275 frames.
+PL040_69 sil j e k o b O s k a s k a rZ O S_j i n a b u b r u x a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_85, best cost 78.3898 + -128.613 = -50.223 over 275 frames.
+PL084_85 sil t a r a s m O rZ n a d u rZ E z a r a b i tS i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_11, best cost 84.2704 + -129.411 = -45.1403 over 281 frames.
+PL072_11 sil t r a s E s o: m p r O v a S E n a n i u tS m a n a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_51, best cost 92.1099 + -138.333 = -46.2231 over 288 frames.
+PL040_51 sil m o g o n t o tS 1 tS E d i n i p r o k u r a t o S E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_6, best cost 85.826 + -151.243 = -65.4173 over 288 frames.
+PL084_6 sil b r t a l i z a ts j a s t a j S_j ts_j O_~ f a k t E m sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_54, best cost 55.6334 + -109.595 = -53.9615 over 294 frames.
+PL038_54 sil v S E s E o t E m e dZ a l sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_37, best cost 112.985 + -155.293 = -42.309 over 306 frames.
+PL036_37 sil v S O t k u z a s a dz_j E v i t n a s l E k i o k r a i n k a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_59, best cost 142.532 + -188.472 = -45.9406 over 331 frames.
+PL036_59 sil v ts O_~ b E S E x s a m a s v a v n i j a k i x p O p S E n i a p i k o n O v 1 sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL037_60, best cost 138.576 + -178.688 = -40.1115 over 331 frames.
+PL037_60 sil s k m i n i w S_j ts_j s a m i t a t n i l i tS n i i t r u n E n t u z n a l i S 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_71, best cost 125.776 + -395640 = -395514 over 338 frames.
+PL040_71 sil s t u tS a S e t t r E S_j ts_j i t O v O v E l E v a S_j i d o t S E v n i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL090_65, best cost 102.383 + -170.345 = -67.9619 over 350 frames.
+PL090_65 sil o n i a s t a i p S E d p O d O b n E m p r o b r a n a n sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_50, best cost 131.225 + -195.033 = -63.808 over 363 frames.
+PL039_50 sil k a Z d O S_j r O d a k v a ts 1 m O S_j v o i x p S E n o s w O v tS u v sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL041_87, best cost 147.095 + -202.377 = -55.2816 over 363 frames.
+PL041_87 sil z a p E v n a b E n d a n t a ts E k t u rZ E z a k s o b a d v a rZ E t e d a ts i z i ya sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_98, best cost 105.524 + -178.276 = -72.7515 over 363 frames.
+PL084_98 sil t a m s O_~ p i n i O_~ dz E b a z O n a m p O t S a b n a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL012_7, best cost 108.104 + -158.936 = -50.8318 over 369 frames.
+PL012_7 sil j E n a k r a m b a z a d n i m i z a r a g O v a n O S_j v a tS E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_7, best cost 61.1079 + -134.595 = -73.4867 over 369 frames.
+PL038_7 sil t O b E_~ dz_j E m a j p r a n k n a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_81, best cost 66.2097 + -139.184 = -72.9739 over 375 frames.
+PL038_81 sil b a d a n E n i s n i v E k a z a v a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL012_28, best cost 117.721 + -194.021 = -76.3002 over 381 frames.
+PL012_28 sil v tS O r a j s a m o b r O n o p o S u j E rZ 1 m i x a l s k i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_56, best cost 155.82 + -221.348 = -65.5276 over 413 frames.
+PL040_56 sil v a p O t u r p S E s a v E l i n i k i n s p E k ts i i S E n s a j O_~ ts O l i k t u r o sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL041_16, best cost 183.88 + -232.119 = -48.239 over 413 frames.
+PL041_16 sil a b a s o v a t a u rZ O_~ d a j O_~ ts E g O d i t a m i n i s a z a r a z a p O t f i r dz E n i v p r a k t E ts E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL030_48, best cost 91.5357 + -185.813 = -94.2773 over 419 frames.
+PL030_48 sil t o n i o t p O v i dZ a l n E i n i ya t 1 tS n a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL077_28, best cost 177.642 + -217.708 = -40.0658 over 425 frames.
+PL077_28 sil f E k s E t 1 x tS 1 s E k O k O d v i S 1 ts_j O_~ ts O s u s o s o: m o r d O v a n h a b u z a g i n o sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_26, best cost 148.04 + -199.904 = -51.864 over 438 frames.
+PL072_26 sil i S i s p O d O v a m O S_j i m E S_j ts_j E m O rZ E g O p O z a s t a l s n a ts a l s E z a n sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL090_51, best cost 126.195 + -224.159 = -97.9637 over 438 frames.
+PL090_51 sil j a k i s p o s o p t f O rZ O n a j e s t o: n i a w O r O p a i s k a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL012_9, best cost 135.838 + -217.049 = -81.2108 over 450 frames.
+PL012_9 sil d i m i t i r o g O z i n d O r a ts a p r a z a n t a v a d i m i r a p o t i n a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_42, best cost 154.855 + -232.822 = -77.9671 over 450 frames.
+PL039_42 sil v s r a S t o n i tS O n a t u rZ E n O v E b o r i: s m i n s k o t S E m u n a n E p S E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_4, best cost 135.779 + -220.072 = -84.2929 over 463 frames.
+PL036_4 sil p O d a m s p o s t u m a tS 1 s t o t u S E f O v 1 v s p o tS n i p o l i ts i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL041_100, best cost 168.031 + -245.036 = -77.0052 over 488 frames.
+PL041_100 sil v n i o s a k t a v a b 7 r ts 1 s o: m i n i b a p S 1 tS E S m o g i o t E m p a m i E n t a ts_j sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_44, best cost 148.61 + -230.925 = -82.3157 over 488 frames.
+PL072_44 sil n a p i S E i n i f r a n t u v a t o d_z\ u s E t o v a n o b i r O k s u k i E n t a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_66, best cost 145.829 + -243.765 = -97.9358 over 513 frames.
+PL038_66 sil r O dz_j E n a j e m a rZ a m O v i w a rZ E t r u d n O S_j ts_j O_~ z n i o d O g a b 1 ts_j sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_85, best cost 235.313 + -286.703 = -51.3895 over 513 frames.
+PL040_85 sil n a r a dZ e b a k r a t o r a p o l i tS i v a k s u m O v a dZ o k i tS v o r g a n o v 7 r o t k u z m a r u v 1 b u j E g u m i ts_j O_~ ts u sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_63, best cost 133.848 + -227.744 = -93.8965 over 519 frames.
+PL038_63 sil p O rZ E s p O v O d O m a rZ a k t o 4 u b i z a g o n d a z d a k i l i S k a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL063_87, best cost 157.401 + -256.197 = -98.7956 over 519 frames.
+PL063_87 sil d a S E l E l i s t 1 m a z m a l E S E m p r a z d E m p a l E x a n d a d u k a S a n k a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_38, best cost 80.7926 + -119.26 = -38.467 over 206 frames.
+PL036_38 sil z a tS a j p S E S k i v a tS n i S k a n i E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_89, best cost 88.2507 + -107.24 = -18.9889 over 213 frames.
+PL072_89 sil rZ 1 ts_j rZ a t k u z d a 4 a S a s t a m e d a a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_41, best cost 62.2216 + -107.97 = -45.7482 over 219 frames.
+PL039_41 sil t O v O_~ p i v 1 p o s t o l a t sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_42, best cost 101.464 + -124.853 = -23.3891 over 225 frames.
+PL036_42 sil j e d n a s k o l t r a f l a v s o: f i n d v i E S a 4 sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_69, best cost 67.7284 + -101.004 = -33.2755 over 244 frames.
+PL072_69 sil k O z a s t a w a t y k O n t E r E s sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL030_28, best cost 54.8223 + -102.553 = -47.7307 over 269 frames.
+PL030_28 sil r a d E n i o t x O dz O_~ sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_29, best cost 101.862 + -145.844 = -43.9815 over 275 frames.
+PL036_29 sil t E m r a z a m tS E S k o r a n i u sil p o j ts j a n t a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_97, best cost 53.2106 + -74.6848 = -21.4742 over 175 frames.
+PL036_97 sil o n S 1 i s p r a v dz_j i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_24, best cost 73.8116 + -93.0307 = -19.2191 over 194 frames.
+PL072_24 sil 9 z a b a n a t a S O k O f r g O S_j ts_j sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL041_7, best cost 85.8932 + -119.343 = -33.4494 over 219 frames.
+PL041_7 sil p O s a w O v i n s t v i S k a w O v a S a b 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_102, best cost 64.3916 + -104.253 = -39.8609 over 225 frames.
+PL072_102 sil tS E s t i p O v i n i z a r a m i ts_j sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_56, best cost 62.6817 + -104.194 = -41.5128 over 244 frames.
+PL036_56 sil s u S E p k o j d a b rZ 1 ts_j sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_21, best cost 68.2921 + -124.542 = -56.2503 over 256 frames.
+PL038_21 sil p r a t o tS E dz_j E tS i k S 1 tS a w a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_105, best cost 101.677 + -132.113 = -30.4361 over 256 frames.
+PL039_105 sil tS 1 v a r t o tS a s o: m rZ a v a dZ i S tS E r a S a x sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_38, best cost 66.9593 + -109.689 = -42.7294 over 256 frames.
+PL039_38 sil h a l t o r t E t 1 S_j i E v a n i u sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_4, best cost 35.8801 + -102.72 = -66.8397 over 294 frames.
+PL038_4 sil j a k t u rZ 1 ts_j sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL041_41, best cost 126.361 + -150.812 = -24.4517 over 294 frames.
+PL041_41 sil p S a S a j v r O v o s o m i r a t n i m i E s p S E s t a m s t v a m sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_126, best cost 109.392 + -157.649 = -48.2574 over 294 frames.
+PL072_126 sil p S E g a p i S n a g a n i s t a m i p S E k a p m i r a k o sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL046_93, best cost 84.3008 + -155.849 = -71.5483 over 306 frames.
+PL046_93 sil z d a n i a n a t E n t E m a ts a m p O dz_j E l a n sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_20, best cost 87.6311 + -151.281 = -63.6502 over 306 frames.
+PL084_20 sil r a f l a k s E p S 1 x O dz_j E p O v S E s t k i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_73, best cost 118.887 + -179.497 = -60.61 over 325 frames.
+PL040_73 sil k O b i t a n i z g o d i O S_j i n o p a r a ts i v a d u r O v i tS u sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_32, best cost 120.502 + -166.145 = -45.6431 over 331 frames.
+PL036_32 sil z a n g a rZ E v a n a b r E g a d M a n t a t a rZ O l s t o tS n o sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL077_8, best cost 111.561 + -165.948 = -54.3863 over 381 frames.
+PL077_8 sil n a s n a rZ 1 ts O n i p r i E_~ dz 1 b o t o n i E s t r s M l i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL030_11, best cost 91.302 + -176.041 = -84.7392 over 400 frames.
+PL030_11 sil n a v E t 1 v r u dz_j i n a j u tS i p r E m i E r a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL030_87, best cost 83.63 + -156.695 = -73.0653 over 400 frames.
+PL030_87 sil t o n O v O k o n f i k t 1 t f i r a dZ i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_70, best cost 109.771 + -192.107 = -82.3358 over 406 frames.
+PL084_70 sil p S E s t k O z a S k a z E n a t O rZ E t a k m a rZ E b E ts_j sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_18, best cost 131.866 + -217.521 = -85.6552 over 413 frames.
+PL036_18 sil v l a n d a n a t O rZ E d O v a dz O_~ ts a ts O n i d a ts i n i p r a k s a r O v sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_107, best cost 146.294 + -217.124 = -70.8295 over 413 frames.
+PL039_107 sil p S E tS E S E n dZ e k a S t 1 z n a S u p o ya t a z a t o t u k e d E S_j r O v i o sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_32, best cost 164.74 + -215.882 = -51.142 over 413 frames.
+PL039_32 sil v s O S_j i E S t O s t i m i l u tS n i k t u rZ 1 v O v tS a s p o S a d a l j a l t O r E t a t sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_17, best cost 86.8882 + -177.211 = -90.3232 over 438 frames.
+PL038_17 sil z a j a w a S E o d O m O v n o p r O b o t o sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_65, best cost 147.321 + -227.999 = -80.6783 over 438 frames.
+PL040_65 sil j e d n a d o t 1 tS 1 S_j m i 4 J\ e ts k a d u J\ e b E d u S t o ts E l a k a r s k i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_79, best cost 174.854 + -245.287 = -70.4325 over 444 frames.
+PL040_79 sil i s t e: n o m a r a t u rZ E v r a S tS E m o g O m u v 1 dz_j E b 1 z o b a f O g O S_j i w a k a p i s k a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL030_58, best cost 57.8224 + -164.894 = -107.072 over 463 frames.
+PL030_58 sil s a k r E t a S O v r a ts a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_80, best cost 128.26 + -218.37 = -90.1098 over 463 frames.
+PL040_80 sil i m O v i k a j y z n a j a t a g o d O t r u n u ts k i S p i t a l i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL041_61, best cost 185.38 + -260.876 = -75.4957 over 475 frames.
+PL041_61 sil p O k a z u rZ 1 ts i m a t r E u v O v i n S E m a ts E n a l a rZ 1 z a r a ts_j v i r m i s u p r a m i: N A: m i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL090_47, best cost 105.663 + -218.794 = -113.13 over 475 frames.
+PL090_47 sil j a k i E s t u rZ O_~ dz O m a u n i a r a u r O p a i s k a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL097_20, best cost 130.612 + -199.495 = -68.8832 over 475 frames.
+PL097_20 sil v i s t a k e g O rZ O n a s t a w a v e dZ e l E m p S a rZ E b i o n k i n sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_87, best cost 82.5268 + -192.606 = -110.079 over 488 frames.
+PL040_87 sil b 1 b E t a k o r o n E n d o v s p r a v i E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL046_35, best cost 64.0739 + -173.32 = -109.246 over 488 frames.
+PL046_35 sil p a l E ts n a p r a z a d E n t a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_3, best cost 89.9969 + -202.618 = -112.621 over 494 frames.
+PL038_3 sil d a k a n ts a rZ 1 tS a n a z a p o n o t E g O d n a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_41, best cost 162.807 + -241.345 = -78.5382 over 494 frames.
+PL040_41 sil j E Z a i t E S p o s t a n O v i E rZ E n i b E n i S E n i m i k i r O v o p O rZ O_~ b a r t a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL041_27, best cost 237.36 + -279.333 = -41.9729 over 500 frames.
+PL041_27 sil a ts a tS i a l a r m O v a l i b r a tS E rZ E n a l j S_j ts_j O m e S tS 1 m a v i r a l a k O v p S E s a rZ a v a k r dz_j E S_j i u S E m i p O d a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_101, best cost 226.176 + -269.305 = -43.1287 over 506 frames.
+PL072_101 sil v r a k o b E_~ dz_j i w a ts_j i b u z n i S tS E n i p O v i n i b 1 dz_j E v i a k i a k r E s n i d u rZ 1 p o t E n dZ a n i b a ts E b o g a t sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_77, best cost 108.628 + -205.416 = -96.7879 over 513 frames.
+PL038_77 sil m i a w a j a k o S O b s a s i o n a p u tS E z d r o r a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_44, best cost 172.788 + -264.488 = -91.6999 over 519 frames.
+PL036_44 sil v S dZ e s t o tS t a r O l a t i v O v k a z k i n o n a m e s E p O ts j a t a m i tS i n s t a v a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL041_88, best cost 218.405 + -301.498 = -83.093 over 544 frames.
+PL041_88 sil f E d a p O z a s t a n i i m i: n d i b i d u w a n a d v a n i S a b a s a m O rZ O n a v a g O k O l a g i m a t v A: v tS a g o sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_89, best cost 132.064 + -235.722 = -103.658 over 550 frames.
+PL038_89 sil j e t E O r i a j s t a k a S tS E s w a v a m i o p r o b l a m a s o b u sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_92, best cost 217.194 + -282.1 = -64.906 over 556 frames.
+PL039_92 sil n a tS E_~ dz_j E S_j ts_j i S a n 1 x p r a d v O dz_j E s t O S_j i t n 1 ts_j O_~ ts 1 S_j p i n a r j O d u j u S tS E_~ ts_j a p o s t E m p O v a n i ya sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_45, best cost 183.945 + -285.164 = -101.218 over 563 frames.
+PL040_45 sil a p i n s n O v a tS v a t u J\ e p o S u g O r O k u p a n O v a n a s u n t r g o k a p i t O v a k a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL063_8, best cost 195.75 + -282.51 = -86.7606 over 569 frames.
+PL063_8 sil s t r a j k u j O r u j u v o S E Z i k a rZ 1 v O b r o n i E p r u r O l i z b o b a d e: r E t r u n i tS n a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_34, best cost 191.533 + -299.426 = -107.893 over 569 frames.
+PL084_34 sil a b E n i g i n a l i k O l E n i p O l i ts j a n dZ i k O n i E tS n a j a s t i E S tS E l a p S E r a s p O z n a n i E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_27, best cost 199.715 + -298.882 = -99.167 over 575 frames.
+PL084_27 sil v s l a n i n a s m a d a r E n k i b u w a v tS O r a j n E v a rZ n E S E n t E m a t a n a g O v p O l i ts j a n t o sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL041_67, best cost 206.778 + -305.747 = -98.9687 over 581 frames.
+PL041_67 sil n a j O_~ ts E u r a z O v i O_~ rZ 1 ts_j O_~ ts O p O rZ E n a m i s p O v O d O v a n E m i n i o m e: n o t p a l a n i m p a t a r t sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_23, best cost 225.09 + -327.695 = -102.604 over 594 frames.
+PL040_23 sil p i s E p S E s i k O m n i k a t u v i n i k a j d n d a tS n a p O p a r t i l a s p o n i a n E g O k o t E k s p S 1 z v i t O S_j ts_j sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_79, best cost 203.668 + -296.467 = -92.7985 over 594 frames.
+PL072_79 sil s o d i s k i p i E_~ dz 1 x i n a s j O_~ t E rZ O r E z n d a s v a n o s a m b i n a d E n E m i a k a j d o n a tS a v a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_22, best cost 187.488 + -298.851 = -111.364 over 594 frames.
+PL084_22 sil n a t a v n a p S E s ts i ya t E S E p o r u S a n i t E m s a S a s t a w a m u v i d a l u S u rZ a x i k sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_90, best cost 191.054 + -282.494 = -91.4394 over 600 frames.
+PL072_90 sil p r a t m a t i ts i tS E tS n a u rZ E p i b i tS E S_j ts_j O v a n E m i s i t i n i S n i v O l a n i m i g o d n E m sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_116, best cost 71.053 + -96.7652 = -25.7122 over 175 frames.
+PL072_116 sil t o s o j n a k s t a r E p i n i O_~ z a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_41, best cost 64.5508 + -104.189 = -39.6383 over 200 frames.
+PL036_41 sil z d O rZ O d a t S E s t S a v a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_85, best cost 59.6628 + -89.5994 = -29.9366 over 206 frames.
+PL039_85 sil n i m i a n s a t E v 1 b o r u sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_56, best cost 73.976 + -125.265 = -51.2887 over 250 frames.
+PL039_56 sil t E m h a n i S E z a S k O tS O p a n a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_124, best cost 96.2795 + -130.944 = -34.664 over 256 frames.
+PL072_124 sil tS E rZ E j O_~ S_j i n i k i k O p a r E k i s p i x a tS E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL041_102, best cost 86.6977 + -132.892 = -46.1943 over 269 frames.
+PL041_102 sil p S E tS n i m O b i n a n i x n i g o s a v a ts i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL041_18, best cost 103.522 + -145.667 = -42.1454 over 281 frames.
+PL041_18 sil n a b i S E m tS a S e n m a S E z i m i s p o t k a ts i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_11, best cost 86.4939 + -141.382 = -54.8882 over 288 frames.
+PL084_11 sil n i l i tS a S a s k a n s a n k v E n ts j a v i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_20, best cost 74.7766 + -130.476 = -55.6997 over 294 frames.
+PL038_20 sil r a l e b o s k A: r a n a n b o s k r x sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_17, best cost 81.8889 + -139.301 = -57.4118 over 300 frames.
+PL040_17 sil p i o t r a n a p o: d i v\ e m o d i tS v E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_62, best cost 84.6344 + -128.687 = -44.0527 over 306 frames.
+PL038_62 sil z a s a n a r a S E l a tS E g a t a z r O b i l a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_82, best cost 101.856 + -151.991 = -50.1353 over 313 frames.
+PL072_82 sil a t E o p r a ts i s p O r O g r a s a m i r a k i tS E tS E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_37, best cost 73.4392 + -159.4 = -85.9611 over 325 frames.
+PL084_37 sil t a d E u S a ts E v i tS z b i s k a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_45, best cost 99.8993 + -151.602 = -51.7027 over 331 frames.
+PL038_45 sil n a m o j tS E k n a d rZ E k z b i l i S E l u l a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_52, best cost 90.0058 + -143.6 = -53.5946 over 338 frames.
+PL038_52 sil v e b a n i k n i o d p o v\ e n a t a p E t a n i E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_73, best cost 115.49 + -171.995 = -56.5055 over 344 frames.
+PL072_73 sil p O z a t E n t u S u j a i k a n a g a ts E v i d E g O m O k i m sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_40, best cost 94.7006 + -164.961 = -70.26 over 350 frames.
+PL084_40 sil t a r a s r O m a n t E z a z n i k n o v S a n dZ a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL012_15, best cost 85.9149 + -149.912 = -63.9971 over 356 frames.
+PL012_15 sil n i m a k O n t r O l i n a t E k m i o s o: m a n sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_30, best cost 118.108 + -157.634 = -39.526 over 356 frames.
+PL036_30 sil p i sil d O b a v 1 z i S E n i n t a l k o tS u s a f u s n M sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_19, best cost 140.376 + -196.313 = -55.9373 over 369 frames.
+PL039_19 sil tS E S_j ts_j p O s u v k O m i t E t O b u v a t a l s k i g O z a p r O t o s t O v a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_87, best cost 126.945 + -168.27 = -41.3245 over 369 frames.
+PL039_87 sil d E n t E g O n i s r O b i x a b a p r a tS i l s k r a tS i b i n i b u sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_8, best cost 172.023 + -214.904 = -42.8815 over 374 frames.
+PL072_8 sil s o v O k O f 9 4 t a v a n i m a n s p o n E g O z b i x t r a n f i O rZ 1 S_j i E r a tS 1 z g O d u sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_66, best cost 127.107 + -200.743 = -73.6359 over 375 frames.
+PL040_66 sil v tS a S E p O r o d o l E k a z a s t o s O v a l t E s a s k i tS E_~ ts_j E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_13, best cost 159.548 + -197.852 = -38.3044 over 394 frames.
+PL072_13 sil n a s t a k u m O rZ n a p o s t a ts_j d o p O rZ n i g O dz_j E tS a n d u S t r a s O_~ S_j i t v a n a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_16, best cost 92.2763 + -161.477 = -69.2007 over 406 frames.
+PL038_16 sil z n i x a l i n i z o tS o v r a j a n i E rZ E k i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_21, best cost 133.599 + -215.749 = -82.1497 over 419 frames.
+PL036_21 sil s a v O m i tS i s O v s k i E rZ E tS i k O m a n t 1 x g o v n i p r i ts i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_49, best cost 100.756 + -197.453 = -96.6967 over 419 frames.
+PL038_49 sil p a n i m a r j a m a o tS 1 tS E r v o l a o d u w a s sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_74, best cost 97.5915 + -178.362 = -80.7704 over 419 frames.
+PL038_74 sil n i m o g w a z m a l E z n i n s p o n a n b E_~ dz 1 k a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_97, best cost 121.095 + -210.755 = -89.66 over 419 frames.
+PL084_97 sil p S E g a p i S m a a v k a n i s t a n t n i p S E g a p i r a k o sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_1, best cost 130.221 + -217.139 = -86.9183 over 431 frames.
+PL084_1 sil p S a S a k t i p O l i ts j a n t n i s t a n a v E S_j ts_j O_~ t a m o g r o Z i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_80, best cost 57.3779 + -151.592 = -94.214 over 444 frames.
+PL038_80 sil v 1 s v A: n d o l a k a rZ a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_43, best cost 112.618 + -189.639 = -77.0208 over 450 frames.
+PL038_43 sil v a l E z u s t 1 S a l k i p r E l j a g O S_j ts_j O_~ g r O tS w a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_112, best cost 169.353 + -223.142 = -53.7881 over 450 frames.
+PL072_112 sil z a r a v i E n i g o t a m tS E n a S t o n i a l E g a n s k o p a t a l O g A: r a tS E n i tS n o r m a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_113, best cost 167.973 + -211.335 = -43.3614 over 456 frames.
+PL072_113 sil f a s t v a h E: g i S O dz_j O z b r a k r O k o s o: m i S E v i w O v f a d E n t E r E s i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL030_82, best cost 103.735 + -198.198 = -94.4626 over 475 frames.
+PL030_82 sil v s a v S 1 m i a w 1 m E g i ts O v E p o b l o n d E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_78, best cost 156.472 + -244.324 = -87.8522 over 494 frames.
+PL040_78 sil t o S O k p S E s t a j p r O k r a t a p r O v a dz O_~ ts p r O S_j v i tS n o r O t k u v sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_31, best cost 87.5885 + -195.867 = -108.279 over 500 frames.
+PL038_31 sil r a l e b o s k i E sil t O ts O S_j i o r u S a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_48, best cost 39.0538 + -58.4529 = -19.3991 over 119 frames.
+PL038_48 sil n i o d a w O S_j ts_j O_~ sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_20, best cost 29.9392 + -63.2841 = -33.3449 over 156 frames.
+PL039_20 sil z a tS a g o sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_104, best cost 46.5089 + -77.9895 = -31.4806 over 188 frames.
+PL072_104 sil v tS i t a g rZ a m E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_27, best cost 77.6988 + -108.343 = -30.6443 over 206 frames.
+PL040_27 sil t a k f 9 s E z O f a n i n t E r a s u v sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL041_63, best cost 71.4302 + -108.131 = -36.7011 over 219 frames.
+PL041_63 sil b a k a z b a dZ i t v a k i k a m i n t sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL097_104, best cost 27.4249 + -78.1538 = -50.7289 over 231 frames.
+PL097_104 sil i s t o p a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_66, best cost 84.2548 + -120.224 = -35.9692 over 238 frames.
+PL039_66 sil j e p a n O tS E n i a p S E l e k u s t r a tS i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_127, best cost 95.113 + -120.426 = -25.3134 over 238 frames.
+PL072_127 sil t a n s o: m p i n i O_~ ts E b a dz O n a m p O p S E b i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_94, best cost 68.7442 + -105.034 = -36.2902 over 238 frames.
+PL072_94 sil v a r O k i k o t a m u s o n d a n 1 sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_68, best cost 89.1313 + -141.202 = -52.0712 over 275 frames.
+PL072_68 sil t r a s r m a n t 1 z n i z n i k n o S E_~ ts_j E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL063_60, best cost 62.2282 + -132.322 = -70.0936 over 281 frames.
+PL063_60 sil t a k a b 1 w a i E g O f O l a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_36, best cost 98.3297 + -141.141 = -42.8116 over 288 frames.
+PL036_36 sil n i k i ya t f 9 r o i p O l s E n dZ i v a rZ 1 dz_j E v i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_106, best cost 38.6683 + -60.113 = -21.4447 over 113 frames.
+PL039_106 sil s p E v n O S_j ts_j O_~ sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_28, best cost 19.2442 + -49.6322 = -30.388 over 125 frames.
+PL039_28 sil m a m a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL037_32, best cost 52.6731 + -78.157 = -25.4839 over 169 frames.
+PL037_32 sil a l E t a r O v 1 m S E s sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_88, best cost 42.2155 + -85.3601 = -43.1445 over 194 frames.
+PL084_88 sil a ts a z n O v E m i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL041_57, best cost 59.191 + -81.9312 = -22.7401 over 200 frames.
+PL041_57 sil r u x m a m E n i v i E l k i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL041_98, best cost 83.5604 + -106.793 = -23.233 over 206 frames.
+PL041_98 sil k a r a m p a n O rZ O_~ j E d n a t a b o r s a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_87, best cost 49.9199 + -93.4621 = -43.5422 over 225 frames.
+PL036_87 sil tS 1 ts E S E z m i j o sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_75, best cost 68.6762 + -114.874 = -46.1974 over 238 frames.
+PL039_75 sil p O tS 1 S_j ts_j E z a p r o t E s k O n a n sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_108, best cost 79.3691 + -127.926 = -48.5568 over 250 frames.
+PL039_108 sil p S E d a S E s k i m o r a n i a n i t a l k a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_67, best cost 93.4956 + -143.821 = -50.3251 over 269 frames.
+PL040_67 sil p S o k a z i p S 1 tS e k O v i tS E l j e 4 i t o sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_4, best cost 94.9926 + -149.838 = -54.8452 over 275 frames.
+PL039_4 sil p O r a ts_j i w a n d E v 1 s t o m p i o d O S_j ts_j O_~ d u sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL041_34, best cost 109.716 + -144.589 = -34.8732 over 275 frames.
+PL041_34 sil j s t E S tS e d a m p r o b l a m k t a s a p a tS i z a l a k i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL090_83, best cost 40.8824 + -104.487 = -63.6047 over 281 frames.
+PL090_83 sil t a n i E p r a v a d a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_68, best cost 81.6704 + -133.579 = -51.9085 over 288 frames.
+PL040_68 sil s p r a v a S O n a j a v i n u S k t a l u sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_12, best cost 79.9871 + -146.29 = -66.3025 over 300 frames.
+PL084_12 sil m a rZ O_~ i E_~ ts_j O_~ k a r i E r E b o s u v sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL097_97, best cost 76.2708 + -140.25 = -63.9797 over 313 frames.
+PL097_97 sil i s t o p o p O b a j k O m a n d O j a n sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_52, best cost 112.487 + -174.254 = -61.7678 over 319 frames.
+PL072_52 sil p S t o k O v a n i E v E s a k i z a b u d O v i s p r a k t 1 tS n a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_59, best cost 113.545 + -159.743 = -46.1978 over 331 frames.
+PL039_59 sil v O dz_j E ts_j O_~ p O z l a j O_~ z a tS n a j u s o: m i S a tS u s u sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_7, best cost 96.9857 + -160.494 = -63.5084 over 331 frames.
+PL084_7 sil m i s t E r a z b i t E k a n g u v s E m u j a n O v a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_125, best cost 159.605 + -191.41 = -31.8054 over 336 frames.
+PL072_125 sil f i v E n o t p O v a d O n a t E p E t a n i a rZ 1 b E n i p S 1 tS u m o r p a S t v O l sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_45, best cost 117.489 + -169.676 = -52.1873 over 344 frames.
+PL039_45 sil v i s E S m a k r a i m k a p i t a l i s u p a j S_j v O v a g o sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL030_25, best cost 72.379 + -163.539 = -91.1602 over 363 frames.
+PL030_25 sil v s a rZ O_~ t u m i s k i m p a r t i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_57, best cost 16.5269 + -41.1887 = -24.6618 over 119 frames.
+PL039_57 sil n i ya sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_114, best cost 76.6084 + -103.545 = -26.937 over 188 frames.
+PL072_114 sil t r a s n o tS n a d u rZ a z a r O v i ts_j sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_83, best cost 60.3799 + -91.1198 = -30.7399 over 194 frames.
+PL039_83 sil r o s p r a v O d r O tS a n o sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_103, best cost 83.5727 + -105.762 = -22.1888 over 250 frames.
+PL072_103 sil n a v i ts i tS i k t u rZ 1 s o: m r E k a n a n sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_46, best cost 107.757 + -137.587 = -29.8296 over 281 frames.
+PL072_46 sil a m i x t v n i tS E m i p S t o n a n i d a v n i r o d E r E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL077_5, best cost 115.389 + -153.936 = -38.547 over 281 frames.
+PL077_5 sil n i E m s m a j o j a n E p E k a b a f O_~ ts O dz_j i z r O v 1 sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_82, best cost 80.6834 + -132.581 = -51.8977 over 288 frames.
+PL038_82 sil a l o n a d a l a j O ts E v s p O m i n a w a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_37, best cost 89.9347 + -143.784 = -53.8497 over 294 frames.
+PL072_37 sil s a w S_j ts_j p S E k r e d v o s p a d O v E d a x sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_47, best cost 67.6007 + -131.505 = -63.9044 over 300 frames.
+PL038_47 sil p o b O v a l i: f r a n i m O v a ts_j sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL041_54, best cost 123.302 + -159.596 = -36.2946 over 306 frames.
+PL041_54 sil a s t E m h e: n a rZ 1 z a p a l i tS l a n d i S E p k O d a l i ts_j O_~ sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_95, best cost 99.3781 + -162.322 = -62.9435 over 313 frames.
+PL039_95 sil v i s t E t E n i p S E g O t O v a n o i x a j l E p i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_94, best cost 104.742 + -176.125 = -71.3827 over 319 frames.
+PL040_94 sil p O z a t E m sil j u S p a t O f i s a s k a k o j O_~ ts a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_72, best cost 128.607 + -173.259 = -44.6521 over 331 frames.
+PL040_72 sil d o S u d u z a p a l a J e k O n i S m y z a b i k i r u 4 J\ y tS n a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_96, best cost 86.3647 + -159.049 = -72.6841 over 381 frames.
+PL038_96 sil n i n b u k u m A: sil j O_~ s v o j O p r a t sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL090_16, best cost 40.2244 + -128.073 = -87.8484 over 388 frames.
+PL090_16 sil d l a tS a g a o sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL097_2, best cost 77.7683 + -150.672 = -72.9033 over 388 frames.
+PL097_2 sil s t a r e t a t r b n o v a n s a z o r E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_123, best cost 184.059 + -222.72 = -38.6609 over 400 frames.
+PL072_123 sil m e S E t n E f i m E b u d O v a n E z d u rZ 1 m i n M S E tS E n i a m i z E f r a t E n t E g r 1 ts_j O_~ t sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL030_17, best cost 90.2163 + -196.01 = -105.793 over 413 frames.
+PL030_17 sil p o s u x s E u n i E v a rZ n i a z j a s t o sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_14, best cost 157.069 + -210.604 = -53.5349 over 425 frames.
+PL039_14 sil v S 1 j e m e a j s p O n o k r a S E p S 1 S_j ts_j a v a l a t v a t E rZ 1 p o s p o l i t E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_81, best cost 170.077 + -234.76 = -64.6837 over 425 frames.
+PL039_81 sil k a l i S O S_j l a tS u v O v tS a S m u S O S_j E_~ p O r O s m i s p a n a m p r a s E d E n t e: n sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_10, best cost 117.382 + -201.48 = -84.098 over 425 frames.
+PL084_10 sil k ts O S E p k O i d O rZ E rZ E tS t o j E s t i x a t o s sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL097_77, best cost 115.999 + -189.407 = -73.4082 over 425 frames.
+PL097_77 sil t o j t a k S E d n a t r u d o tS i n a k r u u s p O k a j a n sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_62, best cost 172.3 + -233.938 = -61.6381 over 450 frames.
+PL039_62 sil v a tS E g a s a d a k a d v a r t a b a v i E S_j i E s t r a S i s t E t o t o p a m i tS n a n o d O v a i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL037_29, best cost 170.744 + -229.666 = -58.9217 over 456 frames.
+PL037_29 sil S_j n a m i s t r O k a l i s E ts i b r a n a m i s t a w i d u b E n a n i d a l e k O m o s k f E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL041_29, best cost 168.763 + -249.963 = -81.2007 over 463 frames.
+PL041_29 sil j e k i z a t E m i a b a b E ts E s k l a p a ts i n d u v p E d a n a tS a n a i z b a t a k a r s k a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL077_18, best cost 160.102 + -219.692 = -59.5901 over 463 frames.
+PL077_18 sil p r a z a s t a z a p r E z a t O v a n 1 p o b i tS n a m o b i o ts E S E s M n a v O j u tS 1 s sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_79, best cost 111.649 + -209.983 = -98.3337 over 469 frames.
+PL038_79 sil k a z a w a m i z a rZ 1 v a tS k r O p l a u s p O k a j a n s a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL037_39, best cost 175.493 + -240.6 = -65.1076 over 475 frames.
+PL037_39 sil s v i n i E S_j v a n E t a k i s i n i S E rZ 1 tS E v i s t i: v a k o n a s t m u v i r o: m a n o r u i t sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_16, best cost 190.762 + -240.807 = -50.0442 over 475 frames.
+PL072_16 sil s t u a ts i z m i n i d o n a tS a rZ a l M s a p r E k t O v a n E p S E z a m i S k a j a d E r n E g a v r a n sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL012_39, best cost 160.627 + -234.977 = -74.3502 over 481 frames.
+PL012_39 sil p r a t f o: m O v a t r s k a p O n o s p a sil tS n a 4 i n a r a rZ E n E v i n p S E s t r a t 1 sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_25, best cost 100.55 + -190.157 = -89.6075 over 481 frames.
+PL038_25 sil v ts O tS a S E u z a w rZ E t o j E m a k n i o m a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_4, best cost 157.182 + -239.795 = -82.6135 over 488 frames.
+PL072_4 sil t r n a s k a p r a ts a d n a s n a p S 1 S_j ts_j u n a t a n a m a S t a p i s p r E d O r O b a k sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_44, best cost 63.1553 + -89.9579 = -26.8026 over 206 frames.
+PL038_44 sil k O S E s k a t f O s E k O n d a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_74, best cost 61.2473 + -103.877 = -42.63 over 219 frames.
+PL036_74 sil o d b i t a z a k o d n i k u v sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_58, best cost 71.4416 + -120.35 = -48.9085 over 256 frames.
+PL036_58 sil m a rZ O_~ S_j i E k a r i r E b o s u v sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_91, best cost 101.211 + -139.736 = -38.5259 over 269 frames.
+PL072_91 sil v i b a m a r a ts j u tS E S t o m a u r O m a n t 1 tS n a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_43, best cost 79.1389 + -122.783 = -43.6444 over 275 frames.
+PL036_43 sil p o l i ts E n dZ a d p O v i dZ i o g i m sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_86, best cost 123.81 + -156.931 = -33.1205 over 281 frames.
+PL072_86 sil m a dZ i t a d O b r O b E t n i v O n i k v p O v i z O n i k t u rZ E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL030_24, best cost 21.9501 + -92.252 = -70.3019 over 288 frames.
+PL030_24 sil s k i m sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_90, best cost 116.67 + -164.518 = -47.8486 over 300 frames.
+PL036_90 sil b 1 ts_j m O rZ E k O m u S p O p r O v i o t o s a m a p O tS u tS E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_36, best cost 57.1233 + -123.261 = -66.1382 over 306 frames.
+PL038_36 sil r a t o l i k u r a t o n k o sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_42, best cost 97.1541 + -143.638 = -46.4837 over 313 frames.
+PL040_42 sil S E b a t r k o j a s n a k r O S_j i s f 9 z a m i a r sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_3, best cost 103.26 + -165.199 = -61.9386 over 331 frames.
+PL039_3 sil z a k o t n i S_j ts_j O v a p o tS i tS m O tS k o d O v a n a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL097_98, best cost 87.9935 + -154.851 = -66.8575 over 338 frames.
+PL097_98 sil d r E f O j a m a d o n a b i S E p u tS i z 1 sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_32, best cost 50.5388 + -122.922 = -72.3829 over 350 frames.
+PL038_32 sil p o d a S O n b l E rZ E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL097_16, best cost 85.4506 + -149.845 = -64.3942 over 350 frames.
+PL097_16 sil d a m O v E p o r o d n g a r t i: s t 1 tS n 1 sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_24, best cost 74.218 + -140.934 = -66.7159 over 356 frames.
+PL038_24 sil j a t a tS n i m o g O v t o v i E rZ 1 ts_j sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL046_96, best cost 76.5813 + -147.137 = -70.556 over 356 frames.
+PL046_96 sil j a d a b a dZ a f t E m p S E p a t k u sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_108, best cost 124.713 + -184.801 = -60.088 over 373 frames.
+PL072_108 sil v i r a z i n a i S m i a k O p a J s t v a J s t i n k t u p i r a n sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_63, best cost 112.898 + -179.331 = -66.4327 over 375 frames.
+PL084_63 sil k a b a m a j a m r a ts j a tS E S t o m a w O r O m a n t E tS n a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL097_88, best cost 93.1107 + -164.329 = -71.2182 over 394 frames.
+PL097_88 sil z m a dZ y z a z a d E d o s o v a n a m u v i j a n sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL012_26, best cost 80.8021 + -162.565 = -81.763 over 406 frames.
+PL012_26 sil t z a n i n i p o d o m a s t a m p n i sil t sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL030_65, best cost 56.3764 + -157.696 = -101.32 over 413 frames.
+PL030_65 sil t o o t k r i tS E k a r t sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL036_93, best cost 142.854 + -212.284 = -69.4294 over 413 frames.
+PL036_93 sil p S E d n i E v k a S t E m p r a ts l i p o p i E_~ dz_j E ts_j O_~ t f u tS E n a rZ 1 S E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL030_49, best cost 99.9289 + -189.955 = -90.0259 over 419 frames.
+PL030_49 sil p O v i l d u m i s t a v a tS E d o t r u g i t u r 1 sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL046_11, best cost 105.17 + -193.388 = -88.2182 over 419 frames.
+PL046_11 sil n a sil a n a l i z a r a p a r t o r a S t a r O v u j E n sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL097_41, best cost 98.041 + -182.386 = -84.3449 over 431 frames.
+PL097_41 sil z a n i m a w a b i n O_~ z a v p E m i E_~ ts_j O_~ t o d a j E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL012_50, best cost 139.916 + -206.524 = -66.6078 over 450 frames.
+PL012_50 sil j o s v O v a t o s o d n i p o t a k t O v a l n a r a rZ E p i n dZ u p O s u v sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL038_64, best cost 130.859 + -214.261 = -83.4024 over 450 frames.
+PL038_64 sil s t E g O ts O v i a m sil n a r O dz_j E n a tS E S k a n i n i a ts O l i tS 1 ts_j sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL097_82, best cost 121.381 + -210.645 = -89.2639 over 450 frames.
+PL097_82 sil l a b a ts a v a v t E u p S E tS 1 k u j E x o g o v o d E j a n sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_95, best cost 114.614 + -224.139 = -109.525 over 456 frames.
+PL084_95 sil tS E j u S rZ a j O_~ S_j i n i k i k O p a r E k i s p a h a tS E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL039_101, best cost 192.735 + -251.874 = -59.1385 over 463 frames.
+PL039_101 sil p i n S 1 S_j ts_j i p S 1 p a t k u v i E d n a k o S E k v E n S u n a g a n i n a k i s k O m i E v 1 ts_j O_~ d n i n t a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_97, best cost 151.526 + -225.511 = -73.9852 over 469 frames.
+PL072_97 sil v i S i t a m i S a p O v 1 ts_j O_~ n a ts_j t r E ts_j v E n O f a j tS a m r E k a n o v sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL084_13, best cost 147.748 + -239.555 = -91.8074 over 475 frames.
+PL084_13 sil v ts O b 1 tS t a k s a m a s l a v n i a k i x p O p S E d n i O p i k o n O v E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL090_41, best cost 87.8144 + -199.989 = -112.175 over 475 frames.
+PL090_41 sil p S E m b e u z v i O_~ z a k s a v i E ts k i sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_92, best cost 177.571 + -236.232 = -58.6617 over 481 frames.
+PL072_92 sil p O b 1 b E n o r m a t E p i S E f a dZ i m a n o i r a k u tS n i d O d o n o g o s f i n i O_~ ts a t sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL037_10, best cost 186.806 + -256.883 = -70.0768 over 500 frames.
+PL037_10 sil s u rZ O_~ b E s p o t n o r a d u i p O m o t u k a S t E m u k t o s t v e v E r o: m 1 x i r i n d v E sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL037_28, best cost 195.463 + -276.312 = -80.8492 over 500 frames.
+PL037_28 sil s E rZ O_~ t f i r m E p o d u d E ts j o u r u x O m i n f t E n k r a j u f a p r E k i s v a i f 9 r O r sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL037_85, best cost 182.235 + -273.803 = -91.5686 over 500 frames.
+PL037_85 sil s o: n t a l n i ya t o r O v a u s k O k i s a p O rZ a j O_~ ts E k O t k O m p i r f o t i p O v i E S k sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL077_22, best cost 185.249 + -259.654 = -74.4051 over 500 frames.
+PL077_22 sil b u d O v a p O t f O tS u k O p i E_~ ts_j u l a t i p O x O n i tS E s a v S 1 dz_j E S_j i l j O_~ t o l a r u v sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL090_73, best cost 131.78 + -248.186 = -116.406 over 513 frames.
+PL090_73 sil z v i E n k S a S tS E k r a j u v k o r o p ts j a p S E n i k a z d o sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL040_3, best cost 210.081 + -285.528 = -75.4468 over 525 frames.
+PL040_3 sil j a v n a b E n o d O p i r O t a S_j v a tS E n i a t o r s a m O rZ O_~ d O v ts 1 z u 4 u n a p o t o n k u S E g O r O k u sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL041_11, best cost 157.064 + -262.073 = -105.009 over 531 frames.
+PL041_11 sil m O rZ 1 b a ts_j d o n a d r a k t o r d a n o t a b l a n d a s z v i l i d a ts j u S a sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL030_47, best cost 84.9387 + -195.503 = -110.564 over 538 frames.
+PL030_47 sil j a k m O rZ n a z a k p i s o b u r s u v sil 
+LOG (lattice-scale[5.5]:main():lattice-scale.cc:107) Done 259 lattices.
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL072_100, best cost 193.002 + -268.85 = -75.8479 over 544 frames.
+PL072_100 sil p o d r b i v a n i S a t O v i p l a n t E m p S E s p e S u b u d O v o r O p i s a x O n i s t i m i E m i s sil 
+LOG (lattice-add-penalty[5.5]:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 259 lattices.
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:99) For utterance PL037_47, best cost 226.488 + -291.054 = -64.5661 over 550 frames.
+PL037_47 sil t o g o v n i z i n k i n i m k a Z i m i E rZ 1 v i l k i k t r i z a s t o p o s k o n d r n i a n o b o s t a v i tS i o n o r O v a n sil 
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:124) Overall cost per frame is -4.43036 = 0.305469 [graph] + -4.73583 [acoustic] over 92870 frames.
+LOG (lattice-best-path[5.5]:main():lattice-best-path.cc:128) Done 259 lattices, failed for 0
+# Accounting: time=2 threads=1
+# Ended (code 0) at Mon Apr 20 22:24:24 BST 2020, elapsed time 2 seconds

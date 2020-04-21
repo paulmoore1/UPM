@@ -1,0 +1,1036 @@
+PL012_15 ref  sil  n  i   E   m  a   m    1   k  O  n  t  r  O  l  j  n  a   d   t  a  k   i   m  i  O  s  O  b  a   m   i  sil
+PL012_15 hyp  sil  n  i  ***  m  a  ***  ***  k  O  n  t  r  O  l  i  n  a  ***  t  E  k  ***  m  i  o  s  o  m  a  ***  n  sil
+PL012_15 op    C   C  C   D   C  C   D    D   C  C  C  C  C  C  C  S  C  C   D   C  S  C   D   C  C  S  C  S  S  C   D   S   C 
+PL012_15 #csid 21 6 0 6
+PL012_26 ref  sil  ***  z  a  n  i  m  i  p   u   j  d  O_~  n  a  s  t  ***  E_~  p  n  i  ***  ***  sil
+PL012_26 hyp  sil   t   z  a  n  i  m  i  p  ***  o  d   o   m  a  s  t   a    m   p  n  i  sil   t   sil
+PL012_26 op    C    I   C  C  C  C  C  C  C   D   S  C   S   S  C  C  C   I    S   C  C  C   I    I    C 
+PL012_26 #csid 16 4 4 1
+PL012_28 ref  sil  v  tS  O  r  a  j  s  a  m   O   O  b  r  O  n   E   O  p  u  S_j  ts_j  i  w  j  E  rZ  1  m  i  x  a  l  s  k  i  sil
+PL012_28 hyp  sil  v  tS  O  r  a  j  s  a  m  ***  o  b  r  O  n  ***  o  p  u  ***   ***  S  u  j  E  rZ  1  m  i  x  a  l  s  k  i  sil
+PL012_28 op    C   C   C  C  C  C  C  C  C  C   D   S  C  C  C  C   D   S  C  C   D     D   S  S  C  C   C  C  C  C  C  C  C  C  C  C   C 
+PL012_28 #csid 29 4 0 4
+PL012_39 ref  sil  p  l  a  t  f   O   r  m   a   O   b    1   v  a  t   E   l  s  k  a  p  O  n  i  O  s  w  a  ***  p  S   1   n  a   j    m   n  i   E    j   n  a  r  a  z_j  E  n   a   j  v  i  E_~  k  S  E  s  t  r  a  t  1  sil
+PL012_39 hyp  sil  p  r  a  t  f  ***  o  m  ***  O  ***  ***  v  a  t  ***  r  s  k  a  p  O  n  i  o  s  p  a  sil  p  S  ***  l  a  ***  ***  4  i  ***  ***  n  a  r  a   rZ  E  n  ***  E  v  i   n   p  S  E  s  t  r  a  t  1  sil
+PL012_39 op    C   C  S  C  C  C   D   S  C   D   C   D    D   C  C  C   D   S  C  C  C  C  C  C  C  S  C  S  C   I   C  C   D   S  C   D    D   S  C   D    D   C  C  C  C   S   C  C   D   S  C  C   S   S  C  C  C  C  C  C  C  C   C 
+PL012_39 #csid 40 11 1 11
+PL012_50 ref  sil  j   E    g   O  s  w  O  v  a  d  O  s   w   O  v  n  i   E   p  O  t   r   a  k  t  O  v  a   w   O  n  a  r  a  z_j  E  p  i  E_~  ts_j  u  p  O  s   w   u  v  sil
+PL012_50 hyp  sil  j  ***  ***  o  s  v  O  v  a  t  o  s  ***  o  g  n  i  ***  p  O  t  ***  a  k  t  O  v  a  ***  l  n  a  r  a   rZ  1  p  i   n    dZ   u  p  O  s  ***  u  v  sil
+PL012_50 op    C   C   D    D   S  C  S  C  C  C  S  S  C   D   S  S  C  C   D   C  C  C   D   C  C  C  C  C  C   D   S  C  C  C  C   S   S  C  C   S     S   C  C  C  C   D   C  C   C 
+PL012_50 #csid 31 11 0 7
+PL012_7 ref  sil  j  E   d   n  a   k   k  r  E  m   l   b  a  r  dz  O  g  n  i  E  v  n  i   E   z  a  r   E   a  g  O  v  a  w  n   a   O  S_j  v   i   a  d  tS  E  n   i   E  sil
+PL012_7 hyp  sil  j  E  ***  n  a  ***  k  r  a  m  ***  b  a  r   z  O  d  n  i  E  v  n  i  ***  z  a  r  ***  a  g  O  v  a  v  n  ***  O  S_j  v  ***  a  t  tS  E  n  ***  1  sil
+PL012_7 op    C   C  C   D   C  C   D   C  C  S  C   D   C  C  C   S  C  S  C  C  C  C  C  C   D   C  C  C   D   C  C  C  C  C  S  C   D   C   C   C   D   C  S   C  C  C   D   S   C 
+PL012_7 #csid 35 6 0 8
+PL012_9 ref  sil  d  ***  m  i  t  r   j   j  r  O  g  O  z_j  i  n  d  O  r  a   d   ts  a  p  r  E  z   1   d  E  n  t  a  v   w   a  d  j  m  i  r  a  p  u  t  j  n  a  sil
+PL012_9 hyp  sil  d   i   m  i  t  r  ***  i  r  O  g  O   z   i  n  d  O  r  a  ***  ts  a  p  r  a  z  ***  d  E  n  t  a  v  ***  o  d  i  m  i  r  a  p  o  t  i  n  a  sil
+PL012_9 op    C   C   I   C  C  C  C   D   S  C  C  C  C   S   C  C  C  C  C  C   D    C  C  C  C  S  C   D   C  C  C  C  C  C   D   S  C  S  C  C  C  C  C  S  C  S  C  C   C 
+PL012_9 #csid 37 7 1 4
+PL030_11 ref  sil  n  a  v  E  t  ***  v  r  O  dz_j  i   n   n  E  j   w   O  dz_j  i  p  r  E  m  i  E  r  a  sil
+PL030_11 hyp  sil  n  a  v  E  t   1   v  r  u  dz_j  i  ***  n  a  j  ***  u   tS   i  p  r  E  m  i  E  r  a  sil
+PL030_11 op    C   C  C  C  C  C   I   C  C  S    C   C   D   C  S  C   D   S    S   C  C  C  C  C  C  C  C  C   C 
+PL030_11 #csid 22 4 1 2
+PL030_17 ref  sil  p  O  s   E   w  x  ts  E  u  n  i  E  v  a  rZ   n    i    E   n  i  a  z  j  a  z  d  u  sil
+PL030_17 hyp  sil  p  o  s  ***  u  x   s  E  u  n  i  E  v  a  rZ  ***  ***  ***  n  i  a  z  j  a  s  t  o  sil
+PL030_17 op    C   C  S  C   D   S  C   S  C  C  C  C  C  C  C   C   D    D    D   C  C  C  C  C  C  S  S  S   C 
+PL030_17 #csid 19 6 0 4
+PL030_24 ref  sil  z  k  i  m  sil
+PL030_24 hyp  sil  s  k  i  m  sil
+PL030_24 op    C   S  C  C  C   C 
+PL030_24 #csid 5 1 0 0
+PL030_25 ref  sil  z  z  a  rZ  O_~   d   E  m  m  i   E    j   s  k  i  m  p  a  r  t   j   i  sil
+PL030_25 hyp  sil  v  s  a  rZ  O_~  ***  t  u  m  i  ***  ***  s  k  i  m  p  a  r  t  ***  i  sil
+PL030_25 op    C   S  S  C   C   C    D   S  S  C  C   D    D   C  C  C  C  C  C  C  C   D   C   C 
+PL030_25 #csid 16 4 0 4
+PL030_28 ref  sil  r  a  d  ***  n  i  O  d  x  O  dz  O_~  sil
+PL030_28 hyp  sil  r  a  d   E   n  i  o  t  x  O  dz  O_~  sil
+PL030_28 op    C   C  C  C   I   C  C  S  S  C  C   C   C    C 
+PL030_28 #csid 11 2 1 0
+PL030_47 ref  sil  j  a  k  m  O  rZ  n  a  z  a  k  p  i  ts_j  z  v  1  b  O   r   ts  u  v  sil
+PL030_47 hyp  sil  j  a  k  m  O  rZ  n  a  z  a  k  p  i    s   o  b  u  r  O  ***  ts  u  v  sil
+PL030_47 op    C   C  C  C  C  C   C  C  C  C  C  C  C  C    S   S  S  S  S  C   D    C  C  C   C 
+PL030_47 #csid 19 5 0 1
+PL030_48 ref  sil  t  O  n  i   E   O  d  p  O  v  i   E   dz_j  a  l  n  E  i  n  i   E    E  t  1  tS  n  E  sil
+PL030_48 hyp  sil  t  o  n  i  ***  o  t  p  O  v  i  ***   dZ   a  l  n  E  i  n  i  ***  ya  t  1  tS  n  a  sil
+PL030_48 op    C   C  S  C  C   D   S  S  C  C  C  C   D     S   C  C  C  C  C  C  C   D    S  C  C   C  C  S   C 
+PL030_48 #csid 20 6 0 3
+PL030_49 ref  sil  p  O  v   i    n   i   E   n  b  1  w  n  i  E  s  t  a  v  a  ***  ts_j  d  O  d  r  u  g  i   E    j   t  u  r  1  sil
+PL030_49 hyp  sil  p  O  v  ***  ***  i  ***  j  u  d  u  m  i  n  s  t  a  v  a   tS    E   d  o  d  r  u  g  i  ***  ***  t  u  r  1  sil
+PL030_49 op    C   C  C  C   D    D   C   D   S  S  S  S  S  C  S  C  C  C  C  C   I     S   C  S  C  C  C  C  C   D    D   C  C  C  C   C 
+PL030_49 #csid 22 8 1 5
+PL030_58 ref  sil  s  E  k  r  E  t  a  S  ***  ***  v  r  a  ts  a  sil
+PL030_58 hyp  sil  s  a  k  r  E  t  a  S   p    O   v  r  a  ts  a  sil
+PL030_58 op    C   C  S  C  C  C  C  C  C   I    I   C  C  C   C  C   C 
+PL030_58 #csid 14 1 2 0
+PL030_65 ref  sil  t  O  O  t  k  r  1  ts_j  E  k  a  r  t  ***  sil
+PL030_65 hyp  sil  t  o  o  t  k  r  i   tS   E  k  a  r  t   o   sil
+PL030_65 op    C   C  S  S  C  C  C  S    S   C  C  C  C  C   I    C 
+PL030_65 #csid 11 4 1 0
+PL030_82 ref  sil  ***  z  a  v  S  E  m  i  a  w  E  m  l  E  v  i  ts  O  v  E  p  O  g  l  ***  O_~  d  1  sil
+PL030_82 hyp  sil   v   s  a  v  S  1  m  i  a  w  1  m  l  E  g  i  ts  O  v  E  p  o  b  l   o    n   d  E  sil
+PL030_82 op    C    I   S  C  C  C  S  C  C  C  C  S  C  C  C  S  C   C  C  C  C  C  S  S  C   I    S   C  S   C 
+PL030_82 #csid 20 8 2 0
+PL030_87 ref  sil  ***  t  O  n  O  v   a   w  k  O  n  f  l  j  k  t  1  t  f  i  E  r  dz_j  i  sil
+PL030_87 hyp  sil   v   t  o  n  O  v  ***  O  k  o  n  f  l  i  k  t  1  t  f  i  r  a   dZ   i  sil
+PL030_87 op    C    I   C  S  C  C  C   D   S  C  S  C  C  C  S  C  C  C  C  C  C  S  S    S   C   C 
+PL030_87 #csid 17 7 1 1
+PL036_18 ref  sil  v   1   g  l  O_~  d  a  n  a  t  O  rZ  E  d  O  v  O  dz  O_~  ts   1   a   k   ts   j   O_~  n  i  E  d  O  ts  E  n  i   l   j  g  a   n   g  s   t   E  r  u  v  sil
+PL036_18 hyp  sil  v  ***  l  a   n   d  a  n  a  t  O  rZ  E  d  O  v  a  dz  O_~  ts  ***  a  ***  ts  ***   O   n  i  E  d  a  ts  i  n  i  ***  p  r  a  ***  k  s  ***  a  r  u  v  sil
+PL036_18 op    C   C   D   S  S   S   C  C  C  C  C  C   C  C  C  C  C  S   C   C    C   D   C   D    C   D    S   C  C  C  C  S   C  S  C  C   D   S  S  C   D   S  C   D   S  C  C  C   C 
+PL036_18 #csid 31 11 0 7
+PL036_21 ref  sil  s   w   a  v  O  m  i   r   ts_j  i  s  O  v  s  k  i  ***  rZ  E  tS   n   i  k  k  O  m  E  n  d  1  g  w  u  v  n   E   j  p  O  l  j  ts   j   i  sil
+PL036_21 hyp  sil  s  ***  a  v  O  m  i  S_j  ts_j  i  s  O  v  s  k  i   E   rZ  E  tS  ***  i  k  k  O  m  a  n  t  1  x  g  o  v  n  ***  i  p  O  l  i  ts  ***  i  sil
+PL036_21 op    C   C   D   C  C  C  C  C   S     C   C  C  C  C  C  C  C   I    C  C   C   D   C  C  C  C  C  S  C  S  C  S  S  S  C  C   D   S  C  C  C  S   C   D   C   C 
+PL036_21 #csid 33 8 1 4
+PL036_22 ref  sil  n  i   E   z  a  v  S  E  sil
+PL036_22 hyp  sil  n  i  ***  z  a  v  S  a  sil
+PL036_22 op    C   C  C   D   C  C  C  C  S   C 
+PL036_22 #csid 8 1 0 1
+PL036_29 ref  sil  t  1  m  r  a  z  E  m  ts_j  E_~  rZ  k  O  r  a  n  i  w   p   O  l  j  ts  j  a  n  t  a  sil
+PL036_29 hyp  sil  t  E  m  r  a  z  a  m   tS    E    S  k  o  r  a  n  i  u  sil  p  o  j  ts  j  a  n  t  a  sil
+PL036_29 op    C   C  S  C  C  C  C  S  C    S    S    S  C  S  C  C  C  C  S   S   S  S  C   C  C  C  C  C  C   C 
+PL036_29 #csid 20 10 0 0
+PL036_30 ref  sil  ***  ***   d   O  O  b   w   a  v  1  z  a   n    i    m   S_j  ts_j  O_~  g  n  i  ***  E_~  t  O  O  k   O    w    O   t   S  1  s   t   a  f  u   n    k    ts   j   O  n   a    r    j    u    S   1  sil
+PL036_30 hyp  sil   p    i   sil  d  O  b  ***  a  v  1  z  a  ***  ***  ***   j     u    S   E  n  i   E    n   t  a  l  k  ***  ***  ***  o  tS  u  s  ***  a  f  u  ***  ***  ***  ***  s  n  ***  ***  ***  ***  ***  M  sil
+PL036_30 op    C    I    I    S   S  C  C   D   C  C  C  C  C   D    D    D    S     S    S   S  C  C   I    S   C  S  S  C   D    D    D   S   S  S  C   D   C  C  C   D    D    D    D   S  C   D    D    D    D    D   S   C 
+PL036_30 #csid 18 14 3 17
+PL036_32 ref  sil  z   a   a  n  g  a  rZ  O  v  a  n  O  b  r  1  g  a  d  ***  E  a  n  t  1  t   E   r   r  O   r   1  s  t  1  tS  n  O_~  sil
+PL036_32 hyp  sil  z  ***  a  n  g  a  rZ  1  v  a  n  a  b  r  E  g  a  d   n   u  a  n  t  a  t  ***  a  rZ  O  ***  l  s  t  o  tS  n   o   sil
+PL036_32 op    C   C   D   C  C  C  C   C  S  C  C  C  S  C  C  S  C  C  C   I   S  C  C  C  S  C   D   S   S  C   D   S  C  C  S   C  C   S    C 
+PL036_32 #csid 25 10 1 3
+PL036_36 ref  sil  n  i  k   t    n   i   E   O  t  f   i   E  r   a   w  i  p  O  l   j    ts  j  a  n  ts_j  i   v    1   v  a  rZ  1  l  j    d   rZ  v  i  sil
+PL036_36 hyp  sil  n  i  k  ***  ***  i  ***  o  t  f  ***  9  r  ***  o  i  p  O  l  ***  ***  s  E  n   dZ   i  ***  ***  v  a  rZ  E  l  j  dz_j   E  v  i  sil
+PL036_36 op    C   C  C  C   D    D   C   D   S  C  C   D   S  C   D   S  C  C  C  C   D    D   S  S  C    S   C   D    D   C  C   C  S  C  C    S    S  C  C   C 
+PL036_36 #csid 22 9 0 9
+PL036_37 ref  sil  v  S_j  r  O  t  k  u  z  a  s   t   a  l  j  dz_j  E  v  i  E_~  t  n  a  s   t    O   l  E   t   n  i  O_~  u  k  r  a  i  n  k  E  sil
+PL036_37 hyp  sil  v  ***  S  O  t  k  u  z  a  s  ***  a  l  j  dz_j  E  v  i  ***  t  n  a  s  ***  ***  l  E  ***  k  i  ***  o  k  r  a  i  n  k  a  sil
+PL036_37 op    C   C   D   S  C  C  C  C  C  C  C   D   C  C  C    C   C  C  C   D   C  C  C  C   D    D   C  C   D   S  C   D   S  C  C  C  C  C  C  S   C 
+PL036_37 #csid 30 4 0 7
+PL036_38 ref  sil  z  a  tS  E_~  l  j  p  S  E  S   u   k  i  v  a  ts_j  m  i   E   S  k  a  n  i  E  sil
+PL036_38 hyp  sil  z  a  tS  ***  a  j  p  S  E  S  ***  k  i  v  a  ts_j  m  i  ***  S  k  a  n  i  E  sil
+PL036_38 op    C   C  C   C   D   S  C  C  C  C  C   D   C  C  C  C    C   C  C   D   C  C  C  C  C  C   C 
+PL036_38 #csid 23 1 0 3
+PL036_4 ref  sil   v   p  O  d   O    b   n  1  s  p  O  s   u    b   t   w   u  m  a  tS  1   l    j   s  t   r   a  t  1  S  E  f  O  v  i  E  s   t    O   w  E  tS  n   E   j  p  O  l  j  ts   j   i  sil
+PL036_4 hyp  sil  ***  p  O  d  ***  ***  a  m  s  p  o  s  ***  ***  t  ***  u  m  a  tS  1  ***  ***  s  t  ***  o  t  u  S  E  f  O  v  1  v  s  ***  ***  p  o  tS  n  ***  i  p  o  l  i  ts  ***  i  sil
+PL036_4 op    C    D   C  C  C   D    D   S  S  C  C  S  C   D    D   C   D   C  C  C   C  C   D    D   C  C   D   S  C  S  C  C  C  C  C  S  S  C   D    D   S  S   C  C   D   S  C  S  C  S   C   D   C   C 
+PL036_4 #csid 29 12 0 13
+PL036_40 ref  sil  g  a  n  g  s  t  E  r   t    S    1  m   a   w  v  d   w   O  n   i   a  x  d  v  a  p  i  s  t  O  l   E    t   1  sil
+PL036_40 hyp  sil  g  a  n  a  k  s  a  r  ***  ***  tS  m  ***  O  v  d  ***  o  n  ***  a  l  t  v  a  p  i  s  t  a  l  ***  ***  a  sil
+PL036_40 op    C   C  C  C  S  S  S  S  C   D    D    S  C   D   S  C  C   D   S  C   D   C  S  S  C  C  C  C  C  C  S  C   D    D   S   C 
+PL036_40 #csid 18 11 0 7
+PL036_41 ref  sil  z  d  O_~  rZ   1    w   O   d   d  a  ts_j  t  S  1  s  t  S  a  w  1  sil
+PL036_41 hyp  sil  z  d   O   rZ  ***  ***  O  ***  d  a   ***  t  S  E  s  t  S  a  v  a  sil
+PL036_41 op    C   C  C   S    C   D    D   C   D   C  C    D   C  C  S  C  C  C  C  S  S   C 
+PL036_41 #csid 14 4 0 4
+PL036_42 ref  sil  j  E  d  n  a  z  k  u  l  t  r  a  f   i   w  a  v  s  u  f  i  t  d  v  i  E   v   S_j  ts_j  a   n   E  sil
+PL036_42 hyp  sil  j  e  d  n  a  s  k  o  l  t  r  a  f  ***  l  a  v  s  o  f  i  n  d  v  i  E  ***  ***    S   a  ***  4  sil
+PL036_42 op    C   C  S  C  C  C  S  C  S  C  C  C  C  C   D   S  C  C  C  S  C  C  S  C  C  C  C   D    D     S   C   D   S   C 
+PL036_42 #csid 22 8 0 4
+PL036_43 ref  sil  p  O  l   j   ts   j   a  n  ts_j  i  O   d   p  O  v  i   E   dz_j  E  l  j  O  g   n   i   E   m  sil
+PL036_43 hyp  sil  p  O  l  ***  ts  ***  E  n   dZ   a  d  sil  p  O  v  i  ***   dZ   i  l  i  o  g  ***  i  ***  m  sil
+PL036_43 op    C   C  C  C   D    C   D   S  C    S   S  S   S   C  C  C  C   D     S   S  C  S  S  C   D   C   D   C   C 
+PL036_43 #csid 15 9 0 5
+PL036_44 ref  sil  t  S   1   dz_j  E  s  t  O  tS  t  E   r  O  l  E  t   n   i  v  O  v  k  a  z  g  i  n  O_~  w  n  a  m   i    E   j  s   ts  u  p  O   l   j  ts  j  a   n   t  O  m   n   i   ts  S_j  i   E   n   i    E   s  t  a  w  O  sil
+PL036_44 hyp  sil  v  S  ***   dZ   a  s  t  o  tS  t  a  rZ  O  l  a  t  ***  i  v  O  v  k  a  z  k  i  n  ***  o  n  a  m  ***  ***  e  s  ***  E  p  O  ***  j  ts  j  a  ***  t  a  m  ***  i  ***   tS  i  ***  n  ***  ***  s  t  a  v  a  sil
+PL036_44 op    C   S  C   D     S   S  C  C  S   C  C  S   S  C  C  S  C   D   C  C  C  C  C  C  C  S  C  C   D   S  C  C  C   D    D   S  C   D   S  C  C   D   C   C  C  C   D   C  S  C   D   C   D    S   C   D   C   D    D   C  C  C  S  S   C 
+PL036_44 #csid 37 15 0 13
+PL036_56 ref  sil   x   ts  O_~  S  1  b  k  O  i  d  O  b  rZ  E  rZ  1  ts_j  sil
+PL036_56 hyp  sil  ***   s   u   S  E  p  k  o  j  d  a  b  rZ  E   Z  E  ts_j  sil
+PL036_56 op    C    D    S   S   C  S  S  C  S  S  C  S  C   C  C   S  S    C    C 
+PL036_56 #csid 9 9 0 1
+PL036_57 ref  sil   n    i    E   l  j  tS  O_~  S_j  i  E  z  k  O  n  s  E   k   f  E  n  ts  j  a  m  i  sil
+PL036_57 hyp  sil  ***  ***  ***  j  y  tS   O   S_j  i  E  s  k  o  n  s  E  ***  f  E  n  ts  j  a  m  i  sil
+PL036_57 op    C    D    D    D   S  S   C   S    C   C  C  S  C  S  C  C  C   D   C  C  C   C  C  C  C  C   C 
+PL036_57 #csid 18 5 0 4
+PL036_58 ref  sil  ***  m  a  rZ  O_~   i    m   S_j  i  E  k  a  r   j   E  r  1  b  O  S  u  v  sil
+PL036_58 hyp  sil   v   m  a  rZ  O_~  ***  ***  S_j  i  E  k  a  r  ***  i  r  E  b  o  s  u  v  sil
+PL036_58 op    C    I   C  C   C   C    D    D    C   C  C  C  C  C   D   S  C  S  C  S  S  C  C   C 
+PL036_58 #csid 16 4 1 3
+PL036_59 ref  sil  x  ts  O_~  b   1   ts_j  t  a  k  s  a  m  O  s  w  a  v  n  i  j  a  k  i  x  p  O  p  S  E   d   n  i  O  p  i   E   k  u  n  O  v   i   E  sil
+PL036_59 hyp  sil  v  ts  O_~  b  ***    E   S  E  x  s  a  m  a  s  v  a  v  n  i  j  a  k  i  x  p  O  p  S  E  ***  n  i  a  p  i  ***  k  o  n  O  v  ***  1  sil
+PL036_59 op    C   S   C   C   C   D     S   S  S  S  C  C  C  S  C  S  C  C  C  C  C  C  C  C  C  C  C  C  C  C   D   C  C  S  C  C   D   C  S  C  C  C   D   S   C 
+PL036_59 #csid 31 10 0 4
+PL036_69 ref  sil  p  O  l  j  ts  j   i   u  d  a  w  O  S_j  i  E  p  O  s  t    S   E   l    j   ts_j  b  a  n  d  1  t   E   sil
+PL036_69 hyp  sil  p  o  l  i   s  j  ***  u  d  a  w  O  S_j  E  m  p  o  s  O  dz_j  E  ***  ***   ***  b  a  n  d  E  t  ***  sil
+PL036_69 op    C   C  S  C  S   S  C   D   C  C  C  C  C   C   S  S  C  S  C  S    S   C   D    D     D   C  C  C  C  S  C   D    C 
+PL036_69 #csid 19 9 0 5
+PL036_74 ref  sil  O  d  b  i   l    j   t  E  S  z  a  k   w   a  d  n  i  k  u  v  sil
+PL036_74 hyp  sil  o  d  b  i  ***  ***  t  E  r  z  a  k  ***  o  d  n  i  k  u  v  sil
+PL036_74 op    C   S  C  C  C   D    D   C  C  S  C  C  C   D   S  C  C  C  C  C  C   C 
+PL036_74 #csid 16 3 0 3
+PL036_87 ref  sil  tS  1  ts  O  S_j  S_j   i   E  z  m   i    E    n   i  w  O  sil
+PL036_87 hyp  sil  tS  1  ts  O  ***  S_j  ***  E  z  m  ***  ***  ***  i  j  o  sil
+PL036_87 op    C    C  C   C  C   D    C    D   C  C  C   D    D    D   C  S  S   C 
+PL036_87 #csid 11 2 0 5
+PL036_90 ref  sil  b  1  ts_j  m  O  rZ  E  k  O  m  u  S_j  p  O  p  r  a  v  i   a    w   O  t  O  s  a  m  O  p  O  tS  u  ts_j  E  sil
+PL036_90 hyp  sil  b  1   tS   m  O  rZ  E  k  O  m  u   S   p  O  p  r  O  v  i  ***  ***  o  t  o  s  a  m  a  p  O  tS  u   tS   E  sil
+PL036_90 op    C   C  C    S   C  C   C  C  C  C  C  C   S   C  C  C  C  S  C  C   D    D   S  C  S  C  C  C  S  C  C   C  C    S   C   C 
+PL036_90 #csid 27 7 0 2
+PL036_91 ref  sil  p  O  l  s  k  a  n  a  p  E  v  n  O  n  i   E    j   E  s   t   E  n  k   l   a  v  ***  O_~  s  p  O  k  O   j   u  sil
+PL036_91 hyp  sil  p  O  l  s  k  a  n  a  p  O  d  n  o  n  i  ***  ***  E  s  ***  E  n  k  ***  a  v   O    n   s  p  o  k  O  ***  n  sil
+PL036_91 op    C   C  C  C  C  C  C  C  C  C  S  S  C  S  C  C   D    D   C  C   D   C  C  C   D   C  C   I    S   C  C  S  C  C   D   S   C 
+PL036_91 #csid 25 6 1 5
+PL036_93 ref  sil  S_j  r  E  d  n  i  O  v  k  a  rZ  d  1  m  p  r  a  ts   u   j  E  p  O  p  i  E_~  ts_j  dz_j  E  ts_j  O_~  t  f  u   n    k    ts   j  O  n  a   r    j  u  S  1  sil
+PL036_93 hyp  sil   p   S  E  d  n  i  E  v  k  a   S  t  E  m  p  r  a  ts  ***  l  i  p  o  p  i  E_~   ***  dz_j  E  ts_j  O_~  t  f  u  ***  ***  ***  tS  E  n  a  ***  rZ  1  S  E  sil
+PL036_93 op    C    S   S  C  C  C  C  S  C  C  C   S  S  S  C  C  C  C   C   D   S  S  C  S  C  C   C     D     C   C    C    C   C  C  C   D    D    D    S  S  C  C   D    S  S  C  S   C 
+PL036_93 #csid 28 14 0 6
+PL036_95 ref  sil  b  a  r  dz  O  v  a  rZ  n  a  j   E   s  t  v  s  t  E_~   p   n  a  s  E  l  E  k  ts  j   a  sil
+PL036_95 hyp  sil  b  a  r  dz  O  v  a  rZ  n  a  j  ***  s  t  a  n  t  ***  ***  n  a  s  M  n  a  k  ts  i  ya  sil
+PL036_95 op    C   C  C  C   C  C  C  C   C  C  C  C   D   C  C  S  S  C   D    D   C  C  C  S  S  S  C   C  S   S   C 
+PL036_95 #csid 21 7 0 3
+PL036_97 ref  sil  O  n  S_j   i   E  n  i   E   s  p  r  a  v  dz_j  i  sil
+PL036_97 hyp  sil  o  n  ***  ***  S  u  i  ***  s  p  r  a  v  dz_j  i  sil
+PL036_97 op    C   S  C   D    D   S  S  C   D   C  C  C  C  C    C   C   C 
+PL036_97 #csid 11 3 0 3
+PL037_10 ref  sil  s   w   u  rZ  O_~  b  E  z  p   w   a  t  n  O_~  r  a  d  O_~  i  p  O  m  ***  O  ts  O_~  k  a  rZ  d  E  m  u  k  t  O  s  t  O  s  u  j  E  v  1  r  O  b  1  f  i  r  ***  ***  ***  m  1  sil
+PL037_10 hyp  sil  s  ***  u  rZ  O_~  b  E  s  p  ***  o  t  n   o   r  a  d   u   i  p  O  m   o   t   u   n   k  a   S  t  E  m  u  k  t  o  s  t  o  s  u  j  u  v  E  r  o  m  1  x  i  r   i    n    d   v  1  sil
+PL037_10 op    C   C   D   C   C   C   C  C  S  C   D   S  C  C   S   C  C  C   S   C  C  C  C   I   S   S   S   C  C   S  S  C  C  C  C  C  S  C  C  S  C  C  C  S  C  S  C  S  S  C  S  C  C   I    I    I   S  C   C 
+PL037_10 #csid 36 17 4 2
+PL037_28 ref  sil  z  a  rZ  O_~  d  f  i  r  m  1  p  O  d   j   O_~  w  d  E  ts  1  z   j   E  O  u  r  u  x  O  m  i   E   n   i    u   v  t  1  m  k  r  a  j  u  f  a  b  r  1  k  i  s  v  O  i   x   v  1  r  O   b    u   v  sil
+PL037_28 hyp  sil  s  E  rZ  O_~  t  f  i  r  m  E  p  o  d  ***  ***  u  d  E  ts  i  z  ***  i  o  u  r  u  x  O  m  i  ***  n  ***  ***  f  t  E  n  k  r  a  j  u  f  a  p  r  E  k  i  s  v  a  i  ***  f  9  r  O  ***  ***  r  sil
+PL037_28 op    C   S  S   C   C   S  C  C  C  C  S  C  S  C   D    D   S  C  C   C  S  C   D   S  S  C  C  C  C  C  C  C   D   C   D    D   S  C  S  S  C  C  C  C  C  C  C  S  C  S  C  C  C  C  S  C   D   S  S  C  C   D    D   S   C 
+PL037_28 #csid 38 18 0 9
+PL037_29 ref  sil  ***  n  a  m  i   E    j   s  ts  E  l  O  k  a  l  j  z  a  ts   j   i  v  1  b  r  a  n  O  m  i   E    j   s   ts  O  v  O  S_j  ts_j  d  u  b  ***  n  a  ***  n  i  E  d  a  l  E  k  O  m  O  s  k  f  ***  1  sil
+PL037_29 hyp  sil  S_j  n  a  m  i  ***  ***  s   t  E  l  O  k  a  l  i  s  E  ts  ***  i  f  i  b  r  a  n  a  m  i  ***  ***  s  ***  t  a  w   i     l   d  u  b   E   n  a   n   n  i  E  d  a  l  e  k  O  m  o  s  k  f   E   t  sil
+PL037_29 op    C    I   C  C  C  C   D    D   C   S  C  C  C  C  C  C  S  S  S   C   D   C  S  S  C  C  C  C  S  C  C   D    D   C   D   S  S  S   S     S   C  C  C   I   C  C   I   C  C  C  C  C  C  S  C  C  C  S  C  C  C   I   S   C 
+PL037_29 #csid 39 15 4 6
+PL037_32 ref  sil  a  l  E  t  O  r  O   b    i   O_~  dz_j  i  S_j  v  S  1  s   ts   1   sil
+PL037_32 hyp  sil  a  l  E  t  a  r  O  ***  ***  ***    v   1   m   t  S  1  s  ***  ***  sil
+PL037_32 op    C   C  C  C  C  S  C  C   D    D    D     S   S   S   S  C  C  C   D    D    C 
+PL037_32 #csid 11 5 0 5
+PL037_39 ref  sil  z  m  i   E   n  i   a    j   O_~  S_j   i   E  O  n  E  t  a  k   j    a   k  z  m  i   E   n  i   a   S_j  i  E  rZ  E  tS  1  v  i  s  t   O   S_j  ts_j  v  O  k   u   w  n  a  s  ***  m  u  v  i  r  O  m  a  n  r  O  j  E  k  sil
+PL037_39 hyp  sil  s  v  i  ***  n  i  ***  ***   E   S_j  ***  v  a  n  E  t  a  k  ***  ***  i  l  s  i  ***  n  i  ***  ***  S  O  rZ  1   k  i  v  i  s  t  ***  ***    i   v  O  k  ***  o  n  a  s   t   m  u  v  i  r  o  m  a  n  o  r  u  i  t  sil
+PL037_39 op    C   S  S  C   D   C  C   D    D    S    C    D   S  S  C  C  C  C  C   D    D   S  S  S  C   D   C  C   D    D   S  S   C  S   S  S  C  C  C  C   D    D     S   C  C  C   D   S  C  C  C   I   C  C  C  C  C  S  C  C  C  S  S  S  S  S   C 
+PL037_39 #csid 33 21 1 12
+PL037_47 ref  sil  t  O  g   w   u  v  n  i  E  dz_j  E_~  k  i  n  i  m  k  a  z_j  i  m  i  E  ***  S  v  i   E   l  k  i  k  t  u  r  1  z  a  s  t   a   w  p   O   l  s  k  ***  E  d  r   E    v   n  i  a  n  O_~   m    u   g  w  p  O  z  O  s  t  a  v  i  ts_j  j  O_~  m  u  r  O  v  a  n  O_~  sil
+PL037_47 hyp  sil  t  o  g  ***  o  v  n  i  z    i    n   k  i  n  i  m  k  a   Z   i  m  i  E   rZ  1  v  i  ***  l  k  i  k  t  u  r  i  z  a  s  t  ***  o  p  ***  o  s  k   o   n  d  r  ***  ***  n  i  a  n  ***  ***  ***  o  v  b  o  s  E  s  t  a  v  i   tS   i   o   n  u  r  O  v  a  n  ***  sil
+PL037_47 op    C   C  S  C   D   S  C  C  C  S    S    S   C  C  C  C  C  C  C   S   C  C  C  C   I   S  C  C   D   C  C  C  C  C  C  C  S  C  C  C  C   D   S  C   D   S  C  C   I   S  C  C   D    D   C  C  C  C   D    D    D   S  S  S  S  S  S  C  C  C  C  C    S   S   S   S  C  C  C  C  C  C   D    C 
+PL037_47 #csid 51 21 2 10
+PL037_6 ref  sil  ***  O  n  E  z  m  i  E  n   i    a    j   O_~  s  t  1   l   rZ  1  ***  ts_j  a  sil
+PL037_6 hyp  sil   k   a  n  E  z  m  i  E  n  ***  ***  ***  ***  s  t  1  ***  rZ  1   tS    n   a  sil
+PL037_6 op    C    I   S  C  C  C  C  C  C  C   D    D    D    D   C  C  C   D    C  C   I     S   C   C 
+PL037_6 #csid 15 2 2 5
+PL037_60 ref  sil  s  k   a   m  i   E   n  i   a    w   O  S_j  ts_j  i  s  O_~  j  E  d  n  a  k  n  i   E   l  j  tS  n  E  i  t  r  u   d   n  E  ***  d  O  z  n  a  l   E   z_j   E    n   i   a   sil
+PL037_60 hyp  sil  s  k  ***  m  i  ***  n  i  ***  ***  u   S     t   i  s  ***  a  m  i  t  a  t  n  i  ***  l  i  tS  n  i  i  t  r  u  ***  n  E   n   t  u  z  n  a  l  ***  ***  ***  ***  i  ***   S 
+PL037_60 op    C   C  C   D   C  C   D   C  C   D    D   S   S     S   C  C   D   S  S  S  S  C  S  C  C   D   C  S   C  C  S  C  C  C  C   D   C  C   I   S  S  C  C  C  C   D    D    D    D   C   D    S 
+PL037_60 #csid 26 13 1 12
+PL037_85 ref  sil  s  ***  O_~  t  ***  O  m  i  n  i   a  t  u  r  O  v  E  u  s  k  O  k  i  z  a  b  u  rZ  a  j  O_~  ts  E   g   w  a  t  k  ***  O_~  p  i   E   r  v  O  t   n   i   E   p  O  v  i  E   rZ   x    n   i  E  sil
+PL037_85 hyp  sil  s   o    n   t   a   l  n  i  n  i  ya  t  o  r  O  v  E  u  s  k  O  k  i  s  a  p  O  rZ  a  j  O_~  ts  E  ***  k  O  t  k   O    m   p  i  ***  r  f  o  t  ***  i  ***  p  O  v  i  E  ***  ***  ***  S  k  sil
+PL037_85 op    C   C   I    S   C   I   S  S  C  C  C   S  C  S  C  C  C  C  C  C  C  C  C  C  S  C  S  S   C  C  C   C    C  C   D   S  S  C  C   I    S   C  C   D   C  S  S  C   D   C   D   C  C  C  C  C   D    D    D   S  S   C 
+PL037_85 #csid 37 15 3 7
+PL038_16 ref  sil  z  n  i   k   n  E_~  l  j  m  i  z  O  tS  u  v  r  E  j  O  n  i  E  rZ  E  k  i  sil
+PL038_16 hyp  sil  z  n  i  ***  x   E   l  i  n  i  z  o  tS  o  v  r  a  j  a  n  i  E  rZ  E  k  i  sil
+PL038_16 op    C   C  C  C   D   S   S   C  S  S  C  C  S   C  S  C  C  S  C  S  C  C  C   C  C  C  C   C 
+PL038_16 #csid 19 8 0 1
+PL038_17 ref  sil  z  a  j  E_~  w  a  m  S_j  i  E  d  O  m  O  v  ***  ***  O_~  r  O  b  O  t  O_~  sil
+PL038_17 hyp  sil  z  a  j   a   w  a  o   S   E  o  d  O  m  O  v   n    o    p   r  O  b  o  t   o   sil
+PL038_17 op    C   C  C  C   S   C  C  S   S   S  S  C  C  C  C  C   I    I    S   C  C  C  S  C   S    C 
+PL038_17 #csid 16 8 2 0
+PL038_20 ref  sil  r  a  n  1  b  O  s  k  i  E  r  a  n  ***  1  b  O  s  k  i  E  sil
+PL038_20 hyp  sil  r  a  l  e  b  o  s  k  i  E  r  a  n   a   n  b  o  s  k  r  x  sil
+PL038_20 op    C   C  C  S  S  C  S  C  C  C  C  C  C  C   I   S  C  S  C  C  S  S   C 
+PL038_20 #csid 15 7 1 0
+PL038_21 ref  sil  ***  r  a  t   u   j  ts_j  E  dz_j  E  ts_j  i  k  S  1  tS  a  w  a  sil
+PL038_21 hyp  sil   p   r  a  t  ***  o   tS   E  dz_j  E   tS   i  k  S  1  tS  a  w  a  sil
+PL038_21 op    C    I   C  C  C   D   S    S   C    C   C    S   C  C  C  C   C  C  C  C   C 
+PL038_21 #csid 16 3 1 1
+PL038_24 ref  sil  j  a  t  E   S  n  i   E   m  O  g   w    a   m  v  t   O   u  v  i  E  rZ  1  ts_j  sil
+PL038_24 hyp  sil  j  a  t  a  tS  n  i  ***  m  o  g  ***  ***  O  v  t  ***  o  v  i  E  rZ  1  ts_j  sil
+PL038_24 op    C   C  C  C  S   S  C  C   D   C  S  C   D    D   S  C  C   D   S  C  C  C   C  C    C    C 
+PL038_24 #csid 17 5 0 4
+PL038_25 ref  sil   ts  a   w  1  tS  a   s   S_j  i  E  w  u  dz  E  rZ  E  t  O  j  E   d   n  a  k  n  i   E   O  n  a  sil
+PL038_25 hyp  sil  ***  v  ts  O  tS  a  ***  ***  S  E  u  z   a  w  rZ  E  t  O  j  E  ***  m  a  k  n  i  ***  o  m  a  sil
+PL038_25 op    C    D   S   S  S   C  C   D    D   S  C  S  S   S  S   C  C  C  C  C  C   D   S  C  C  C  C   D   S  S  C   C 
+PL038_25 #csid 16 11 0 5
+PL038_3 ref  sil  d  O  k  O  J  ts  a  rZ  1  ts_j  a  n   i   E  z  a  p   O   m  n  E  t  E  g  O  d  n   i   a  sil
+PL038_3 hyp  sil  d  a  k  a  n  ts  a  rZ  1   tS   a  n  ***  a  z  a  p  ***  o  n  o  t  E  g  O  d  n  ***  a  sil
+PL038_3 op    C   C  S  C  S  S   C  C   C  C    S   C  C   D   S  C  C  C   D   S  C  S  C  C  C  C  C  C   D   C   C 
+PL038_3 #csid 21 7 0 3
+PL038_31 ref  sil  r  a  n  1  b  O  s  k  i  E  ***  t  O  ts  O  S_j  S_j  i  E  r  u  S  a  sil
+PL038_31 hyp  sil  r  a  l  e  b  o  s  k  i  E  sil  t  O  ts  O  ***  S_j  i  o  r  u  S  a  sil
+PL038_31 op    C   C  C  S  S  C  S  C  C  C  C   I   C  C   C  C   D    C   C  S  C  C  C  C   C 
+PL038_31 #csid 19 4 1 1
+PL038_32 ref  sil  p  O  d  E  S   w   a  m  b  l  j  rZ  E   j   sil
+PL038_32 hyp  sil  p  o  d  a  S  ***  O  n  b  l  E  rZ  E  ***  sil
+PL038_32 op    C   C  S  C  S  C   D   S  S  C  C  S   C  C   D    C 
+PL038_32 #csid 9 5 0 2
+PL038_36 ref  sil  r  a  t  ***  u  n  k  u  r  a  t  u  n  k  u  sil
+PL038_36 hyp  sil  r  a  t   o   l  i  k  u  r  a  t  o  n  k  o  sil
+PL038_36 op    C   C  C  C   I   S  S  C  C  C  C  C  S  C  C  S   C 
+PL038_36 #csid 12 4 1 0
+PL038_4 ref  sil  j  a  k  t  u  rZ  1  ts_j  sil
+PL038_4 hyp  sil  j  a  k  t  u  rZ  1  ts_j  sil
+PL038_4 op    C   C  C  C  C  C   C  C    C    C 
+PL038_4 #csid 10 0 0 0
+PL038_43 ref  sil  ***  a  l  E  z  j  u  s  t  1  ***  ts_j  O_~  k  i  p  i  E  l  j  a   k    b   1  S_j    i    E   d  r  O  tS  1  w  a  sil
+PL038_43 hyp  sil   v   a  l  E  z  i  o  s  t  1   S     a    l   k  i  p  r  E  l  j  a  ***  ***  g   a   ts_j  O_~  g  r  O  tS  O  w  a  sil
+PL038_43 op    C    I   C  C  C  C  S  S  C  C  C   I     S    S   C  C  C  S  C  C  C  C   D    D   S   S     S    S   S  C  C   C  S  C  C   C 
+PL038_43 #csid 21 11 2 2
+PL038_44 ref  sil  t  O   v   S  1  s   t   k  O  t   r   v   a    w   O  s  E  k  u  n  d  1  sil
+PL038_44 hyp  sil  k  O  ***  S  1  s  ***  k  a  t  ***  v  ***  ***  O  s  E  k  O  n  d  a  sil
+PL038_44 op    C   S  C   D   C  C  C   D   C  S  C   D   C   D    D   C  C  C  C  S  C  C  S   C 
+PL038_44 #csid 15 4 0 5
+PL038_45 ref  sil  n  a  m  u  j   k    S  1  k  n  a  d   b   rZ  E  g  z  b   i    E   g  l   j   S_j  i  E  l  u  ***  dz_j  E  sil
+PL038_45 hyp  sil  n  a  m  o  j  ***  tS  E  k  n  a  d  ***  rZ  E  k  z  b  ***  ***  1  l  ***   i   S  E  l  u   l     i   E  sil
+PL038_45 op    C   C  C  C  S  C   D    S  S  C  C  C  C   D    C  C  S  C  C   D    D   S  C   D    S   S  C  C  C   I     S   C   C 
+PL038_45 #csid 19 8 1 5
+PL038_47 ref  sil  p   r   u  b  O  v  a  l   j   i  x  r   E   a  n  i  m  O  v  a  ts_j  sil
+PL038_47 hyp  sil  p  ***  o  b  O  v  a  l  ***  i  f  r  ***  a  n  i  m  O  v  a  ts_j  sil
+PL038_47 op    C   C   D   S  C  C  C  C  C   D   C  S  C   D   C  C  C  C  C  C  C    C    C 
+PL038_47 #csid 18 2 0 3
+PL038_48 ref  sil  n  i   E   u  d  a  w  O  S_j    i    E   sil
+PL038_48 hyp  sil  n  i  ***  o  d  a  w  O  S_j  ts_j  O_~  sil
+PL038_48 op    C   C  C   D   S  C  C  C  C   C     S    S    C 
+PL038_48 #csid 9 3 0 1
+PL038_49 ref  sil  p  a  n  i  m  a  r  j  a  m  a  O  tS  1  tS  E  r  v  O  n  E  O  d  ***  w  E  z  sil
+PL038_49 hyp  sil  p  a  n  i  m  a  r  j  a  m  a  o  tS  1  tS  E  r  v  o  l  a  o  d   u   w  a  s  sil
+PL038_49 op    C   C  C  C  C  C  C  C  C  C  C  C  S   C  C   C  C  C  C  S  S  S  S  C   I   C  S  S   C 
+PL038_49 #csid 21 7 1 0
+PL038_5 ref  sil  j  a  k  p  r  a  ts  O  v  a  ts_j  sil
+PL038_5 hyp  sil  j  a  k  p  r  a  ts  O  v  a  ts_j  sil
+PL038_5 op    C   C  C  C  C  C  C   C  C  C  C    C    C 
+PL038_5 #csid 13 0 0 0
+PL038_52 ref  sil  x  1  b  a  n  i  k   t   n  i   E   O  d  p   O   v   i  E  n  a  t  O  p  1  t  a  n  i  E  sil
+PL038_52 hyp  sil  v  e  b  a  n  i  k  ***  n  i  ***  o  d  p  ***  o  v\  e  n  a  t  a  p  E  t  a  n  i  E  sil
+PL038_52 op    C   S  S  C  C  C  C  C   D   C  C   D   S  C  C   D   S   S  S  C  C  C  S  C  S  C  C  C  C  C   C 
+PL038_52 #csid 20 8 0 3
+PL038_54 ref  sil  v  S  1  s   ts  1  O  t  1  m   v   i  E  dz_j  E  l   j   sil
+PL038_54 hyp  sil  v  S  1  s  ***  E  O  t  E  m  ***  l  e   dZ   a  l  ***  sil
+PL038_54 op    C   C  C  C  C   D   S  C  C  S  C   D   S  S    S   S  C   D    C 
+PL038_54 #csid 10 6 0 3
+PL038_62 ref  sil  z  a  s   t   a  n  a   v   i  a   m   S_j  i  E   d   l  a  tS  E  g  O  t  O  z  r  O  b  i  w  a  sil
+PL038_62 hyp  sil  z  a  s  ***  a  n  a  ***  r  a  ***  ***  S  E  ***  l  a  tS  E  g  a  t  a  z  r  O  b  i  l  a  sil
+PL038_62 op    C   C  C  C   D   C  C  C   D   S  C   D    D   S  C   D   C  C   C  C  C  S  C  S  C  C  C  C  C  S  C   C 
+PL038_62 #csid 22 5 0 5
+PL038_63 ref  sil  ***  m  O  rZ  E  z  p  O  v  O  d  u  m  E_~  rZ  a  k  t  u  r  1  l  u  b  i   w   z  a  g  l  O_~  d  a  ts_j  d  O  k  i   E   l  j  S  k  a  sil
+PL038_63 hyp  sil   v   m  O  rZ  E  s  p  O  v  O  d  O  m   a   rZ  a  k  t  u  r  1  l  u  b  i  ***  z  a  g  o   n   d  a    z   d  a  k  i  ***  l  i  S  k  a  sil
+PL038_63 op    C    I   C  C   C  C  S  C  C  C  C  C  S  C   S    C  C  C  C  C  C  C  C  C  C  C   D   C  C  C  S   S   C  C    S   C  S  C  C   D   C  S  C  C  C   C 
+PL038_63 #csid 35 8 1 2
+PL038_64 ref  sil  z  t  E  g  O  ts  O  v  i  E  m  ***  n  a  r  O  dz_j  i  n  ***  E  tS  E  S_j  k  a  n  i   E   m  i   a    w   a  ts  O  l  j  tS  1  ts_j  sil
+PL038_64 hyp  sil  s  t  E  g  O  ts  O  v  i  a  m  sil  n  a  r  O  dz_j  E  n   a   n  tS  E   S   k  a  n  i  ***  n  i  ***  ***  a  ts  O  l  i  tS  1  ts_j  sil
+PL038_64 op    C   S  C  C  C  C   C  C  C  C  S  C   I   C  C  C  C    C   S  C   I   S   C  C   S   C  C  C  C   D   S  C   D    D   C   C  C  C  S   C  C    C    C 
+PL038_64 #csid 31 7 2 3
+PL038_66 ref  sil  r  O  dz_j  i  n  a  j   E   j  m  E_~  rZ  a  m  u  v  i  w  a  rZ  E  t  r  u  d  n  O  S_j    i    E   z  n  i  O_~  d  O  g  a  d  a  ts_j  sil
+PL038_66 hyp  sil  r  O  dz_j  E  n  a  j  ***  e  m   a   rZ  a  m  O  v  i  w  a  rZ  E  t  r  u  d  n  O  S_j  ts_j  O_~  z  n  i   o   d  O  g  a  b  1  ts_j  sil
+PL038_66 op    C   C  C    C   S  C  C  C   D   S  C   S    C  C  C  S  C  C  C  C   C  C  C  C  C  C  C  C   C     S    S   C  C  C   S   C  C  C  C  S  S    C    C 
+PL038_66 #csid 33 9 0 1
+PL038_7 ref  sil  t  O  b  E_~  dz_j  E  m  O  j  E  p  i  E_~  t  n  O  sil
+PL038_7 hyp  sil  t  O  b  E_~  dz_j  E  m  a  j  p  r  a   n   k  n  a  sil
+PL038_7 op    C   C  C  C   C     C   C  C  S  C  S  S  S   S   S  C  S   C 
+PL038_7 #csid 11 7 0 0
+PL038_74 ref  sil  n  i   E   m  O  g  w  a  z  n  a  l  E  z_j  ts_j  z  n  i   m   v  s  p   u   l  n   E   g  O  j  E_~   z  1  k  a  sil
+PL038_74 hyp  sil  n  i  ***  m  o  g  w  a  z  m  a  l  E  ***   ***  z  n  i  ***  n  s  p  ***  o  n  ***  a  n  b  E_~  dz  1  k  a  sil
+PL038_74 op    C   C  C   D   C  S  C  C  C  C  S  C  C  C   D     D   C  C  C   D   S  C  C   D   S  C   D   S  S  S   C    S  C  C  C   C 
+PL038_74 #csid 22 8 0 6
+PL038_77 ref  sil  m  i  a  w  a  j  a  k  O_~  S_j  O  b  s  E  s  j  E  n  a  p  u  n   k   ts_j  E  z  d  r   O   v  i  a  sil
+PL038_77 hyp  sil  m  i  a  w  a  j  a  k   o    S   O  b  s  a  s  i  o  n  a  p  o  n  ***   tS   E  z  d  r  ***  o  r  a  sil
+PL038_77 op    C   C  C  C  C  C  C  C  C   S    S   C  C  C  S  C  S  S  C  C  C  S  C   D     S   C  C  C  C   D   S  S  C   C 
+PL038_77 #csid 23 9 0 2
+PL038_79 ref  sil  k  a  z  a  w  E  m   j    E   j  z  a  rZ  1  v  a  ts_j  k  r  O  p  l  E  u  s  p  O  k  a  j  a   j   O_~  ts  E  sil
+PL038_79 hyp  sil  k  a  z  a  w  a  m  ***  ***  i  z  a  rZ  1  v  a   tS   k  r  O  p  l  a  u  s  p  O  k  a  j  a  ***   n    s  a  sil
+PL038_79 op    C   C  C  C  C  C  S  C   D    D   S  C  C   C  C  C  C    S   C  C  C  C  C  S  C  C  C  C  C  C  C  C   D    S    S  S   C 
+PL038_79 #csid 27 7 0 3
+PL038_80 ref  sil  v  1  s   w    a   w  E  m  d  O  l  E  k  a  rZ  a  sil
+PL038_80 hyp  sil  v  1  s  ***  ***  v  A  n  d  O  l  a  k  a  rZ  a  sil
+PL038_80 op    C   C  C  C   D    D   S  S  S  C  C  C  S  C  C   C  C   C 
+PL038_80 #csid 12 4 0 2
+PL038_81 ref  sil  b  a  d  a  n   i   a  n  i  ts  n  i  E  v  1  k  a  z  a  w  1  sil
+PL038_81 hyp  sil  b  a  d  a  n  ***  E  n  i   s  n  i  E  v  E  k  a  z  a  v  a  sil
+PL038_81 op    C   C  C  C  C  C   D   S  C  C   S  C  C  C  C  S  C  C  C  C  S  S   C 
+PL038_81 #csid 17 5 0 1
+PL038_82 ref  sil  a  l   E   O  n  a  d  a  l  E  j  O   t    1  m  v  s  p  O  m  i  n  a  w  a  sil
+PL038_82 hyp  sil  a  l  ***  o  n  a  d  a  l  a  j  O  ***  ts  E  v  s  p  O  m  i  n  a  w  a  sil
+PL038_82 op    C   C  C   D   S  C  C  C  C  C  S  C  C   D    S  S  C  C  C  C  C  C  C  C  C  C   C 
+PL038_82 #csid 21 4 0 2
+PL038_89 ref  sil  j   E   j  t  E  O  r  j  a  j  E  s   t   t  a  k  a  rZ  E  tS  E  s  w  a  v  a  m  i   a    w   a  p  r  O  b  l  E  m   1   z  s  O  b  O_~  sil
+PL038_89 hyp  sil  j  ***  e  t  E  O  r  i  a  j  e  s  ***  t  a  k  a   t  S  tS  E  s  w  a  v  A  m  i  ***  ***  o  p  r  O  b  l  a  m  ***  E  s  o  b   o   sil
+PL038_89 op    C   C   D   S  C  C  C  C  S  C  C  S  C   D   C  C  C  C   S  S   C  C  C  C  C  C  S  C  C   D    D   S  C  C  C  C  C  S  C   D   S  C  S  C   S    C 
+PL038_89 #csid 30 11 0 5
+PL038_90 ref  sil  v  i  E  m  ts  O  S_j  n  a  t  E  n  t  E  m  a  t  sil
+PL038_90 hyp  sil  v  r  E  n  ts  O  S_j  l  a  p  a  n  k  a  m  a  t  sil
+PL038_90 op    C   C  S  C  S   C  C   C   S  C  S  S  C  S  S  C  C  C   C 
+PL038_90 #csid 12 7 0 0
+PL038_96 ref  sil  n  i  ***  E  x  b  u  g  m   a   j  O_~   v   s  v   O    j   E  j  O  p   i   E  ts  E  sil
+PL038_96 hyp  sil  n  i   n   b  o  k  u  m  A  sil  j  O_~  ***  s  v  ***  ***  o  j  O  p  ***  r   a  t  sil
+PL038_96 op    C   C  C   I   S  S  S  C  S  S   S   C   C    D   C  C   D    D   S  C  C  C   D   S   S  S   C 
+PL038_96 #csid 12 10 1 4
+PL039_101 ref  sil   v   v  i  E_~  k  S  O  S_j  ts_j  i  p  S  1  p  a  t  k  u  v  j  E  d  n  a   k   k   O   n  s  E  k  f  E  n   ts   j    i   z  u  l  E  g  a  n  i   a   n  a  ts_j  i  s  k  O  m   n   i  E  v  1  ts_j  O_~  g  n  i  ***  E_~  t  O  sil
+PL039_101 hyp  sil  ***  p  i  ***  n  S  1  S_j  ts_j  i  p  S  1  p  a  t  k  u  f  i  E  d  n  a  ***  k  ***  o  S  E  k  f  E  n  ***  ***  ***  S  u  n  a  g  a  n  i  ***  n  a    k   i  s  k  O  m  ***  i  E  v  i  ts_j  O_~  d  n  i   E    n   t  o  sil
+PL039_101 op    C    D   S  C   D   S  C  S   C     C   C  C  C  C  C  C  C  C  C  S  S  C  C  C  C   D   C   D   S  S  C  C  C  C  C   D    D    D   S  C  S  S  C  C  C  C   D   C  C    S   C  C  C  C  C   D   C  C  C  S    C    C   S  C  C   I    S   C  S   C 
+PL039_101 #csid 45 15 1 9
+PL039_104 ref  sil  ***  m  a  w  O  k  t  O  z  n  a  i  x  n  a  z  v  i  s  k  a  sil
+PL039_104 hyp  sil   v   m  a  v  O  k  t  o  s  l  a  i  x  n  a  z  v  i  S  k  a  sil
+PL039_104 op    C    I   C  C  S  C  C  C  S  S  S  C  C  C  C  C  C  C  C  S  C  C   C 
+PL039_104 #csid 17 5 1 0
+PL039_105 ref  sil  ***  tS  1   l    j   v  a  r  t  O  tS  a  s  E  m   g   rZ  E  b  a  ts_j   v  rZ  1  ts_j  O  r  1  s  a  x  sil
+PL039_105 hyp  sil   v   tS  1  ***  ***  v  a  r  t  o  tS  a  s  o  m  ***  rZ  a  v  a   ***  dZ   i  S   tS   E  r  a  S  a  x  sil
+PL039_105 op    C    I    C  C   D    D   C  C  C  C  S   C  C  C  S  C   D    C  S  S  C    D    S   S  S    S   S  C  S  S  C  C   C 
+PL039_105 #csid 17 11 1 4
+PL039_106 ref  sil  ***  z  p  E  v  n  O  S_j  ts_j  O_~  sil
+PL039_106 hyp  sil   v   s  p  E  v  n  O  S_j  ts_j  O_~  sil
+PL039_106 op    C    I   S  C  C  C  C  C   C     C    C    C 
+PL039_106 #csid 10 1 1 0
+PL039_107 ref  sil  p  S  E  ts_j  E  S   s   E_~  dz_j   a  i  k  a  rZ  d  1  z  n  a   s   O  d  p   O   v  i  a  d  a  z  a  t  O  ts  O  k   i   E  d  1  S_j  r  O  b  i  w  sil
+PL039_107 hyp  sil  p  S  E   tS   E  S  ***   E     n   dZ  e  k  a   S  t  1  z  n  a  ***  S  u  p  ***  o  j  a  d  a  z  a  t  o   t  u  k  ***  e  d  E  S_j  r  O  b  i  o  sil
+PL039_107 op    C   C  C  C    S   C  C   D    S     S    S  S  C  C   S  S  C  C  C  C   D   S  S  C   D   S  S  C  C  C  C  C  C  S   S  S  C   D   S  C  S   C   C  C  C  C  S   C 
+PL039_107 #csid 27 17 0 4
+PL039_108 ref  sil  p  S  E  d   E   v  S  1  s   t   k  i   m   m  O  r  a  l  n  i   E   a  l  E  n  i   E  t  1  l  k  O  sil
+PL039_108 hyp  sil  p  S  E  d  ***  a  S  1  s  ***  k  i  ***  m  o  r  a  l  n  i  ***  a  l  i  n  i  ya  t  a  l  k  a  sil
+PL039_108 op    C   C  C  C  C   D   S  C  C  C   D   C  C   D   C  S  C  C  C  C  C   D   C  C  S  C  C   S  C  S  C  C  S   C 
+PL039_108 #csid 24 6 0 4
+PL039_14 ref  sil  ***  rZ  1  j  E  m  1  a   l    E   j  E  s  t  O  n   a   O  k  r  E  s  E   m   p  S  E   j   S_j  ts_j  O  v   1   m  d  O   i  f  a  w  rZ  E  tS  1  ***  p  O  s  p  O  l  j  t  E   j   sil
+PL039_14 hyp  sil   v    S  1  j  e  m  e  a  ***  ***  j  e  s  p  O  n  ***  o  k  r  a  S  E  ***  p  S  E  ***  S_j  ts_j  a  v  ***  a  l  a  tS  v  a  r   t  1  rZ  1   x   p  o  s  p  O  l  i  t  E  ***  sil
+PL039_14 op    C    I    S  C  C  S  C  S  C   D    D   C  S  C  S  C  C   D   S  C  C  S  S  C   D   C  C  C   D    C     C   S  C   D   S  S  S   S  S  C  S   S  S   S  C   I   C  S  C  C  C  C  S  C  C   D    C 
+PL039_14 #csid 28 20 2 7
+PL039_19 ref  sil  tS  E_~  S_j  ts_j  p  O  s   w   u  v  k  O  m  i  t  E  t  u  O  b  1  v  a  t  E  l  s  k  i   E   g  O  z  a  p  r  O  t  E  s  t  O  v  a  w  a  sil
+PL039_19 hyp  sil  tS   E   S_j  ts_j  p  O  s  ***  u  v  k  O  m  i  t  E  t  u  O  b  u  v  a  t  a  l  s  k  i  ***  g  O  z  a  p  r  O  t  o  s  t  O  v  a  v  a  sil
+PL039_19 op    C    C   S    C     C   C  C  C   D   C  C  C  C  C  C  C  C  C  C  C  C  S  C  C  C  S  C  C  C  C   D   C  C  C  C  C  C  C  C  S  C  C  C  C  C  S  C   C 
+PL039_19 #csid 41 5 0 2
+PL039_20 ref  sil   d   l  a  tS  E  g  O  sil
+PL039_20 hyp  sil  ***  z  a  tS  a  g  o  sil
+PL039_20 op    C    D   S  C   C  S  C  S   C 
+PL039_20 #csid 5 3 0 1
+PL039_28 ref  sil  m  a  m  1  sil
+PL039_28 hyp  sil  m  a  m  a  sil
+PL039_28 op    C   C  C  C  S   C 
+PL039_28 #csid 5 1 0 0
+PL039_3 ref  sil  z  a  k   w   a  d  n  i   E    x   ts_j   a   w  v  1  p   w   a  ts_j  i  ts_j  m   u   O  d  S  k  O  d  O  v  a  n   i   a  sil
+PL039_3 hyp  sil  z  a  k  ***  o  t  n  i  ***  S_j  ts_j  ***  O  v  a  p  ***  o   tS   i   tS   m  ***  o  t  S  k  O  d  O  v  a  n  ***  a  sil
+PL039_3 op    C   C  C  C   D   S  S  C  C   D    S     C    D   S  C  S  C   D   S    S   C    S   C   D   S  S  C  C  C  C  C  C  C  C   D   C   C 
+PL039_3 #csid 21 10 0 6
+PL039_32 ref  sil  ***  ts  O  S_j  i  E  s  t  a   w   O  z  t  1  m  i  l  u  dz_j   i  m  i  k  t  u  rZ  1  v  u  v  tS  a  s  p  O  ts_j  a  d  a  l  j  a  u  t  O  r  1  t  ***  E  t  sil
+PL039_32 hyp  sil   v    s  O  S_j  i  E  S  t  a  ***  u  s  t  i  m  i  l  u   ***  tS  n  i  k  t  u  rZ  1  v  u  v  tS  a  s  p  o    S   a  d  a  l  j  a  l  t  O  r  E  t   a   r  t  sil
+PL039_32 op    C    I    S  C   C   C  C  S  C  C   D   S  S  C  S  C  C  C  C    D    S  S  C  C  C  C   C  C  C  C  C   C  C  C  C  S    S   C  C  C  C  C  C  S  C  C  C  S  C   I   S  C   C 
+PL039_32 #csid 37 12 2 2
+PL039_38 ref  sil  ***  a  u  t  O  r   1   t  E  t  1  S_j  i  E  v   1    w   O  n  i  O_~  sil
+PL039_38 hyp  sil   h   a  l  t  o  r  ***  t  E  t  1  S_j  i  E  v  ***  ***  a  n  i   o   sil
+PL039_38 op    C    I   C  S  C  S  C   D   C  C  C  C   C   C  C  C   D    D   S  C  C   S    C 
+PL039_38 #csid 15 4 1 3
+PL039_4 ref  sil  p  O  r  a  dz_j  i  w  E  m  b  1  v  1  s  t  ***  O_~  p  i  w  d  O  ***    s   O_~  d  u  sil
+PL039_4 hyp  sil  p  O  r  a  ts_j  i  w  a  n  d  1  v  1  s  t   o    m   p  i  o  d  O  S_j  ts_j  O_~  d  u  sil
+PL039_4 op    C   C  C  C  C    S   C  C  S  S  S  C  C  C  C  C   I    S   C  C  S  C  C   I     S    C   C  C   C 
+PL039_4 #csid 20 7 2 0
+PL039_40 ref  sil  tS  1   v   z   v   i  O_~  z  k  u  z  a  f  E  r  O_~  r  1  v  i  n  a  s  E   j   m  p  O  v   i    n   i   E    n   S_j  i  E  r  O   z    v   i  O_~  z  a  ts_j  sil
+PL039_40 hyp  sil  tS  1  ***  z  ***  j  O_~  s  k  o  Z  a  f  9  r   u   r  i  k  i  n  a  S  E  ***  m  p  O  v  ***  ***  i  ***  ***  S_j  i  o  r  O  ***  S_j  i  O_~  z  a  ts_j  sil
+PL039_40 op    C    C  C   D   C   D   S   C   S  C  S  S  C  C  S  C   S   C  S  S  C  C  C  S  C   D   C  C  C  C   D    D   C   D    D    C   C  S  C  C   D    S   C   C   C  C    C    C 
+PL039_40 #csid 29 11 0 8
+PL039_41 ref  sil  t  O  v  O_~  t  p   l   j  v  1  p  O  s  t  u  l  a  t  sil
+PL039_41 hyp  sil  t  O  v  O_~  t  p  ***  i  v  1  p  o  s  t  o  l  a  t  sil
+PL039_41 op    C   C  C  C   C   C  C   D   S  C  C  C  S  C  C  S  C  C  C   C 
+PL039_41 #csid 16 3 0 1
+PL039_42 ref  sil  ***  z  r  E  S  t  O_~  n  i   E   l  j  tS  E  n  a  t  O  rZ  E  n  O  v  E   v    1   b  O  r  1  z  m  i   E   n  i  O_~  s  k   w   a  d  s  E   j   m  u  n  a  l  E  p  S  1  sil
+PL039_42 hyp  sil   v   s  r  a  S  t   o   n  i  ***  l  i  tS  O  n  a  t  u  rZ  E  n  O  v  E  ***  ***  b  o  r  i  s  m  i  ***  n  i  O_~  s  k  ***  o  t  S  E  ***  m  u  n  a  n  E  p  S  E  sil
+PL039_42 op    C    I   S  C  S  C  C   S   C  C   D   C  S   C  S  C  C  C  S   C  C  C  C  C  C   D    D   C  S  C  S  S  C  C   D   C  C   C   C  C   D   S  S  S  C   D   C  C  C  C  S  C  C  C  S   C 
+PL039_42 #csid 35 14 1 6
+PL039_45 ref  sil  j  E  s   t   E  S_j  m  1  k  r  a  j   E   m  k  a  p  i  t  a  l   j   z  m  u  p  a   J   s   t   f  O  v  E  g  O  ***  sil
+PL039_45 hyp  sil  v  i  s  ***  E   S   m  a  k  r  a  j  ***  m  k  a  p  i  t  a  l  ***  i  s  u  p  a  ***  j  S_j  v  O  v  a  g  O   m   sil
+PL039_45 op    C   S  S  C   D   C   S   C  S  C  C  C  C   D   C  C  C  C  C  C  C  C   D   S  S  C  C  C   D   S   S   S  C  C  S  C  C   I    C 
+PL039_45 #csid 24 10 1 4
+PL039_50 ref  sil  k  a  rZ  d  1  O  S_j  r  O  d  E  k  v   w   a  dz  1  m  a   s   v  O  i  x  p  S  E  m  1  s  w  O  v  ts  u  v  sil
+PL039_50 hyp  sil  k  a   Z  d  E  O  S_j  r  O  d  a  k  v  ***  a  ts  1  m  O  S_j  v  o  i  x  p  S  a  n  o  s  w  O  v  tS  u  v  sil
+PL039_50 op    C   C  C   S  C  S  C   C   C  C  C  S  C  C   D   C   S  C  C  S   S   C  S  C  C  C  C  S  S  S  C  C  C  C   S  C  C   C 
+PL039_50 #csid 26 11 0 1
+PL039_52 ref  sil  t  O  p   O   v  S  E  x  n  E  z  j  a  v  i  s  k  O  sil
+PL039_52 hyp  sil  t  O  p  ***  o  S  1  x  n  a  s  i  E  v  i  S  k  a  sil
+PL039_52 op    C   C  C  C   D   S  C  S  C  C  S  S  S  S  C  C  S  C  S   C 
+PL039_52 #csid 11 8 0 1
+PL039_56 ref  sil  t  E  m   E   x  a  n  i  z  m  1  z  a  s  k  O  tS  1  w  1  p  a  n  a  sil
+PL039_56 hyp  sil  t  E  m  ***  h  a  n  i  s  l  a  z  a  S  k  O  tS  a  w  O  p  a  n  a  sil
+PL039_56 op    C   C  C  C   D   S  C  C  C  S  S  S  C  C  S  C  C   C  S  C  S  C  C  C  C   C 
+PL039_56 #csid 18 7 0 1
+PL039_57 ref  sil  n  i   E  sil
+PL039_57 hyp  sil  n  i  ya  sil
+PL039_57 op    C   C  C   S   C 
+PL039_57 #csid 4 1 0 0
+PL039_59 ref  sil  l  u  dz_j  E  S_j    i    E   p  O  z  n  a  j  O_~  z  a  tS   1   n  a  j  O_~  s  O  b  i   E   S_j   v   i  a  d  tS   1   ts_j  u  s   w   u   g    i   sil
+PL039_59 hyp  sil  v  O  dz_j  E  ***  ts_j  O_~  p  O  z  l  a  j  O_~  z  a  tS  ***  n  a  j  O_~  s  o  m  i  ***  ***  ***  S  a  t  tS  ***   ***  u  s  ***  u  ***  ***  sil
+PL039_59 op    C   S  S    C   C   D     S    S   C  C  C  S  C  C   C   C  C   C   D   C  C  C   C   C  S  S  C   D    D    D   S  C  S   C   D     D   C  C   D   C   D    D    C 
+PL039_59 #csid 24 9 0 10
+PL039_62 ref  sil   d   l  a  tS  E  g   O   E  s   E   l  d  E  t  a  k  b  a  r   dz   O  O  b  a  v  i  a  S_j  i   E    l   u  s  t  r  a   ts   j    i   i  i   n   s  t  1  t  u  t  u  p  a  m  i  E_~  ts_j   i  n  a  r  O  d  O  v  E  j  sil
+PL039_62 hyp  sil  ***  v  a  tS  1  g  ***  a  s  ***  a  d  a  k  a  d  v  a  r  ***  ts  O  b  a  v  i  E  S_j  i  ***  ***  u  s  t  r  a  ***  ***  ***  S  i  ***  s  t  E  t  o  t  o  p  a  m  i  ***   ***  tS  n  a  n  o  d  O  v  a  i  sil
+PL039_62 op    C    D   S  C   C  S  C   D   S  C   D   S  C  S  S  C  S  S  C  C   D    S  C  C  C  C  C  S   C   C   D    D   C  C  C  C  C   D    D    D   S  C   D   C  C  S  C  S  C  S  C  C  C  C   D     D    S  C  C  S  S  C  C  C  S  S   C 
+PL039_62 #csid 36 19 0 12
+PL039_66 ref  sil  j   a   k  p  a  n  O  ts  E  n  i  a  p  S  E   b    i   E  g  l  u  s  t  r  a  ts  j  i  sil
+PL039_66 hyp  sil  j  ***  e  p  a  n  O  tS  E  n  i  a  p  S  E  ***  ***  l  e  k  u  s  t  r  a   p  S  i  sil
+PL039_66 op    C   C   D   S  C  C  C  C   S  C  C  C  C  C  C  C   D    D   S  S  S  C  C  C  C  C   S  S  C   C 
+PL039_66 #csid 20 7 0 3
+PL039_75 ref  sil  ***  O  tS  1  v  i  S_j  ts_j  E  z  a  p  r  O  t  E  s  t  O  v  a   w   E  m  sil
+PL039_75 hyp  sil   p   O  tS  1  v  i  S_j  ts_j  E  z  a  p  r  o  t  E  s  k  O  n  a  ***  l  n  sil
+PL039_75 op    C    I   C   C  C  C  C   C     C   C  C  C  C  C  S  C  C  C  S  C  S  C   D   S  S   C 
+PL039_75 #csid 19 5 1 1
+PL039_81 ref  sil  k  a  l  j  S  ***  O  S_j   v   i  a   d   tS   1   w  v  u  v  tS  a  s  m  u  S  E  S_j   i    E   p  O  r  O   z   u  m  i   E   ts_j   z  p  a  n  E  m  p  r  E  z  1  d  E  n  t  E  m  sil
+PL039_81 hyp  sil  k  a  l  i  S   p   O  S_j  ***  l  a  ***  tS  ***  u  v  O  v  tS  a  S  m  u  S  O  S_j  ***  E_~  p  O  r  O  ***  s  m  i  ***   ***  tS  p  a  n  E  m  p  r  a  s  E  d  E  n  t  e  n  sil
+PL039_81 op    C   C  C  C  S  C   I   C   C    D   S  C   D    C   D   S  C  S  C   C  C  S  C  C  C  S   C    D    S   C  C  C  C   D   S  C  C   D     D    S  C  C  C  C  C  C  C  S  S  S  C  C  C  C  S  S   C 
+PL039_81 #csid 35 14 1 7
+PL039_82 ref  sil  a  k  f  a  S_j   n   i   E    v   s  k  i  b   1    w   v  x  j  S  p  a  n   i   i  sil
+PL039_82 hyp  sil  a  k  f  O  S_j  ***  i  ***  ***  S  k  i  b  ***  ***  u  f  i  S  p  a  n  ***  i  sil
+PL039_82 op    C   C  C  C  S   C    D   C   D    D   S  C  C  C   D    D   S  S  S  C  C  C  C   D   C   C 
+PL039_82 #csid 15 5 0 6
+PL039_83 ref  sil  r  O  z  p  r  a  v  E  O  d  r  O  tS  O  n  O  sil
+PL039_83 hyp  sil  r  o  s  p  r  a  v  a  O  d  r  O  tS  a  n  o  sil
+PL039_83 op    C   C  S  S  C  C  C  C  S  C  C  C  C   C  S  C  S   C 
+PL039_83 #csid 13 5 0 0
+PL039_85 ref  sil  ***  n  i   E   m  i  a  w  E  m  z  a  t  E   m   v  1  b  O  r  u  sil
+PL039_85 hyp  sil   v   n  i  ***  m  i  a  w  a  n  s  a  t  E  ***  v  1  b  o  r  u  sil
+PL039_85 op    C    I   C  C   D   C  C  C  C  S  S  S  C  C  C   D   C  C  C  S  C  C   C 
+PL039_85 #csid 16 4 1 2
+PL039_87 ref  sil   g   d   1    b   1  m  t  E  g  O  n  i   E   z  r  O  b  i  w  x  1  b  a  p  r  a   v   dz_j  i  v   E   j  l  u  s  t  r  a   ts   j  i  b  1  n  i  E  b  1   w   O  sil
+PL039_87 hyp  sil  ***  d  ***  ***  E  n  t  E  g  O  n  i  ***  s  r  O  b  i  u  x  a  b  a  p  r  a  ***   tS   i  v  ***  i  l  u  s  k  r  a  ***  tS  i  b  i  n  i  E  b  1  ***  u  sil
+PL039_87 op    C    D   C   D    D   S  S  C  C  C  C  C  C   D   S  C  C  C  C  S  C  S  C  C  C  C  C   D     S   C  C   D   S  C  C  C  S  C  C   D    S  C  C  S  C  C  C  C  C   D   S   C 
+PL039_87 #csid 33 11 0 8
+PL039_92 ref  sil  n  a   t    S  1  dz_j  E  S_j  ts_j  i  v   n   i   E   S_j  O  n  1  x  s  p  r  a   v    v   d  v  u  dz_j  E  s  t  u  S_j   E   d  m  i  u    s   O_~   d   d   1    s   ts  1  p   l   j  n  a  r   n   1  O  d   m   u   v    i   w  v  S  tS  E_~  ts_j  a  p  O  s  t  ***  E_~  p  O  v  a  n  i   a  sil
+PL039_92 hyp  sil  n  a  ***  tS  1  dz_j  E  S_j  ts_j  i  v  ***  i  ***   S   a  n  1  x  s  p  r  a  ***  ***  d  v  O  dz_j  E  s  t  O  S_j  ***  i  t  n  1  ts_j  O_~  ***  d  ***  ***   E  S  p  ***  i  n  a  r  ***  j  O  d  ***  u  ***  ***  j  u  S  tS  E_~  ts_j  a  p  o  s  t   E    m   p  O  v  a  n  i  ya  sil
+PL039_92 op    C   C  C   D    S  C    C   C   C     C   C  C   D   C   D    S   S  C  C  C  C  C  C  C   D    D   C  C  S    C   C  C  C  S   C    D   S  S  S  S    S    C    D   C   D    D    S  S  C   D   S  C  C  C   D   S  C  C   D   C   D    D   S  S  C   C   C     C   C  C  S  C  C   I    S   C  C  C  C  C  C   S   C 
+PL039_92 #csid 49 19 1 14
+PL039_95 ref  sil  ***  n  i   E   s  t  E  t  1  n  i  E  p  S  1  g  O  t  O  v  a  n  O  i  x   n   a  j  l  E  p  i   E    j   sil
+PL039_95 hyp  sil   v   n  i  ***  s  t  E  t  E  n  i  E  p  S  E  g  O  t  O  v  a  n  o  i  x  ***  a  j  l  E  p  i  ***  ***  sil
+PL039_95 op    C    I   C  C   D   C  C  C  C  S  C  C  C  C  C  S  C  C  C  C  C  C  C  S  C  C   D   C  C  C  C  C  C   D    D    C 
+PL039_95 #csid 28 3 1 4
+PL040_17 ref  sil  p  i  O  t  r  a  n  a  p   O    w   u  d   n   i   O   v   E  j  m  O  d   l   j   t  f  i  E  sil
+PL040_17 hyp  sil  p  i  o  t  r  a  n  a  p  ***  ***  o  d  ***  i  ***  o  v\  e  m  o  d  ***  i  tS  v  i  E  sil
+PL040_17 op    C   C  C  S  C  C  C  C  C  C   D    D   S  C   D   C   D   S   S  S  C  S  C   D   S   S  S  C  C   C 
+PL040_17 #csid 16 9 0 5
+PL040_23 ref  sil  n  i   E   z  E  v  S  1  s   t    k   i   x   k  O  m   u   n  i  k  a  t  u   v   v  1  n  i  k  a  j   E   d  n   O    z   n  a  tS  n  E  p  O  p  a  r  ts_j   E  d  l  a  v  s  p   O   m  n  i  a  n  E  g  O  k  O  d  E  k  s   u   p  S  1  z  v  O  i  t  O  S_j  ts_j   i   sil
+PL040_23 hyp  sil  p  i  ***  s  E  p  S  E  s  ***  ***  i  ***  k  O  m  ***  n  i  k  a  t  u  ***  v  i  n  i  k  a  j  ***  d  n  ***  ***  d  a  tS  n  a  p  O  p  a  r   ***  tS  i  l  a  v  s  p  ***  o  n  i  a  n  E  g  O  k  o  t  E  k  s  ***  p  S  1  z  v  a  i  t  O  S_j  ts_j  ***  sil
+PL040_23 op    C   S  C   D   S  C  S  C  S  C   D    D   C   D   C  C  C   D   C  C  C  C  C  C   D   C  S  C  C  C  C  C   D   C  C   D    D   S  C   C  C  S  C  C  C  C  C    D    S  S  C  C  C  C  C   D   S  C  C  C  C  C  C  C  C  S  S  C  C  C   D   C  C  C  C  C  S  C  C  C   C     C    D    C 
+PL040_23 #csid 58 13 0 13
+PL040_27 ref  sil  t  O  k  f  E  s   t    j   a  z   a   u  f  a  n   i    a   i  n  v  E   s   t  O  r  u  v  sil
+PL040_27 hyp  sil  t  a  k  f  9  s  ***  ***  E  z  ***  O  f  a  n  ***  ***  i  n  t  E  ***  r  a  s  u  v  sil
+PL040_27 op    C   C  S  C  C  S  C   D    D   S  C   D   S  C  C  C   D    D   C  C  S  C   D   S  S  S  C  C   C 
+PL040_27 #csid 15 8 0 6
+PL040_3 ref  sil  j  a  v  n  E  b  E_~  d  O_~  d  O  p  i   E   r  O  t   E   O  S_j  v   i   a   d   tS  E  n  i  a   k   t  u  r   E   s  a  m  O  rZ  O_~  d  O  v  ts  1  z   w   O  rZ  O_~  n  a  p  O  tS  O_~  t  k  u   p    S    1   S  w  E  g  O  r  O  k  u  sil
+PL040_3 hyp  sil  j  a  v  n  a  b   E   n   o   d  O  p  i  ***  r  O  t  ***  a  S_j  v  ***  a  ***  tS  E  n  i  a  ***  t  u  r  ***  s  a  m  O  rZ  O_~  d  O  v  ts  1  z  ***  u   4   u   n  a  p  o   t   o   n  k  u  ***  ***  ***  S  v  a  g  O  r  O  k  u  sil
+PL040_3 op    C   C  C  C  C  S  C   S   S   S   C  C  C  C   D   C  C  C   D   S   C   C   D   C   D    C  C  C  C  C   D   C  C  C   D   C  C  C  C   C   C   C  C  C   C  C  C   D   S   S   S   C  C  C  S   S   S   S  C  C   D    D    D   C  S  S  C  C  C  C  C  C   C 
+PL040_3 #csid 49 14 0 10
+PL040_41 ref  sil  j   E    rZ  E  l  j  k  t  O  S_j  p  O  s  t  a  n  O  v  i  ***  rZ  E  n  i  E  b  ***  E_~  dz_j  E  S_j  i  E  n  i  m  i  k  i   E   r  O  v   a   w  p   r   O   S   E   b  a  r  dz  O  sil
+PL040_41 hyp  sil  j  ***  ***  E  Z  a  i  t  E   S   p  o  s  t  a  n  O  v  i   E   rZ  E  n  i  E  b   E    n     i   E  S_j  i  E  n  i  m  i  k  i  ***  r  O  v  ***  o  p  ***  O  rZ  O_~  b  a  r   t  a  sil
+PL040_41 op    C   C   D    D   C  S  S  S  C  S   S   C  S  C  C  C  C  C  C  C   I    C  C  C  C  C  C   I    S     S   C   C   C  C  C  C  C  C  C  C   D   C  C  C   D   S  C   D   C   S   S   C  C  C   S  S   C 
+PL040_41 #csid 37 13 2 5
+PL040_42 ref  sil   t   S  E  b  a  t   1   l  k  O  j  a  s  n   O   O  k  r  E  S_j   l    j   ts_j  s   v    O   j  E  z  a  m  i  a  r   1   sil
+PL040_42 hyp  sil  ***  S  E  b  a  t  ***  r  k  o  j  a  s  n  ***  a  k  r  O  S_j  ***  ***    i   s  ***  ***  f  9  z  a  m  i  a  r  ***  sil
+PL040_42 op    C    D   C  C  C  C  C   D   S  C  S  C  C  C  C   D   S  C  C  S   C    D    D     S   C   D    D   S  S  C  C  C  C  C  C   D    C 
+PL040_42 #csid 22 7 0 8
+PL040_44 ref  sil  k  a  r  a  ***  ts_j  b  E_~  dz_j  E  r  1  n  E  k  t  f  i  E  r  dz_j  i  v  i  E  s   w   a  v  r  O  z   w   u  ts  k  i  sil
+PL040_44 hyp  sil  k  a  r  a   l     i   p   e    J\   e  4  e  n  E  k  t  f  i  E  r  dz_j  E  v  i  E  s  ***  a  f  r  O  z  ***  u  ts  k  i  sil
+PL040_44 op    C   C  C  C  C   I     S   S   S     S   S  S  S  C  C  C  C  C  C  C  C    C   S  C  C  C  C   D   C  S  C  C  C   D   C   C  C  C   C 
+PL040_44 #csid 27 9 1 2
+PL040_45 ref  sil  a  p  i  E_~  t  n  O  v  a  ts_j  O  d  d  r  u   g    i    E  j  p   O    w   O  v   1    p    S   1  S   w   E  g  O  r  O  k  u  p   l   a  n  O  v  a  n  1  s  O_~  d  r  1  n  k  u  k  a  p  i  t   a    w   O  v  E  g  O  sil
+PL040_45 hyp  sil  a  p  i   n   s  n  O  v  a   tS   v  a  n  t  u  ***  ***  J\  e  p  ***  ***  o  v  ***  ***  ***  1  S  ***  u  g  O  r  O  k  u  p  ***  a  n  O  v  a  n  a  s  ***  u  n  t  r  g  o  k  a  p  i  t  ***  ***  O  v  E  k  a  sil
+PL040_45 op    C   C  C  C   S   S  C  C  C  C    S   S  S  S  S  C   D    D    S  S  C   D    D   S  C   D    D    D   C  C   D   S  C  C  C  C  C  C  C   D   C  C  C  C  C  C  S  C   D   S  S  S  S  S  S  C  C  C  C  C   D    D   C  C  C  S  S   C 
+PL040_45 #csid 36 20 0 12
+PL040_51 ref  sil  m  O  g  ***  O_~  t  O  u  tS  1   n   i  ts_j   j  E  d  1  n  i   E   p  r  O  k  u  r  a  t  O  rZ  1  sil
+PL040_51 hyp  sil  m  o  g   o    n   t  o  4  tS  1  ***  i   ***  tS  E  d  i  n  i  ***  p  r  o  k  u  r  a  t  o   S  E  sil
+PL040_51 op    C   C  S  C   I    S   C  S  S   C  C   D   C    D    S  C  C  S  C  C   D   C  C  S  C  C  C  C  C  S   S  S   C 
+PL040_51 #csid 19 10 1 3
+PL040_56 ref  sil  r  a  p  O   r    t    k   t  u  r   1   p  S   E   d  s   t   a  v   i   a  v  1  n  i  k   i   i  n  s  p  E  k  ts  j  i  j  E   s    t    v    s    t    S   O_~  s  a  j  O_~  ts  O_~  l  E  k  t  u  r  O_~  sil
+PL040_56 hyp  sil  v  a  p  O  ***  ***  ***  t  u  r  ***  p  S  ***  1  s  ***  a  v  ***  e  l  i  n  i  k  ***  i  n  s  p  E  k  ts  i  i  S  E  ***  ***  ***  ***  ***  ***   n   s  a  j  O_~  ts   O   l  i  k  t  u  r   o   sil
+PL040_56 op    C   S  C  C  C   D    D    D   C  C  C   D   C  C   D   S  C   D   C  C   D   S  S  S  C  C  C   D   C  C  C  C  C  C   C  S  C  S  C   D    D    D    D    D    D    S   C  C  C   C    C   S   C  S  C  C  C  C   S    C 
+PL040_56 #csid 35 11 0 14
+PL040_65 ref  sil  j  E  d  n  O  d  O  t  1  tS  1  S_j  m  i   E   r  ts_j  i  dz_j  E  ts  k  a  d  r  u   g    i  E  b  w  E_~  d  u   v   S  t  u  ts  E  l  E  k  a  r  s  k  i   E    j   sil
+PL040_65 hyp  sil  j  e  d  n  a  d  o  t  1  tS  1  S_j  m  i  ***  4    k   i  dz_j  E  ts  k  a  d  r  u  ***  J\  e  b  E   n   d  u  ***  S  t  u  ts  E  l  a  k  a  r  s  k  i  ***  ***  sil
+PL040_65 op    C   C  S  C  C  S  C  S  C  C   C  C   C   C  C   D   S    S   C    C   C   C  C  C  C  C  C   D    S  S  C  S   S   C  C   D   C  C  C   C  C  C  S  C  C  C  C  C  C   D    D    C 
+PL040_65 #csid 37 10 0 5
+PL040_66 ref  sil  v  tS  a  S_j  E  p  O  r  O  d  u  l  E  k  a  rZ  E  z  a  s  t  O  s  O  v  a  l   j   ts  E  s  a   r   s  k  i   E  ts_j  E_~  ts_j  E  sil
+PL040_66 hyp  sil  v  tS  a   S   E  p  O  r  o  d  o  l  E  k  a  rZ  1  z  a  s  t  o  s  O  v  a  l  ***   t  1  s  a  ***  s  k  i  tS    i   E_~  ts_j  E  sil
+PL040_66 op    C   C   C  C   S   C  C  C  C  S  C  S  C  C  C  C   C  S  C  C  C  C  S  C  C  C  C  C   D    S  S  C  C   D   C  C  C   S    S    C     C   C   C 
+PL040_66 #csid 32 9 0 2
+PL040_67 ref  sil  p  S   1   O  k  a  z   j   i  p  S   E   ts_j  E_~   l  j  k  O  b  i   E  ts_j  E  j  E  l  j  t  O  sil
+PL040_67 hyp  sil  p  S  ***  o  k  a  z  ***  i  p  S  ***   ***   1   tS  e  k  O  b  i  tS    E   l  j  e  4  i  t  o  sil
+PL040_67 op    C   C  C   D   S  C  C  C   D   C  C  C   D     D    S    S  S  C  C  C  C   S    S   S  C  S  S  S  C  S   C 
+PL040_67 #csid 16 11 0 4
+PL040_68 ref  sil  s  p  r  a  v  a   v    1   S   w   a  n  a  j  a   v   v  i   n   n  1   m   S   p   i  t  a  l  u  sil
+PL040_68 hyp  sil  s  p  r  a  v  a  ***  ***  S  ***  O  n  a  j  a  ***  v  i  ***  n  1  ***  S  ***  k  t  a  l  u  sil
+PL040_68 op    C   C  C  C  C  C  C   D    D   C   D   S  C  C  C  C   D   C  C   D   C  C   D   C   D   S  C  C  C  C   C 
+PL040_68 #csid 22 2 0 7
+PL040_69 ref  sil  j  a  k  u  b  O   v   s  k  a  s  k  a   r   rZ   1    w   a  S_j  i  E  n  a  b  u   l   b  rZ  u  x  a  sil
+PL040_69 hyp  sil  v  e  k  u  b  O  ***  s  k  a  s  k  a  ***  rZ  ***  ***  O  S_j  i  o  n  a  b  u  ***  b  rZ  u  x  a  sil
+PL040_69 op    C   S  S  C  C  C  C   D   C  C  C  C  C  C   D    C   D    D   S   C   C  S  C  C  C  C   D   C   C  C  C  C   C 
+PL040_69 #csid 24 4 0 5
+PL040_71 ref  sil  v  t   1   m  tS  a  ***  S_j  E  t  r  E  S_j  ts_j   j    E    l   j  t  O  v  a  v  1  l  E  v   a    w   a  S_j  i   E   d   O   O  t  S  E  v  n   E   j  sil
+PL040_71 hyp  sil  s  t  ***  u  tS  a   S    e   t  t  r  E  S_j  ts_j  ***  ***  ***  i  t  O  v  O  v  E  l  E  v  ***  ***  a  S_j  i  ***  d  ***  o  t  S  E  v  n  ***  i  sil
+PL040_71 op    C   S  C   D   S   C  C   I    S   S  C  C  C   C     C    D    D    D   S  C  C  C  S  C  S  C  C  C   D    D   C   C   C   D   C   D   S  C  C  C  C  C   D   S   C 
+PL040_71 #csid 26 9 1 9
+PL040_72 ref  sil  d  O  S   w   O  d  O  z  a  p  a  l   E    n   i  a  i  k  O  n  i  E   tS   n    1   b  1  w  z  a  b  i   E    g   x  j  r  u  r   g  i  tS  n  1  sil
+PL040_72 hyp  sil  d  o  S  ***  u  d  u  z  a  p  a  l  ***  ***  a  J  e  k  O  n  i  E  ***  ***  ***  S  m  y  z  a  b  i  ***  ***  k  i  r  u  4  J\  y  tS  n  1  sil
+PL040_72 op    C   C  S  C   D   S  C  S  C  C  C  C  C   D    D   S  S  S  C  C  C  C  C   D    D    D   S  S  S  C  C  C  C   D    D   S  S  C  C  S   S  S   C  C  C   C 
+PL040_72 #csid 24 14 0 8
+PL040_73 ref  sil  k  O  b  i   E   t  a  n  i   E   z  g  O  dz_j  i   w   a  S_j  i   E   n   a   O  p  E  r  a  ts  j   E   v   m   a  d  u  r  O  v  i  tS  u  sil
+PL040_73 hyp  sil  k  O  b  i  ***  t  a  n  i  ***  z  g  o    d   i  ***  O  S_j  i  ***  n  ***  o  p  a  r  a  ts  j  ***  v  ***  a  d  u  r  O  v  i  tS  u  sil
+PL040_73 op    C   C  C  C  C   D   C  C  C  C   D   C  C  S    S   C   D   S   C   C   D   C   D   S  C  S  C  C   C  C   D   C   D   C  C  C  C  C  C  C   C  C   C 
+PL040_73 #csid 31 5 0 7
+PL040_78 ref  sil  t  O  S  O  k  p  S  1  z  n  a  j   E   p  r  O  k  u  r  a  t   O   r  p  r  O  v  a  dz  O_~  ts   1    s   p  r  a  v  E  S_j  m  i  E   r   ts_j  i  n  O  v  O  r  O  t  k  u  v  sil
+PL040_78 hyp  sil  t  o  S  O  k  p  S  E  s  t  a  j  ***  p  r  O  k  u  r  a  t  ***  a  p  r  O  v  a  dz  O_~  ts  ***  ***  p  r  a  v  O  S_j  v  i  E  ***   tS   i  n  a  v  o  r  O  t  k  u  v  sil
+PL040_78 op    C   C  S  C  C  C  C  C  S  S  S  C  C   D   C  C  C  C  C  C  C  C   D   S  C  C  C  C  C   C   C    C   D    D   C  C  C  C  S   C   S  C  C   D     S   C  C  S  C  S  C  C  C  C  C  C   C 
+PL040_78 #csid 42 10 0 5
+PL040_79 ref  sil   j   E  s  t   E   m  n   a   E  m  E  r  1  t  u  rZ  E  v  r  E  S  ts_j  E  m  O  g  E  m  u  v  ***    i   ts_j  b  E  z  O  b  a  v  O  g   w   O  S_j  i  w  a  k  a   r   p  i   J   s  k  a  sil
+PL040_79 hyp  sil  ***  i  s  t  ***  M  n  ***  o  m  a  r  E  t  u  rZ  E  v  r  a  S   tS   E  m  o  g  O  m  u  v   1   dz_j    i   b  1  z  o  b  a  f  O  g  ***  O  S_j  i  w  a  k  a  ***  p  i  ***  s  k  a  sil
+PL040_79 op    C    D   S  C  C   D   S  C   D   S  C  S  C  S  C  C   C  C  C  C  S  C    S   C  C  S  C  S  C  C  C   I     S     S   C  S  C  S  C  C  S  C  C   D   C   C   C  C  C  C  C   D   C  C   D   C  C  C   C 
+PL040_79 #csid 38 14 1 6
+PL040_80 ref  sil  i  m  u  v  i   a   j  E  j   z   E  z  n  a   n   i  a  t  O  g   v   u  z_j  dz_j  i  d  O  t  r  u   m   n   1    w   u  dz  k  i   x   S  p  i  t  a  l  j  sil
+PL040_80 hyp  sil  i  m  O  v  i  ***  k  a  j  ***  y  z  n  a  ***  j  a  t  a  g  ***  u  ***   ***  4  d  O  t  r  u  ***  n  ***  ***  u  ts  k  i  ***  S  p  i  t  a  l  i  sil
+PL040_80 op    C   C  C  S  C  C   D   S  S  C   D   S  C  C  C   D   S  C  C  S  C   D   C   D     D   S  C  C  C  C  C   D   C   D    D   C   S  C  C   D   C  C  C  C  C  C  S   C 
+PL040_80 #csid 29 9 0 10
+PL040_85 ref  sil  n  a  r  a  z_j   E  p  r  O  k   u   r  a  t  u  r  a  p  O  l  E  ts_j  i  w  a   E   k  s   x   u  m  O  v  a  ts_j  z  v   w   O  k  i  tS  v  O  r  g  a  n  O  v  O  r  O  t  k  u   v   z  m  a  r  w  1  x  v  u   b   i  E  g   w    1   m  m  i   E   ts_j  O_~  ts  u  sil
+PL040_85 hyp  sil  n  a  r  a  ***  dZ  e  b  a  k  ***  r  a  t  o  r  a  p  o  l  i   tS   i  v  a  ***  k  s  ***  u  m  O  v  a   ***  z  v  ***  o  k  i  tS  v  o  r  g  a  n  o  v  7  r  o  t  k  u  ***  z  m  a  r  u  v  1  b  u  ***  j  E  g  ***  ***  u  m  i  ***  ts_j  O_~  ts  u  sil
+PL040_85 op    C   C  C  C  C   D    S  S  S  S  C   D   C  C  C  S  C  C  C  S  C  S    S   C  S  C   D   C  C   D   C  C  C  C  C    D   C  C   D   S  C  C   C  C  S  C  C  C  C  S  C  S  C  S  C  C  C   D   C  C  C  C  S  S  S  S  C   D   S  C  C   D    D   S  C  C   D     C    C    C  C   C 
+PL040_85 #csid 51 20 0 11
+PL040_87 ref  sil  b  1   w   b  1  t  O  k  O  r  O  n  n  1  d   O    v    u   d  v  s  p  r  a  v  i  E  sil
+PL040_87 hyp  sil  b  1  ***  b  E  t  o  k  O  r  o  n  E  n  d  ***  ***  ***  o  v  s  p  r  a  v  i  E  sil
+PL040_87 op    C   C  C   D   C  S  C  S  C  C  C  S  C  S  S  C   D    D    D   S  C  C  C  C  C  C  C  C   C 
+PL040_87 #csid 19 6 0 4
+PL040_94 ref  sil  p  O  z  a  t  1  m   i    l    O   S_j  ts_j  p  S   1   p  a  t   k    u   v  j  E  s   t    z   a  s  k  a  k  u  j  O_~  ts  a  sil
+PL040_94 hyp  sil  p  O  z  a  t  E  m  ***  ***  ***  sil    j   u  S  ***  p  a  t  ***  ***  O  f  i  s  ***  ***  a  s  k  a  k  o  j  O_~  ts  a  sil
+PL040_94 op    C   C  C  C  C  C  S  C   D    D    D    S     S   S  C   D   C  C  C   D    D   S  S  S  C   D    D   C  C  C  C  C  S  C   C    C  C   C 
+PL040_94 #csid 22 8 0 8
+PL041_100 ref  sil  v  n  i  O  s  E  k  t  O  v  1  b  O  r  ts  1  s  ***  O_~  v  i   n   n  i  b  O  p  S  E  ts_j  E  S  m  O  g   l   j  O  t  1  m  p  a  m  i  ***  E_~  t  a  ts_j  sil
+PL041_100 hyp  sil  v  n  i  o  s  a  k  t  a  v  a  b  7  r  ts  1  s   o    m   v  i  ***  n  i  b  a  p  S  1   tS   E  S  m  o  g  ***  i  o  t  1  m  p  a  m  i   E    n   t  a  ts_j  sil
+PL041_100 op    C   C  C  C  S  C  S  C  C  S  C  S  C  S  C   C  C  C   I    S   C  C   D   C  C  C  S  C  C  S    S   C  C  C  S  C   D   S  S  C  C  C  C  C  C  C   I    S   C  C    C    C 
+PL041_100 #csid 35 13 2 2
+PL041_102 ref  sil  p  S  E  ts_j  E  S  n  i   E   m  O   g   l  j  n  a  n  i  x  n  i  E  g   w   O  s  O  v  a  ***  ts_j  sil
+PL041_102 hyp  sil  p  S  E   tS   i  S  n  i  ***  m  O  ***  b  i  l  e  n  i  x  n  i  E  g  ***  o  s  a  v  a   ts    i   sil
+PL041_102 op    C   C  C  C    S   S  C  C  C   D   C  C   D   S  S  S  S  C  C  C  C  C  C  C   D   S  C  S  C  C   I     S    C 
+PL041_102 #csid 20 9 1 3
+PL041_11 ref  sil  m  O  rZ  E  b  1  ts_j  d   u   m  n  a  d   1   r  E  k  t  O  r  d  a  n  u  t  a  g  l  O  n  d  1  s  z  v  i   l   l  j  d  E  ts  j  u  S  a  sil
+PL041_11 hyp  sil  m  O  rZ  1  b  a  ts_j  d  ***  o  n  a  d  ***  r  a  k  t  O  r  d  a  n  o  t  a  b  l  a  n  d  a  s  z  v  i  ***  l  i  d  a  ts  j  u  S  a  sil
+PL041_11 op    C   C  C   C  S  C  S    C   C   D   S  C  C  C   D   C  S  C  C  C  C  C  C  C  S  C  C  S  C  S  C  C  S  C  C  C  C   D   C  S  C  S   C  C  C  C  C   C 
+PL041_11 #csid 35 10 0 3
+PL041_16 ref  sil  O  b  1  s   w   O  v  a  t  E  u  rZ  E_~  d  u  j  O_~  ts  E  g   O   O  d   l    j   p  ts  a  m  i  n  i  s  t  r  a  z   n   a  l  a  z   w   1  p  O  t  f  i   E   r  dz  E  n  i  E  v  p  r  a  k  t  1  ts  E  sil
+PL041_16 hyp  sil  a  b  a  s  ***  o  v  a  t  a  u  rZ  O_~  d  a  j  O_~  ts  E  g  ***  O  d  ***  ***  i  ts  a  m  i  n  i  s  t  r  a  z  ***  a  r  a  z  ***  a  p  O  t  f  i  ***  r  dz  E  n  i  E  v  p  r  a  k  t  E  ts  a  sil
+PL041_16 op    C   S  C  S  C   D   S  C  C  C  S  C   C   S   C  S  C   C    C  C  C   D   C  C   D    D   S   C  C  C  C  C  C  C  C  C  C  C   D   C  S  C  C   D   S  C  C  C  C  C   D   C   C  C  C  C  C  C  C  C  C  C  C  S   C  S   C 
+PL041_16 #csid 49 11 0 7
+PL041_18 ref  sil   v   n  a  j  b   l    j   rZ  S  1  m  tS  a  ***  S_j  E  m  a  S_j  i  E  z   n   i  m  i  s  p  O  t  k  a  ***  ts_j  sil
+PL041_18 hyp  sil  ***  n  a  j  b  ***  ***   i  S  E  m  tS  a   S    e   n  m  a  ***  S  E  z  ***  i  m  i  s  p  o  t  k  a   ts    i   sil
+PL041_18 op    C    D   C  C  C  C   D    D    S  C  S  C   C  C   I    S   S  C  C   D   S  C  C   D   C  C  C  C  C  S  C  C  C   I     S    C 
+PL041_18 #csid 22 7 2 5
+PL041_27 ref  sil   f    a   r   m   a  ts   E   u  ts_j  i  a  l  a  r  m  O  v  a  l  j  v  l  E  ts_j  E  rZ  E  n  a  l  j  S_j  ts_j   E   u  m   i   E  S  tS  O  n  O  v  i   E   l  E  l  E  k  u  v  p  S  E  s  t  a  rZ  a  w   1   x  k   t    u   r   1    x   dz_j   i   ts_j  a   j   j  u  S  S_j   i   E  n  i   E   p  O  d  a   j    E   sil
+PL041_27 hyp  sil  ***  ***  r  ***  a  ts  ***  a   tS   i  a  l  a  r  m  O  v  a  l  i  b  r  a   tS   E  rZ  E  n  a  l  j  S_j  ts_j  ***  O  m  ***  e  S  tS  1  m  a  v  i  ***  r  a  l  a  k  O  v  p  S  E  s  v  a  rZ  a  w  ***  O  k  ***  ***  r  ***  ***  dz_j  ***   ***  E  S_j  i  u  S  ***  ***  E  m  i  ***  p  O  d  a  ***  ***  sil
+PL041_27 op    C    D    D   C   D   C   C   D   S    S   C  C  C  C  C  C  C  C  C  C  S  S  S  S    S   C   C  C  C  C  C  C   C     C    D   S  C   D   S  C   C  S  S  S  C  C   D   S  S  C  S  C  S  C  C  C  C  C  S  C   C  C  C   D   S  C   D    D   C   D    D     C    D     D   S   S   S  C  C   D    D   C  S  C   D   C  C  C  C   D    D    C 
+PL041_27 #csid 51 22 0 19
+PL041_29 ref  sil  ***  j  a  k  i  z  a  t  E   m   m  i  a   w   b  1  b  1  ts_j  z  1  s  k   d   l  a  p  a  ts   j   E  n  t  u  v  p   1    t   a  w  a  n  a  tS   E   l  n  a  i  z  b   a   a   p   t  E  k  a  r  s  k  a  sil
+PL041_29 hyp  sil   p   j  e  k  i  z  a  t  E  ***  m  i  a  ***  b  a  b  E    d   s  E  s  k  ***  l  a  p  a  ts  ***  i  n  d  u  v  p  ***  ***  E  d  a  n  a  tS  ***  a  n  a  i  z  b  ***  a  ***  t  a  k  a  r  s  k  a  sil
+PL041_29 op    C    I   C  S  C  C  C  C  C  C   D   C  C  C   D   C  S  C  S    S   S  S  C  C   D   C  C  C  C   C   D   S  C  S  C  C  C   D    D   S  S  C  C  C   C   D   S  C  C  C  C  C   D   C   D   C  S  C  C  C  C  C  C   C 
+PL041_29 #csid 42 12 1 9
+PL041_34 ref  sil  j   E   s  t   j   E  S  tS  E  j  E  d  E  n  p  r  O  b  l  E  m  k  t  O  z  a  p   w   a  ts_j  i  z  a  l  E  k  i  sil
+PL041_34 hyp  sil  j  ***  s  t  ***  E  S  tS  E  j  e  d  a  m  p  r  o  b  l  a  m  k  t  a  s  a  p  ***  a   tS   i  z  a  l  a  k  i  sil
+PL041_34 op    C   C   D   C  C   D   C  C   C  C  C  S  C  S  S  C  C  S  C  C  S  C  C  C  S  S  C  C   D   C    S   C  C  C  C  S  C  C   C 
+PL041_34 #csid 27 9 0 3
+PL041_41 ref  sil  s  p  S   E    d   a  S   f   a  j  E   r   v  E  r   k   u  v  O  s   O    b   O  m   n   i   E   l  E  t  n  i  m  j  E  s   t   p  S  E  s  t  E_~  p  s  t  f  E  m  sil
+PL041_41 hyp  sil  s  p  S  ***  ***  a  S  ***  a  j  E  ***  v  7  r  ***  O  v  o  s  ***  ***  o  m  ***  i  ***  r  a  t  n  i  m  i  E  s  ***  p  S  E  s  t   a   m  s  t  v  a  m  sil
+PL041_41 op    C   C  C  C   D    D   C  C   D   C  C  C   D   C  S  C   D   S  C  S  C   D    D   S  C   D   C   D   S  S  C  C  C  C  S  C  C   D   C  C  C  C  C   S   S  C  C  S  S  C   C 
+PL041_41 #csid 30 11 0 10
+PL041_54 ref  sil   n   a  s  t  E_~  p  n  i  E  n  a   l    E   rZ  1  z  a  p  a  l  j  ts_j  l  O  n  t  i  S  1  b  k  O  O  d  d  a  l  j  ts_j  S_j   i    E   sil
+PL041_54 hyp  sil  ***  a  s  t  ***  E  m  h  e  n  a  ***  ***  rZ  1  z  a  p  a  l  i   tS   l  a  n  d  i  S  E  p  k  O  d  E  d  a  l  i  ts_j  ***  ***  O_~  sil
+PL041_54 op    C    D   C  C  C   D   S  S  S  S  C  C   D    D    C  C  C  C  C  C  C  S    S   C  S  C  S  C  C  S  S  C  C  S  S  C  C  C  S    C    D    D    S    C 
+PL041_54 #csid 24 14 0 6
+PL041_57 ref  sil  ***  ***  r  u  x  m  a  m  1  n  i   E   v  i  E  l  k  i  sil
+PL041_57 hyp  sil   v    O   r  u  x  m  a  m  E  n  i  ***  v  i  E  l  k  i  sil
+PL041_57 op    C    I    I   C  C  C  C  C  C  S  C  C   D   C  C  C  C  C  C   C 
+PL041_57 #csid 16 1 2 1
+PL041_61 ref  sil  p  O  k  a   z    1   z  u  rZ  1  ts_j   E  m  m  a  t   E   r   j    a   w  u  v  O  v  i  E_~  k  S  E   j   m  O  ts  1  n  a  l  E  rZ  1  z  a   l    E   ts_j  i  ts_j  f  i  r  m  i   E   z  u  p  r  a  v  n  i   E    n   i  a  m  i  sil
+PL041_61 hyp  sil  p  O  k  a  ***  ***  z  u  rZ  1   ***  ts  i  m  a  t  ***  r  ***  ***  e  u  v  O  v  i  ***  n  S  E  ***  m  a  ts  a  n  a  l  a  rZ  1  z  a  ***  ***    r   a  ts_j  v  i  r  m  i  ***  s  u  p  r  a  v  n  i  ***  ***  N  A  m  i  sil
+PL041_61 op    C   C  C  C  C   D    D   C  C   C  C    D    S  S  C  C  C   D   C   D    D   S  C  C  C  C  C   D   S  C  C   D   C  S   C  S  C  C  C  S   C  C  C  C   D    D     S   S    C   S  C  C  C  C   D   S  C  C  C  C  C  C  C   D    D   S  S  C  C   C 
+PL041_61 #csid 44 13 0 13
+PL041_63 ref  sil  p  O  k  a  z  b  E_~  dz_j  E  t   r   v  a   w   k  i  l  k  a  m  i  n   u   t  sil
+PL041_63 hyp  sil  b  a  k  a  z  b   a    dZ   i  t  ***  v  a  ***  k  i  l  k  a  m  i  n  ***  t  sil
+PL041_63 op    C   S  S  C  C  C  C   S     S   S  C   D   C  C   D   C  C  C  C  C  C  C  C   D   C   C 
+PL041_63 #csid 18 5 0 3
+PL041_67 ref  sil  n  a  j  v  i  E_~  ts  E   j   u  r  a  z   u   v  v  i  O_~  rZ   E   S_j    i    E    z  O  p  a  rZ  E  n   i   a  m  i  s  p  O  v  O  d  O  v  a  n  1  m  i  n  i   E   u  m   i    E    j   E_~  t  n   1    m   O  d  p  a  l  a  n  i   E   m  p  E  t  a  r  d  sil
+PL041_67 hyp  sil  n  a  j  v  i  E_~  ts  E  ***  u  r  a  z  ***  O  v  i  O_~  rZ  ***   1   ts_j  O_~  ts  O  p  O  rZ  E  n  ***  a  m  i  s  p  O  v  O  d  O  v  a  n  E  m  i  n  i  ***  o  m  ***  ***  ***  ***  e  n  ***  ***  o  t  p  a  l  a  n  i  ***  m  p  a  t  a  r  t  sil
+PL041_67 op    C   C  C  C  C  C   C    C  C   D   C  C  C  C   D   S  C  C   C    C   D    S     S    S    S  C  C  S   C  C  C   D   C  C  C  C  C  C  C  C  C  C  C  C  C  S  C  C  C  C   D   S  C   D    D    D    D   S  C   D    D   S  S  C  C  C  C  C  C   D   C  C  S  C  C  C  S   C 
+PL041_67 #csid 53 13 0 12
+PL041_7 ref  sil  p  O   v   s   t   a  w  1  v  i  E_~  ts  d  v  i   E    n    O    v   E  S  k  O  w   1   v  v  a   r   S  a  v  i   E   sil
+PL041_7 hyp  sil  p  O  ***  s  ***  a  w  O  v  i   n    s  t  v  i  ***  ***  ***  ***  E  S  k  a  w  ***  O  v  a  ***  S  a  v  i  ***  ***
+PL041_7 op    C   C  C   D   C   D   C  C  S  C  C   S    S  S  C  C   D    D    D    D   C  C  C  S  C   D   S  C  C   D   C  C  C  C   D    D 
+PL041_7 #csid 20 6 0 10
+PL041_87 ref  sil  z  a  p  E  v  n  E  b  ***  E_~  d  ***  O_~  t  a  ts  1  k  t  u  rZ  1  z  E  x  ts  O_~  p  O  d  v  a  rZ   1   ts_j  t  E  d  E  ts  1  z  j   E  sil
+PL041_87 hyp  sil  z  a  p  E  v  n  a  b   E    n   d   a    n   t  a  ts  E  k  t  u  rZ  1  z  a  k   s   o   b  a  d  v  a  rZ  ***    E   t  e  d  a  ts  i  z  i  ya  sil
+PL041_87 op    C   C  C  C  C  C  C  S  C   I    S   C   I    S   C  C   C  S  C  C  C   C  C  C  S  S   S   S   S  S  C  C  C   C   D     S   C  S  C  S   C  S  C  S   S   C 
+PL041_87 #csid 27 16 2 1
+PL041_88 ref  sil  v  t  E  d  1  p  O  z  O  s  t  a  n  i   E   i  m  i  n  d  1  v  i  d  u  a  l  n   E   O  d  v   O    w   a  n  i   E   S_j  i  E  d  O  s  a  m  O  rZ  O_~  d  O  v  E  g  O  k  O  l  E  g  i   u   m  O  d  v   O    w   a  v  tS  E  g  O  sil
+PL041_88 hyp  sil  f  t  E  d  a  p  O  z  a  s  t  a  n  i  ***  i  m  i  n  d  i  b  i  d  u  w  a  n  ***  a  d  v  ***  ***  a  n  i  ***  ***  S  a  b  a  s  a  m  O  rZ   O   n  a  v  a  g  O  k  O  l  a  g  i  ***  m  a  t  v  ***  ***  A  v  tS  a  g  o  sil
+PL041_88 op    C   S  C  C  C  S  C  C  C  S  C  C  C  C  C   D   C  C  C  C  C  S  S  C  C  C  S  S  C   D   S  C  C   D    D   C  C  C   D    D   S  S  S  S  C  C  C  C   C   S   S  S  C  S  C  C  C  C  C  S  C  C   D   C  S  S  C   D    D   S  C   C  S  C  S   C 
+PL041_88 #csid 45 22 0 9
+PL041_98 ref  sil  k  a  ***  r  E  p  O  n  O   S  O_~  j  E  d  n  a  k  v  1  b  O  r  ts  1  sil
+PL041_98 hyp  sil  k  a   4   a  m  p  a  n  O  rZ  O_~  j  E  d  n  a  k  t  a  b  o  r   s  E  sil
+PL041_98 op    C   C  C   I   S  S  C  S  C  C   S   C   C  C  C  C  C  C  S  S  C  S  C   S  S   C 
+PL041_98 #csid 16 9 1 0
+PL046_11 ref  ***  ***  ***  sil  a  n  a  l  j  z  a  r  a  p  O  r  t  ***  u  r  O  z  tS  a  r  O  v  ***  u  j  E  ***  sil
+PL046_11 hyp  sil   n    a   sil  a  n  a  l  i  z  a  r  a  p  a  r  t   o   o  r  a  S   t  a  r  O  v   z   u  j  E   n   sil
+PL046_11 op    I    I    I    C   C  C  C  C  S  C  C  C  C  C  S  C  C   I   S  C  S  S   S  C  C  C  C   I   C  C  C   I    C 
+PL046_11 #csid 21 6 6 0
+PL046_35 ref  sil  p  a  l  E  ts  n  a  p  r  E  z  1  d  E  n  t  a  sil
+PL046_35 hyp  sil  p  a  l  E  ts  n  a  p  r  a  z  e  d  E  n  t  a  sil
+PL046_35 op    C   C  C  C  C   C  C  C  C  C  S  C  S  C  C  C  C  C   C 
+PL046_35 #csid 17 2 0 0
+PL046_93 ref  sil  z  d  a  n  i  a  n  a  t  E  n  t  E  m  a   t  s  O_~  p  O  dz_j  E  l  O  n   E   sil
+PL046_93 hyp  sil  z  d  a  n  i  a  n  a  t  E  n  t  E  m  a  ts  a   m   p  O  dz_j  E  l  a  n  ***  sil
+PL046_93 op    C   C  C  C  C  C  C  C  C  C  C  C  C  C  C  C   S  S   S   C  C    C   C  C  S  C   D    C 
+PL046_93 #csid 23 4 0 1
+PL046_96 ref  sil  j  a  ***  k  b  E_~  dz_j  E  v  t  1  m  p  S  1  p  a  t  k  u  sil
+PL046_96 hyp  sil  j  a   d   a  b   a    dZ   a  f  t  E  m  p  S  E  p  a  t  k  u  sil
+PL046_96 op    C   C  C   I   S  C   S     S   S  S  C  S  C  C  C  S  C  C  C  C  C   C 
+PL046_96 #csid 14 7 1 0
+PL063_60 ref  sil  t  a  k  a  b  1  w  a  j  E  g  O  v  O  l  a  sil
+PL063_60 hyp  sil  t  a  k  a  b  1  w  a  i  E  g  O  f  O  l  a  sil
+PL063_60 op    C   C  C  C  C  C  C  C  C  S  C  C  C  S  C  C  C   C 
+PL063_60 #csid 16 2 0 0
+PL063_8 ref  sil  s  t  r  a  j  k  u  j  O_~  r  u   v    n    i   E  S  v   w    O    s    ts  1  dz_j  E  n  n  i  k  a  rZ  E  v  O  b  r  O  n  i  E  p  l  u  r  a  l  j  z   m   u  v  m  E  d   j   a  x  E  l  E   k   t  r  O  n  i  tS  n   1   x  sil
+PL063_8 hyp  sil  s  t  r  a  j  k  u  j   O   r  u  ***  ***  ***  j  u  v  ***  ***  ***  ***  o    S   E  Z  i  i  k  a  rZ  1  v  O  b  r  o  n  i  E  p  l  u  r  O  l  i  z  ***  b  o  b  a  d  ***  a  x  a  l  E  ***  t  r  u  n  i   S  n  ***  a  sil
+PL063_8 op    C   C  C  C  C  C  C  C  C   S   C  C   D    D    D   S  S  C   D    D    D    D   S    S   C  S  S  C  C  C   C  S  C  C  C  C  S  C  C  C  C  C  C  C  S  C  S  C   D   S  S  S  S  C   D   C  C  S  C  C   D   C  C  S  C  C   S  C   D   S   C 
+PL063_8 #csid 41 19 0 11
+PL063_87 ref  sil  n  a  tS  E  l  E  l  j  s  t  1  m  a  z  n  a  l  E  z_j  ts_j  S_j  i  E  p  r  E  z   1   d  E  n  t  a  l  E   k   s  a  n  d   E   r  w  u  k  a  S  E  n  k  a  sil
+PL063_87 hyp  sil  d  a   S  E  l  E  l  i  s  t  1  m  a  z  m  a  l  E  ***   ***   S   E  m  p  r  a  z  ***  d  E  m  p  a  l  E  ***  x  a  n  d  ***  a  d  u  k  a  S  a  n  k  a  sil
+PL063_87 op    C   S  C   S  C  C  C  C  S  C  C  C  C  C  C  S  C  C  C   D     D    S   S  S  C  C  S  C   D   C  C  S  S  C  C  C   D   S  C  C  C   D   S  S  C  C  C  C  S  C  C  C   C 
+PL063_87 #csid 34 14 0 5
+PL072_100 ref  sil  p  O  d  r  u  g  i   E    j   v   O   j  n  i   E   S_j   v   i  a  t  O  v   E   j  p  l  a  n  t  E  n  p  S  1  s  p   i   E  S   1    w    O   d  b  u  d  O  v  E  E  u  r  O  p  1  z  a  x  O   d   n  i   E    j   v  t  1  m   n   i  E  m  i   E   ts  sil
+PL072_100 hyp  sil  p  o  d  r  u  b  i  ***  ***  v  ***  a  n  i  ***  ***  ***  S  a  t  O  v  ***  i  p  l  a  n  t  E  m  p  S  E  s  p  ***  e  S  ***  ***  ***  u  b  u  d  O  v  a  m  o  r  O  p  i  s  a  x  O  ***  n  i  ***  ***  S  t  i  m  ***  i  E  m  i  ***   s  sil
+PL072_100 op    C   C  S  C  C  C  S  C   D    D   C   D   S  C  C   D    D    D   S  C  C  C  C   D   S  C  C  C  C  C  C  S  C  C  S  C  C   D   S  C   D    D    D   S  C  C  C  C  C  S  S  S  C  C  C  S  S  C  C  C   D   C  C   D    D   S  C  S  C   D   C  C  C  C   D    S   C 
+PL072_100 #csid 44 17 0 16
+PL072_101 ref  sil  v  i  r  a  k  u  b  E_~  dz_j  E  w  a   t     f   i   E    j   b  O  z  n  i  S  tS  E  n  i  a  n  i   E   p  O  v  i   n   n  1  b  1   ***  ts_j  v  i   E   l  k  i   E   a  k  r   a   j  j   E   s   t   n  i   E   d  u  rZ  1   i   p  O  t  E  n   ts   j  a   l   n  i   E   b  a  r  dz  O  b  O  g  a  t   1   sil
+PL072_101 hyp  sil  v  i  r  a  k  o  b  E_~  dz_j  i  w  a  ***  ts_j  i  ***  ***  b  u  z  n  i  S  tS  E  n  i  E  n  i  ***  p  O  v  i  ***  n  i  b  1  dz_j    E   v  i  ***  a  k  i  ***  a  k  r  ***  E  j  ***  s  ***  n  i  ***  d  u  rZ  1  ***  p  o  t  E  n  ***  dZ  a  ***  n  i  ***  b  a  r  dz  1  b  o  g  a  t  ***  sil
+PL072_101 op    C   C  C  C  C  C  S  C   C     C   S  C  C   D     S   C   D    D   C  S  C  C  C  C   C  C  C  C  S  C  C   D   C  C  C  C   D   C  S  C  C    I     S   C  C   D   S  C  C   D   C  C  C   D   S  C   D   C   D   C  C   D   C  C   C  C   D   C  S  C  C  C   D    S  C   D   C  C   D   C  C  C   C  S  C  S  C  C  C   D    C 
+PL072_101 #csid 61 13 1 16
+PL072_102 ref  sil   v    S  1  s  ts  1  p  O  v  i   n   n  i  z  a  r  O  b  i  ts_j  sil
+PL072_102 hyp  sil  ***  tS  E  s   t  i  p  O  v  i  ***  m  i  z  a  r  a  m  i  ts_j  sil
+PL072_102 op    C    D    S  S  C   S  S  C  C  C  C   D   S  C  C  C  C  S  S  C    C    C 
+PL072_102 #csid 13 7 0 2
+PL072_103 ref  sil  n  a  j  v  i  E_~  ts  E  j  ts_j  i  k  t  u  rZ  1  s  O_~  z  a  m   E   r  1  k  a  n  a   m   i  sil
+PL072_103 hyp  sil  n  a  j  v  i  ***   n  s  i   tS   i  k  t  u  rZ  1  s  O_~  z  a  m  ***  r  E  k  a  n  a  ***  j  sil
+PL072_103 op    C   C  C  C  C  C   D    S  S  S    S   C  C  C  C   C  C  C   C   C  C  C   D   C  S  C  C  C  C   D   S   C 
+PL072_103 #csid 23 6 0 3
+PL072_104 ref  sil   tS  1   l  j  t  a  g  rZ  E  m  1  sil
+PL072_104 hyp  sil  ***  v  tS  i  t  a  g  rZ  a  m  E  sil
+PL072_104 op    C    D   S   S  S  C  C  C   C  S  C  S   C 
+PL072_104 #csid 7 5 0 1
+PL072_108 ref  sil  n  i   E   r  O  z   v   i  n  E_~  l  j  S_j  m   1   j  a  k  O  p  a  J  s  t   f   O  i  n  s  t  1  n  k  t  u  p  i  r  a  n   i    i   sil
+PL072_108 hyp  sil  v  i  ***  r  a  z  ***  i  n  ***  a  i   S   m  ***  i  a  k  O  p  a  J  s  t  ***  v  a  J  s  t  i  n  k  t  u  p  i  r  a  n  ***  ***  sil
+PL072_108 op    C   S  C   D   C  S  C   D   C  C   D   S  S   S   C   D   S  C  C  C  C  C  C  C  C   D   S  S  S  C  C  S  C  C  C  C  C  C  C  C  C   D    D    C 
+PL072_108 #csid 27 10 0 7
+PL072_11 ref  sil  t  r  a  s  1  s  ***  O_~  p  r  O   f   E  s  j  O  n  a   l   n  i   E   u   t    S    1  m  a  n  E  sil
+PL072_11 hyp  sil  t  r  a  s  E  s   o    m   p  r  O  ***  v  a  S  E  n  a  ***  n  i  ***  u  ***  ***  tS  m  a  n  a  sil
+PL072_11 op    C   C  C  C  C  S  C   I    S   C  C  C   D   S  S  S  S  C  C   D   C  C   D   C   D    D    S  C  C  C  S   C 
+PL072_11 #csid 18 8 1 5
+PL072_112 ref  sil  z  a  r  a  b  i  a  n  i  E   b    1   w  O  t  a  m  tS   1   n  n  O  S_j  ts_j  O_~  n  i   E   E  l  E  g  a  n  ts  k  O_~  p  a  t  O  l  O  g   i   O_~  r  a  tS  E   j   n  i  S  n  O  r  m  O_~  sil
+PL072_112 hyp  sil  z  a  r  a  v  i  a  n  i  E  ***  ***  g  o  t  a  m  tS  ***  E  n  a  S_j  ts_j   O   n  i  ***  a  l  E  g  a  n   s  k   o   p  a  t  O  l  O  g  ***   A   r  a  tS  E  ***  n  i  S  n  o  r  m   a   sil
+PL072_112 op    C   C  C  C  C  S  C  C  C  C  C   D    D   S  S  C  C  C   C   D   S  C  S   C     C    S   C  C   D   S  C  C  C  C  C   S  C   S   C  C  C  C  C  C  C   D    S   C  C   C  C   D   C  C  C  C  S  C  C   S    C 
+PL072_112 #csid 43 12 0 6
+PL072_113 ref  sil  p  a   J   s  t   f    O    x   E_~  t  n  i  E  j  p  S   1   x  O  dz_j   i    w   O  z  b  r  a   t   n  i  O_~  p  O   m  O  ts  O_~  n  i  S   r   O  b  i  w  O  t  f  a  r  d  E   i   n  t  E  r  E  s  1  sil
+PL072_113 hyp  sil  f  a  ***  s  t  ***  ***  ***  ***  v  a  h  E  g  i  S  ***  v  O  dz_j  ***  ***  O  z  b  r  a  ***  k  r   O   k  O  rZ  O   s   o   m  i  S  ***  E  v  i  w  O  v  f  a  4  d  E  ***  n  t  E  r  E  s  i  sil
+PL072_113 op    C   S  C   D   C  C   D    D    D    D   S  S  S  C  S  S  C   D   S  C    C    D    D   C  C  C  C  C   D   S  S   S   S  C   S  C   S   S   S  C  C   D   S  S  C  C  C  S  C  C  S  C  C   D   C  C  C  C  C  C  S   C 
+PL072_113 #csid 31 20 0 11
+PL072_114 ref  sil  t   E   r  a  z  m  O  rZ  n  a  ***  d  u  rZ  O  z  a  r  O  b  i  ts_j  sil
+PL072_114 hyp  sil  t  ***  r  a  s  n  O  rZ  n  a   n   d  u  rZ  a  z  a  r  O  v  i  ts_j  sil
+PL072_114 op    C   C   D   C  C  S  S  C   C  C  C   I   C  C   C  S  C  C  C  C  S  C    C    C 
+PL072_114 #csid 18 4 1 1
+PL072_116 ref  sil  t  O  s  O_~  j   E    d   n  a  k  s  t  a  r  E  p  i   E   n  i  O_~  dz  E  sil
+PL072_116 hyp  sil  t  o  s   o   j  ***  ***  n  a  k  s  t  a  r  E  p  i  ***  n  i  O_~   z  a  sil
+PL072_116 op    C   C  S  C   S   C   D    D   C  C  C  C  C  C  C  C  C  C   D   C  C   C    S  S   C 
+PL072_116 #csid 18 4 0 3
+PL072_117 ref  sil  ***  a  ts  O  z  n  O  v  1  m  i  sil
+PL072_117 hyp  sil   h   a  ts  O  z  n  O  v  E  m  i  sil
+PL072_117 op    C    I   C   C  C  C  C  C  C  S  C  C   C 
+PL072_117 #csid 11 1 1 0
+PL072_123 ref  sil   m    a   m   1   S_j  v  i  E  t  n  E  f  i   r   m  1  b  u  d  O  v   l   a  n  E  z  d  u  rZ  1  m  i   d    O   S_j  v  i  a  d  tS  E  n  i  a   m    i   m  i  E_~   dz  1  E   u   f  r  a  t  E   m   i  t  1  g  r  1  s  E  ***  m  sil
+PL072_123 hyp  sil  ***  ***  m  ***  ***  e  S  E  t  n  E  f  i  ***  v  E  b  u  d  O  v  ***  a  n  E  z  d  u  rZ  1  m  i  ***  ***   n   d  u  S  E  tS  E  n  i  a  ***  ***  m  i  ***  ***  z  E  ***  f  r  a  t  E  ***  n  t  E  g  r  E  S  E   n   t  sil
+PL072_123 op    C    D    D   C   D    D   S  S  C  C  C  C  C  C   D   S  S  C  C  C  C  C   D   C  C  C  C  C  C   C  C  C  C   D    D    S   S  S  S  S   C  C  C  C  C   D    D   C  C   D    D   S  C   D   C  C  C  C  C   D   S  C  S  C  C  S  S  C   I   S   C 
+PL072_123 #csid 41 15 1 14
+PL072_124 ref  sil  tS   1    j   u  S  g  rZ  E  j  O_~  S_j  i   l   n  i  k  i  u  k  O  p  a  r  E  k  i  s  p  1  x  a  tS  1  sil
+PL072_124 hyp  sil  tS  ***  ***  E  Z  g  rZ  E  j  O_~  S_j  i  ***  n  i  k  i  u  k  O  p  a  r  E  k  i  s  p  i  x  a  tS  E  sil
+PL072_124 op    C    C   D    D   S  S  C   C  C  C   C    C   C   D   C  C  C  C  C  C  C  C  C  C  C  C  C  C  C  S  C  C   C  S   C 
+PL072_124 #csid 28 4 0 3
+PL072_125 ref  sil  n  i   E    b   E_~  d  E  O  d  p  O  v   i   a  d   a   w  n  a  t  E  p  1  t  a  n  i  a  rZ  E  b  1  n  i   E   p   s   u  ts_j   x  u  m  O  r   u   p  a  J  s  t  f  u  sil
+PL072_125 hyp  sil  f  i  ***  ***   v   E  n  o  t  p  O  v  ***  a  d  ***  O  n  a  t  E  p  E  t  a  n  i  a  rZ  1  b  1  n  i  ***  p  ***  S    1   tS  u  m  o  r  ***  p  a  S  t  v  O  l  sil
+PL072_125 op    C   S  C   D    D    S   S  S  S  S  C  C  C   D   C  C   D   S  C  C  C  C  C  S  C  C  C  C  C   C  S  C  C  C  C   D   C   D   S    S    S  C  C  S  C   D   C  C  S  S  S  S  S   C 
+PL072_125 #csid 29 18 0 7
+PL072_126 ref  sil  p  S  E  g  a  p  i   l    j   S_j  m  1  a   f   g  a  n  i  s  t  a   n   n  i   E   p  S  E  g  a  p  m   1   i  r  a  k  u  sil
+PL072_126 hyp  sil  p  S  E  g  a  p  i  ***  ***  ***  S  n  a  ***  g  a  n  i  s  t  a  ***  m  i  ***  p  S  E  k  a  p  m  ***  i  r  a  k  o  sil
+PL072_126 op    C   C  C  C  C  C  C  C   D    D    D   S  S  C   D   C  C  C  C  C  C  C   D   S  C   D   C  C  C  S  C  C  C   D   C  C  C  C  S   C 
+PL072_126 #csid 28 5 0 7
+PL072_127 ref  sil  t  a  m  s  ***  O_~  p  i   E   n  i  O_~  dz  E  b  a   r   dz  O  n  a  m  p  O  t  S  E  b   n   E  sil
+PL072_127 hyp  sil  t  a  n  s   o    m   p  i  ***  n  i  O_~  dz  E  b  a  ***  dz  O  n  a  m  p  O  p  S  E  b  ***  i  sil
+PL072_127 op    C   C  C  S  C   I    S   C  C   D   C  C   C    C  C  C  C   D    C  C  C  C  C  C  C  S  C  C  C   D   S   C 
+PL072_127 #csid 24 4 1 3
+PL072_13 ref  sil  n  a  s  t  O  k  u  m  O  rZ  n  a  p   O    z   O  s  t  a  ts_j  d  O  p  u  z_j  n   1   x  g  O  dz_j   i   n  v   i   E  tS   O   r  n   1    x    g   d  1  S  t  r  a   s    1   s  O_~   O   S_j   v   i   E   t  l  O  n  E  sil
+PL072_13 hyp  sil  n  a  s  t  O  k  u  m  O  rZ  n  a  p  ***  ***  o  s  t  a  ts_j  d  o  p  O   rZ  n  ***  i  g  O  dz_j  ***  E  v  ***  1  tS  ***  a  n  ***  ***  ***  d  u  S  t  r  a  ***  ***  s  O_~  ***  S_j  ***  i  ***  t  v  a  n  a  sil
+PL072_13 op    C   C  C  C  C  C  C  C  C  C   C  C  C  C   D    D   S  C  C  C    C   C  S  C  S   S   C   D   S  C  C    C    D   S  C   D   S   C   D   S  C   D    D    D   C  S  C  C  C  C   D    D   C   C    D    C    D   C   D   C  S  S  C  S   C 
+PL072_13 #csid 39 12 0 14
+PL072_15 ref  sil   O   S_j  r  O  d  E  k  d  1  s  p  O  n   u    j   E  z  a  p   l   E  tS   E    m    v   ts_j  O_~  S   j   E  S  tS  E  s  k  r   O   m  n  1  m  sil
+PL072_15 hyp  sil  ***   p   S  a  d  i  n  d  i  s  p  O  n  ***  ***  i  z  a  p  ***  a  tS  ***  ***  E_~  ts_j  O_~  S  ***  E  S  tS  E  s  k  r  ***  a  n  1  m  sil
+PL072_15 op    C    D    S   S  S  C  S  S  C  S  C  C  C  C   D    D   S  C  C  C   D   S   C   D    D    S     C    C   C   D   C  C   C  C  C  C  C   D   S  C  C  C   C 
+PL072_15 #csid 25 10 0 8
+PL072_16 ref  sil  s   1   t  u  a  ts   j   E  z  m  i   E   n  i  d   O   m  n  a   r   ts_j  a  rZ  a  ***  ***  z  a  p  r   O    j   E  k  t  O  v  a  n  1  p  S  E  z  a   g   n  i   E   S  k  E  j  a  d  E  r  n  1  g  a  v  r  O  n  sil
+PL072_16 hyp  sil  s  ***  t  u  a  ts  ***  i  z  m  i  ***  n  i  d  ***  o  n  a  ***   tS   a  rZ  a   l    M   s  a  p  r  ***  ***  E  k  t  O  v  a  n  E  p  S  1  z  a  ***  m  i  ***  S  k  a  j  a  d  E  r  n  E  g  a  v  r  a  n  sil
+PL072_16 op    C   C   D   C  C  C   C   D   S  C  C  C   D   C  C  C   D   S  C  C   D     S   C   C  C   I    I   S  C  C  C   D    D   C  C  C  C  C  C  C  S  C  C  S  C  C   D   S  C   D   C  C  S  C  C  C  C  C  C  S  C  C  C  C  S  C   C 
+PL072_16 #csid 46 10 2 9
+PL072_24 ref  sil  ***  ***  z  a   d   b  a  n  O  t  E  S  O  k  O   m   f   O   r   t   g  O  S_j  ts_j   i   sil
+PL072_24 hyp  sil   n    M   z  a  ***  b  a  n  a  t  a  S  O  k  O  ***  f  ***  r  ***  g  O  S_j  ts_j  ***  sil
+PL072_24 op    C    I    I   C  C   D   C  C  C  S  C  S  C  C  C  C   D   C   D   C   D   C  C   C     C    D    C 
+PL072_24 #csid 18 2 2 5
+PL072_26 ref  sil   j   E  S_j   l   j  s  p  O  d  O  b  a  m  u  S_j  i   E   m  i  E   j    s    ts   E  m  O  rZ  E  g  O  p  O  z  O  s  t  a   v   i  ts_j  n  a  ts  a   w   1  s  E  z  O  n  sil
+PL072_26 hyp  sil  ***  i  S_j  ***  i  s  p  O  d  O  v  a  m  O  S_j  i  ***  m  i  E  ***  S_j  ts_j  E  m  O  rZ  E  g  O  p  O  z  a  s  t  a  ***  l    s   n  a  ts  a  ***  u  s  E  z  a  n  sil
+PL072_26 op    C    D   S   C    D   S  C  C  C  C  C  S  C  C  S   C   C   D   C  C  C   D    S     S   C  C  C   C  C  C  C  C  C  C  S  C  C  C   D   S    S   C  C   C  C   D   S  C  C  C  S  C   C 
+PL072_26 #csid 36 11 0 6
+PL072_37 ref  sil  ts  a  w   O   S_j  ts_j  p  S  1  k  r   1    j   E  d  v  u  s  p  a  d  O  v  1  d  a  x  sil
+PL072_37 hyp  sil   s  a  w  ***  S_j  ts_j  p  S  1  k  r  ***  ***  e  d  v  o  s  p  a  d  O  v  1  d  a  x  sil
+PL072_37 op    C    S  C  C   D    C     C   C  C  C  C  C   D    D   S  C  C  S  C  C  C  C  C  C  C  C  C  C   C 
+PL072_37 #csid 23 3 0 3
+PL072_4 ref  sil  t   a   r  n   O   v  s  k  a  p  r  a  ts  O  v  n   i   a   i    s   t  n  i   E    j    E   O  d  S  E  S_j  ts_j  u  l  a  t  a  l  E  m  a   j    u   S  ts  a   w   k  i   E   m  s  p  O  r  1  d  O  r  O  b  E  k  sil
+PL072_4 hyp  sil  t  ***  r  n  ***  a  s  k  a  p  r  a  ts  a  b  n  ***  a  ***  ***  S  n  i  ***  ***  ***  a  p  S  1  S_j  ts_j  u  n  a  t  a  n  a  m  a  ***  ***  S   t  a  ***  p  i  ***  n  s  p  o  r  E  d  O  r  O  b  E  k  sil
+PL072_4 op    C   C   D   C  C   D   S  C  C  C  C  C  C   C  S  S  C   D   C   D    D   S  C  C   D    D    D   S  S  C  S   C     C   C  S  C  C  C  S  S  C  C   D    D   C   S  C   D   S  C   D   S  C  C  S  C  S  C  C  C  C  C  C  C   C 
+PL072_4 #csid 38 15 0 12
+PL072_44 ref  sil  n  a  p  i   E    r    v   S  E   j    l   j  n   i   i  f  r  O  n  t  u  v   r   O  t  u  n  dz_j  E  u  s  1  t   u   O  v  a  n  O  b  i   u   r   O   O  b  s   w   u   g    i   k   l   j  E  n  t  a  sil
+PL072_44 hyp  sil  n  a  p  i  ***  ***  ***  S  E  ***  ***  i  n  ***  i  f  r  a  n  t  u  v  ***  O  t  o  n   dZ   e  u  s  E  t  ***  o  v  a  n  o  b  i  ***  r  ***  O  b  s  ***  u  ***  ***  k  ***  i  E  n  t  a  sil
+PL072_44 op    C   C  C  C  C   D    D    D   C  C   D    D   S  C   D   C  C  C  S  C  C  C  C   D   C  C  S  C    S   S  C  C  S  C   D   S  C  C  C  S  C  C   D   C   D   C  C  C   D   C   D    D   C   D   S  C  C  C  C   C 
+PL072_44 #csid 37 9 0 14
+PL072_46 ref  sil  O  b  i   E   k  t  v  n  i  tS  1  m   n   i   E   p  S   1    p    O   m  i  n  a  n  i   E   d  a  v  n  E  j  r  u  d  E  r  1  sil
+PL072_46 hyp  sil  a  m  i  ***  x  t  v  n  i  tS  i  m  ***  i  ***  p  S  ***  ***  ***  t  o  n  a  n  i  ***  d  a  v  n  a  i  r  u  d  E  r  1  sil
+PL072_46 op    C   S  S  C   D   S  C  C  C  C   C  S  C   D   C   D   C  C   D    D    D   S  S  C  C  C  C   D   C  C  C  C  S  S  C  C  C  C  C  C   C 
+PL072_46 #csid 26 8 0 7
+PL072_52 ref  sil  ***  S  t  u  k  O  v  a  n  i  E  v  1  s  O  k  i   E    j   z  a  b  u  d  O  v   1    j   E  s   t   p  r  a  k  t  1  tS  n  E  sil
+PL072_52 hyp  sil   p   S  t  o  k  O  v  a  n  i  E  v  1  s  a  k  i  ***  ***  z  a  b  u  d  O  v  ***  ***  i  s  ***  p  r  a  k  t  1  tS  n  a  sil
+PL072_52 op    C    I   C  C  S  C  C  C  C  C  C  C  C  C  C  S  C  C   D    D   C  C  C  C  C  C  C   D    D   S  C   D   C  C  C  C  C  C   C  C  S   C 
+PL072_52 #csid 32 4 1 5
+PL072_68 ref  sil  t   E   r  a  z  r  O  m  a  n  t  1  z  ***  m  z  n  i  k  n  O_~  w  v  S  E_~  dz_j  E  sil
+PL072_68 hyp  sil  t  ***  r  a  s  r  a  m  a  n  t  1  z   n   i  z  m  i  k  n  ***  o  v  S  E_~  ts_j  E  sil
+PL072_68 op    C   C   D   C  C  S  C  S  C  C  C  C  C  C   I   S  C  S  C  C  C   D   S  C  C   C     S   C   C 
+PL072_68 #csid 20 6 1 2
+PL072_69 ref  sil  p  O  z  O  s  t  a  w  1  t   1   l  k  O   i   n  t  E  r  E  s   1   sil
+PL072_69 hyp  sil  k  O  z  a  s  t  a  w  1  t  ***  y  k  O  ***  n  t  E  r  E  s  ***  sil
+PL072_69 op    C   S  C  C  S  C  C  C  C  C  C   D   S  C  C   D   C  C  C  C  C  C   D    C 
+PL072_69 #csid 18 3 0 3
+PL072_73 ref  sil  p  O  z  a  t  1  m  t  O  S  u  j  a  i  k  a  n  a   l   j  a  ts  O  v  i  d  ***  a  ts_j  g  O   w    1   m  O  k  i   E   m  sil
+PL072_73 hyp  sil  p  O  z  a  t  E  n  t  u  S  u  j  a  i  k  a  n  a  ***  g  a  ts  E  v  i  d   E   d    i   g  O  ***  ***  m  O  k  i  ***  m  sil
+PL072_73 op    C   C  C  C  C  C  S  S  C  S  C  C  C  C  C  C  C  C  C   D   S  C   C  S  C  C  C   I   S    S   C  C   D    D   C  C  C  C   D   C   C 
+PL072_73 #csid 29 7 1 4
+PL072_79 ref  sil  s   a   u  d   1   j  s  k  i   E   p  i   E   n  i  O_~  dz  E  f  i  n  a   n   s   u   j  O_~  t  E   r    r  O  r  1  z  m  z  E  s   w   1  n  n   1    m   O  s  a  m  ***  O_~  b  E  n   l   a  d  E  n  E  m  i  a  l  k  a  i  d  O_~  n  a  tS  E  l  E  sil
+PL072_79 hyp  sil  s  ***  o  d  ***  i  s  k  i  ***  p  i  ***  n  i  E_~  dz  1  x  i  n  a  ***  s  ***  j  O_~  t  E  ***  rZ  O  r  E  z  n  d  a  s  ***  v  a  n  ***  ***  o  s  a  m   o    m   b  i  n  ***  a  d  E  n  E  m  i  a  l  k  a  j  d   o   n  a  tS  a  v  a  sil
+PL072_79 op    C   C   D   S  C   D   S  C  C  C   D   C  C   D   C  C   S    C  S  S  C  C  C   D   C   D   C   C   C  C   D    S  C  C  S  C  S  S  S  C   D   S  S  C   D    D   S  C  C  C   I    S   C  S  C   D   C  C  C  C  C  C  C  C  C  C  C  S  C   S   C  C   C  S  S  S   C 
+PL072_79 #csid 45 20 1 11
+PL072_8 ref  sil  s   w   O  v  O  k  O   m   f  O  r  t  O  v  E  n  i   E   m  a   n    i    ts  v  s  p   u   l  n  E  g  O  z  b   l   j  x  t  r  ***  E  m  v  i  O_~  rZ  E  S_j  i  E  r  a  tS   E   j  z   v    1   g  O  d  O_~  sil
+PL072_8 hyp  sil  s  ***  o  v  O  k  O  ***  f  9  4  t  a  v  a  n  i  ***  m  a  ***  ***  ***  J  s  p  ***  o  n  E  g  O  z  b  ***  i  x  t  r   a   n  f  9  j  O_~  rZ  1  S_j  i  E  r  a  tS  ***  1  z  ***  ***  g  O  d   u   sil
+PL072_8 op    C   C   D   S  C  C  C  C   D   C  S  S  C  S  C  S  C  C   D   C  C   D    D    D   S  C  C   D   S  C  C  C  C  C  C   D   S  C  C  C   I   S  S  S  S   C    C  S   C   C  C  C  C   C   D   S  C   D    D   C  C  C   S    C 
+PL072_8 #csid 37 15 1 11
+PL072_82 ref  sil   n   a  t  E   j   O  p  E  r  a  ts   j   i  s  p  O  r  O  v  1  g  r  a   j   O_~  s  a  m   i   i  r  a  k  i   j   tS  1  ts  1  sil
+PL072_82 hyp  sil  ***  a  t  E  ***  o  p  a  r  a  ts  ***  i  s  p  O  r  O  v  o  g  r  a  ***  ***  s  a  m  ***  i  r  a  k  i  ***  tS  E  tS  E  sil
+PL072_82 op    C    D   C  C  C   D   S  C  S  C  C   C   D   C  C  C  C  C  C  C  S  C  C  C   D    D   C  C  C   D   C  C  C  C  C   D    C  S   S  S   C 
+PL072_82 #csid 28 6 0 7
+PL072_86 ref  sil  b  E_~  dz_j  E  t  O  d  O  b  r  O  b  1  t  n  i  E  v  O   l   n  i  k   u   v  p  O  v  i   E   dz  O_~  n  i   E   k  t  u  rZ  1  sil
+PL072_86 hyp  sil  m   a    dZ   i  t  a  d  O  b  r  O  b  1  t  n  i  E  v  O  ***  n  i  k  ***  v  p  O  v  i  ***   z   O   n  i  ***  k  t  u  rZ  1  sil
+PL072_86 op    C   S   S     S   S  C  S  C  C  C  C  C  C  C  C  C  C  C  C  C   D   C  C  C   D   C  C  C  C  C   D    S   S   C  C   D   C  C  C   C  C   C 
+PL072_86 #csid 31 7 0 4
+PL072_87 ref  sil  s  w  a  b  a  t  O  l  O  g  i  k  a  sil
+PL072_87 hyp  sil  s  v  a  b  a  t  O  l  o  g  i  k  a  sil
+PL072_87 op    C   C  S  C  C  C  C  C  C  S  C  C  C  C   C 
+PL072_87 #csid 13 2 0 0
+PL072_89 ref  sil   v   rZ  1  ts_j   u   rZ  a  t  k  O  z  d  a  rZ  a   j   O_~  S_j  i  E  s  t  a   n   1  i  d   E   a   l    n   E  sil
+PL072_89 hyp  sil  ***  rZ  1  ts_j  ***  rZ  a  t  k  u  z  d  a   4  a  ***  ***  ***  S  a  s  t  a  ***  m  e  d  ***  a  ***  ***  a  sil
+PL072_89 op    C    D    C  C    C    D    C  C  C  C  S  C  C  C   S  C   D    D    D   S  S  C  C  C   D   S  S  C   D   C   D    D   S   C 
+PL072_89 #csid 18 7 0 9
+PL072_90 ref  sil  p  r  a  g  m  a  t  1  ts   1   t   f  i  E  ***  r  dz  O_~  rZ  E  l  E  p  i   E    j   b   1   ts_j  tS  E_~  S_j  ts_j  O  v  O  v  O  l  n  1  m  i  s  1  t   1   m  n  i   S   z  n  i   E   v  O  l  O  n  1  m  i  g   w   O  d  n  1  m  ***  sil
+PL072_90 hyp  sil  p  r  E  d  m  a  t  E  ts  ***  i  tS  i  E   tS  n   a   u   rZ  E  l  E  p  i  ***  ***  b  ***    i   tS   E   S_j  ts_j  a  w  O  v  a  l  n  1  m  i  s  i  t  ***  i  n  i  ***  Z  n  i  ***  v  O  l  a  n  1  m  i  g  ***  o  d  n  1  m   t   sil
+PL072_90 op    C   C  C  S  S  C  C  C  S   C   D   S   S  C  C   I   S   S   S    C  C  C  C  C  C   D    D   C   D     S    C   S    C     C   S  S  C  C  S  C  C  C  C  C  C  S  C   D   S  C  C   D   S  C  C   D   C  C  C  S  C  C  C  C  C   D   S  C  C  C  C   I    C 
+PL072_90 #csid 45 18 2 8
+PL072_91 ref  sil  x  1  b  a  m  a  r  a  ts  j   E    x   O  ts_j  a  S  t  O  m  a  w  O  r  O  m  a  n  t  1  tS  n  E  sil
+PL072_91 hyp  sil  v  i  b  O  m  a  r  a  ts  j  ***  ***  u   tS   a  S  t  o  m  a  w  O  r  O  m  a  n  t  1  tS  n  a  sil
+PL072_91 op    C   S  S  C  S  C  C  C  C   C  C   D    D   S    S   C  C  C  S  C  C  C  C  C  C  C  C  C  C  C   C  C  S   C 
+PL072_91 #csid 25 7 0 2
+PL072_92 ref  sil  b  O  m  b  1  b  ***  E_~  d  O_~  a  r   g    u   m   E   n  t  E   m    v   p  i   E    r    v   S  E   j   f  a  z_j  E  v  O  j  n   1   O  i  r  a  k   p   u  z_j  n  i   E    j   d  O   j   d  O_~  d  O  g   w   O  s   u   p  i   E   n  i  O_~  ***  dz  E  sil
+PL072_92 hyp  sil  v  O  n  b  1  b   E    n   o   v\  a  r  ***  ***  m  ***  a  t  E  ***  ***  p  i  ***  ***  ***  S  E  ***  f  a   dZ  i  m  a  j  n  ***  o  i  r  a  k  ***  u   rZ  n  i  ***  ***  d  O  ***  d   o   n  o  g  ***  o  s  ***  f  i  ***  n  i  O_~   ts   a  t  sil
+PL072_92 op    C   S  C  S  C  C  C   I    S   S   S   C  C   D    D   C   D   S  C  C   D    D   C  C   D    D    D   C  C   D   C  C   S   S  S  S  C  C   D   S  C  C  C  C   D   C   S   C  C   D    D   C  C   D   C   S   S  S  C   D   S  C   D   S  C   D   C  C   C    I    S  S   C 
+PL072_92 #csid 35 19 2 17
+PL072_94 ref  sil  v  a  r   u   n  k  i  k  u  t  E  m  u  s  O_~  i  d   E   a   l   n  E  sil
+PL072_94 hyp  sil  v  a  r  ***  O  k  i  k  o  t  a  m  u  s   o   n  d  ***  a  ***  n  1  sil
+PL072_94 op    C   C  C  C   D   S  C  C  C  S  C  S  C  C  C   S   S  C   D   C   D   C  S   C 
+PL072_94 #csid 15 6 0 3
+PL072_97 ref  sil   j   E  S_j  l  j  t  a  m  i   s   j  a  p  O  v  i  E  dz_j  E  S_j  i  E  n  a   v    E    t     x   j  s  t   O   r   1    ts  1    b   E_~  d  O_~  x  v  a   l   j  ts_j  a  m   E   r  1  k  a  n  u  v  sil
+PL072_97 hyp  sil  ***  v   i   S  i  t  a  m  i  ***  S  a  p  O  v  i  E  dz_j  E  S_j  i  o  n  a  ***  ***  ***  ts_j  i  S  t  ***  r  ***  ***  1  ts_j   v   E   n   O  f  a  ***  j   tS   a  m  ***  r  E  k  a  n  o  v  sil
+PL072_97 op    C    D   S   S   S  S  C  C  C  C   D   S  C  C  C  C  C  C    C   C   C   C  S  C  C   D    D    D     S   S  S  C   D   C   D    D   C    S    S   S   S   S  S  C   D   C    S   C  C   D   C  S  C  C  C  S  C   C 
+PL072_97 #csid 30 18 0 10
+PL072_98 ref  sil   v    S  1  s   t   k  O  z  a  S_j   v   s  k  a  z   u    j   E  n  a  t  O  rZ  E  t  a  k  m  O  rZ  E  b  1  ts_j  sil
+PL072_98 hyp  sil  ***  tS  1  s  ***  k  O  z  a  ***  ***  S  k  a  z  ***  ***  e  n  a  t  O  rZ  E  t  a  t  m  O  rZ  E  b  1  ts_j  sil
+PL072_98 op    C    D    S  C  C   D   C  C  C  C   D    D   S  C  C  C   D    D   S  C  C  C  C   C  C  C  C  S  C  C   C  C  C  C    C    C 
+PL072_98 #csid 26 4 0 6
+PL077_18 ref  sil  p  r  a  ts  E  z  O  s  t   a    w   1  z  a  p  r  E  z   E   n  t  O  v  a  n  E  p  u  b   l   j  tS  n   i    E   a  b  1  m  O  g   l    j    j   E  O  ts  E   n    i   ts_j   v   S  1  s   ts  1  n  O  v  O  j  O  r  tS  1   ts  1  sil
+PL077_18 hyp  sil  p  r  a  ts  E  z  O  s  t  ***  ***  O  z  a  p  r  E  z  ***  a  t  O  v  a  n  1  p  o  b  ***  i  tS  n  ***  ***  a  b  u  m  o  g  ***  ***  ***  i  o  ts  E  ***  ***   ***  ***  S  E  s  ***  M  n  a  v  O  j  O  r  tS  1  ***  s  sil
+PL077_18 op    C   C  C  C   C  C  C  C  C  C   D    D   S  C  C  C  C  C  C   D   S  C  C  C  C  C  S  C  S  C   D   S   C  C   D    D   C  C  S  C  S  C   D    D    D   S  S   C  C   D    D     D    D   C  S  C   D   S  C  S  C  C  C  C  C   C  C   D   S   C 
+PL077_18 #csid 42 13 0 15
+PL077_22 ref  sil  b  u  d  O  v  a  m  a  p  O  t   r    v    a   ts_j  O   k  O  w  O  p  i  E_~  ts_j  u  l  a  t  i  p  O  x   w   O  n  i   E    t    S  1  s  t  a  t  S  1  dz_j  E  S_j  ts_j   i    m   i  l  j   O    n    u   v  d  O  l  a  r  u  v  sil
+PL077_22 hyp  sil  b  u  d  O  v  a  l  a  p  O  t  ***  ***  ***    f   O  tS  u  k  O  p  i  E_~  ts_j  u  l  a  t  i  p  O  x  ***  O  n  i  ***  ***  tS  E  s  v  a  v  S  1  dz_j  E  S_j   ***  ***  ***  i  l  j  ***  ***  O_~  v  t  o  l  a  r  u  v  sil
+PL077_22 op    C   C  C  C  C  C  C  S  C  C  C  C   D    D    D     S   C   S  S  S  C  C  C   C     C   C  C  C  C  C  C  C  C   D   C  C  C   D    D    S  S  C  S  C  S  C  C    C   C   C     D    D    D   C  C  C   D    D    S   C  S  S  C  C  C  C  C   C 
+PL077_22 #csid 45 12 0 11
+PL077_28 ref  sil   v    E   f  E  k  ts_j  E  t  1  x  tS  1  s   t   E  k  O  k   O    w   O  d  v  i   E   S_j  ts_j  E  t   1   ts_j  O_~  ts  O  s  u   b    z    O   s   t    a    w   O  z  a  m  O  r  d  O  v  a  n   1   x  a   l   b  O  z  a  g  i  n  E_~   w   O  sil
+PL077_28 hyp  sil  ***  ***  f  E  k    s   E  t  1  x  tS  1  s  ***  E  k  O  k  ***  ***  O  d  v  i  ***  ***    S   E  t  ***   S_j  E_~  ts  O  s  u  ***  ***  ***  s  ***  ***  ***  o  s  o  m  o  r  d  O  v  a  n  ***  h  a  ***  b  u  z  a  g  i  n  ***  ***  o  sil
+PL077_28 op    C    D    D   C  C  C    S   C  C  C  C   C  C  C   D   C  C  C  C   D    D   C  C  C  C   D    D     S   C  C   D     S    S    C  C  C  C   D    D    D   C   D    D    D   S  S  S  C  S  C  C  C  C  C  C   D   S  C   D   C  S  C  C  C  C  C   D    D   S   C 
+PL077_28 #csid 41 11 0 18
+PL077_5 ref  sil  n  i  E  m   ts  1  m  a  j  O_~  u  j   E   m  n  1  p  E  k  a  b  E  f   r    a    n   ts  u   z_j  i  z   E   r  O  v  1  sil
+PL077_5 hyp  sil  n  i  E  m  ***  s  m  a  j  ***  o  j  ***  a  n  1  p  E  k  a  b  a  f  ***  ***  O_~  ts  O  dz_j  i  z  ***  r  O  v  1  sil
+PL077_5 op    C   C  C  C  C   D   S  C  C  C   D   S  C   D   S  C  C  C  C  C  C  C  S  C   D    D    S    C  S    S   C  C   D   C  C  C  C   C 
+PL077_5 #csid 25 7 0 6
+PL077_8 ref  sil  n  a  s  n  a   v    1   rZ  u  ts  a  n  i   E   p   i    E   n  i  E_~  dz  1   v   b   w   O  t  O  n  i  E  s  t   a   ts_j   d   O  d  a  j  E  sil
+PL077_8 hyp  sil  n  a  s  n  a  ***  ***  rZ  1  ts  O  n  i  ***  p  ***  ***  r  i  E_~  dz  1  ***  b  ***  o  t  o  n  i  E  s  t  ***   ***  ***  r  s  M  l  i  sil
+PL077_8 op    C   C  C  C  C  C   D    D    C  S   C  S  C  C   D   C   D    D   S  C   C    C  C   D   C   D   S  C  S  C  C  C  C  C   D     D    D   S  S  S  S  S   C 
+PL077_8 #csid 23 10 0 10
+PL084_1 ref  sil  ***  v  tS  a  S_j  E  a  k   ts  j  i  p  O  l  j  ts  j  a  n  t  n  i   E   z  a  s  t  a  n  a  v   i   a  S_j    i    E   ts  O  m  u  g  r  O  z_j  i  sil
+PL084_1 hyp  sil   p   S  tS  a  ***  S  a  k  ***  t  i  p  O  l  i  ts  j  a  n  t  n  i  ***  z  a  s  t  a  n  a  v  ***  E  S_j  ts_j  O_~   t  a  m  o  g  r  o   Z   i  sil
+PL084_1 op    C    I   S   C  C   D   S  C  C   D   S  C  C  C  C  S   C  C  C  C  C  C  C   D   C  C  C  C  C  C  C  C   D   S   C     S    S    S  S  C  S  C  C  S   S   C   C 
+PL084_1 #csid 30 12 1 4
+PL084_10 ref  sil  ***  x  ts  O_~  S  1  b  k  O  i  d  O  b  rZ  E  rZ  ***   1  ts_j  t  O  j  E  s  t  i  x  E  t  O  s  sil
+PL084_10 hyp  sil   t   k  ts   O   S  E  p  k  O  i  d  O  b  rZ  E  rZ   E   tS    t   t  a  j  E  s  t  i  x  a  t  O  s  sil
+PL084_10 op    C    I   S   C   S   C  S  S  C  C  C  C  C  C   C  C   C   I    S    S   C  S  C  C  C  C  C  C  S  C  C  C   C 
+PL084_10 #csid 23 8 2 0
+PL084_11 ref  sil  n  i   E   l  j  tS  O_~  S_j  i  E  z  k  O  n  s  ***  E  k  f  E  n  ts  j  a  m  ***  ***  i  sil
+PL084_11 hyp  sil  n  i  ***  l  i  tS  ***   a   S  a  s  k  a  n  s   a   n  k  v  E  n  ts  j  a  m   i    S   i  sil
+PL084_11 op    C   C  C   D   C  S   C   D    S   S  S  S  C  S  C  C   I   S  C  S  C  C   C  C  C  C   I    I   C   C 
+PL084_11 #csid 17 8 3 2
+PL084_12 ref  sil  m  a  rZ  O_~  i   m   S_j    i    E   k  a  r  j  E  r  1  b  O  S  u  v  sil
+PL084_12 hyp  sil  m  a  rZ  O_~  i  ***  E_~  ts_j  O_~  k  a  r  i  E  r  E  b  o  s  u  v  sil
+PL084_12 op    C   C  C   C   C   C   D    S     S    S   C  C  C  S  C  C  S  C  S  S  C  C   C 
+PL084_12 #csid 15 7 0 1
+PL084_13 ref  sil  ***  x  ts  O_~  b  1  ts_j  t  a  k  s  a  m  O  s  w  a  v  n  i   j   a  k  i  x  p  O  p  S  E  d  n  i  O  p  i   E   k  u  n  O  v   i   E  sil
+PL084_13 hyp  sil   t   k  ts   O   b  1   tS   t  a  k  s  a  m  a  s  l  a  v  n  i  ***  a  k  i  x  p  O  p  S  E  d  n  i  O  p  i  ***  k  o  n  O  v  ***  E  sil
+PL084_13 op    C    I   S   C   S   C  C    S   C  C  C  C  C  C  S  C  S  C  C  C  C   D   C  C  C  C  C  C  C  C  C  C  C  C  C  C  C   D   C  S  C  C  C   D   C   C 
+PL084_13 #csid 36 6 1 3
+PL084_20 ref  sil  r  E  f  l  E  k  s  j  a  p  S  1  x  O  dz_j  i  p  O  v  S  1  s  t  k  i  m  sil
+PL084_20 hyp  sil  r  a  f  l  E  k  s  j  a  p  S  1  x  O  dz_j  E  p  O  v  S  E  s  t  k  i  E  sil
+PL084_20 op    C   C  S  C  C  C  C  C  C  C  C  C  C  C  C    C   S  C  C  C  C  S  C  C  C  C  S   C 
+PL084_20 #csid 24 4 0 0
+PL084_22 ref  sil  n  a  p  E  v  n  O  v  S  1  s  ts   1   j  E  s  t  E  S_j  m  1  p  O  r  u  S  E  n  i  t  1  m  ts   O   S_j  i  E  s  t  a  w  O  m  u  v  i  d  a  r  j  u  S  g  rZ  E  x   n   i  k  sil
+PL084_22 hyp  sil  n  a  t  a  v  n  a  v  S  E  s  ts  ***  j  E  s  t  E  S_j  l  E  p  o  r  u  S  a  n  i  t  E  m  ts  ***   a   S  a  s  t  a  w  a  m  u  v  i  d  a  l  j  u  S  u  rZ  a  x  ***  i  k  sil
+PL084_22 op    C   C  C  S  S  C  C  S  C  C  S  C   C   D   C  C  C  C  C   C   S  S  C  S  C  C  C  S  C  C  C  S  C   C   D    S   S  S  C  C  C  C  S  C  C  C  C  C  C  S  C  C  C  S   C  S  C   D   C  C   C 
+PL084_22 #csid 42 16 0 3
+PL084_27 ref  sil   s    t   S  E  l  a  n  i  n  a  z  m  a   g   d  a  l  E  n  k  i  b  1  w  a  v  tS  O  r  a  j  n   a   j  v  a  rZ  n   i   E   j   S  1  m  t  E  m  a  t   E    m   r  O  z  m  u  v  p  O  l  j  ts  j  a  n  t   u   v  sil
+PL084_27 hyp  sil  ***  ***  v  s  l  a  n  i  n  a  s  m  a  ***  d  a  r  E  n  k  i  b  u  w  a  v  tS  O  r  a  j  n  ***  E  v  a  rZ  n  ***  E  ***  S  E  n  t  E  m  a  t  ***  ***  a  l  a  g  O  v  p  O  l  i  ts  j  a  n  t  ***  o  sil
+PL084_27 op    C    D    D   S  S  C  C  C  C  C  C  S  C  C   D   C  C  S  C  C  C  C  C  S  C  C  C   C  C  C  C  C  C   D   S  C  C   C  C   D   C   D   C  S  S  C  C  C  C  C   D    D   S  S  S  S  S  C  C  C  C  S   C  C  C  C  C   D   S   C 
+PL084_27 #csid 46 15 0 9
+PL084_34 ref  sil  a  b  1  n  i   E   g  i  n  E_~  l  j  k  O  l  E   j   n  i  p  O  l  j  ts  j  a  n  ts_j  i  k  O  n  i  E  tS  n  E  j  E  s  t  j  E  S  tS  E  l  E  p  S  E  r  O  z  p  O  z  n  a  n  i  E  sil
+PL084_34 hyp  sil  a  b  E  n  i  ***  g  i  n   a   l  i  k  O  l  E  ***  n  i  p  O  l  i  ts  j  a  n   dZ   i  k  O  n  i  E  tS  n  a  j  E  s  t  i  E  S  tS  E  l  a  p  S  a  r  a  s  p  O  z  n  a  n  i  E  sil
+PL084_34 op    C   C  C  S  C  C   D   C  C  C   S   C  S  C  C  C  C   D   C  C  C  C  C  S   C  C  C  C    S   C  C  C  C  C  C   C  C  S  C  C  C  C  S  C  C   C  C  C  S  C  C  S  C  S  S  C  C  C  C  C  C  C  C   C 
+PL084_34 #csid 51 11 0 2
+PL084_37 ref  sil  t   E   a  d   E   E  u   E    s    z    E    t    j   O  t  a  ts   E   E  v   u   i   ts   E    z    E    t  z  b   l   j  s  k  a  sil
+PL084_37 hyp  sil  t  ***  a  d  ***  E  u  ***  ***  ***  ***  ***  ***  S  i  a  ts  ***  E  v  ***  i  ***  ***  ***  ***  tS  z  b  ***  i  s  k  a  sil
+PL084_37 op    C   C   D   C  C   D   C  C   D    D    D    D    D    D   S  S  C   C   D   C  C   D   C   D    D    D    D    S  C  C   D   S  C  C  C   C 
+PL084_37 #csid 17 4 0 15
+PL084_40 ref  sil  t  E  r  a  z  r  O  m  a  n  t  1  z  m  z  n  i  k  n  O_~  w  v  S  ***  E_~  dz_j  E  sil
+PL084_40 hyp  sil  t  a  r  a  s  r  O  m  a  n  t  1  z  a  z  n  i  k  n  ***  o  v  S   a    n    dZ   a  sil
+PL084_40 op    C   C  S  C  C  S  C  C  C  C  C  C  C  C  S  C  C  C  C  C   D   S  C  C   I    S     S   S   C 
+PL084_40 #csid 20 7 1 1
+PL084_41 ref  sil  p  O  z  O  s  t  a  w  1  t  1   l   k  O  i  n  t  E  r  E  s   1   sil
+PL084_41 hyp  sil  p  O  z  a  s  t  a  w  a  t  1  ***  k  o  j  n  t  E  r  a  s  ***  sil
+PL084_41 op    C   C  C  C  S  C  C  C  C  S  C  C   D   C  S  S  C  C  C  C  S  C   D    C 
+PL084_41 #csid 17 5 0 2
+PL084_59 ref  sil  s  w  a  b  a  t  O  l  O  g  i  k  a  sil
+PL084_59 hyp  sil  s  w  a  b  a  t  O  r  O  g  i  k  a  sil
+PL084_59 op    C   C  C  C  C  C  C  C  S  C  C  C  C  C   C 
+PL084_59 #csid 14 1 0 0
+PL084_6 ref  sil  b  r   u   t  a  l  j  z  a  ts  j  a  s  t  a  j   E   S_j    i    E   f  a  k  t  E  m  sil
+PL084_6 hyp  sil  b  r  ***  t  a  l  i  z  a  ts  j  a  s  t  a  j  ***  S_j  ts_j  O_~  f  a  k  t  E  m  sil
+PL084_6 op    C   C  C   D   C  C  C  S  C  C   C  C  C  C  C  C  C   D    C     S    S   C  C  C  C  C  C   C 
+PL084_6 #csid 23 3 0 2
+PL084_63 ref  sil  x  1  b  a  m  a  j  ***  O_~  r  a  ts  j  E  x  O  ts_j  a  S  t  O  m  a  w  O  r  O  m  a  n  t  1  tS  n  E  sil
+PL084_63 hyp  sil  k  a  b  a  m  a  j   a    m   r  a  ts  j  a  x  a   tS   a  S  t  O  m  a  w  O  r  O  m  a  n  t  E  tS  n  a  sil
+PL084_63 op    C   S  S  C  C  C  C  C   I    S   C  C   C  C  S  C  S    S   C  C  C  C  C  C  C  C  C  C  C  C  C  C  S   C  C  S   C 
+PL084_63 #csid 28 8 1 0
+PL084_7 ref  sil  m  i   E    j   s  ts  E  r  O  z  b  i  t  1  x  g  a  n  g  u  v   z   a  j  m  u  j  ***  O_~  n  O  v  E  sil
+PL084_7 hyp  sil  m  i  ***  ***  s   t  E  r  O  z  b  i  t  E  l  k  a  n  g  u  v  ***  s  E  m  u  j   a    m   n  O  v  a  sil
+PL084_7 op    C   C  C   D    D   C   S  C  C  C  C  C  C  C  S  S  S  C  C  C  C  C   D   S  S  C  C  C   I    S   C  C  C  S   C 
+PL084_7 #csid 23 8 1 3
+PL084_70 ref  sil  v  S  1  s  t  k  O  z  a  S_j   v   s  k  a  z   u    j   E  n  a  t  O  rZ  E  t  a  k  m  O  rZ  E  b  1  ts_j  sil
+PL084_70 hyp  sil  p  S  E  s  t  k  O  z  a  ***  ***  S  k  a  z  ***  ***  E  n  a  t  O  rZ  E  t  a  k  m  a  rZ  E  b  E  ts_j  sil
+PL084_70 op    C   S  C  S  C  C  C  C  C  C   D    D   S  C  C  C   D    D   C  C  C  C  C   C  C  C  C  C  C  S   C  C  C  S    C    C 
+PL084_70 #csid 27 5 0 4
+PL084_74 ref  sil  v  S  1  s   ts  1  p  O  v  i   n   n  i  z  a  r  O  b  i  ***  ts_j  sil
+PL084_74 hyp  sil  v  S  E  s  ***  E  p  O  v  i  ***  n  i  z  a  r  a  b  i   tS    i   sil
+PL084_74 op    C   C  C  S  C   D   S  C  C  C  C   D   C  C  C  C  C  S  C  C   I     S    C 
+PL084_74 #csid 16 4 1 2
+PL084_76 ref  sil  tS  1  l  j  t  a  g  rZ  E  m  1  sil
+PL084_76 hyp  sil  tS  e  4  i  t  a  g  rZ  a  n  a  sil
+PL084_76 op    C    C  S  S  S  C  C  C   C  S  S  S   C 
+PL084_76 #csid 7 6 0 0
+PL084_85 ref  sil  t  E  r  a  z  m  O  rZ  n  a  d  u  rZ  O  z  a  r  O  b  i  ***  ts_j  sil
+PL084_85 hyp  sil  t  a  r  a  s  m  O  rZ  n  a  d  u  rZ  E  z  a  r  a  b  i   tS    i   sil
+PL084_85 op    C   C  S  C  C  S  C  C   C  C  C  C  C   C  S  C  C  C  S  C  C   I     S    C 
+PL084_85 #csid 18 5 1 0
+PL084_88 ref  sil  a  ts  O  z  n  O  v  1  m  i  sil
+PL084_88 hyp  sil  a  ts  a  z  n  O  v  E  m  i  sil
+PL084_88 op    C   C   C  S  C  C  C  C  S  C  C   C 
+PL084_88 #csid 10 2 0 0
+PL084_95 ref  sil  ***  tS  1  j  u  S  g  rZ  E  j  O_~  S_j  i   l   n  i  k  i  k  O  p  a  r  E  k  i  s  p  1  x  a  tS  1  sil
+PL084_95 hyp  sil   v   tS  E  j  u  S  g  rZ  a  j  O_~  S_j  i  ***  n  i  k  i  k  O  p  a  r  E  k  i  s  p  a  h  a  tS  1  sil
+PL084_95 op    C    I    C  S  C  C  C  C   C  S  C   C    C   C   D   C  C  C  C  C  C  C  C  C  C  C  C  C  C  S  S  C   C  C   C 
+PL084_95 #csid 29 4 1 1
+PL084_97 ref  sil  p  S  E  g  a  p  i   l    j   S_j  m  1  a  f  g  a  n  i  s  t  a  n  ***  n  i   E   p  S  E  g  a  p  m  1  i  r  a  k  u  sil
+PL084_97 hyp  sil  p  S  E  g  a  p  i  ***  ***   S   m  a  a  v  k  a  n  i  s  t  a  n   t   n  i  ***  p  S  E  g  a  p  m  i  i  r  a  k  o  sil
+PL084_97 op    C   C  C  C  C  C  C  C   D    D    S   C  S  C  S  S  C  C  C  C  C  C  C   I   C  C   D   C  C  C  C  C  C  C  S  C  C  C  C  S   C 
+PL084_97 #csid 31 6 1 3
+PL084_98 ref  sil  t  a  m  s  O_~  p  i   E   n  i  O_~  dz  E  b  a   r   dz  O  n  a  m  p  O  t  S  E  b  n  E  sil
+PL084_98 hyp  sil  t  a  m  s  O_~  p  i  ***  n  i  O_~  dz  E  b  a  ***   z  O  n  a  m  p  O  t  S  a  b  n  a  sil
+PL084_98 op    C   C  C  C  C   C   C  C   D   C  C   C    C  C  C  C   D    S  C  C  C  C  C  C  C  C  S  C  C  S   C 
+PL084_98 #csid 26 3 0 2
+PL090_16 ref  sil  d  l  a  tS  E  g  ***  O  sil
+PL090_16 hyp  sil  g  l  a  tS  a  g   a   o  sil
+PL090_16 op    C   S  C  C   C  S  C   I   S   C 
+PL090_16 #csid 6 3 1 0
+PL090_41 ref  sil  ***  tS  1  m  b  1  w  z  v  i  O_~  z  E  k  s  O  v  i  E  ts  k  i  sil
+PL090_41 hyp  sil   p    S  E  m  b  e  u  z  v  i  O_~  z  a  k  s  a  v  i  E  ts  k  i  sil
+PL090_41 op    C    I    S  S  C  C  S  S  C  C  C   C   C  S  C  C  S  C  C  C   C  C  C   C 
+PL090_41 #csid 17 6 1 0
+PL090_47 ref  sil  j  a  k  j  E  s  t  ***  rZ  O_~  dz  O  n  a  u  n  i  a  ***  E  u  r  O  p  E  j  s  k  a  sil
+PL090_47 hyp  sil  j  a  k  i  E  s  t   u   rZ  O_~  dz  O  m  a  u  n  i  a   r   a  u  r  O  p  a  i  s  k  a  sil
+PL090_47 op    C   C  C  C  S  C  C  C   I    C   C    C  C  S  C  C  C  C  C   I   S  C  C  C  C  S  S  C  C  C   C 
+PL090_47 #csid 24 5 2 0
+PL090_51 ref  sil   v   j  a  k  i  s  p  O  s  u  b  t  f  O  rZ  O  n  a  j  E  s  t  u  n  i  a  E  u  r  O  p  E  j  s  k  a  sil
+PL090_51 hyp  sil  ***  j  a  k  i  s  p  o  s  o  p  t  f  O  rZ  O  n  a  j  e  s  t  o  n  i  a  w  O  r  O  p  a  i  s  k  a  sil
+PL090_51 op    C    D   C  C  C  C  C  C  S  C  S  S  C  C  C   C  C  C  C  C  S  C  C  S  C  C  C  S  S  C  C  C  S  S  C  C  C   C 
+PL090_51 #csid 28 9 0 1
+PL090_65 ref  sil  u  n  i  a  s  t  O  i  p  S  E  d  p  O  d  O  b  n  1  m  p  r  O  b  l  E  m  E  m  sil
+PL090_65 hyp  sil  o  n  i  a  s  t  a  i  p  S  E  d  p  O  d  O  b  n  E  m  p  r  o  b  r  a  n  a  n  sil
+PL090_65 op    C   S  C  C  C  C  C  S  C  C  C  C  C  C  C  C  C  C  C  S  C  C  C  S  C  S  S  S  S  S   C 
+PL090_65 #csid 22 9 0 0
+PL090_73 ref  sil  v  v  i  ***  E_~  k  S  O  S_j  ts_j  i  k  r  a  j  u  v  k  O  r  u  p  ts  j  a  p  S  E  n  i  k  a  z  d   O    w   u  sil
+PL090_73 hyp  sil  v  v  i   E    n   k  S  a   S    tS   E  k  r  a  j  u  v  k  o  r  o  p  ts  j  a  p  S  E  n  i  k  a  z  d  ***  ***  o  sil
+PL090_73 op    C   C  C  C   I    S   C  C  S   S     S   S  C  C  C  C  C  C  C  S  C  S  C   C  C  C  C  C  C  C  C  C  C  C  C   D    D   S   C 
+PL090_73 #csid 28 8 1 2
+PL090_83 ref  sil  t  O  n  i  E  p  r  a  v  ***  d  a  sil
+PL090_83 hyp  sil  t  a  n  i  E  p  r  a  v   a   d  a  sil
+PL090_83 op    C   C  S  C  C  C  C  C  C  C   I   C  C   C 
+PL090_83 #csid 12 1 1 0
+PL097_104 ref  sil  i  s  t  O  p  ***  sil
+PL097_104 hyp  sil  i  s  t  o  p   a   sil
+PL097_104 op    C   C  C  C  S  C   I    C 
+PL097_104 #csid 6 1 1 0
+PL097_16 ref  sil  d  O  m  O  v  1  p  O  r  a  d  n   i   k  a  r  t  1  s  t  1  tS  n  1  sil
+PL097_16 hyp  sil  d  a  m  O  v  1  p  o  r  o  d  n  ***  g  a  r  t  i  s  t  1  tS  n  1  sil
+PL097_16 op    C   C  S  C  C  C  C  C  S  C  S  C  C   D   S  C  C  C  S  C  C  C   C  C  C   C 
+PL097_16 #csid 20 5 0 1
+PL097_2 ref  sil  s  t  a  r  1  t   E   a  t  r  v  n  O  v  1  m  s  E  z   O   n  i  E  sil
+PL097_2 hyp  sil  s  t  a  r  e  t  ***  a  t  r  b  n  o  v  a  n  s  a  z  ***  o  r  E  sil
+PL097_2 op    C   C  C  C  C  S  C   D   C  C  C  S  C  S  C  S  S  C  S  C   D   S  S  C   C 
+PL097_2 #csid 15 8 0 2
+PL097_20 ref  sil  n  i  ts  t  a  k   i   E  g  O  S_j   i  E  n   i   E  s  t  a  w  O  ***  z  j  E  d  n  1  m  v  S  a  k  rZ  E  v  1  j  O_~  t  k  i   E   m  sil
+PL097_20 hyp  sil  v  i   s  t  a  k  ***  e  g  O  ***  rZ  O  n  ***  a  s  t  a  w  O   n   9  z  e  d  l  E  m  p  S  a  l   Z  E  b  i  j  O_~  t  k  i  ***  n  sil
+PL097_20 op    C   S  C   S  C  C  C   D   S  C  C   D    S  S  C   D   S  C  C  C  C  C   I   S  S  S  C  S  S  C  S  C  C  S   S  C  S  S  C   C   C  C  C   D   S   C 
+PL097_20 #csid 24 17 1 4
+PL097_41 ref  sil  z  a  n  i   E   m  a  w  E  p  i   E    n   i  O_~  dz  E  v  p  E   w    n   i  i   m   S_j    i    E   t   O   u  d  a  j  E  sil
+PL097_41 hyp  sil  z  a  n  i  ***  m  a  w  E  p  i  ***  ***  l  O_~   z  a  v  p  E  ***  ***  m  i  ***  E_~  ts_j  O_~  t  ***  o  d  a  j  E  sil
+PL097_41 op    C   C  C  C  C   D   C  C  C  C  C  C   D    D   S   C    S  S  C  C  C   D    D   S  C   D    S     S    S   C   D   S  C  C  C  C   C 
+PL097_41 #csid 22 8 0 7
+PL097_77 ref  sil  t  O  i  t  a  k  S_j  r  E  d  n   i   O  t  r  u  d   n    1   O  d  ts_j  i  n  E  k  ***  ***  u  s  p  a  k  a  j   a    i   a  n  sil
+PL097_77 hyp  sil  t  o  j  t  a  k  ***  S  E  d  n  ***  o  t  r  u  d  ***  ***  i  o   tS   i  n  a  k   r    u   u  s  p  O  k  a  j  ***  ***  a  n  sil
+PL097_77 op    C   C  S  S  C  C  C   D   S  C  C  C   D   S  C  C  C  C   D    D   S  S    S   C  C  S  C   I    I   C  C  C  S  C  C  C   D    D   C  C   C 
+PL097_77 #csid 24 9 2 6
+PL097_82 ref  sil  ***  ***  l  E  v  a  ts  a  w  a  v  t  1  w  p  S  E   k    S  1  k  u  j  E  x  ***  u  k  v  O  d  1  i  a  n  sil
+PL097_82 hyp  sil   v    E   l  a  b  a  ts  a  v  a  v  t  E  u  p  S  E  ***  tS  1  k  u  j  E  x   o   g  o  v  o  d  E  j  a  n  sil
+PL097_82 op    C    I    I   C  S  S  C   C  C  S  C  C  C  S  S  C  C  C   D    S  C  C  C  C  C  C   I   S  S  C  S  C  S  S  C  C   C 
+PL097_82 #csid 22 11 3 1
+PL097_88 ref  sil  z  n  a  ts_j   E    j    u  S  z  a  s  a  d   1   v  i  O  s  w  O  v  a  n   i   a  m  u  v  i  i  a  n  sil
+PL097_88 hyp  sil  z  m  a   ***  ***  ***  dZ  y  z  a  z  a  d  ***  E  d  o  s  w  O  v  a  n  ***  a  m  u  v  i  j  a  n  sil
+PL097_88 op    C   C  S  C    D    D    D    S  S  C  C  S  C  C   D   S  S  S  C  C  C  C  C  C   D   C  C  C  C  C  S  C  C   C 
+PL097_88 #csid 21 8 0 5
+PL097_97 ref  sil  i  s  t  O  p  ***  p  O  d  a  j   E   k  O  m  E  n  d  E  i  a  n  sil
+PL097_97 hyp  sil  i  s  t  o  p   o   p  O  b  a  j  ***  k  O  m  a  n  d  O  j  a  n  sil
+PL097_97 op    C   C  C  C  S  C   I   C  C  S  C  C   D   C  C  C  S  C  C  S  S  C  C   C 
+PL097_97 #csid 17 5 1 1
+PL097_98 ref  sil  d  r  1  f  u  j  E  m  1  d  O  n  a   j   b   l    j   rZ  S  E   j   p   w   1  ts_j  i  z   n   1  sil
+PL097_98 hyp  sil  d  r  E  f  O  j  a  m  a  d  o  n  a  ***  b  ***  ***   i  S  E  ***  p  ***  u   tS   i  z  ***  1  sil
+PL097_98 op    C   C  C  S  C  S  C  S  C  S  C  S  C  C   D   C   D    D    S  C  C   D   C   D   S    S   C  C   D   C   C 
+PL097_98 #csid 17 8 0 6

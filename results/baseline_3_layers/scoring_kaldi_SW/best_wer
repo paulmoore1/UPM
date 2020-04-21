@@ -1,0 +1,1 @@
+%WER 50.37 [ 59316 / 117751, 3054 ins, 23200 del, 33062 sub ] [PARTIAL] /home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_3_layers/decode_SW_only_out_dnn2/wer_7_0.0

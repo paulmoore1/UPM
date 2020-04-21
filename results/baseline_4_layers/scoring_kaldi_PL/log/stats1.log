@@ -1,0 +1,32 @@
+# cat /home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/penalty_0.0/7.txt | align-text --special-symbol='***' ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt ark:- ark,t:- | utils/scoring/wer_per_utt_details.pl --special-symbol '***' | tee /home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/wer_details/per_utt | utils/scoring/wer_per_spk_details.pl /home/paul/upm_exp/baseline_mfcc/data/val_PL/utt2spk > /home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/wer_details/per_spk 
+# Started at Mon Apr 20 20:59:17 BST 2020
+#
+align-text '--special-symbol=***' ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt ark:- ark,t:- 
+WARNING (align-text[5.5]:main():align-text.cc:88) Key PL012_100 is in ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt, but not in ark:-
+WARNING (align-text[5.5]:main():align-text.cc:88) Key PL012_20 is in ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt, but not in ark:-
+utils/scoring/wer_per_spk_details.pl: Note: handling as utf-8 text
+WARNING (align-text[5.5]:main():align-text.cc:88) Key PL012_96 is in ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt, but not in ark:-
+WARNING (align-text[5.5]:main():align-text.cc:88) Key PL036_68 is in ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt, but not in ark:-
+WARNING (align-text[5.5]:main():align-text.cc:88) Key PL036_78 is in ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt, but not in ark:-
+WARNING (align-text[5.5]:main():align-text.cc:88) Key PL037_25 is in ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt, but not in ark:-
+WARNING (align-text[5.5]:main():align-text.cc:88) Key PL037_26 is in ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt, but not in ark:-
+WARNING (align-text[5.5]:main():align-text.cc:88) Key PL037_35 is in ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt, but not in ark:-
+WARNING (align-text[5.5]:main():align-text.cc:88) Key PL037_38 is in ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt, but not in ark:-
+WARNING (align-text[5.5]:main():align-text.cc:88) Key PL038_26 is in ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt, but not in ark:-
+WARNING (align-text[5.5]:main():align-text.cc:88) Key PL039_29 is in ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt, but not in ark:-
+WARNING (align-text[5.5]:main():align-text.cc:88) Key PL040_55 is in ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt, but not in ark:-
+WARNING (align-text[5.5]:main():align-text.cc:88) Key PL041_20 is in ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt, but not in ark:-
+WARNING (align-text[5.5]:main():align-text.cc:88) Key PL041_25 is in ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt, but not in ark:-
+WARNING (align-text[5.5]:main():align-text.cc:88) Key PL041_37 is in ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt, but not in ark:-
+WARNING (align-text[5.5]:main():align-text.cc:88) Key PL041_42 is in ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt, but not in ark:-
+WARNING (align-text[5.5]:main():align-text.cc:88) Key PL041_44 is in ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt, but not in ark:-
+WARNING (align-text[5.5]:main():align-text.cc:88) Key PL041_46 is in ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt, but not in ark:-
+WARNING (align-text[5.5]:main():align-text.cc:88) Key PL041_47 is in ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt, but not in ark:-
+WARNING (align-text[5.5]:main():align-text.cc:88) Key PL046_25 is in ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt, but not in ark:-
+WARNING (align-text[5.5]:main():align-text.cc:88) Key PL046_51 is in ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt, but not in ark:-
+WARNING (align-text[5.5]:main():align-text.cc:88) Key PL072_33 is in ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_PL_only_out_dnn2/scoring_kaldi/test_filt.txt, but not in ark:-
+LOG (align-text[5.5]:main():align-text.cc:135) Done 1452 sentences, failed for 22
+utils/scoring/wer_per_utt_details.pl: Note: handling as utf-8 text
+utils/scoring/wer_per_spk_details.pl: Note: handling as utf-8 text
+# Accounting: time=1 threads=1
+# Ended (code 0) at Mon Apr 20 20:59:18 BST 2020, elapsed time 1 seconds
