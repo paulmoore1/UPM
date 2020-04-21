@@ -1,5 +1,0 @@
-# cat /home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_5_layers/decode_BG_only_out_dnn2/scoring_kaldi/penalty_1.0/8.txt | compute-wer --text --mode=present ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_5_layers/decode_BG_only_out_dnn2/scoring_kaldi/test_filt.txt ark,p:- >& /home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_5_layers/decode_BG_only_out_dnn2/wer_8_1.0 
-# Started at Tue Apr 21 12:12:33 BST 2020
-#
-# Accounting: time=0 threads=1
-# Ended (code 0) at Tue Apr 21 12:12:33 BST 2020, elapsed time 0 seconds
