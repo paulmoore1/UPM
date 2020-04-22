@@ -1,0 +1,10 @@
+# cat /home/paul/upm_exp/baseline_mfcc/tri3/decode_val_SW/scoring_kaldi/penalty_0.0/7.txt | align-text --special-symbol='***' ark:/home/paul/upm_exp/baseline_mfcc/tri3/decode_val_SW/scoring_kaldi/test_filt.txt ark:- ark,t:- | utils/scoring/wer_per_utt_details.pl --special-symbol '***' | tee /home/paul/upm_exp/baseline_mfcc/tri3/decode_val_SW/scoring_kaldi/wer_details/per_utt | utils/scoring/wer_per_spk_details.pl /home/paul/upm_exp/baseline_mfcc/data/val_SW/utt2spk > /home/paul/upm_exp/baseline_mfcc/tri3/decode_val_SW/scoring_kaldi/wer_details/per_spk 
+# Started at Wed Apr 22 07:42:26 BST 2020
+#
+align-text '--special-symbol=***' ark:/home/paul/upm_exp/baseline_mfcc/tri3/decode_val_SW/scoring_kaldi/test_filt.txt ark:- ark,t:- 
+utils/scoring/wer_per_spk_details.pl: Note: handling as utf-8 text
+LOG (align-text[5.5]:main():align-text.cc:135) Done 1555 sentences, failed for 0
+utils/scoring/wer_per_utt_details.pl: Note: handling as utf-8 text
+utils/scoring/wer_per_spk_details.pl: Note: handling as utf-8 text
+# Accounting: time=1 threads=1
+# Ended (code 0) at Wed Apr 22 07:42:27 BST 2020, elapsed time 1 seconds

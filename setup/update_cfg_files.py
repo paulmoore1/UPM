@@ -72,15 +72,15 @@ def main():
         
         if "dataset3" in line and dataset == "test":
             updating_test_lab_files = True
-            lines[idx+1] = "data_name = {}_only".format(lang)
+            lines[idx+1] = "data_name = {}_only_{}".format(lang, dataset)
 
         if "dataset2" in line and dataset == "val":
             updating_val_lab_files = True
-            lines[idx+1] = "data_name = {}_only".format(lang)
+            lines[idx+1] = "data_name = {}_only_{}".format(lang, dataset)
 
         if line.startswith("forward_with"):
-            lines[idx-1] = "valid_with = {}_only".format(lang)
-            lines[idx] = "forward_with = {}_only".format(lang)
+            lines[idx-1] = "valid_with = {}_only_{}".format(lang, dataset)
+            lines[idx] = "forward_with = {}_only_{}".format(lang, dataset)
 
     with open(args.cfg_filepath, "w") as f:
         for line in lines:

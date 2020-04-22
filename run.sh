@@ -30,7 +30,7 @@ feattype="mfcc"
 mfccdir=$FEAT_DIR_GLOBAL/mfcc
 fbankdir=$FEAT_DIR_GLOBAL/fbank
 
-#GP_LANGUAGES="BG UA CR PL"
+GP_LANGUAGES="BG UA CR PL TU SA SW HA"
 exp_dir=$EXP_DIR_GLOBAL/$expname
 exp_data_dir=$exp_dir/data
 baseline_dir=$EXP_DIR_GLOBAL/baseline_mfcc
@@ -60,16 +60,53 @@ echo "Pytorch experiment files are ${cfgname}"
 
 # setup/gp_format_data.sh \
 #     --expname $expname
+#lang="PL"
+#local/score.sh $exp_data_dir/val_${lang} $exp_data_dir/lang $PWD/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_${lang}_only_test_out_dnn2
+# dataset="val"
+tri3_exp=tri3
+for lang in "TU" "UA"; do
 
-#local/score.sh $exp_data_dir/val_${lang} $exp_data_dir/lang $PWD/pytorch-kaldi/exp/UPM_RNN_mfcc_base_5_layers/decode_${lang}_only_out_dnn2
+    steps/decode_fmllr.sh \
+        --nj "$decode_nj" \
+        --cmd "$decode_cmd" \
+        ${exp_dir}/${tri3_exp}/graph \
+        ${exp_data_dir}/val_${lang} \
+        ${exp_dir}/${tri3_exp}/decode_val_${lang}
 
-for lang in "BG" "CR" "UA" "PL"; do
+    steps/decode_fmllr.sh --nj "$decode_nj" --cmd "$decode_cmd" \
+    ${exp_dir}/${tri3_exp}/graph ${exp_data_dir}/test_${lang} ${exp_dir}/${tri3_exp}/decode_test_${lang}
 
-    expname=${lang}_only
+done
+
+expname=baseline_slavic
+exp_dir=$EXP_DIR_GLOBAL/$expname
+exp_data_dir=$exp_dir/data
+
+for lang in "BG" "CR" "TU" "UA"; do
+
+    steps/decode_fmllr.sh \
+        --nj "$decode_nj" \
+        --cmd "$decode_cmd" \
+        ${exp_dir}/${tri3_exp}/graph \
+        ${exp_data_dir}/val_${lang} \
+        ${exp_dir}/${tri3_exp}/decode_val_${lang}
+
+    steps/decode_fmllr.sh --nj "$decode_nj" --cmd "$decode_cmd" \
+    ${exp_dir}/${tri3_exp}/graph ${exp_data_dir}/test_${lang} ${exp_dir}/${tri3_exp}/decode_test_${lang}
+
+done
+
+exit
+
+dataset="test"
+
+for lang in "BG" "UA" "PL" "CR"; do
+
+    expname=baseline_slavic
     exp_dir=$EXP_DIR_GLOBAL/$expname
     exp_data_dir=$exp_dir/data
 
-    ali_dir=${exp_dir}/tri3_ali_test
+    ali_dir=${exp_dir}/tri3_ali_${dataset}_$lang
     feat=all
     phones=${ali_dir}/phones.txt
     python misc/make_phone_feature_map.py \
@@ -88,7 +125,7 @@ for lang in "BG" "CR" "UA" "PL"; do
     python setup/update_cfg_files.py \
         --cfg-filepath $cfgpath \
         --lang $lang \
-        --dataset "test"
+        --dataset ${dataset}
     
     #Drop into pytorch-kaldi and back out to make sure everything works
     root_dir=$PWD
@@ -96,11 +133,11 @@ for lang in "BG" "CR" "UA" "PL"; do
     python run_exp.py cfg/UPM/$cfgname
     cd $root_dir
 
-    expname=baseline_slavic
-    exp_dir=$EXP_DIR_GLOBAL/$expname
-    exp_data_dir=$exp_dir/data
+    # expname=baseline_mfcc
+    # exp_dir=$EXP_DIR_GLOBAL/$expname
+    # exp_data_dir=$exp_dir/data
 
-    local/score.sh $exp_data_dir/val_${lang} $exp_data_dir/lang $PWD/pytorch-kaldi/exp/UPM_RNN_mfcc_slavic_base/decode_${lang}_only_out_dnn2
+    local/score.sh $exp_data_dir/${dataset}_${lang} $exp_data_dir/lang $PWD/pytorch-kaldi/exp/UPM_RNN_mfcc_slavic_base/decode_${lang}_only_${dataset}_out_dnn2
 
 done
 

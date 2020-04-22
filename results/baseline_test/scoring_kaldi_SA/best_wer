@@ -1,0 +1,1 @@
+%WER -nan [ 0 / 0, 0 ins, 0 del, 0 sub ] [PARTIAL] /home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_SA_only_test_out_dnn2/wer_7_0.0

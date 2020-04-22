@@ -1,0 +1,6 @@
+# cat /home/paul/upm_exp/baseline_mfcc/tri3/decode_val_CR/scoring_kaldi/wer_details/per_utt | utils/scoring/wer_ops_details.pl --special-symbol '***' | sort -b -i -k 1,1 -k 4,4rn -k 2,2 -k 3,3 > /home/paul/upm_exp/baseline_mfcc/tri3/decode_val_CR/scoring_kaldi/wer_details/ops 
+# Started at Wed Apr 22 03:24:53 BST 2020
+#
+utils/scoring/wer_ops_details.pl: Note: handling as utf-8 text
+# Accounting: time=0 threads=1
+# Ended (code 0) at Wed Apr 22 03:24:53 BST 2020, elapsed time 0 seconds
