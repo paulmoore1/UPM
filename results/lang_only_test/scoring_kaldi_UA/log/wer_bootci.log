@@ -1,0 +1,6 @@
+# compute-wer-bootci --mode=present ark:/home/paul/upm_exp/UA_only/tri3/decode_test/scoring_kaldi/test_filt.txt ark:/home/paul/upm_exp/UA_only/tri3/decode_test/scoring_kaldi/penalty_0.0/11.txt > /home/paul/upm_exp/UA_only/tri3/decode_test/scoring_kaldi/wer_details/wer_bootci 
+# Started at Tue Apr 14 13:51:45 BST 2020
+#
+compute-wer-bootci --mode=present ark:/home/paul/upm_exp/UA_only/tri3/decode_test/scoring_kaldi/test_filt.txt ark:/home/paul/upm_exp/UA_only/tri3/decode_test/scoring_kaldi/penalty_0.0/11.txt 
+# Accounting: time=0 threads=1
+# Ended (code 0) at Tue Apr 14 13:51:45 BST 2020, elapsed time 0 seconds

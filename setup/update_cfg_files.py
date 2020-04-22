@@ -54,7 +54,7 @@ def main():
             pattern_1 = re.compile(r'.*\/(.*)_only\/')
             lines[idx], updated = get_new_lang_string(pattern_1, line, lang, "{}_only")
             if not updated:
-                # Try a second patter
+                # Try a second pattern
                 pattern_2 = re.compile(r'.*test_(.{2})')
                 lines[idx], _ = get_new_lang_string(pattern_2, line, lang, "test_{}")
             # Stop updating at "n_chunks" which is at the end of the test lab files
@@ -63,8 +63,11 @@ def main():
                 updating_test_lab_files = False
 
         if updating_val_lab_files:
-            pattern = re.compile(r'.*val_(.{2})')
-            lines[idx], updated = get_new_lang_string(pattern, line, lang, "val_{}")
+            pattern_1 = re.compile(r'.*\/(.*)_only\/')
+            lines[idx], updated = get_new_lang_string(pattern_1, line, lang, "{}_only")
+            if not updated:
+                pattern_2 = re.compile(r'.*val_(.{2})')
+                lines[idx], _ = get_new_lang_string(pattern_2, line, lang, "val_{}")
             # Stop updating at "n_chunks" which is at the end of the test lab files
             if line.startswith("n_chunks"):
                 lines[idx] = "n_chunks = 10"
