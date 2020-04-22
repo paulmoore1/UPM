@@ -51,11 +51,11 @@ for lang in $langs; do
   # steps/align_fmllr.sh --nj 8  \
   #  $new_train ${exp_data_dir}/lang ${exp_dir}/tri3 ${exp_dir}/${new_tr_ali}
 
-  steps/align_fmllr.sh --nj 8  \
-    $new_val ${exp_data_dir}/lang ${exp_dir}/tri3 ${exp_dir}/${new_val_ali}
+  # steps/align_fmllr.sh --nj 8  \
+  #   $new_val ${exp_data_dir}/lang ${exp_dir}/tri3 ${exp_dir}/${new_val_ali}
 
-  steps/align_fmllr.sh --nj 8  \
-    $new_test ${exp_data_dir}/lang ${exp_dir}/tri3 ${exp_dir}/${new_test_ali}
+  # steps/align_fmllr.sh --nj 8  \
+  #   $new_test ${exp_data_dir}/lang ${exp_dir}/tri3 ${exp_dir}/${new_test_ali}
 
   # steps/align_fmllr.sh --nj 8  \
   #   $new_val_2 ${exp_data_dir}/lang ${exp_dir}/tri3 ${exp_dir}/${new_val_2_ali}
