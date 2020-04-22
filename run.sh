@@ -84,8 +84,32 @@ echo "Pytorch experiment files are ${cfgname}"
 #local/score.sh $exp_data_dir/val_${lang} $exp_data_dir/lang $PWD/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_${lang}_only_test_out_dnn2
 # dataset="val"
 tri3_exp=tri3
-
 dataset="test"
+
+for lang in "BG"; do
+    expname=${lang}_only
+    exp_dir=$EXP_DIR_GLOBAL/$expname
+    exp_data_dir=$exp_dir/data
+
+    cfgname="UPM_RNN_mfcc_slavic_art_no_${lang}_test.cfg"
+    cfgpath=$UPM_DIR_GLOBAL/pytorch-kaldi/cfg/UPM/$cfgname
+    python setup/update_cfg_files.py \
+        --cfg-filepath $cfgpath \
+        --lang $lang \
+        --dataset ${dataset}
+
+    steps/compute_cmvn_stats.sh $exp_data_dir/$dataset $exp_dir/make_cmvn/$x $mfccdir
+
+
+    root_dir=$PWD
+    cd pytorch-kaldi
+    python run_exp.py cfg/UPM/$cfgname
+    cd $root_dir
+done
+
+exit
+
+
 for lang in "BG" "PL" "CR" "UA" "TU" "SA" "SW" "HA"; do
 
     expname=baseline_mfcc
