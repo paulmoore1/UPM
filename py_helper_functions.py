@@ -1,4 +1,4 @@
-import os, sys
+import os, sys, argparse, csv
 from os.path import join, exists
 import global_vars
 
@@ -81,5 +81,27 @@ def str2bool(v):
     else:
         raise argparse.ArgumentTypeError('Boolean value expected.')
 
+
+def write_to_csv(filename, header, data, save_dir=None, overwrite=False):
+    if save_dir is None:
+        save_dir = os.getcwd()
+    if ".csv" in filename:
+        save_path = join(save_dir, filename)
+    else:
+        save_path = join(save_dir, filename + ".csv")
+        
+    # Sanity check on data
+    for idx, row in enumerate(data):
+        assert len(row) == len(header), "ERROR: mismatch between length of data ({}) and length of header ({})\n \
+                                        This occurs at row {} containing: {}".format(len(row), len(header), idx, str(row))
+    
+    if exists(save_path) and overwrite == False:
+        print("File exists already. Set overwrite=True to replace it")
+    else:
+        with open(save_path, "w", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow(header)
+            writer.writerows(data)
+    
 
 

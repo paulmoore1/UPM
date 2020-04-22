@@ -114,3 +114,7 @@ t_s\ consonant voiceless alveolo-palatal affricate coronal
 s\ consonant voiceless palatal fricative dorsal
 tK consonant voiceless alveolar lateral affricate coronal
 d_z\ consonant voiced alveolo-palatal affricate
+ai vowel close front unrounded open
+au vowel back close front open rounded unrounded
+ya vowel front open rounded unrounded close
+yu vowel back close front rounded

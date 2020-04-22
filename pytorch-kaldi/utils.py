@@ -2746,18 +2746,20 @@ def setup_prediction_variables(exp_phones_filepath, conf_dir, out_folder, save_d
 
     def _add_extensions(extensions, phones, curr_phone, phone_to_idx_dict, remove_val):
         # Each extension is of the format [":", 3, 2]
-        for extension in extensions:
-            # Only add new attributes
-            atts_to_add = [x for x in extension[1:] if x not in curr_phone[1:]]
-            if len(atts_to_add) > 0:
-                ext_phone = curr_phone[0] + extension[0]
-                if ext_phone in phone_to_idx_dict:
-                    ext_phone_idx = phone_to_idx_dict[ext_phone]
-                else:
-                    ext_phone_idx = 0
-                ext_feat = [ext_phone_idx] + curr_phone[1:] + atts_to_add
-                ext_feat.remove(remove_val)
-                phones.append(ext_feat)
+        # Hard-coding to avoid diphthongs for now
+        if curr_phone[0] not in ['yu', 'ai', 'ya', 'au']:
+            for extension in extensions:
+                # Only add new attributes
+                atts_to_add = [x for x in extension[1:] if x not in curr_phone[1:]]
+                if len(atts_to_add) > 0:
+                    ext_phone = curr_phone[0] + extension[0]
+                    if ext_phone in phone_to_idx_dict:
+                        ext_phone_idx = phone_to_idx_dict[ext_phone]
+                    else:
+                        ext_phone_idx = 0
+                    ext_feat = [ext_phone_idx] + curr_phone[1:] + atts_to_add
+                    ext_feat.remove(remove_val)
+                    phones.append(ext_feat)
         return phones
 
 
