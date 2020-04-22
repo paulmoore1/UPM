@@ -1,5 +1,0 @@
-# cat /home/paul/upm_exp/baseline_mfcc/tri3/decode_test_UA/scoring_kaldi/penalty_0.0/16.txt | compute-wer --text --mode=present ark:/home/paul/upm_exp/baseline_mfcc/tri3/decode_test_UA/scoring_kaldi/test_filt.txt ark,p:- >& /home/paul/upm_exp/baseline_mfcc/tri3/decode_test_UA/wer_16_0.0 
-# Started at Wed Apr 22 14:12:23 BST 2020
-#
-# Accounting: time=0 threads=1
-# Ended (code 0) at Wed Apr 22 14:12:23 BST 2020, elapsed time 0 seconds
