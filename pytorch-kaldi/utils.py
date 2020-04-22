@@ -2776,11 +2776,13 @@ def setup_prediction_variables(exp_phones_filepath, conf_dir, out_folder, save_d
             write_lines.append("{} {}".format(phone, next_num))
             next_num += 1
             if "vowel" in curr_phone:
-                for ext_list in ve:
-                    ext = ext_list[0]
-                    phone_ext = phone + ext
-                    write_lines.append("{} {}".format(phone_ext, next_num))
-                    next_num += 1
+                # Hard coding to avoid diphthongss
+                if phone not in ['yu', 'ai', 'ya', 'au']:
+                    for ext_list in ve:
+                        ext = ext_list[0]
+                        phone_ext = phone + ext
+                        write_lines.append("{} {}".format(phone_ext, next_num))
+                        next_num += 1
                     
             elif "consonant" in curr_phone:
                 for ext_list in ce:
