@@ -21,7 +21,7 @@ train_nj=8
 decode_nj=8
 
 #expname="sa_only"
-expname="baseline_mfcc"
+expname="baseline_fbank"
 #expname="baseline_fbank"
 cfgname="UPM_RNN_mfcc_base_test.cfg"
 #cfgname="UPM_RNN_fbank_base.cfg"
@@ -53,8 +53,6 @@ echo "Pytorch experiment files are ${cfgname}"
 
 # setup/gp_prepare_dict.sh --src-dir=$exp_dir || exit 1
 
-# # # # # # Caution below: we remove optional silence by setting "--sil-prob 0.0",
-# # # # # # in TIMIT the silence appears also as a word in the dictionary and is scored.
 # utils/prepare_lang.sh --sil-prob 0.0 --position-dependent-phones false --num-sil-states 3 \
 #    ${exp_dir}/data/dict "sil" ${exp_dir}/data/lang_tmp ${exp_dir}/data/lang
 
@@ -64,60 +62,26 @@ echo "Pytorch experiment files are ${cfgname}"
 #local/score.sh $exp_data_dir/val_${lang} $exp_data_dir/lang $PWD/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_${lang}_only_test_out_dnn2
 # dataset="val"
 tri3_exp=tri3
-for lang in "TU" "UA"; do
-
-    steps/decode_fmllr.sh \
-        --nj "$decode_nj" \
-        --cmd "$decode_cmd" \
-        ${exp_dir}/${tri3_exp}/graph \
-        ${exp_data_dir}/val_${lang} \
-        ${exp_dir}/${tri3_exp}/decode_val_${lang}
-
-    steps/decode_fmllr.sh --nj "$decode_nj" --cmd "$decode_cmd" \
-    ${exp_dir}/${tri3_exp}/graph ${exp_data_dir}/test_${lang} ${exp_dir}/${tri3_exp}/decode_test_${lang}
-
-done
-
-expname=baseline_slavic
-exp_dir=$EXP_DIR_GLOBAL/$expname
-exp_data_dir=$exp_dir/data
-
-for lang in "BG" "CR" "TU" "UA"; do
-
-    steps/decode_fmllr.sh \
-        --nj "$decode_nj" \
-        --cmd "$decode_cmd" \
-        ${exp_dir}/${tri3_exp}/graph \
-        ${exp_data_dir}/val_${lang} \
-        ${exp_dir}/${tri3_exp}/decode_val_${lang}
-
-    steps/decode_fmllr.sh --nj "$decode_nj" --cmd "$decode_cmd" \
-    ${exp_dir}/${tri3_exp}/graph ${exp_data_dir}/test_${lang} ${exp_dir}/${tri3_exp}/decode_test_${lang}
-
-done
-
-exit
 
 dataset="test"
+for lang in "BG" "CR" "PL" "UA" "TU" "SA" "SW" "HA"; do
 
-for lang in "BG" "UA" "PL" "CR"; do
+    # expname=baseline_fbank
+    # exp_dir=$EXP_DIR_GLOBAL/$expname
+    # exp_data_dir=$exp_dir/data
 
-    expname=baseline_slavic
-    exp_dir=$EXP_DIR_GLOBAL/$expname
-    exp_data_dir=$exp_dir/data
-
-    ali_dir=${exp_dir}/tri3_ali_${dataset}_$lang
-    feat=all
-    phones=${ali_dir}/phones.txt
-    python misc/make_phone_feature_map.py \
-    --phones-filepath $phones \
-    --feat $feat \
-    --print-info True
+    # ali_dir=${exp_dir}/tri3_ali_${dataset}_$lang
+    # feat=all
+    # phones=${ali_dir}/phones.txt
+    # python misc/make_phone_feature_map.py \
+    # --phones-filepath $phones \
+    # --feat $feat \
+    # --print-info True
 
 
     #steps/compute_cmvn_stats.sh $exp_data_dir/test $exp_dir/make_cmvn/$x $mfccdir
 
-    cfgname="UPM_RNN_mfcc_slavic_base_test.cfg"
+    cfgname="UPM_RNN_fbank_art_test.cfg"
 
     cfgpath=$UPM_DIR_GLOBAL/pytorch-kaldi/cfg/UPM/$cfgname
 
@@ -137,7 +101,7 @@ for lang in "BG" "UA" "PL" "CR"; do
     # exp_dir=$EXP_DIR_GLOBAL/$expname
     # exp_data_dir=$exp_dir/data
 
-    local/score.sh $exp_data_dir/${dataset}_${lang} $exp_data_dir/lang $PWD/pytorch-kaldi/exp/UPM_RNN_mfcc_slavic_base/decode_${lang}_only_${dataset}_out_dnn2
+    #local/score.sh $exp_data_dir/${dataset}_${lang} $exp_data_dir/lang $PWD/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_${lang}_only_${dataset}_out_dnn2
 
 done
 
