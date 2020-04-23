@@ -1,6 +1,6 @@
-# compute-wer-bootci --mode=present ark:/home/paul/upm_exp/baseline_slavic/tri3/decode_val_UA/scoring_kaldi/test_filt.txt ark:/home/paul/upm_exp/baseline_slavic/tri3/decode_val_UA/scoring_kaldi/penalty_1.0/8.txt > /home/paul/upm_exp/baseline_slavic/tri3/decode_val_UA/scoring_kaldi/wer_details/wer_bootci 
-# Started at Wed Apr 22 19:09:35 BST 2020
+# compute-wer-bootci --mode=present ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_slavic_base/decode_UA_only_test_out_dnn2/scoring_kaldi/test_filt.txt ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_slavic_base/decode_UA_only_test_out_dnn2/scoring_kaldi/penalty_0.5/7.txt > /home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_slavic_base/decode_UA_only_test_out_dnn2/scoring_kaldi/wer_details/wer_bootci 
+# Started at Thu Apr 23 07:00:51 BST 2020
 #
-compute-wer-bootci --mode=present ark:/home/paul/upm_exp/baseline_slavic/tri3/decode_val_UA/scoring_kaldi/test_filt.txt ark:/home/paul/upm_exp/baseline_slavic/tri3/decode_val_UA/scoring_kaldi/penalty_1.0/8.txt 
-# Accounting: time=0 threads=1
-# Ended (code 0) at Wed Apr 22 19:09:35 BST 2020, elapsed time 0 seconds
+compute-wer-bootci --mode=present ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_slavic_base/decode_UA_only_test_out_dnn2/scoring_kaldi/test_filt.txt ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_slavic_base/decode_UA_only_test_out_dnn2/scoring_kaldi/penalty_0.5/7.txt 
+# Accounting: time=1 threads=1
+# Ended (code 0) at Thu Apr 23 07:00:52 BST 2020, elapsed time 1 seconds

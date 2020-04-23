@@ -1,0 +1,2077 @@
+69
+
+hmm-info /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl 
+
+
+/bin/sh: 1: blockdiag: not found
+
+69
+
+hmm-info /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl 
+
+
+/bin/sh: 1: blockdiag: not found
+
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck00_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck01_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck02_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck03_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck04_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck05_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck06_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck07_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck08_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck09_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck10_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck11_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck12_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck13_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck14_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck15_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck16_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck17_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck18_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck19_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck20_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck21_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck22_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck23_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck24_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 479 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 479 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck25_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck26_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck27_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck28_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck29_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck30_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck31_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck32_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck33_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck34_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck35_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck36_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck37_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck38_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck39_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck40_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck41_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck42_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck43_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck44_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck45_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck46_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck47_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck48_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep00_ck49_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep00_trCk49_ck00_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 262 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 262 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep00_trCk49_ck01_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 261 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 261 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep00_trCk49_ck02_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 262 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 262 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep00_trCk49_ck03_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 261 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 261 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep00_trCk49_ck04_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 262 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 262 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep00_trCk49_ck05_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 261 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 261 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep00_trCk49_ck06_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 262 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 262 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep00_trCk49_ck07_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 261 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 261 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep00_trCk49_ck08_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 262 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 262 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep00_trCk49_ck09_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 262 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 262 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep00_trCk49_ck10_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 261 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 261 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep00_trCk49_ck11_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 262 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 262 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep00_trCk49_ck12_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 261 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 261 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep00_trCk49_ck13_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 262 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 262 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep00_trCk49_ck14_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 261 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 261 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep00_trCk49_ck15_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 262 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 262 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep00_trCk49_ck16_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 261 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 261 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep00_trCk49_ck17_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 262 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 262 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep00_trCk49_ck18_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 261 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 261 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep00_trCk49_ck19_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 262 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 262 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck00_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck01_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck02_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck03_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck04_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck05_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck06_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck07_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck08_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck09_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck10_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck11_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck12_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck13_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck14_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck15_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck16_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck17_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck18_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck19_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck20_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck21_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck22_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck23_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck24_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 479 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 479 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck25_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck26_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck27_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck28_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck29_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck30_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck31_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck32_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck33_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck34_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck35_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck36_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck37_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck38_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck39_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck40_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck41_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck42_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck43_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck44_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck45_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck46_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck47_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck48_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep01_ck49_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep01_trCk49_ck00_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 262 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 262 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep01_trCk49_ck01_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 261 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 261 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep01_trCk49_ck02_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 262 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 262 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep01_trCk49_ck03_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 261 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 261 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep01_trCk49_ck04_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 262 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 262 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep01_trCk49_ck05_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 261 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 261 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep01_trCk49_ck06_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 262 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 262 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep01_trCk49_ck07_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 261 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 261 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep01_trCk49_ck08_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 262 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 262 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep01_trCk49_ck09_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 262 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 262 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep01_trCk49_ck10_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 261 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 261 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep01_trCk49_ck11_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 262 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 262 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep01_trCk49_ck12_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 261 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 261 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep01_trCk49_ck13_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 262 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 262 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep01_trCk49_ck14_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 261 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 261 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep01_trCk49_ck15_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 262 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 262 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep01_trCk49_ck16_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 261 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 261 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep01_trCk49_ck17_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 262 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 262 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep01_trCk49_ck18_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 261 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 261 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/val/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_val.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/valid_UPM_val_ep01_trCk49_ck19_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 262 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 262 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_val/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 5231 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck00_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck01_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck02_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck03_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck04_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck05_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck06_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck07_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck08_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck09_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck10_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck11_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck12_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck13_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck14_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck15_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck16_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck17_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck18_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck19_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck20_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck21_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck22_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck23_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck24_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 479 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 479 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck25_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck26_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck27_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck28_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck29_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck30_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck31_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck32_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck33_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck34_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck35_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck36_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck37_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck38_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck39_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck40_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck41_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck42_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 23901 utterances.
+69
+
+hmm-info /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl 
+
+
+/bin/sh: 1: blockdiag: not found
+
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck41_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+69
+
+hmm-info /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl 
+
+
+/bin/sh: 1: blockdiag: not found
+
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/baseline_slavic/data/train/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_train.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/train_UPM_tr_ep02_ck41_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 478 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 478 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/baseline_slavic/tri3_ali_train/final.mdl ark:- ark:- 
+119
+
+hmm-info /home/paul/upm_exp/baseline_mfcc/tri3_ali_train/final.mdl 
+
+
+/bin/sh: 1: blockdiag: not found
+
+119
+
+hmm-info /home/paul/upm_exp/baseline_mfcc/tri3_ali_train/final.mdl 
+
+
+/bin/sh: 1: blockdiag: not found
+
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck0_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 127 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 127 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck1_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 127 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 127 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+119
+
+hmm-info /home/paul/upm_exp/baseline_mfcc/tri3_ali_train/final.mdl 
+
+
+/bin/sh: 1: blockdiag: not found
+
+119
+
+hmm-info /home/paul/upm_exp/baseline_mfcc/tri3_ali_train/final.mdl 
+
+
+/bin/sh: 1: blockdiag: not found
+
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck0_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 127 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 127 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck1_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 127 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 127 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck2_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 127 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 127 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck3_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 127 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 127 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck4_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 126 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 126 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck5_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 127 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 127 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck6_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 127 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 127 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck7_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 127 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 127 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck8_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 127 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 127 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck9_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 127 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 127 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck9_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 127 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 127 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+119
+
+hmm-info /home/paul/upm_exp/baseline_mfcc/tri3_ali_train/final.mdl 
+
+
+/bin/sh: 1: blockdiag: not found
+
+119
+
+hmm-info /home/paul/upm_exp/baseline_mfcc/tri3_ali_train/final.mdl 
+
+
+/bin/sh: 1: blockdiag: not found
+
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck0_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/CR_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 46 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 46 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/CR_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 454 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck1_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/CR_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 46 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 46 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/CR_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 454 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck2_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/CR_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 45 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 45 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/CR_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 454 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/CR_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck3_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 46 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 46 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/CR_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 454 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck4_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/CR_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 46 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 46 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/CR_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 454 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck5_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/CR_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 46 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 46 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/CR_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 454 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck6_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/CR_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 46 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 46 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/CR_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 454 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck7_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/CR_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 45 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 45 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/CR_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 454 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck8_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/CR_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 46 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 46 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/CR_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 454 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/CR_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck9_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 46 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 46 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/CR_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 454 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck9_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/CR_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 46 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 46 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/CR_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 454 utterances.
+119
+
+hmm-info /home/paul/upm_exp/baseline_mfcc/tri3_ali_train/final.mdl 
+
+
+/bin/sh: 1: blockdiag: not found
+
+119
+
+hmm-info /home/paul/upm_exp/baseline_mfcc/tri3_ali_train/final.mdl 
+
+
+/bin/sh: 1: blockdiag: not found
+
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck0_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/PL_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 155 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 155 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/PL_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1549 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/PL_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck1_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 156 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 156 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/PL_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1549 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck2_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/PL_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 155 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 155 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/PL_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1549 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck3_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/PL_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 155 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 155 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/PL_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1549 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck4_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/PL_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 155 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 155 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/PL_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1549 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck5_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/PL_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 156 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 156 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/PL_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1549 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/PL_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck6_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 155 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 155 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/PL_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1549 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/PL_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck7_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 155 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 155 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/PL_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1549 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck8_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/PL_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 156 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 156 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/PL_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1549 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/PL_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck9_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 155 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 155 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/PL_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1549 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck9_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/PL_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 155 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 155 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/PL_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1549 utterances.
+119
+
+hmm-info /home/paul/upm_exp/baseline_mfcc/tri3_ali_train/final.mdl 
+
+
+/bin/sh: 1: blockdiag: not found
+
+119
+
+hmm-info /home/paul/upm_exp/baseline_mfcc/tri3_ali_train/final.mdl 
+
+
+/bin/sh: 1: blockdiag: not found
+
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/UA_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck0_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 204 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 204 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/UA_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 2044 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/UA_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck1_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 205 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 205 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/UA_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 2044 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck2_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/UA_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 204 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 204 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/UA_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 2044 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck3_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/UA_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 205 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 205 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/UA_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 2044 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/UA_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck4_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 204 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 204 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/UA_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 2044 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/UA_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck5_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 204 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 204 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/UA_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 2044 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck6_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/UA_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 205 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 205 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/UA_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 2044 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck7_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/UA_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 204 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 204 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/UA_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 2044 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck8_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/UA_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 205 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 205 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/UA_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 2044 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck9_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/UA_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 204 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 204 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/UA_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 2044 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UPM_test_ep23_ck9_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/UA_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 204 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 204 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/UA_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 2044 utterances.
+119
+
+hmm-info /home/paul/upm_exp/baseline_mfcc/tri3_ali_train/final.mdl 
+
+
+/bin/sh: 1: blockdiag: not found
+
+119
+
+hmm-info /home/paul/upm_exp/baseline_mfcc/tri3_ali_train/final.mdl 
+
+
+/bin/sh: 1: blockdiag: not found
+
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_BG_only_test_ep23_ck0_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 127 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 127 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_BG_only_test_ep23_ck1_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 127 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 127 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_BG_only_test_ep23_ck2_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 127 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 127 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_BG_only_test_ep23_ck3_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 127 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 127 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_BG_only_test_ep23_ck4_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 126 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 126 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_BG_only_test_ep23_ck5_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 127 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 127 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_BG_only_test_ep23_ck6_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 127 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 127 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_BG_only_test_ep23_ck7_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 127 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 127 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_BG_only_test_ep23_ck8_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 127 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 127 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_BG_only_test_ep23_ck9_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 127 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 127 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/BG_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_BG_only_test_ep23_ck9_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 127 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 127 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/BG_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1269 utterances.
+119
+
+hmm-info /home/paul/upm_exp/baseline_mfcc/tri3_ali_train/final.mdl 
+
+
+/bin/sh: 1: blockdiag: not found
+
+119
+
+hmm-info /home/paul/upm_exp/baseline_mfcc/tri3_ali_train/final.mdl 
+
+
+/bin/sh: 1: blockdiag: not found
+
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/PL_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_PL_only_test_ep23_ck0_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 155 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 155 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/PL_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1549 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_PL_only_test_ep23_ck1_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/PL_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 155 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 155 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/PL_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1549 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_PL_only_test_ep23_ck2_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/PL_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 155 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 155 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/PL_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1549 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/PL_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_PL_only_test_ep23_ck3_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 155 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 155 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/PL_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1549 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_PL_only_test_ep23_ck4_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/PL_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 154 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 154 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/PL_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1549 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_PL_only_test_ep23_ck5_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/PL_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 155 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 155 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/PL_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1549 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/PL_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_PL_only_test_ep23_ck6_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 155 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 155 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/PL_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1549 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_PL_only_test_ep23_ck7_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/PL_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 155 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 155 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/PL_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1549 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_PL_only_test_ep23_ck8_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/PL_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 155 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 155 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/PL_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1549 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_PL_only_test_ep23_ck9_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/PL_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 155 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 155 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/PL_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1549 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_PL_only_test_ep23_ck9_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/PL_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 155 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 155 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/PL_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 1549 utterances.
+119
+
+hmm-info /home/paul/upm_exp/baseline_mfcc/tri3_ali_train/final.mdl 
+
+
+/bin/sh: 1: blockdiag: not found
+
+119
+
+hmm-info /home/paul/upm_exp/baseline_mfcc/tri3_ali_train/final.mdl 
+
+
+/bin/sh: 1: blockdiag: not found
+
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/CR_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_CR_only_test_ep23_ck0_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 45 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 45 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/CR_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 454 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_CR_only_test_ep23_ck1_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/CR_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 46 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 46 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/CR_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 454 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/CR_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_CR_only_test_ep23_ck2_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 45 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 45 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/CR_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 454 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/CR_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_CR_only_test_ep23_ck3_mfcc.lst ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 46 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 46 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/CR_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 454 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_CR_only_test_ep23_ck4_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/CR_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 45 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 45 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/CR_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 454 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_CR_only_test_ep23_ck5_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/CR_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 45 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 45 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/CR_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 454 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/CR_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_CR_only_test_ep23_ck6_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 46 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 46 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/CR_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 454 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/CR_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_CR_only_test_ep23_ck7_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 45 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 45 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/CR_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 454 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_CR_only_test_ep23_ck8_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/CR_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 46 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 46 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/CR_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 454 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/CR_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_CR_only_test_ep23_ck9_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 45 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 45 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/CR_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 454 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_CR_only_test_ep23_ck9_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/CR_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 45 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 45 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/CR_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 454 utterances.
+119
+
+hmm-info /home/paul/upm_exp/baseline_mfcc/tri3_ali_train/final.mdl 
+
+
+/bin/sh: 1: blockdiag: not found
+
+119
+
+hmm-info /home/paul/upm_exp/baseline_mfcc/tri3_ali_train/final.mdl 
+
+
+/bin/sh: 1: blockdiag: not found
+
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UA_only_test_ep23_ck0_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/UA_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 204 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 204 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/UA_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 2044 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UA_only_test_ep23_ck1_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/UA_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 205 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 205 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/UA_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 2044 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/UA_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UA_only_test_ep23_ck2_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 204 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 204 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/UA_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 2044 utterances.
+add-deltas --delta-order=2 ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UA_only_test_ep23_ck3_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/UA_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 205 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 205 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/UA_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 2044 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UA_only_test_ep23_ck4_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/UA_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 204 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 204 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/UA_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 2044 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UA_only_test_ep23_ck5_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/UA_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 204 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 204 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/UA_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 2044 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/UA_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UA_only_test_ep23_ck6_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 205 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 205 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/UA_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 2044 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/UA_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UA_only_test_ep23_ck7_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 204 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 204 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/UA_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 2044 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/UA_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UA_only_test_ep23_ck8_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 205 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 205 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/UA_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 2044 utterances.
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/UA_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UA_only_test_ep23_ck9_mfcc.lst ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 204 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 204 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/UA_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 2044 utterances.
+copy-feats scp:exp/UPM_RNN_mfcc_slavic_art/exp_files/forward_UA_only_test_ep23_ck9_mfcc.lst ark:- 
+apply-cmvn --utt2spk=ark:/home/paul/upm_exp/UA_only/data/test/utt2spk ark:/home/paul/gp_feats/mfcc/cmvn_test.ark ark:- ark:- 
+add-deltas --delta-order=2 ark:- ark:- 
+LOG (copy-feats[5.5]:main():copy-feats.cc:143) Copied 204 feature matrices.
+LOG (apply-cmvn[5.5]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 204 utterances, errors on 0
+ali-to-phones --per-frame=true /home/paul/upm_exp/UA_only/tri3_ali_test/final.mdl ark:- ark:- 
+LOG (ali-to-phones[5.5]:main():ali-to-phones.cc:134) Done 2044 utterances.
