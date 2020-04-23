@@ -40,22 +40,6 @@ echo "Pytorch experiment files are ${cfgname}"
 
 # #For removing invalid utterances after aligning
 
-# for lang in "PL" "CR" "UA" "TU" "SA" "SW" "HA"; do
-#     expname=${lang}_only_fbank
-#     exp_dir=$EXP_DIR_GLOBAL/$expname
-
-#     for dataset in train val test; do
-#         exp_data_dir=$exp_dir/data/$dataset
-#         root_data_dir=$DATA_DIR_GLOBAL/$lang/lists
-#         # Delete old MFCC feats and replace with FBANK feats
-#         rm -f $exp_data_dir/feats.scp
-#         cp $root_data_dir/feats_fbank.scp $exp_data_dir/feats.scp
-
-#         utils/fix_data_dir.sh $exp_data_dir
-#     done
-
-# done
-# exit 
 # setup/filter_valid_alignments.sh \
 #     --exp-dir $exp_dir
 # exit
@@ -86,27 +70,46 @@ echo "Pytorch experiment files are ${cfgname}"
 tri3_exp=tri3
 dataset="test"
 
-# for lang in "BG"; do
-#     expname=${lang}_only
-#     exp_dir=$EXP_DIR_GLOBAL/$expname
-#     exp_data_dir=$exp_dir/data
+for lang in "UA"; do
+    expname=baseline_slavic
+    exp_dir=$EXP_DIR_GLOBAL/$expname
+    exp_data_dir=$exp_dir/data
 
-#     cfgname="UPM_RNN_mfcc_slavic_art_no_${lang}_test.cfg"
-#     cfgpath=$UPM_DIR_GLOBAL/pytorch-kaldi/cfg/UPM/$cfgname
-#     python setup/update_cfg_files.py \
-#         --cfg-filepath $cfgpath \
-#         --lang $lang \
-#         --dataset ${dataset}
+    tr_ali_dir=${exp_dir}/tri3_ali_train_no_UA
+    val_ali_dir=${exp_dir}/tri3_ali_val_no_UA
+    test_ali_dir=${exp_dir}/tri3_ali_test_UA
 
-#     steps/compute_cmvn_stats.sh $exp_data_dir/$dataset $exp_dir/make_cmvn/$x $mfccdir
+    feat=all
+    for x in $tr_ali_dir $val_ali_dir $test_ali_dir; do
+        echo "Making phone feature map for ${x}"
+        phones=${x}/phones.txt
+        python misc/make_phone_feature_map.py \
+            --phones-filepath $phones \
+            --feat $feat \
+            --print-info True
+    done
+
+    cfgname="UPM_RNN_mfcc_slavic_art_no_${lang}.cfg"
+    # cfgpath=$UPM_DIR_GLOBAL/pytorch-kaldi/cfg/UPM/$cfgname
+    # python setup/update_cfg_files.py \
+    #     --cfg-filepath $cfgpath \
+    #     --lang $lang \
+    #     --dataset ${dataset}
+
+    
+
+    for x in train_no_UA val_no_UA test_UA; do
+        steps/compute_cmvn_stats.sh $exp_data_dir/$x $exp_dir/make_cmvn/$x $mfccdir
+        #steps/compute_cmvn_stats.sh $exp_data_dir/$x $exp_dir/make_cmvn/$x $fbankdir
+    done
 
 
-#     root_dir=$PWD
-#     cd pytorch-kaldi
-#     python run_exp.py cfg/UPM/$cfgname
-#     cd $root_dir
-# done
-
+    root_dir=$PWD
+    cd pytorch-kaldi
+    python run_exp.py cfg/UPM/$cfgname
+    cd $root_dir
+done
+exit
 # exit
 # expname=baseline_mfcc
 # exp_dir=$EXP_DIR_GLOBAL/$expname
@@ -114,48 +117,6 @@ dataset="test"
 # lang="CR"
 # local/score.sh $exp_data_dir/${dataset}_${lang} $exp_data_dir/lang $PWD/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_${lang}_only_${dataset}_out_dnn2
 
-for lang in "CR"; do
-
-    expname=${lang}_only
-    exp_dir=$EXP_DIR_GLOBAL/$expname
-    exp_data_dir=$exp_dir/data
-
-    ali_dir=${exp_dir}/tri3_ali_${dataset}
-    feat=all
-    phones=${ali_dir}/phones.txt
-    python misc/make_phone_feature_map.py \
-    --phones-filepath $phones \
-    --feat $feat \
-    --print-info True
-
-
-    steps/compute_cmvn_stats.sh $exp_data_dir/test $exp_dir/make_cmvn/$x $mfccdir
-
-    cfgname="UPM_RNN_mfcc_base_test_v2.cfg"
-
-    cfgpath=$UPM_DIR_GLOBAL/pytorch-kaldi/cfg/UPM/$cfgname
-
-    # Update configuration files 
-    python setup/update_cfg_files.py \
-        --cfg-filepath $cfgpath \
-        --lang $lang \
-        --dataset ${dataset}
-    
-    #Drop into pytorch-kaldi and back out to make sure everything works
-    root_dir=$PWD
-    cd pytorch-kaldi
-    python run_exp.py cfg/UPM/$cfgname
-    cd $root_dir
-
-    # expname=baseline_mfcc
-    # exp_dir=$EXP_DIR_GLOBAL/$expname
-    # exp_data_dir=$exp_dir/data
-
-    local/score.sh $exp_data_dir/${dataset}_${lang} $exp_data_dir/lang $PWD/pytorch-kaldi/exp/UPM_RNN_mfcc_base_4_layers/decode_${lang}_only_${dataset}_out_dnn2
-
-done
-
-exit
 
 for lang in "BG" "PL" "CR" "UA" "TU" "SA" "SW" "HA"; do
 
