@@ -1,0 +1,40 @@
+BG
+Age info for 55/55 speakers: 32.3±13.8
+Gender ratio (m/f) for 55/55 speakers: 45:55
+Length: 14.8 hours
+--------------------------------------------------
+CR
+Age info for 65/66 speakers: 34.6±15.0
+Gender ratio (m/f) for 66/66 speakers: 38:62
+Length: 7.0 hours
+--------------------------------------------------
+HA
+Age info for 70/70 speakers: 30.1±11.5
+Gender ratio (m/f) for 70/70 speakers: 22:78
+Length: 6.1 hours
+--------------------------------------------------
+PL
+Age info for 20/69 speakers: 34.5±10.9
+Gender ratio (m/f) for 20/69 speakers: 55:45
+Length: 17.3 hours
+--------------------------------------------------
+SA
+Age info for 52/52 speakers: 24.8±7.6
+Gender ratio (m/f) for 52/52 speakers: 49:51
+Length: 7.8 hours
+--------------------------------------------------
+SW
+Age info for 68/68 speakers: 32.4±14.1
+Gender ratio (m/f) for 68/68 speakers: 44:56
+Length: 15.1 hours
+--------------------------------------------------
+TU
+Age info for 68/68 speakers: 27.7±10.7
+Gender ratio (m/f) for 68/68 speakers: 21:79
+Length: 10.5 hours
+--------------------------------------------------
+UA
+Age info for 80/80 speakers: 35.4±13.4
+Gender ratio (m/f) for 80/80 speakers: 35:65
+Length: 9.8 hours
+--------------------------------------------------
