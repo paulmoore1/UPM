@@ -17,14 +17,15 @@ def get_args():
 
 def analyse_info_files(info_dir, savename=None):
     def _read_loss(info_file):
+        #print(info_file)
         with open(info_file, "r") as f:
             for line in f:
                 if line.startswith("loss"):
                     return float(line[5:])
                 
     def _get_mean_loss(info_dir, dataset):
-        relevant_info = [x for x in listdir_fullpath(info_dir) if os.path.basename(x).startswith(dataset)]
-
+        relevant_info = [x for x in listdir_fullpath(info_dir) if os.path.basename(x).startswith(dataset) and x.endswith(".info")]
+        relevant_info.sort()
         pattern = re.compile(r'.*ep(.{2})')
         d = defaultdict(list)
         for info in relevant_info:
