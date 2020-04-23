@@ -98,6 +98,7 @@ def write_to_csv(filename, header, data, save_dir=None, overwrite=False):
     if exists(save_path) and overwrite == False:
         print("File exists already. Set overwrite=True to replace it")
     else:
+        print("Writing to {}".format(save_path))
         with open(save_path, "w", newline="") as f:
             writer = csv.writer(f)
             writer.writerow(header)
