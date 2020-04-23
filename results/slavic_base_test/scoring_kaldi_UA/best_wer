@@ -1,1 +1,1 @@
-%WER 37.43 [ 26109 / 69754, 2490 ins, 6374 del, 17245 sub ] /home/paul/upm_exp/baseline_slavic/tri3/decode_val_UA/wer_8_1.0
+%WER 47.77 [ 32443 / 67919, 1529 ins, 6912 del, 24002 sub ] /home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_slavic_base/decode_UA_only_test_out_dnn2/wer_7_0.5

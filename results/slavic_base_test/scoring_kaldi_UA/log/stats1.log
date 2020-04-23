@@ -1,10 +1,10 @@
-# cat /home/paul/upm_exp/baseline_slavic/tri3/decode_val_UA/scoring_kaldi/penalty_1.0/8.txt | align-text --special-symbol='***' ark:/home/paul/upm_exp/baseline_slavic/tri3/decode_val_UA/scoring_kaldi/test_filt.txt ark:- ark,t:- | utils/scoring/wer_per_utt_details.pl --special-symbol '***' | tee /home/paul/upm_exp/baseline_slavic/tri3/decode_val_UA/scoring_kaldi/wer_details/per_utt | utils/scoring/wer_per_spk_details.pl /home/paul/upm_exp/baseline_slavic/data/val_UA/utt2spk > /home/paul/upm_exp/baseline_slavic/tri3/decode_val_UA/scoring_kaldi/wer_details/per_spk 
-# Started at Wed Apr 22 19:09:34 BST 2020
+# cat /home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_slavic_base/decode_UA_only_test_out_dnn2/scoring_kaldi/penalty_0.5/7.txt | align-text --special-symbol='***' ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_slavic_base/decode_UA_only_test_out_dnn2/scoring_kaldi/test_filt.txt ark:- ark,t:- | utils/scoring/wer_per_utt_details.pl --special-symbol '***' | tee /home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_slavic_base/decode_UA_only_test_out_dnn2/scoring_kaldi/wer_details/per_utt | utils/scoring/wer_per_spk_details.pl /home/paul/upm_exp/baseline_slavic/data/test_UA/utt2spk > /home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_slavic_base/decode_UA_only_test_out_dnn2/scoring_kaldi/wer_details/per_spk 
+# Started at Thu Apr 23 07:00:51 BST 2020
 #
-align-text '--special-symbol=***' ark:/home/paul/upm_exp/baseline_slavic/tri3/decode_val_UA/scoring_kaldi/test_filt.txt ark:- ark,t:- 
+align-text '--special-symbol=***' ark:/home/paul/UPM/pytorch-kaldi/exp/UPM_RNN_mfcc_slavic_base/decode_UA_only_test_out_dnn2/scoring_kaldi/test_filt.txt ark:- ark,t:- 
 utils/scoring/wer_per_spk_details.pl: Note: handling as utf-8 text
-LOG (align-text[5.5]:main():align-text.cc:135) Done 2182 sentences, failed for 0
+LOG (align-text[5.5]:main():align-text.cc:135) Done 2044 sentences, failed for 0
 utils/scoring/wer_per_utt_details.pl: Note: handling as utf-8 text
 utils/scoring/wer_per_spk_details.pl: Note: handling as utf-8 text
-# Accounting: time=1 threads=1
-# Ended (code 0) at Wed Apr 22 19:09:35 BST 2020, elapsed time 1 seconds
+# Accounting: time=0 threads=1
+# Ended (code 0) at Thu Apr 23 07:00:51 BST 2020, elapsed time 0 seconds

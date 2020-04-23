@@ -1,0 +1,40 @@
+BG
+Age info for 10/10 speakers: 39.7±15.0
+Gender ratio (m/f) for 10/10 speakers: 30:70
+Length: 2.9 hours
+--------------------------------------------------
+CR
+Age info for 13/13 speakers: 25.1±8.3
+Gender ratio (m/f) for 13/13 speakers: 46:54
+Length: 1.6 hours
+--------------------------------------------------
+HA
+Age info for 17/17 speakers: 25.2±7.4
+Gender ratio (m/f) for 17/17 speakers: 25:75
+Length: 1.3 hours
+--------------------------------------------------
+PL
+Age info for 1/15 speakers: 22.0±0.0
+Gender ratio (m/f) for 1/15 speakers: 100:0
+Length: 3.7 hours
+--------------------------------------------------
+SA
+Age info for 9/9 speakers: 25.3±9.6
+Gender ratio (m/f) for 9/9 speakers: 29:71
+Length: 1.7 hours
+--------------------------------------------------
+SW
+Age info for 15/15 speakers: 31.7±11.6
+Gender ratio (m/f) for 15/15 speakers: 60:40
+Length: 3.3 hours
+--------------------------------------------------
+TU
+Age info for 18/18 speakers: 27.9±10.9
+Gender ratio (m/f) for 18/18 speakers: 44:56
+Length: 2.2 hours
+--------------------------------------------------
+UA
+Age info for 20/20 speakers: 27.2±8.7
+Gender ratio (m/f) for 20/20 speakers: 50:50
+Length: 2.1 hours
+--------------------------------------------------
