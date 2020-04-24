@@ -89,7 +89,7 @@ for lang in "UA"; do
             --print-info True
     done
 
-    cfgname="UPM_RNN_mfcc_slavic_art_no_${lang}.cfg"
+    cfgname="UPM_RNN_mfcc_slavic_art_no_${lang}_test.cfg"
     # cfgpath=$UPM_DIR_GLOBAL/pytorch-kaldi/cfg/UPM/$cfgname
     # python setup/update_cfg_files.py \
     #     --cfg-filepath $cfgpath \
